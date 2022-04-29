@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -9,11 +9,15 @@
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="OrchardCore.Theme.Targets" Version="1.3.0" />
-    <PackageReference Include="OrchardCore.ContentManagement" Version="1.3.0" />
-    <PackageReference Include="OrchardCore.DisplayManagement" Version="1.3.0" />
-    <PackageReference Include="OrchardCore.ResourceManagement" Version="1.3.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Localization" Version="2.2.0" />
+		<PackageReference Include="OrchardCore.DisplayManagement" Version="1.3.0" />
+		<PackageReference Include="OrchardCore.Flows" Version="1.3.0" />
+		<PackageReference Include="OrchardCore.ResourceManagement" Version="1.3.0" />
+		<PackageReference Include="OrchardCore.Theme.Targets" Version="1.3.0" />
 
+		<PackageReference Include="OrchardCore.Contents" Version="1.3.0" />
+		<PackageReference Include="OrchardCore.DisplayManagement" Version="1.3.0" />
+	</ItemGroup>
+	
 </Project>

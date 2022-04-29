@@ -2,8 +2,9 @@ using OrchardCore.DisplayManagement.Manifest;
 
 [assembly: Theme(
     Name = "ElistaTheme",
-    Author = "The Orchard Core Team",
-    Website = "https://orchardcore.net",
+    Author = "AltiBiz",
+    Website = "https://www.altibiz.com",
     Version = "0.0.1",
-    Description = "ElistaTheme"
+    Description = "Elista Theme",
+    BaseTheme = "The Blog Theme"
 )]

@@ -51,11 +51,19 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "OrchardCore.ContentManagement": {
+            "Microsoft.AspNetCore.Mvc.Localization": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "OrchardCore.Contents": {
               "target": "Package",
               "version": "[1.3.0, )"
             },
             "OrchardCore.DisplayManagement": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            },
+            "OrchardCore.Flows": {
               "target": "Package",
               "version": "[1.3.0, )"
             },

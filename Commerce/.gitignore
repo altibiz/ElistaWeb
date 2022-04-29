@@ -1,0 +1,9 @@
+*/bin
+*/obj
+*.csproj.user
+/.vs
+*.sln
+*.po
+SampleWebApp/App_Data/
+SampleWebApp/wwwroot/is-cache/
+*.placeholder

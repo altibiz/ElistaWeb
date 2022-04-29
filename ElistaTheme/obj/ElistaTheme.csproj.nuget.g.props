@@ -17,6 +17,8 @@
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)orchardcore.module.targets\1.3.0\build\OrchardCore.Module.Targets.props" Condition="Exists('$(NuGetPackageRoot)orchardcore.module.targets\1.3.0\build\OrchardCore.Module.Targets.props')" />
     <Import Project="$(NuGetPackageRoot)orchardcore.theme.targets\1.3.0\build\OrchardCore.Theme.Targets.props" Condition="Exists('$(NuGetPackageRoot)orchardcore.theme.targets\1.3.0\build\OrchardCore.Theme.Targets.props')" />
+    <Import Project="$(NuGetPackageRoot)orchardcore.flows\1.3.0\build\OrchardCore.Flows.props" Condition="Exists('$(NuGetPackageRoot)orchardcore.flows\1.3.0\build\OrchardCore.Flows.props')" />
+    <Import Project="$(NuGetPackageRoot)orchardcore.contents\1.3.0\build\OrchardCore.Contents.props" Condition="Exists('$(NuGetPackageRoot)orchardcore.contents\1.3.0\build\OrchardCore.Contents.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\draze\.nuget\packages\microsoft.codeanalysis.analyzers\3.3.2</PkgMicrosoft_CodeAnalysis_Analyzers>
