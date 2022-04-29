@@ -1,0 +1,49 @@
+{
+  "Version": 1,
+  "Hash": "+I5yrTFrydyjnI3XuEnomAbkngkJHhLyJOl4AgYuJec=",
+  "Source": "ElistaWeb",
+  "BasePath": "_content/ElistaWeb",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Projects\\ElistaWeb\\ElistaTheme\\ElistaTheme.csproj",
+      "Version": 2,
+      "Source": "ElistaTheme",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
+    }
+  ],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ElistaWeb\\wwwroot",
+      "Source": "ElistaWeb",
+      "ContentRoot": "C:\\Projects\\ElistaWeb\\ElistaWeb\\wwwroot\\",
+      "BasePath": "_content/ElistaWeb",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Projects\\ElistaWeb\\ElistaWeb\\wwwroot\\.placeholder",
+      "SourceId": "ElistaWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\ElistaWeb\\ElistaWeb\\wwwroot\\",
+      "BasePath": "_content/ElistaWeb",
+      "RelativePath": ".placeholder",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\.placeholder"
+    }
+  ]
+}
