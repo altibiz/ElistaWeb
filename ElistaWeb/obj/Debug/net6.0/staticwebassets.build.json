@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+I5yrTFrydyjnI3XuEnomAbkngkJHhLyJOl4AgYuJec=",
+  "Hash": "09HDjDJ3ACJzD0puiRN5vkEtV1WZ/XG8J3ZMSLvDOIk=",
   "Source": "ElistaWeb",
   "BasePath": "_content/ElistaWeb",
   "Mode": "Default",
@@ -16,6 +16,28 @@
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
       "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
+    },
+    {
+      "Identity": "C:\\Users\\draze\\Downloads\\OrchardCore.Commerce-main\\OrchardCore.Commerce-main\\OrchardCore.Commerce\\OrchardCore.Commerce.csproj",
+      "Version": 2,
+      "Source": "OrchardCore.Commerce",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
+    },
+    {
+      "Identity": "C:\\Users\\draze\\Downloads\\OrchardCore.Commerce-main\\OrchardCore.Commerce-main\\SampleWebApp\\SampleWebApp.csproj",
+      "Version": 2,
+      "Source": "SampleWebApp",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
     }
   ],
   "DiscoveryPatterns": [
@@ -24,6 +46,20 @@
       "Source": "ElistaWeb",
       "ContentRoot": "C:\\Projects\\ElistaWeb\\ElistaWeb\\wwwroot\\",
       "BasePath": "_content/ElistaWeb",
+      "Pattern": "**"
+    },
+    {
+      "Name": "OrchardCore.Commerce\\wwwroot",
+      "Source": "OrchardCore.Commerce",
+      "ContentRoot": "C:\\Users\\draze\\Downloads\\OrchardCore.Commerce-main\\OrchardCore.Commerce-main\\OrchardCore.Commerce\\wwwroot\\",
+      "BasePath": "_content/OrchardCore.Commerce",
+      "Pattern": "**"
+    },
+    {
+      "Name": "SampleWebApp\\wwwroot",
+      "Source": "SampleWebApp",
+      "ContentRoot": "C:\\Users\\draze\\Downloads\\OrchardCore.Commerce-main\\OrchardCore.Commerce-main\\SampleWebApp\\wwwroot\\",
+      "BasePath": "_content/SampleWebApp",
       "Pattern": "**"
     }
   ],
@@ -34,6 +70,23 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Projects\\ElistaWeb\\ElistaWeb\\wwwroot\\",
       "BasePath": "_content/ElistaWeb",
+      "RelativePath": ".placeholder",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\.placeholder"
+    },
+    {
+      "Identity": "C:\\Users\\draze\\Downloads\\OrchardCore.Commerce-main\\OrchardCore.Commerce-main\\SampleWebApp\\wwwroot\\.placeholder",
+      "SourceId": "SampleWebApp",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\draze\\Downloads\\OrchardCore.Commerce-main\\OrchardCore.Commerce-main\\SampleWebApp\\wwwroot\\",
+      "BasePath": "_content/SampleWebApp",
       "RelativePath": ".placeholder",
       "AssetKind": "All",
       "AssetMode": "All",

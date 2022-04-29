@@ -7,6 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElistaWeb", "ElistaWeb\Elis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElistaTheme", "ElistaTheme\ElistaTheme.csproj", "{FFCF1AD3-B149-4DE6-AA07-137546CB5134}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddressDataType", "..\..\Users\draze\Downloads\OrchardCore.Commerce-main\OrchardCore.Commerce-main\AddressDataType\AddressDataType.csproj", "{7F3DC541-4DEE-4533-B0E3-DA707CF4C4B9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoneyDataType", "..\..\Users\draze\Downloads\OrchardCore.Commerce-main\OrchardCore.Commerce-main\MoneyDataType\MoneyDataType.csproj", "{4E4CBEEA-951D-43B0-964A-8D28CDB3CEE3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrchardCore.Commerce", "..\..\Users\draze\Downloads\OrchardCore.Commerce-main\OrchardCore.Commerce-main\OrchardCore.Commerce\OrchardCore.Commerce.csproj", "{D15234C2-8928-46FB-A700-6E02D893EE12}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleWebApp", "..\..\Users\draze\Downloads\OrchardCore.Commerce-main\OrchardCore.Commerce-main\SampleWebApp\SampleWebApp.csproj", "{80AE2192-D189-4EFB-A719-347996DA316B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +29,22 @@ Global
 		{FFCF1AD3-B149-4DE6-AA07-137546CB5134}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFCF1AD3-B149-4DE6-AA07-137546CB5134}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFCF1AD3-B149-4DE6-AA07-137546CB5134}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F3DC541-4DEE-4533-B0E3-DA707CF4C4B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F3DC541-4DEE-4533-B0E3-DA707CF4C4B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F3DC541-4DEE-4533-B0E3-DA707CF4C4B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F3DC541-4DEE-4533-B0E3-DA707CF4C4B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E4CBEEA-951D-43B0-964A-8D28CDB3CEE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E4CBEEA-951D-43B0-964A-8D28CDB3CEE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E4CBEEA-951D-43B0-964A-8D28CDB3CEE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E4CBEEA-951D-43B0-964A-8D28CDB3CEE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D15234C2-8928-46FB-A700-6E02D893EE12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D15234C2-8928-46FB-A700-6E02D893EE12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D15234C2-8928-46FB-A700-6E02D893EE12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D15234C2-8928-46FB-A700-6E02D893EE12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80AE2192-D189-4EFB-A719-347996DA316B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80AE2192-D189-4EFB-A719-347996DA316B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80AE2192-D189-4EFB-A719-347996DA316B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80AE2192-D189-4EFB-A719-347996DA316B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

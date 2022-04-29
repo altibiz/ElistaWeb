@@ -20,6 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Users\draze\Downloads\OrchardCore.Commerce-main\OrchardCore.Commerce-main\AddressDataType\AddressDataType.csproj" />
+    <ProjectReference Include="..\..\..\Users\draze\Downloads\OrchardCore.Commerce-main\OrchardCore.Commerce-main\MoneyDataType\MoneyDataType.csproj" />
+    <ProjectReference Include="..\..\..\Users\draze\Downloads\OrchardCore.Commerce-main\OrchardCore.Commerce-main\OrchardCore.Commerce\OrchardCore.Commerce.csproj" />
+    <ProjectReference Include="..\..\..\Users\draze\Downloads\OrchardCore.Commerce-main\OrchardCore.Commerce-main\SampleWebApp\SampleWebApp.csproj" />
     <ProjectReference Include="..\ElistaTheme\ElistaTheme.csproj" />
   </ItemGroup>
 

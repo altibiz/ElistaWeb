@@ -6697,7 +6697,7 @@
           }
         }
       },
-      "System.Text.Json/6.0.0": {
+      "System.Text.Json/6.0.2": {
         "type": "package",
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0",
@@ -7147,6 +7147,16 @@
           "lib/netstandard2.1/ZString.dll": {}
         }
       },
+      "AddressDataType/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/AddressDataType.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AddressDataType.dll": {}
+        }
+      },
       "ElistaTheme/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -7161,6 +7171,59 @@
         },
         "runtime": {
           "bin/placeholder/ElistaTheme.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "MoneyDataType/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "System.Text.Json": "6.0.2"
+        },
+        "compile": {
+          "bin/placeholder/MoneyDataType.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MoneyDataType.dll": {}
+        }
+      },
+      "OrchardCore.Commerce/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AddressDataType": "1.0.0",
+          "MoneyDataType": "1.0.0",
+          "OrchardCore.ContentManagement": "1.3.0",
+          "OrchardCore.ContentTypes.Abstractions": "1.3.0",
+          "OrchardCore.Module.Targets": "1.3.0",
+          "OrchardCore.Navigation.Core": "1.3.0",
+          "OrchardCore.Workflows.Abstractions": "1.3.0"
+        },
+        "compile": {
+          "bin/placeholder/OrchardCore.Commerce.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OrchardCore.Commerce.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "SampleWebApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "OrchardCore.Application.Cms.Targets": "1.3.0",
+          "OrchardCore.Commerce": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SampleWebApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SampleWebApp.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -20268,10 +20331,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Text.Json/6.0.0": {
-      "sha512": "zaJsHfESQvJ11vbXnNlkrR46IaMULk/gHxYsJphzSF+07kTjPHv+Oc14w6QEOfo3Q4hqLJgStUaYB9DBl0TmWg==",
+    "System.Text.Json/6.0.2": {
+      "sha512": "0nE2gwXLn3PTBOPwORLqwuYvWB+Beomt9ZBX+6LmogMNKUvfD1SoDb/ycB1vBntT94rGaB/SvxEyeLu14H6aEg==",
       "type": "package",
-      "path": "system.text.json/6.0.0",
+      "path": "system.text.json/6.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -20317,7 +20380,7 @@
         "lib/netcoreapp3.1/System.Text.Json.xml",
         "lib/netstandard2.0/System.Text.Json.dll",
         "lib/netstandard2.0/System.Text.Json.xml",
-        "system.text.json.6.0.0.nupkg.sha512",
+        "system.text.json.6.0.2.nupkg.sha512",
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -21291,16 +21354,40 @@
         "zstring.nuspec"
       ]
     },
+    "AddressDataType/1.0.0": {
+      "type": "project",
+      "path": "../../../Users/draze/Downloads/OrchardCore.Commerce-main/OrchardCore.Commerce-main/AddressDataType/AddressDataType.csproj",
+      "msbuildProject": "../../../Users/draze/Downloads/OrchardCore.Commerce-main/OrchardCore.Commerce-main/AddressDataType/AddressDataType.csproj"
+    },
     "ElistaTheme/1.0.0": {
       "type": "project",
       "path": "../ElistaTheme/ElistaTheme.csproj",
       "msbuildProject": "../ElistaTheme/ElistaTheme.csproj"
+    },
+    "MoneyDataType/1.0.0": {
+      "type": "project",
+      "path": "../../../Users/draze/Downloads/OrchardCore.Commerce-main/OrchardCore.Commerce-main/MoneyDataType/MoneyDataType.csproj",
+      "msbuildProject": "../../../Users/draze/Downloads/OrchardCore.Commerce-main/OrchardCore.Commerce-main/MoneyDataType/MoneyDataType.csproj"
+    },
+    "OrchardCore.Commerce/1.0.0": {
+      "type": "project",
+      "path": "../../../Users/draze/Downloads/OrchardCore.Commerce-main/OrchardCore.Commerce-main/OrchardCore.Commerce/OrchardCore.Commerce.csproj",
+      "msbuildProject": "../../../Users/draze/Downloads/OrchardCore.Commerce-main/OrchardCore.Commerce-main/OrchardCore.Commerce/OrchardCore.Commerce.csproj"
+    },
+    "SampleWebApp/1.0.0": {
+      "type": "project",
+      "path": "../../../Users/draze/Downloads/OrchardCore.Commerce-main/OrchardCore.Commerce-main/SampleWebApp/SampleWebApp.csproj",
+      "msbuildProject": "../../../Users/draze/Downloads/OrchardCore.Commerce-main/OrchardCore.Commerce-main/SampleWebApp/SampleWebApp.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "AddressDataType >= 1.0.0",
       "ElistaTheme >= 1.0.0",
-      "OrchardCore.Application.Cms.Targets >= 1.3.0"
+      "MoneyDataType >= 1.0.0",
+      "OrchardCore.Application.Cms.Targets >= 1.3.0",
+      "OrchardCore.Commerce >= 1.0.0",
+      "SampleWebApp >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -21345,6 +21432,18 @@
           "projectReferences": {
             "C:\\Projects\\ElistaWeb\\ElistaTheme\\ElistaTheme.csproj": {
               "projectPath": "C:\\Projects\\ElistaWeb\\ElistaTheme\\ElistaTheme.csproj"
+            },
+            "C:\\Users\\draze\\Downloads\\OrchardCore.Commerce-main\\OrchardCore.Commerce-main\\AddressDataType\\AddressDataType.csproj": {
+              "projectPath": "C:\\Users\\draze\\Downloads\\OrchardCore.Commerce-main\\OrchardCore.Commerce-main\\AddressDataType\\AddressDataType.csproj"
+            },
+            "C:\\Users\\draze\\Downloads\\OrchardCore.Commerce-main\\OrchardCore.Commerce-main\\MoneyDataType\\MoneyDataType.csproj": {
+              "projectPath": "C:\\Users\\draze\\Downloads\\OrchardCore.Commerce-main\\OrchardCore.Commerce-main\\MoneyDataType\\MoneyDataType.csproj"
+            },
+            "C:\\Users\\draze\\Downloads\\OrchardCore.Commerce-main\\OrchardCore.Commerce-main\\OrchardCore.Commerce\\OrchardCore.Commerce.csproj": {
+              "projectPath": "C:\\Users\\draze\\Downloads\\OrchardCore.Commerce-main\\OrchardCore.Commerce-main\\OrchardCore.Commerce\\OrchardCore.Commerce.csproj"
+            },
+            "C:\\Users\\draze\\Downloads\\OrchardCore.Commerce-main\\OrchardCore.Commerce-main\\SampleWebApp\\SampleWebApp.csproj": {
+              "projectPath": "C:\\Users\\draze\\Downloads\\OrchardCore.Commerce-main\\OrchardCore.Commerce-main\\SampleWebApp\\SampleWebApp.csproj"
             }
           }
         }
