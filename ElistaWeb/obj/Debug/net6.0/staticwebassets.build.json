@@ -1,11 +1,22 @@
 {
   "Version": 1,
-  "Hash": "RFTcfJqRTYbQsgJ6lq7kLTqQF9yVyagSVRxgTHHS0nE=",
+  "Hash": "Z/ugPfCTvN1/LCHKizEf7V1O6rrwbDXJT0yJeRM7S+8=",
   "Source": "ElistaWeb",
   "BasePath": "_content/ElistaWeb",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Projects\\ElistaWeb\\Carousel.OrchardCore\\Carousel.OrchardCore.csproj",
+      "Version": 2,
+      "Source": "Carousel.OrchardCore",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
+    },
     {
       "Identity": "C:\\Projects\\ElistaWeb\\Commerce\\OrchardCore.Commerce\\OrchardCore.Commerce.csproj",
       "Version": 2,

@@ -4,6 +4,101 @@
     "C:\\Projects\\ElistaWeb\\ElistaWeb\\ElistaWeb.csproj": {}
   },
   "projects": {
+    "C:\\Projects\\ElistaWeb\\Carousel.OrchardCore\\Carousel.OrchardCore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\ElistaWeb\\Carousel.OrchardCore\\Carousel.OrchardCore.csproj",
+        "projectName": "Carousel.OrchardCore",
+        "projectPath": "C:\\Projects\\ElistaWeb\\Carousel.OrchardCore\\Carousel.OrchardCore.csproj",
+        "packagesPath": "C:\\Users\\draze\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\ElistaWeb\\Carousel.OrchardCore\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\draze\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.cloudsmith.io/orchardcore/preview/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "OrchardCore.ContentFields": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            },
+            "OrchardCore.ContentManagement.Abstractions": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            },
+            "OrchardCore.Data.Abstractions": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            },
+            "OrchardCore.DisplayManagement": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            },
+            "OrchardCore.Flows": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            },
+            "OrchardCore.Media": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            },
+            "OrchardCore.Module.Targets": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Projects\\ElistaWeb\\Commerce\\AddressDataType\\AddressDataType.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -370,6 +465,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Projects\\ElistaWeb\\Carousel.OrchardCore\\Carousel.OrchardCore.csproj": {
+                "projectPath": "C:\\Projects\\ElistaWeb\\Carousel.OrchardCore\\Carousel.OrchardCore.csproj"
+              },
               "C:\\Projects\\ElistaWeb\\Commerce\\OrchardCore.Commerce\\OrchardCore.Commerce.csproj": {
                 "projectPath": "C:\\Projects\\ElistaWeb\\Commerce\\OrchardCore.Commerce\\OrchardCore.Commerce.csproj"
               },
@@ -394,6 +492,10 @@
               "version": "[1.3.0, )"
             },
             "OrchardCore.Application.Targets": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            },
+            "OrchardCore.AutoSetup": {
               "target": "Package",
               "version": "[1.3.0, )"
             }

@@ -365,3 +365,5 @@ C:\Projects\ElistaWeb\ElistaWeb\bin\Debug\net6.0\OrchardCore.Commerce.dll
 C:\Projects\ElistaWeb\ElistaWeb\bin\Debug\net6.0\OrchardCore.Commerce.pdb
 C:\Projects\ElistaWeb\ElistaWeb\bin\Debug\net6.0\AddressDataType.pdb
 C:\Projects\ElistaWeb\ElistaWeb\bin\Debug\net6.0\MoneyDataType.pdb
+C:\Projects\ElistaWeb\ElistaWeb\bin\Debug\net6.0\Carousel.OrchardCore.dll
+C:\Projects\ElistaWeb\ElistaWeb\bin\Debug\net6.0\Carousel.OrchardCore.pdb

@@ -92,6 +92,7 @@ using System.Reflection;
 [assembly: OrchardCore.Modules.Manifest.ModuleNameAttribute("OrchardCore.Alias")]
 [assembly: OrchardCore.Modules.Manifest.ModuleNameAttribute("OrchardCore.AdminMenu")]
 [assembly: OrchardCore.Modules.Manifest.ModuleNameAttribute("OrchardCore.AdminDashboard")]
+[assembly: OrchardCore.Modules.Manifest.ModuleNameAttribute("Carousel.OrchardCore")]
 [assembly: OrchardCore.Modules.Manifest.ModuleNameAttribute("OrchardCore.Commerce")]
 [assembly: OrchardCore.Modules.Manifest.ModuleNameAttribute("ElistaTheme")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("ElistaWeb")]
