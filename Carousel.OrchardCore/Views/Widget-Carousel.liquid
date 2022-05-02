@@ -1,42 +1,45 @@
-{% assign id = "carousel-" | append: Model.ContentItem.Id %}
-{% assign ride = Model.ContentItem.Content.Carousel.Ride.Value %}
-{% assign wrap = Model.ContentItem.Content.Carousel.Wrap.Value %}
-{% assign interval = Model.ContentItem.Content.Carousel.Interval.Value %}
-{% assign keyboard = Model.ContentItem.Content.Carousel.Keyboard.Value %}
-{% assign pause = Model.ContentItem.Content.Carousel.Pause.Value %}
 
-<div id="{{ id }}" class="carousel slide" data-interval="{{ interval }}"{% if ride %} data-bs-ride="carousel"{% endif %}{% if wrap == false %} data-wrap="false"{% endif %}{% if pause == false %} data-pause="false"{% endif %}{% if keyboard == false %} data-keyboard="false"{% endif %}>
-    {% if Model.ContentItem.Content.Carousel.IncludeIndicators.Value %}
-        <ol class="carousel-indicators">
-            {% assign slideTo = 0 %}
+    <svg class="svg-blob svg-blob-fill-current" style=" width: 800px; height: 800px; max-width: 100%; left: -200px; top: -200px; color: #e0d4ab;">
+      <use xlink:href="#blob-shape"> </use>
+    </svg>
+    <!-- Slider main container-->
+<div class="swiper-container home-slider-design mb-5" style="height: 50vh; min-height: 500px;">
+    <!-- Additional required wrapper-->
+    <div class="swiper-wrapper">
+        <!-- Slides-->
+
             {% for slide in Model.ContentItem.Content.Slides.ContentItems %}
-                <li data-target="#{{ id }}" data-slide-to="{{ slideTo }}"{% if slideTo == 0 %} class="active"{% endif %}></li>
-                {% assign slideTo = slideTo | append: 1 %}
-            {% endfor %}
-        </ol>
-    {% endif %}
-    <div class="carousel-inner">
-        {% assign active = " active" %}
-        {% for slide in Model.ContentItem.Content.Slides.ContentItems %}
-            <div class="carousel-item{{active}}">
-                <img{% if slide.Slide.ImageClass.Text.size > 0 %} class="{{ slide.Slide.ImageClass.Text }}"{% endif %} src="{{ slide.Slide.Image.Paths.first | asset_url }}"{% if slide.Slide.ImageAltText.Text.size > 0 %} alt="{{ slide.Slide.ImageAltText.Text }}"{% endif %}>
-                {% if slide.Slide.DisplayCaption.Value %}
-                    <div class="carousel-caption d-none d-md-block">
-                        {{ slide.Slide.Caption.Html | raw }}
-                    </div>
-                {% endif %}
+
+            <div class="swiper-slide {% if slide.Slide.ImageClass.Text.size > 0 %} {{ slide.Slide.ImageClass.Text }} {% endif %} ">
+              <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                  <div class="col-sm-6 pt-5 pt-md-0" data-swiper-parallax="-500">
+
+                    <p class="subtitle letter-spacing-3 mb-3 text-dark font-weight-light">Time is almost up</p>
+                    <h2 class="display-3 mb-5" style="line-height: 1">{{ slide.Slide.Caption.Html | raw }}</h2>
+                    <a class="btn btn-outline-primary" href="#">Start shopping</a>
+                  </div>
+                  <div class="col-sm-6 text-center">
+
+                        <img class="img-fluid home-slider-image" src="{{ slide.Slide.Image.Paths.first | asset_url }}"{% if slide.Slide.ImageAltText.Text.size > 0 %} alt="{{ slide.Slide.ImageAltText.Text }}"{% endif %}>
+
+                    <svg class="svg-blob d-none d-md-inline-block svg-blob-fill-current svg-blob-swiper" style="color: #e7eaf9">
+                      <use xlink:href="#blob-shape-3"> </use>
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
-            {% assign active = "" %}
-        {% endfor %}
+
+            {% endfor %}
     </div>
-    {% if Model.ContentItem.Content.Carousel.IncludeControls.Value %}
-  <button class="carousel-control-prev" type="button" data-bs-target="#{{ id }}" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#{{ id }}" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-    {% endif %}
+
+    <div class="swiper-pagination position-relative"></div>
+
+    <div class="swiper-nav d-none d-lg-block">
+        <div class="swiper-button-prev" id="homePrev"> </div>
+        <div class="swiper-button-next" id="homeNext"> </div>
+    </div>
 </div>
+
+
