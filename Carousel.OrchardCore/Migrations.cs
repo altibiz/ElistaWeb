@@ -4,32 +4,42 @@ using OrchardCore.ContentManagement.Metadata.Settings;
 using OrchardCore.Data.Migration;
 using OrchardCore.Flows.Models;
 using OrchardCore.Media.Settings;
+using OrchardCore.Recipes.Services;
+using System.Threading.Tasks;
 
 namespace Carousel.OrchardCore {
     public class Migrations : DataMigration {
-        private readonly IContentDefinitionManager _contentDefinitionManager;
 
-        public Migrations(IContentDefinitionManager contentDefinitionManager) {
+        private readonly IContentDefinitionManager _contentDefinitionManager;
+        private readonly IRecipeMigrator _recipeMigrator;
+
+        public Migrations(IContentDefinitionManager contentDefinitionManager, IRecipeMigrator recipeMigrator) 
+        {
+
             _contentDefinitionManager = contentDefinitionManager;
+            _recipeMigrator = recipeMigrator;
         }
 
         public int Create() {
             _contentDefinitionManager.AlterPartDefinition("Slide", cfg => cfg
                 .WithDescription("Contains the fields for the current type")
-                .WithField("Caption",
-                    fieldBuilder => fieldBuilder
-                        .OfType("HtmlField")
-                        .WithDisplayName("Caption")
-                        .WithEditor("Wysiwyg"))
-                .WithField("DisplayCaption",
-                    fieldBuilder => fieldBuilder
-                        .OfType("BooleanField")
-                        .WithDisplayName("Display Caption"))
                 .WithField("Image",
                     fieldBuilder => fieldBuilder
                         .OfType("MediaField")
                         .WithDisplayName("Image")
                         .WithSettings(new MediaFieldSettings { Required = true, Multiple = false}))
+                .WithField("SubTitle",
+                    fieldBuilder => fieldBuilder
+                        .OfType("TextField")
+                        .WithDisplayName("SubTitle (up)"))
+                .WithField("Title",
+                    fieldBuilder => fieldBuilder
+                        .OfType("TextField")
+                        .WithDisplayName("Title"))
+                .WithField("ShortDescription",
+                    fieldBuilder => fieldBuilder
+                        .OfType("TextField")
+                        .WithDisplayName("Short Description"))
                 .WithField("ImageClass",
                     fieldBuilder => fieldBuilder
                         .OfType("TextField")
@@ -38,6 +48,14 @@ namespace Carousel.OrchardCore {
                     fieldBuilder => fieldBuilder
                         .OfType("TextField")
                         .WithDisplayName("Image Alt Text"))
+                .WithField("BtnText",
+                    fieldBuilder => fieldBuilder
+                        .OfType("TextField")
+                        .WithDisplayName("Button display text"))
+                .WithField("BtnUrl",
+                    fieldBuilder => fieldBuilder
+                        .OfType("TextField")
+                        .WithDisplayName("Button click destination"))
             );
 
             _contentDefinitionManager.AlterTypeDefinition("Slide", type => type
@@ -50,26 +68,6 @@ namespace Carousel.OrchardCore {
                         .OfType("NumericField")
                         .WithDisplayName("Interval")
                         .WithSettings(new NumericFieldSettings { Required = true, DefaultValue = "5000", Hint = "Delay between slides (ms)" }))
-                .WithField("IncludeControls",
-                    fieldBuilder => fieldBuilder
-                        .OfType("BooleanField")
-                        .WithDisplayName("Include Controls"))
-                .WithField("IncludeIndicators",
-                    fieldBuilder => fieldBuilder
-                        .OfType("BooleanField")
-                        .WithDisplayName("Include Indicators"))
-                .WithField("Ride",
-                    fieldBuilder => fieldBuilder
-                        .OfType("BooleanField")
-                        .WithDisplayName("Autoplay"))
-                .WithField("Wrap",
-                    fieldBuilder => fieldBuilder
-                        .OfType("BooleanField")
-                        .WithDisplayName("Continuous"))
-                .WithField("Keyboard",
-                    fieldBuilder => fieldBuilder
-                        .OfType("BooleanField")
-                        .WithDisplayName("React to keyboard"))
                 .WithField("Pause",
                     fieldBuilder => fieldBuilder
                         .OfType("BooleanField")
@@ -86,5 +84,12 @@ namespace Carousel.OrchardCore {
 
             return 1;
         }
+
+        //public async Task<int> UpdateFrom1Async()
+        //{
+        //    await _recipeMigrator.ExecuteAsync("county.recipe.json", this);
+
+        //    return 2;
+        //}
     }
 }

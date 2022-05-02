@@ -1,7 +1,4 @@
 
-    <svg class="svg-blob svg-blob-fill-current" style=" width: 800px; height: 800px; max-width: 100%; left: -200px; top: -200px; color: #e0d4ab;">
-      <use xlink:href="#blob-shape"> </use>
-    </svg>
     <!-- Slider main container-->
 <div class="swiper-container home-slider-design mb-5" style="height: 50vh; min-height: 500px;">
     <!-- Additional required wrapper-->
@@ -15,13 +12,14 @@
                 <div class="row h-100 align-items-center">
                   <div class="col-sm-6 pt-5 pt-md-0" data-swiper-parallax="-500">
 
-                    <p class="subtitle letter-spacing-3 mb-3 text-dark font-weight-light">Time is almost up</p>
+                    <p class="subtitle letter-spacing-3 mb-3 text-dark font-weight-light">{{ slide.Slide.SubTitle.Text }}</p>
                     <h2 class="display-3 mb-5" style="line-height: 1">{{ slide.Slide.Caption.Html | raw }}</h2>
-                    <a class="btn btn-outline-primary" href="#">Start shopping</a>
+					  <p class="text-muted mb-5">{{ slide.Slide.ShortDescription.Text }}</p>
+					  <a class="btn btn-outline-primary" href="{{ slide.Slide.BtnUrl.Text }}">{{ slide.Slide.BtnText.Text }}</a>
                   </div>
                   <div class="col-sm-6 text-center">
 
-                        <img class="img-fluid home-slider-image" src="{{ slide.Slide.Image.Paths.first | asset_url }}"{% if slide.Slide.ImageAltText.Text.size > 0 %} alt="{{ slide.Slide.ImageAltText.Text }}"{% endif %}>
+                        <img class="img-fluid home-slider-image" src="{{ slide.Slide.Image.Paths.first | asset_url }}" alt="{{ slide.Slide.ImageAltText.Text }}">
 
                     <svg class="svg-blob d-none d-md-inline-block svg-blob-fill-current svg-blob-swiper" style="color: #e7eaf9">
                       <use xlink:href="#blob-shape-3"> </use>
