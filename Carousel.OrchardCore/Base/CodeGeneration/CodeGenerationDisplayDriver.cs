@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Lombiq.HelpfulExtensions.Extensions.CodeGeneration
+namespace Carousel.OrchardCore.Base.CodeGeneration
 {
     public class CodeGenerationDisplayDriver : ContentTypeDefinitionDisplayDriver
     {
@@ -27,8 +27,8 @@ namespace Lombiq.HelpfulExtensions.Extensions.CodeGeneration
                     {
                         var codeBuilder = new StringBuilder();
 
-                                    // Building the code for the type.
-                                    var name = model.Name;
+                        // Building the code for the type.
+                        var name = model.Name;
                         codeBuilder.AppendLine($"_contentDefinitionManager.AlterTypeDefinition(\"{name}\", type => type");
                         codeBuilder.AppendLine($"    .DisplayedAs(\"{model.DisplayName}\")");
 

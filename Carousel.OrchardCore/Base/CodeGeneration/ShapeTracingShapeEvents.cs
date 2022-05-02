@@ -5,7 +5,7 @@ using OrchardCore.DisplayManagement.Shapes;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ElistWeb.Base.CodeGeneration
+namespace Carousel.OrchardCore.Base.CodeGeneration
 {
     public class ShapeTracingShapeEvents : IShapeDisplayEvents
     {

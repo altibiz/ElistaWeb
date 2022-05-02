@@ -1,14 +1,15 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using OrchardCore.Modules;
 using OrchardCore.ResourceManagement;
-using OrchardCore.Data.Migration;
-using Microsoft.AspNetCore.Mvc;
-using OrchardCore.Recipes;
+using OrchardCore.DisplayManagement.Implementation;
+using OrchardCore.ContentTypes.Editors;
+using Microsoft.Extensions.Hosting;
+using OrchardCore.Modules;
+using Microsoft.AspNetCore.Hosting;
 
 namespace ElistTheme
 {
-    public class Startup : StartupBase
+    public class Startup : OrchardCore.Modules.StartupBase
     {
         public override void ConfigureServices(IServiceCollection serviceCollection)
         {
