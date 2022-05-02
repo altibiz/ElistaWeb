@@ -1,0 +1,185 @@
+extends ../_pug-includes/layout
+
+block vars
+    - var active = 'docs'  
+    - var path = '../'   
+    - var photoSwipe = true
+    - var imageZoom = true    
+    - var quickViewModal = true;     
+
+block content
+
+    - var breadcrumbs = []
+    - breadcrumbs.push({name: 'Home', link: '../index.html'})
+    - breadcrumbs.push({name: 'Documentation', link: 'index.html'})
+    - breadcrumbs.push({name: 'Theme Components'})
+    - var heroHeading = 'Theme Components'
+    - var heroText = '<p class="lead text-muted">This is a quick showcase of some of the main custom components that come with this theme.</p>'
+    - var current = 'docs/components-theme.html'
+    - var heroColumns = 'col-lg-10 col-xl-8 offset-lg-2'
+    
+    include ../_pug-includes/inc-hero-fluid
+
+    .container-fluid
+        .row.px-xl-5
+            .col-lg-2
+                include ../_pug-includes/inc-docs-sidebar.pug
+
+            .col-lg-8.position-relative
+
+                    +componentDocItem('Accordion', '<p class="lead">Block components used to create an Accordion using Bootstrap\' collapse plugin.</p>')
+
+                        include ../_pug-includes/inc-docs-accordion.pug
+
+                    +componentDocItem('Animations', '<p class="lead">The theme uses a great plugin for on-scroll animations, <a href="https://michalsnik.github.io/aos/">AOS</a>.</p><p>To activate the animations on particular element, just choose from the available animations and paste it into element\'s data-aos attribute, e.g. <code>data-aos="flip-up"</code> or <code>data-aos="zoom-in"</code>.</p>')    
+                        include ../_pug-includes/inc-docs-aos.pug
+
+                    +componentDocItem('Blob', '<p>In the design variants of the homepage, I use colourful SVG blobs. At the moment, I have included four types into a SVG sprite, if you would need more, just get in touch. The usage is simple - to insert a basic blob, use syntax <code>&lt;svg class=&quot;svg-blob&quot;&gt;&lt;use xlink:href=&quot;#blob-shape-4&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></p><p>If you\'d add <code>class="svg-blob-fill-current"</code> to the svg element, it will inherit also a fill colour from its parent.</p>')    
+                        include ../_pug-includes/inc-docs-blob.pug
+
+                    +componentDocItem('Cart', '<p class="lead">A responsive cart component used in cart overview or final order review. On smaller displays, a horizontal srollbar appears.</p>')
+
+                        .row
+                            .col-xl-10
+                                include ../_pug-includes/inc-checkout-cart-2.pug
+
+
+                    +componentDocItem('Icons - E-commerce', '<p class="lead">This theme also comes with a <strong>70+ Premium E-commerce SVG icons</strong>.</p><p class="text-muted text-large">For a complete icon reference, see <a href="../icons/demo.html">here</a>.</p>')
+
+                        include ../_pug-includes/inc-docs-icons.pug
+
+                    +componentDocItem('Icons - Font Awesome', '<p class="lead">Vector icons and social logos on your website with Font Awesome, the web’s most popular icon set and toolkit.</p><p>These icons are mostly used in buttons or for social network links. For a complete icon reference, see <a href="https://fontawesome.com/icons?d=gallery">here</a>.</p>')
+                        include ../_pug-includes/inc-docs-icons-fa.pug                      
+
+                    +componentDocItem('Image Zoom', '<p class="lead">A plugin to enlarge images on touch, click, or mouseover. For a complete reference, see <a href="https://www.jacklmoore.com/zoom/">Image Zoom\'s docs</a>.</p>')
+
+                        include ../_pug-includes/inc-docs-image-zoom.pug                      
+
+                    +componentDocItem('Product grid header', '<p class="lead">A simple component with items per page, items filter, ordering and no. of displayed items information. Displayed above the product grid. </p>')
+
+                        include ../_pug-includes/inc-grid-filter.pug
+                    
+
+                    +componentDocItem('Product', '<p class="lead">Product component used in the product listing. Contains animated buttons appearing after hovering above the component. </p>')
+
+                        include ../_pug-includes/inc-var-shopitems.pug
+                        - var additionalButtons = true
+                        - var itemClass = ' col-xxl-3 col-lg-4 col-sm-6'
+
+                        h5.mb-4 Default Product Card
+                        .row
+                            each val, index in shopItems
+                                if (index < 2)
+                                    +product(val, itemClass, additionalButtons)
+                        h5.mb-4 Product Card 1
+                        .row
+                            each val, index in shopItems
+                                if (index < 2)
+                                    +product1(val, itemClass, additionalButtons)  
+                        h5.mb-4 Product Card 2
+                        .row
+                            each val, index in shopItems
+                                if (index < 2)
+                                    +product2(val, itemClass, additionalButtons)  
+                        h5.mb-4 Product Card 3
+                        .row
+                            each val, index in shopItems
+                                if (index < 2)
+                                    +product3(val, itemClass, additionalButtons)     
+                        h5.mb-4 Product Card 4
+                        .row
+                            each val, index in shopItems
+                                if (index < 2)
+                                    +product4(val, itemClass, additionalButtons)     
+                        h5.mb-4 Product Card 5
+                        .row
+                            each val, index in shopItems
+                                if (index < 2)
+                                    +product5(val, itemClass, additionalButtons)     
+                        h5.mb-4 Product Card 6
+                        .row
+                            each val, index in shopItems
+                                if (index < 2)
+                                    +product6(val, itemClass, additionalButtons)     
+                        h5.mb-4 Product Card 7
+                        .row
+                            each val, index in shopItems
+                                if (index < 2)
+                                    +product7(val, itemClass, additionalButtons)     
+
+
+                    +componentDocItem('Product modal', '<p class="lead">A component based on a Bootstrap modal with a product images carousel</p>')
+
+                        a.btn.btn-outline-primary(href="#", data-bs-toggle='modal', data-bs-target='#quickView') Toggle product modal
+
+                        include ../_pug-includes/inc-modal.pug
+
+                    +componentDocItem('Services block', '<p class="lead">Easily format main advantages or services in the services block. Columns in this block have a border on the right which disappears on smaller display sizes.</p>')
+                        .bg-gray-100.text-dark-700.p-3.py-5
+                            include ../_pug-includes/inc-services.pug
+
+                    +componentDocItem('Swiper', '<p class="lead">Touch enabled jQuery plugin that lets you create a beautiful responsive carousel slider.</p><p>Used for the single-item carousels and also for the product carousels. <p><a href="https://idangero.us/swiper/get-started/">Visit plugin website</a></p>')
+
+                        //- include ../_pug-includes/inc-home-slider
+
+                    +componentDocItem('Responsive collapse', '<p class="lead">Responsive collapse blocks with a toggler link. Used in the sidebar for collapsing the inactive menu blocks on smaller displays. Add <code>.expand-lg</code> to a <code>.collapse</code> block and it will expand on lg+ displays. This component is used on the sidebar blocks in the product categories.</p>')
+
+                        .row
+                            .col-md-6.col-lg-4
+                                include ../_pug-includes/inc-sidebar-sizes.pug
+
+                    +componentDocItem('Top bar', '<p class="lead">Top bar element that precedes the navbar, as seen also on this page. Great to display telephone number, language or currency choice or similar.</p>')                                
+
+                    +componentDocItem('Background image', '<p class="lead">Utility class that turns a <code>&lt;img class=&quot;bg-image&quot;&gt;</code> into a background image for its background. Useful e.g. for carousels. Make sure that image\'s parent container and the content that should be placed over the image are relatively positioned.</p>')    
+                        include ../_pug-includes/inc-docs-image.pug
+
+
+                    +componentDocItem('Image overlay', '<p class="lead">Utility class that darkens or lightens the backround image of the element to enhance the legibility. It can be used with cards, carousel slides, etc. Now with responsive behaviour too.</p>')  
+                        include ../_pug-includes/inc-docs-overlay.pug
+
+                        .card.bg-gray-100.border-0
+                            .card-body 
+                                h6.text-muted.text-uppercase.fw-normal.mb-3 Class reference
+                                p.card-text <code>.dark-overlay</code> or <code>.light-overlay</code> - CSS class to be used on the element, accepts Boostrap responsive suffixes. (e.g. <code>.dark-overlay.dark-overlay-lg-0</code> creates overlay on smaller viewports and hides it on lg+ screens.)
+                                p.card-text <code>.overlay-content</code> - use this class on the element's content to increase its Z-index and move it above the overlay layer
+                                
+                    +componentDocItem('Responsive borders', '<p class="lead">Responsive borders as an addition to Bootstrap\'s <a href="https://getbootstrap.com/docs/5.0/utilities/borders/">border utilities</a>.</p>')    
+
+                        .card.bg-gray-100.border-0
+                            .card-body 
+                                h6.text-muted.text-uppercase.fw-normal.mb-3 Class reference
+                                p.card-text <code>.border-sm</code>, <code>.border-md</code>, etc.
+
+                    +componentDocItem('Block utilities', '<p class="lead">Additional utility classes, for block elements mostly.</p>')    
+
+                        .card.bg-gray-100.border-0
+                            .card-body 
+                                h6.text-muted.text-uppercase.fw-normal.mb-3 Class reference
+                                p.card-text <code>.bg-gray-100</code> to <code>.bg-gray-900</code> - grayscale backgrounds
+                                p.card-text <code>.bg-primary-light</code>, <code>.bg-secondary-light</code> - lighter backgrounds for the theme colours
+                                p.card-text <code>.opacity-1</code> to <code>.opacity-9</code> - opacity helper
+
+                    +componentDocItem('Text utilities', '<p class="lead">Text utility classes to control text size and more.</p>')    
+
+                        .card.bg-gray-100.border-0
+                            .card-body 
+                                h6.text-muted.text-uppercase.fw-normal.mb-3 Class reference
+                                p.card-text <code>.text-sm</code>, <code>.text-lg</code>, <code>.text-xl</code> - text sizes
+                                p.card-text <code>.letter-spacing-0</code> to <code>.letter-spacing-5</code> - letter spacing 0em to 0.5em
+                                p.card-text <code>.z-index-1</code> to <code>.z-index-5</code> - z-index from 10 to 50
+                                p.card-text <code>.text-primary-hover</code>, etc. - text colour on hover/focus for theme colours
+                                p.card-text <code>.overflow-visible</code> and <code>.overflow-hidden</code> - overflow control
+
+            .col-xl-2
+                nav#components-nav.nav.nav-pills.flex-column.sticky-top.ms-1.p-3.mb-5.border-left.d-none.d-xl-block(style="top: 30px;")
+                    h6.sidebar-heading Main components
+                    - var components = ['Accordion', 'Animations', 'Blob', 'Cart',  'Icons - E-commerce', 'Icons - Font Awesome', 'Image Zoom', 'Product grid header', 'Product', 'Product modal', 'Services block', 'Swiper', 'Responsive collapse', 'Top bar']
+                    each val in components
+                        +componentDocNav(val)
+                    
+                    h6.sidebar-heading.mt-3 Utilities
+
+                    - var components = ['Background image', 'Image overlay', 'Block utilities', 'Text utilities']
+                    each val in components
+                        +componentDocNav(val)
+
