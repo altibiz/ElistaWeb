@@ -186,7 +186,7 @@ node_modules/*
 
 ElistaWeb/wwwroot
 /**/node_modules/
-/UgpTheme/Assets/dist
+/ElistaTheme/Assets/dist
 /ModuleName.OrchardCore/wwwroot
 /ElistaWeb/App_Data2
 /ElistaWeb/App_Data3
