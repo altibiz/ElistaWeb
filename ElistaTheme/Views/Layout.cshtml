@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="@Orchard.CultureName()">
+<html lang="hr-HR">
 
 <head>
     <meta charset="utf-8" />
@@ -47,69 +47,17 @@
 <body>
     <!-- Header START -->
 
-
        <header class="header"> 
-      <!-- Top Bar-->
-      <div class="top-bar text-sm">
-        <div class="container-fluid px-lg-5 py-3">
-          <div class="row align-items-center">
-            <div class="col-md-4 d-none d-md-block">
-              <ul class="list-inline mb-0">
-                <li class="list-inline-item me-2"><a class="text-reset text-primary-hover" href="#"><i class="fab fa-facebook-f"> </i></a></li>
-                <li class="list-inline-item me-4"><a class="text-reset text-primary-hover" href="#"><i class="fab fa-twitter"> </i></a></li>
-                <li class="list-inline-item me-2">
-                  <svg class="svg-icon me-2">
-                    <use xlink:href="#calls-1"> </use>
-                  </svg>020-800-456-747
-                </li>
-              </ul>
-            </div>
-            <div class="col-sm-6 col-md-4 text-start text-md-center">
-              <p class="mb-0">Free in-store delivery</p>
-            </div>
-            <div class="col-sm-6 col-md-4 d-none d-sm-flex justify-content-end">
-              <!-- Language Dropdown-->
-              <div class="dropdown border-right px-3"><a class="dropdown-toggle topbar-link" id="langsDropdown" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-haspopup="true" aria-expanded="false">English</a>
-                <div class="dropdown-menu dropdown-menu-animated dropdown-menu-end" aria-labelledby="langsDropdown"><a class="dropdown-item" href="#">German</a><a class="dropdown-item" href="#">French</a></div>
-              </div>
-              <!-- Currency Dropdown-->
-              <div class="dropdown ps-3 ms-0"><a class="dropdown-toggle topbar-link" id="currencyDropdown" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-haspopup="true" aria-expanded="false">USD</a>
-                <div class="dropdown-menu dropdown-menu-animated dropdown-menu-end" aria-labelledby="currencyDropdown"><a class="dropdown-item" href="#">EUR</a><a class="dropdown-item" href="#"> GBP</a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Top Bar End-->
-      <nav class="navbar navbar-expand-lg bg-transparent border-0 shadow-0 navbar-light px-lg-5 z-index-20 "><a class="navbar-brand" href="index.html">Varkala</a>
-        <ul class="list-inline mb-0 d-block d-lg-none">
-          <li class="list-inline-item me-3"><a class="text-dark text-primary-hover" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
-              <svg class="svg-icon navbar-icon">
-                <use xlink:href="#avatar-1"> </use>
-              </svg></a></li>
-          <li class="list-inline-item me-3"><a class="text-dark text-primary-hover position-relative" href="wishlist.html">
-              <svg class="svg-icon navbar-icon">
-                <use xlink:href="#heart-1"> </use>
-              </svg>
-              <div class="navbar-icon-badge">3</div></a></li>
-          <li class="list-inline-item position-relative me-3"><a class="text-dark text-primary-hover" href="#" data-bs-toggle="modal" data-bs-target="#sidebarCart">
-              <svg class="svg-icon navbar-icon">
-                <use xlink:href="#retail-bag-1"> </use>
-              </svg>
-              <div class="navbar-icon-badge">5</div></a></li>
-        </ul>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-          <svg class="svg-icon navbar-icon">
-            <use xlink:href="#menu-hamburger-1"> </use>
-          </svg>
-        </button>
+            
+        <!-- Top Bar-->
 
-        <div class="collapse navbar-collapse hideLogin justify-content-end" id="navbarCollapse">
-            <partial name="LoginMenu" />
-            @await RenderSectionAsync("HeaderMenu", required: false)
-        </div>
+        <partial name="TopBar" />
 
-      </nav>
+        <!-- Top Bar End-->      
+
+
+        <partial name="MainMenu" />
+
     </header>
 
     <!-- Header END -->

@@ -2,12 +2,9 @@
   "ContentItemId": "4ehkyebe6v9zsyqn2nq8ke1z51",
   "ContentItemVersionId": "42svgftywakn1sahhxywt641ws",
   "ContentType": "Page",
-  "DisplayText": "Solar Adria",
+  "DisplayText": "Homepage",
   "Latest": true,
   "Published": true,
-  "ModifiedUtc": "2021-11-19T07:07:29.9446799Z",
-  "PublishedUtc": "2021-11-19T07:07:30.3414519Z",
-  "CreatedUtc": "2021-07-12T19:04:01.0255955Z",
   "Owner": "4276mc6nzpy765nkm6ry7xe8ca",
   "Author": "admin",
   "Page": {},
@@ -280,6 +277,6 @@
     ]
   },
   "TitlePart": {
-    "Title": "Solar Adria"
+    "Title": "Homepage"
   }
 }
