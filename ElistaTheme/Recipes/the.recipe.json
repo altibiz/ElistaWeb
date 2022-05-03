@@ -1,0 +1,2005 @@
+{
+  "name": "ElistaWeb",
+  "displayName": "Elista Web Theme",
+  "description": "Provides a functional Blog with CMS features.",
+  "author": "The Orchard Core Team",
+  "website": "https://orchardcore.net",
+  "version": "1.0.0-rc2",
+  "issetuprecipe": true,
+  "categories": [ "default" ],
+  "tags": [ "blog" ],
+
+  // The variables are evaluated the first time they are accessed, and reused across steps
+  "variables": {
+    "adminUrlPrefix": "[js: configuration('OrchardCore_Admin:AdminUrlPrefix', 'Admin')]",
+    "blogContentItemId": "[js:uuid()]",
+    "menuContentItemId": "[js:uuid()]",
+    "tagsContentItemId": "[js:uuid()]",
+    "tagContentItemId": "[js:uuid()]",
+    "earthTagContentItemId": "[js:uuid()]",
+    "explorationTagContentItemId": "[js:uuid()]",
+    "spaceTagContentItemId": "[js:uuid()]",
+    "categoriesContentItemId": "[js:uuid()]",
+    "categoryTravelContentItemId": "[js:uuid()]"
+    // "now": "[js: new Date().toISOString()]"
+  },
+
+  "steps": [
+    {
+      "name": "feature",
+      "enable": [
+        // SaaS
+        "OrchardCore.HomeRoute",
+        "OrchardCore.Admin",
+        "OrchardCore.Diagnostics",
+        "OrchardCore.DynamicCache",
+        "OrchardCore.Features",
+        "OrchardCore.Navigation",
+        "OrchardCore.Recipes",
+        "OrchardCore.Resources",
+        "OrchardCore.Roles",
+        "OrchardCore.Settings",
+        "OrchardCore.Themes",
+        "OrchardCore.Users",
+        "OrchardCore.Localization",
+        "OrchardCore.ContentLocalization.ContentCulturePicker",
+
+        // Content Management
+        "OrchardCore.Alias",
+        "OrchardCore.AdminMenu",
+        "OrchardCore.Autoroute",
+        "OrchardCore.Html",
+        "OrchardCore.ContentFields",
+        "OrchardCore.ContentFields.Indexing.SQL.UserPicker",
+
+        "OrchardCore.ContentPreview",
+        "OrchardCore.Contents",
+        "OrchardCore.Contents.FileContentDefinition",
+        "OrchardCore.ContentTypes",
+        "OrchardCore.CustomSettings",
+        "OrchardCore.Deployment",
+        "OrchardCore.Deployment.Remote",
+        "OrchardCore.Feeds",
+        "OrchardCore.Flows",
+        "OrchardCore.Indexing",
+        "OrchardCore.Layers",
+        "OrchardCore.Lucene",
+        "OrchardCore.Lists",
+        "OrchardCore.Markdown",
+        "[js: configuration('Media_Module')]",
+        "OrchardCore.Menu",
+        "OrchardCore.Placements",
+        "OrchardCore.Queries",
+        "OrchardCore.Shortcodes.Templates",
+        "OrchardCore.Rules",
+        "OrchardCore.Taxonomies",
+        "OrchardCore.Title",
+        "OrchardCore.Templates",
+        "OrchardCore.Users",
+        "OrchardCore.Users.Registration",
+        "OrchardCore.Users.ResetPassword",
+        "OrchardCore.Widgets",
+        "Carousel.OrchardCore",
+        "OrchardCore.Workflows",
+        "Members",
+
+        // Themes
+        "ElistaTheme",
+        "TheAdmin",
+        "SafeMode",
+        "ElasticSearch"
+      ]
+    },
+    {
+      "name": "themes",
+      "admin": "TheAdmin",
+      "site": "ElistaTheme"
+    },
+    {
+      "name": "settings",
+      "HomeRoute": {
+        "Action": "Display",
+        "Controller": "Item",
+        "Area": "OrchardCore.Contents",
+        "ContentItemId": "[js: variables('blogContentItemId')]"
+      },
+      "LayerSettings": {
+        "Zones": [ "Content", "Footer", "BlogPostRight" ]
+      },
+      "LocalizationSettings": {
+        "DefaultCulture": "hr",
+        "SupportedCultures": [ "hr", "en" ]
+      }
+    },
+    {
+      "name": "ContentDefinition",
+      "ContentTypes": [
+        {
+          "Name": "Article",
+          "DisplayName": "Article",
+          "Hidden": false,
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Draftable": true,
+              "Versionable": true,
+              "Listable": true
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Article",
+              "Name": "Article",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "3"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true,
+                  "Pattern": "{{ Model.ContentItem | display_text | slugify }}",
+                  "ShowHomepageOption": true
+                },
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "HtmlBodyPart",
+              "Name": "HtmlBodyPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Editor": "Wysiwyg",
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "LocalizationPart",
+              "Name": "LocalizationPart",
+              "Settings": {}
+            }
+          ]
+        },
+        {
+          "Name": "BlogPost",
+          "DisplayName": "Blog Post",
+          "Hidden": false,
+          "Settings": {
+            "ContentTypeSettings": {
+              "Draftable": true,
+              "Versionable": true
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                },
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true,
+                  "Pattern": "{{ Model.ContentItem | container | display_text | slugify }}/{{ Model.ContentItem | display_text | slugify }}",
+                  "ShowHomepageOption": false
+                }
+              }
+            },
+            {
+              "PartName": "BlogPost",
+              "Name": "BlogPost",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "3"
+                }
+              }
+            },
+            {
+              "PartName": "MarkdownBodyPart",
+              "Name": "MarkdownBodyPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Editor": "Wysiwyg",
+                  "Position": "2"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Blog",
+          "DisplayName": "Blog",
+          "Hidden": false,
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Draftable": true,
+              "Versionable": true,
+              "Listable": true,
+              "Securable": true
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                },
+                "ContentIndexSettings": {
+                  "Included": false,
+                  "Stored": false,
+                  "Analyzed": false,
+                  "Sanitized": false,
+                  "Tokenized": false,
+                  "Template": null
+                },
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true,
+                  "Pattern": "{{ Model.ContentItem | display_text | slugify }}",
+                  "ShowHomepageOption": true
+                }
+              }
+            },
+            {
+              "PartName": "Blog",
+              "Name": "Blog",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "3"
+                }
+              }
+            },
+            {
+              "PartName": "HtmlBodyPart",
+              "Name": "HtmlBodyPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "PartName": "ListPart",
+              "Name": "ListPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "4"
+                },
+                "ListPartSettings": {
+                  "PageSize": 10,
+                  "ContainedContentTypes": [
+                    "BlogPost"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Container",
+          "DisplayName": "Container",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true,
+              "Stereotype": "Widget"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Container",
+              "Name": "Container",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "FlowPart",
+              "Name": "FlowPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Blockquote",
+          "DisplayName": "Blockquote",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true,
+              "Stereotype": "Widget"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Blockquote",
+              "Name": "Blockquote",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Image",
+          "DisplayName": "Image",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true,
+              "Stereotype": "Widget"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Image",
+              "Name": "Image",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "ImageLink",
+          "DisplayName": "ImageLink",
+          "Settings": {
+            "ContentTypeSettings": {},
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "ImageLink",
+              "Name": "ImageLink",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "ImageLinks",
+          "DisplayName": "ImageLinks",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Stereotype": "Widget"
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "ImageLinks",
+              "Name": "ImageLinks",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "BagPart",
+              "Name": "BagPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "DisplayName": "ILinks",
+                  "Description": "ImageLinks display in row",
+                  "Position": "2"
+                },
+                "BagPartSettings": {
+                  "ContainedContentTypes": [
+                    "ImageLink"
+                  ],
+                  "DisplayType": "Detail"
+                },
+                "ContentIndexSettings": {}
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Paragraph",
+          "DisplayName": "Paragraph",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true,
+              "Stereotype": "Widget"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Paragraph",
+              "Name": "Paragraph",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "RawHtml",
+          "DisplayName": "Raw Html",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true,
+              "Stereotype": "Widget"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "RawHtml",
+              "Name": "RawHtml",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Page",
+          "DisplayName": "Page",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Draftable": true,
+              "Versionable": true,
+              "Listable": true,
+              "Securable": true
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Page",
+              "Name": "Page",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "3"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                },
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true,
+                  "Pattern": "{{ Model.ContentItem | display_text | slugify }}",
+                  "ShowHomepageOption": true
+                }
+              }
+            },
+            {
+              "PartName": "FlowPart",
+              "Name": "FlowPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "Name": "LocalizationPart",
+              "Settings": {
+                "ContentPartSettings": {
+                  "Attachable": true,
+                  "Description": "Provides a way to create localized version of content."
+                }
+              },
+              "ContentPartFieldDefinitionRecords": []
+            }
+          ]
+        },
+        {
+          "Name": "Tag",
+          "DisplayName": "Tag",
+          "Settings": {
+            "ContentTypeSettings": {},
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Tag",
+              "Name": "Tag",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                },
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true,
+                  "Pattern": "{{ Model.ContentItem | display_text | slugify }}",
+                  "ManageContainedItemRoutes": true
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Category",
+          "DisplayName": "Category",
+          "Settings": {
+            "ContentTypeSettings": {},
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Category",
+              "Name": "Category",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                },
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true,
+                  "Pattern": "{{ Model.ContentItem | display_text | slugify }}",
+                  "ManageContainedItemRoutes": true
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "RecentNews",
+          "DisplayName": "Recent News",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Stereotype": "Widget"
+            },
+            "FullTextAspectSettings": {
+              "IncludeBodyAspect": false,
+              "IncludeDisplayText": false
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "RecentNews",
+              "Name": "RecentNews",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "FeaturedContent",
+          "DisplayName": "Featured Content",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Stereotype": "Widget"
+            },
+            "FullTextAspectSettings": {
+              "IncludeBodyAspect": false,
+              "IncludeDisplayText": false
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "FeaturedContent",
+              "Name": "FeaturedContent",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "ContentParts": [
+        {
+          "Name": "RecentNews",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "NumericField",
+              "Name": "ShowFirst",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Prikazano vijesti"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "FeaturedContent",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "SubTitle",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "SubTitle",
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "FieldName": "BooleanField",
+              "Name": "IncludeRecentNews",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "IncludeRecentNews",
+                  "Position": "3"
+                }
+              }
+            },
+            {
+              "FieldName": "LinkField",
+              "Name": "MoreButton",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "MoreButton",
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "FieldName": "MediaField",
+              "Name": "FeaturedImage",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Featured Image",
+                  "Position": "1"
+                },
+                "MediaFieldSettings": {
+                  "Multiple": false,
+                  "AllowMediaText": false
+                },
+                "ContentIndexSettings": {}
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Blog",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "MediaField",
+              "Name": "Image",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Banner Image",
+                  "Position": "0"
+                },
+                "ContentIndexSettings": {
+                  "Included": false,
+                  "Stored": false,
+                  "Analyzed": false,
+                  "Sanitized": false,
+                  "Tokenized": false,
+                  "Template": null
+                },
+                "MediaFieldSettings": {
+                  "Multiple": false,
+                  "AllowAnchors": true
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "BlogPost",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "Subtitle",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Subtitle",
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "FieldName": "MediaField",
+              "Name": "Image",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Banner Image",
+                  "Position": "1"
+                },
+                "ContentIndexSettings": {
+                  "Included": false,
+                  "Stored": false,
+                  "Analyzed": false,
+                  "Sanitized": false,
+                  "Tokenized": false,
+                  "Template": null
+                },
+                "MediaFieldSettings": {
+                  "Multiple": false,
+                  "AllowAnchors": true
+                }
+              }
+            },
+            {
+              "FieldName": "TaxonomyField",
+              "Name": "Tags",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Tags",
+                  "Editor": "Tags",
+                  "DisplayMode": "Tags",
+                  "Position": "2"
+                },
+                "ContentIndexSettings": {},
+                "TaxonomyFieldSettings": {
+                  "TaxonomyContentItemId": "[js: variables('tagsContentItemId')]"
+                },
+                "TaxonomyFieldTagsEditorSettings": {}
+              }
+            },
+            {
+              "FieldName": "TaxonomyField",
+              "Name": "Category",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Category",
+                  "Position": "3"
+                },
+                "ContentIndexSettings": {},
+                "TaxonomyFieldSettings": {
+                  "TaxonomyContentItemId": "[js: variables('categoriesContentItemId')]",
+                  "Unique": true,
+                  "LeavesOnly": true
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Article",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "Subtitle",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Subtitle",
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "FieldName": "MediaField",
+              "Name": "Image",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Banner Image",
+                  "Position": "0"
+                },
+                "MediaFieldSettings": {
+                  "Multiple": false,
+                  "AllowAnchors": true
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Blockquote",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "Quote",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Quote",
+                  "Editor": "TextArea",
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Image",
+          "Settings": {
+            "Attachable": true
+          },
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "MediaField",
+              "Name": "Media",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Image",
+                  "Position": "0"
+                },
+                "MediaFieldSettings": {
+                  "Multiple": false,
+                  "Required": true
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Caption",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Caption",
+                  "Position": "1"
+                },
+                "TextFieldSettings": {
+                  "Hint": "A description of the image used as title or alternate text"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "BagPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Reusable": true,
+              "Description": "Provides a collection behavior for your content item where you can place other content items."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "TitlePart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides a Title for your content item.",
+              "DefaultPosition": "0"
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "ImageLink",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "MediaField",
+              "Name": "Image",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Image",
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "FieldName": "LinkField",
+              "Name": "Link",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Link",
+                  "Position": "1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Paragraph",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "HtmlField",
+              "Name": "Content",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Content",
+                  "Position": "0",
+                  "Editor": "Wysiwyg"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "RawHtml",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "HtmlField",
+              "Name": "Content",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Content",
+                  "Position": "0",
+                  "Editor": "Multiline"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Category",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "Icon",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Icon",
+                  "Editor": "IconPicker",
+                  "Position": "0"
+                },
+                "TextFieldSettings": {
+                  "Required": true
+                },
+                "ContentIndexSettings": {}
+              }
+            }
+          ]
+        },
+        {
+          "Name": "ImageMenuItem",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "MediaField",
+              "Name": "MenuImage",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Menu Image",
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "FieldName": "LinkField",
+              "Name": "Link",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Link",
+                  "Position": "1"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      // Create the indices before the content items so they are indexed automatically.
+      "name": "lucene-index",
+      "Indices": [
+        {
+          "Search": {
+            "AnalyzerName": "standardanalyzer",
+            "IndexLatest": false,
+            "IndexedContentTypes": [
+              "Article",
+              "Blockquote",
+              "Blog",
+              "BlogPost",
+              "Button",
+              "Container",
+              "Form",
+              "ImageWidget",
+              "Image",
+              "Input",
+              "Label",
+              "LinkMenuItem",
+              "Menu",
+              "Page",
+              "Paragraph",
+              "RawHtml",
+              "Select",
+              "TextArea",
+              "Validation",
+              "ValidationSummary"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      // Create the search settings.
+      "name": "Settings",
+      "LuceneSettings": {
+        "SearchIndex": "Search",
+        "DefaultSearchFields": [
+          "Content.ContentItem.FullText"
+        ]
+      }
+    },
+    {
+      // Create the search index permissions.
+      "name": "Roles",
+      "Roles": [
+        {
+          "Name": "Anonymous",
+          "Description": "Anonymous role",
+          "Permissions": [
+            "ViewContent",
+            "QueryLuceneSearchIndex"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "media",
+      "Files": [
+      ]
+    },
+    {
+      "name": "content",
+      "Data": [
+        {
+          "ContentType": "Menu",
+          "ContentItemId": "[js: variables('menuContentItemId')]",
+          "Owner": "[js: parameters('AdminUserId')]",
+          "Author": "[js: parameters('AdminUsername')]",
+          "DisplayText": "Main Menu",
+          "Latest": true,
+          "Published": true,
+          "MenuPart": {},
+          "TitlePart": {
+            "Title": "Main Menu"
+          },
+          "MenuItemsListPart": {
+            "MenuItems": [
+              {
+                "ContentItemId": "[js: uuid()]",
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Project",
+                "LinkMenuItemPart": {
+                  "Name": "Project",
+                  "Url": "~/"
+                },
+                "LinkMenuItem": {}
+              },
+              {
+                "ContentItemId": "[js: uuid()]",
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Partners",
+                "LinkMenuItemPart": {
+                  "Name": "Partners",
+                  "Url": "#"
+                },
+                "LinkMenuItem": {}
+              },
+              {
+                "ContentItemId": "[js: uuid()]",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Matchmaking platform",
+                "LinkMenuItemPart": {
+                  "Name": "Matchmaking platform",
+                  "Url": "#"
+                },
+                "LinkMenuItem": {}
+              },
+              {
+                "ContentItemId": "[js: uuid()]",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "News",
+                "LinkMenuItemPart": {
+                  "Name": "News",
+                  "Url": "~/blog"
+                },
+                "LinkMenuItem": {}
+              },
+              {
+                "ContentItemId": "[js: uuid()]",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Publications",
+                "LinkMenuItemPart": {
+                  "Name": "Publications",
+                  "Url": "#"
+                },
+                "LinkMenuItem": {}
+              },
+              {
+                "ContentItemId": "[js: uuid()]",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Contact",
+                "LinkMenuItemPart": {
+                  "Name": "Contact",
+                  "Url": "#"
+                },
+                "LinkMenuItem": {}
+              }
+            ]
+          },
+          "AliasPart": {
+            "Alias": "main-menu"
+          }
+        },
+        {
+          "ContentItemId": "[js: variables('tagsContentItemId')]",
+          "Owner": "[js: parameters('AdminUserId')]",
+          "Author": "[js: parameters('AdminUsername')]",
+          "ContentType": "Taxonomy",
+          "DisplayText": "Tags",
+          "Latest": true,
+          "Published": true,
+          "TitlePart": {
+            "Title": "Tags"
+          },
+          "AliasPart": {
+            "Alias": "tags"
+          },
+          "TaxonomyPart": {
+            "Terms": [
+              {
+                "ContentItemId": "[js: variables('earthTagContentItemId')]",
+                "ContentType": "Tag",
+                "DisplayText": "Earth",
+                "TitlePart": {
+                  "Title": "Earth"
+                },
+                "AutoroutePart": {
+                  "Path": "earth"
+                },
+                "TermPart": {
+                  "TaxonomyContentItemId": "[js: variables('tagsContentItemId')]"
+                }
+              },
+              {
+                "ContentItemId": "[js: variables('explorationTagContentItemId')]",
+                "ContentType": "Tag",
+                "DisplayText": "Exploration",
+                "TitlePart": {
+                  "Title": "Exploration"
+                },
+                "AutoroutePart": {
+                  "Path": "exploration"
+                },
+                "TermPart": {
+                  "TaxonomyContentItemId": "[js: variables('tagsContentItemId')]"
+                }
+              },
+              {
+                "ContentItemId": "[js: variables('spaceTagContentItemId')]",
+                "ContentType": "Tag",
+                "DisplayText": "Space",
+                "TitlePart": {
+                  "Title": "Space"
+                },
+                "AutoroutePart": {
+                  "Path": "space"
+                },
+                "TermPart": {
+                  "TaxonomyContentItemId": "[js: variables('tagsContentItemId')]"
+                }
+              }
+            ],
+            "TermContentType": "Tag"
+          },
+          "AutoroutePart": {
+            "Path": "tags",
+            "RouteContainedItems": true
+          }
+        },
+        {
+          "ContentItemId": "[js: variables('categoriesContentItemId')]",
+          "Owner": "[js: parameters('AdminUserId')]",
+          "Author": "[js: parameters('AdminUsername')]",
+          "ContentType": "Taxonomy",
+          "DisplayText": "Categories",
+          "Latest": true,
+          "Published": true,
+          "TitlePart": {
+            "Title": "Categories"
+          },
+          "AliasPart": {
+            "Alias": "categories"
+          },
+          "TaxonomyPart": {
+            "Terms": [
+              {
+                "ContentItemId": "[js: variables('categoryTravelContentItemId')]",
+                "ContentType": "Category",
+                "DisplayText": "Travel",
+                "Category": {
+                  "Icon": {
+                    "Text": "fas fa-globe-americas"
+                  }
+                },
+                "TitlePart": {
+                  "Title": "Travel"
+                },
+                "AutoroutePart": {
+                  "Path": "travel"
+                },
+                "TermPart": {
+                  "TaxonomyContentItemId": "[js: variables('categoriesContentItemId')]"
+                }
+              }
+            ],
+            "TermContentType": "Category"
+          },
+          "AutoroutePart": {
+            "Path": "categories",
+            "RouteContainedItems": true
+          }
+        },
+        {
+          "ContentType": "Blog",
+          "ContentItemId": "[js: variables('blogContentItemId')]",
+          "DisplayText": "Novosti",
+          "Latest": true,
+          "Published": true,
+          "Owner": "[js: parameters('AdminUserId')]",
+          "Author": "[js: parameters('AdminUsername')]",
+          "TitlePart": {
+            "Title": "Novosti"
+          },
+          "HtmlBodyPart": {
+            "Html": ""
+          },
+          "AutoroutePart": {
+            "Path": "blog"
+          },
+          "ListPart": {},
+          "Blog": {
+            "Image": {
+              "Paths": [],
+              "MediaTexts": [
+                ""
+              ],
+              "Anchors": [
+                {
+                  "X": 0.5,
+                  "Y": 0.5
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ContentType": "BlogPost",
+          "ContentItemId": "[js: uuid()]",
+          "DisplayText": "Man must explore, and this is exploration at its greatest",
+          "Latest": true,
+          "Published": true,
+          "Owner": "[js: parameters('AdminUserId')]",
+          "Author": "[js: parameters('AdminUsername')]",
+          "TitlePart": {
+            "Title": "Man must explore, and this is exploration at its greatest"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "[js: variables('blogContentItemId')]",
+            "Order": 0
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.\n\nScience cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.\n\nWhat was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.\n\nA Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.\n\nFor those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us."
+          },
+          "AutoroutePart": {
+            "Path": "blog/post-1"
+          },
+          "BlogPost": {
+            "Subtitle": {
+              "Text": "Problems look mighty small from 150 miles up"
+            },
+            "Image": {
+              "Paths": [
+                "post-bg.jpg"
+              ],
+              "MediaTexts": [
+                ""
+              ],
+              "Anchors": [
+                {
+                  "X": 0.5,
+                  "Y": 0.5
+                }
+              ]
+            },
+            "Tags": {
+              "TermContentItemIds": [
+                "[js: variables('earthTagContentItemId')]",
+                "[js: variables('explorationTagContentItemId')]",
+                "[js: variables('spaceTagContentItemId')]"
+              ],
+              "TaxonomyContentItemId": "[js: variables('tagsContentItemId')]",
+              "TagNames": [
+                "Earth",
+                "Exploration",
+                "Space"
+              ]
+            },
+            "Category": {
+              "TermContentItemIds": [
+                "[js: variables('categoryTravelContentItemId')]"
+              ],
+              "TaxonomyContentItemId": "[js: variables('categoriesContentItemId')]"
+            }
+          }
+        },
+        {
+          "ContentItemId": "45yr29wejxjk6xq8bv78qtgr4c",
+          "ContentItemVersionId": "48n9y50qv9hka3djb86pmyhtcz",
+          "ContentType": "RecentNews",
+          "DisplayText": "News",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2021-11-04T11:14:51.8909178Z",
+          "PublishedUtc": "2021-11-04T11:14:51.9023534Z",
+          "CreatedUtc": "2021-11-04T10:52:10.4674622Z",
+          "Owner": "42e8jdnkfhzvev58zfdp247gcy",
+          "Author": "admin",
+          "RecentNews": {
+            "ShowFirst": {
+              "Value": 3.0
+            }
+          },
+          "TitlePart": {
+            "Title": "News"
+          },
+          "LayerMetadata": {
+            "RenderTitle": false,
+            "Position": 1.0,
+            "Zone": "BlogPostRight",
+            "Layer": "Always"
+          }
+        },
+        {
+          "ContentItemId": "[js: uuid()]",
+          "ContentType": "Article",
+          "DisplayText": "O nama",
+          "Latest": true,
+          "Published": true,
+          "Owner": "[js: parameters('AdminUserId')]",
+          "Author": "[js: parameters('AdminUsername')]",
+          "AutoroutePart": {
+            "Path": "o-nama",
+            "SetHomepage": false
+          },
+          "HtmlBodyPart": {
+            "Html": "<p>Institut je neprofitna znanstvena ustanova u stopostotnom vlasništvu države koja se financira projektno kroz realizaciju ugovora za izradu projekata dobivenih na međunarodnim i domaćim natječajima. Institut ima 89 zaposlenika, od čega 84 s završenim fakultetom, 17 doktora znanosti, te je 16 zaposlenika na doktorskom studiju.Razvoj energetskog sustava i odnosa unutar njega rezultira novim zahtjevima za znanjem i sposobnošću svih sudionika u energetskom gospodarstvu i državnoj administraciji, ali i za educiranjem samih građana. Obrazovanje i informiranje postaje značajna aktivnost Instituta, što iziskuje kontinuirano usavršavanje stručnjaka u Institutu, kao i njihovo aktivno sudjelovanje u obrazovanju drugih. Institut svoju misiju provodi u suradnji s brojnim znanstvenicima i institucijama iz Hrvatske i inozemstva te preuzima vodeću ulogu na području razvoja energetike u široj regiji, ali i izvan nje.</p>"
+          },
+          "TitlePart": {
+            "Title": "O nama"
+          },
+          "Article": {
+            "Subtitle": {
+              "Text": "Projekt Solar Adria"
+            },
+            "Image": {
+              "Paths": [
+                "about-bg.jpg"
+              ]
+            }
+          }
+        },
+        {
+          "ContentItemId": "[js: uuid()]",
+          "ContentType": "RawHtml",
+          "Displaytext": "Footer",
+          "Latest": true,
+          "Published": true,
+          "Owner": "[js: parameters('AdminUserId')]",
+          "Author": "[js: parameters('AdminUsername')]",
+          "LayerMetadata": {
+            "Layer": "Always",
+            "Zone": "Footer",
+            "RenderTitle": false,
+            "Position": 10
+          },
+          "RawHtml": {
+            "Content": {
+              "Html": "[file:text('Snippets/footer.html')]"
+            }
+          }
+        },
+        {
+          "ContentItemId": "4ehkyebe6v9zsyqn2nq8ke1z51",
+          "ContentItemVersionId": "42svgftywakn1sahhxywt641ws",
+          "ContentType": "Page",
+          "DisplayText": "Solar Adria",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2021-11-19T07:07:29.9446799Z",
+          "PublishedUtc": "2021-11-19T07:07:30.3414519Z",
+          "CreatedUtc": "2021-07-12T19:04:01.0255955Z",
+          "Owner": "4276mc6nzpy765nkm6ry7xe8ca",
+          "Author": "admin",
+          "Page": {},
+          "AutoroutePart": {
+            "Path": "home",
+            "SetHomepage": true,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false
+          },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "ContentItemId": "4p4fhx6gps02a5b5spqw0jge5m",
+                "ContentItemVersionId": null,
+                "ContentType": "FeaturedContent",
+                "DisplayText": "SOLAR ADRIA PROJECT",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-11-19T07:07:30.0059271Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "FeaturedContent": {
+                  "SubTitle": {
+                    "Text": "Lorem ipsum dolor sit amet"
+                  },
+                  "IncludeRecentNews": {
+                    "Value": true
+                  },
+                  "MoreButton": {
+                    "Url": "www.net.hr",
+                    "Text": "vise"
+                  },
+                  "FeaturedImage": {
+                    "Paths": [
+                      "shutterstock_259055471.jpg"
+                    ],
+                    "MediaTexts": []
+                  }
+                },
+                "TitlePart": {
+                  "Title": "SOLAR ADRIA PROJECT"
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              },
+              {
+                "ContentItemId": "4hyb4ys6pxe7gyb0j2h59rwzwc",
+                "ContentItemVersionId": null,
+                "ContentType": "RawHtml",
+                "DisplayText": null,
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-11-19T07:07:30.0509952Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "RawHtml": {
+                  "Content": {
+                    "Html": "<section class=\"pt-3 pb-0 card-grid\">\n\t<div class=\"container\">\n\t\t<hr>\n        </div>\n</section>"
+                  }
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              },
+              {
+                "ContentItemId": "4hrqd32ck9kbw1cqrpstmp9j5k",
+                "ContentItemVersionId": null,
+                "ContentType": "Image",
+                "DisplayText": null,
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-11-19T09:12:21.4443217Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Image": {
+                  "Media": {
+                    "Paths": [
+                      "Infografika.png"
+                    ],
+                    "MediaTexts": [
+                      ""
+                    ]
+                  },
+                  "Caption": {
+                    "Text": null
+                  }
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              },
+              {
+                "ContentItemId": "4sgrxy0vqqfmmrk0sebp2dry4t",
+                "ContentItemVersionId": null,
+                "ContentType": "Container",
+                "DisplayText": null,
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-11-19T07:07:30.2460523Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Container": {},
+                "FlowPart": {
+                  "Widgets": [
+                    {
+                      "ContentItemId": "4rpmfmc9nntf1wqqj1ewzmaanq",
+                      "ContentItemVersionId": null,
+                      "ContentType": "RawHtml",
+                      "DisplayText": null,
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2021-11-19T07:07:30.2483559Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": null,
+                      "Author": "admin",
+                      "RawHtml": {
+                        "Content": {
+                          "Html": "\t<section class=\"pt-3 pb-0 card-grid\">\n\t\t<div class=\"container\">\n<hr>\n\t\t\t<div class=\"row g-4 pt-3\">\n\t\t\t\t<div class=\"col-12\">\n\t\t\t\t\t<h4 class=\" text-uppercase\">PILOT CITIES SOLAR POTENTIAL</h4>\n\t\t\t\t\t<p>\n\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet vestibulum felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla rutrum nisi dictum sem euismod auctor.<br>\n\t\t\t\t\t</p>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</section>\n"
+                        }
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    },
+                    {
+                      "ContentItemId": "41vkydehshqbx25xydr6srckmx",
+                      "ContentItemVersionId": null,
+                      "ContentType": "ImageLinks",
+                      "DisplayText": null,
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2021-11-19T07:07:30.2558981Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": null,
+                      "Author": "admin",
+                      "ImageLinks": {},
+                      "TitlePart": {
+                        "Title": null
+                      },
+                      "BagPart": {
+                        "ContentItems": [
+                          {
+                            "ContentItemId": "4d91511mhhq90tvyrxwvb2fk5g",
+                            "ContentItemVersionId": null,
+                            "ContentType": "ImageLink",
+                            "DisplayText": null,
+                            "Latest": false,
+                            "Published": false,
+                            "ModifiedUtc": "2021-11-19T07:07:30.2589102Z",
+                            "PublishedUtc": null,
+                            "CreatedUtc": null,
+                            "Owner": null,
+                            "Author": "admin",
+                            "ImageLink": {
+                              "Image": {
+                                "Paths": [
+                                  "shutterstock_230484457.jpg"
+                                ],
+                                "MediaTexts": [
+                                  ""
+                                ]
+                              },
+                              "Link": {
+                                "Url": "www.google.com",
+                                "Text": "Starigrad"
+                              }
+                            }
+                          },
+                          {
+                            "ContentItemId": "43ggbdk2mmw25v276j12wtk1wa",
+                            "ContentItemVersionId": null,
+                            "ContentType": "ImageLink",
+                            "DisplayText": null,
+                            "Latest": false,
+                            "Published": false,
+                            "ModifiedUtc": "2021-11-19T07:07:30.264191Z",
+                            "PublishedUtc": null,
+                            "CreatedUtc": null,
+                            "Owner": null,
+                            "Author": "admin",
+                            "ImageLink": {
+                              "Image": {
+                                "Paths": [
+                                  "shutterstock_183878807.jpg"
+                                ],
+                                "MediaTexts": [
+                                  ""
+                                ]
+                              },
+                              "Link": {
+                                "Url": "www.google.com",
+                                "Text": "Koper"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    }
+                  ]
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              },
+              {
+                "ContentItemId": "4sm4gr76my563wpxh2jq607awf",
+                "ContentItemVersionId": null,
+                "ContentType": "RawHtml",
+                "DisplayText": null,
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-11-19T07:07:30.2756444Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "RawHtml": {
+                  "Content": {
+                    "Html": "<section class=\"pt-3 pb-0\">\n\t<div class=\"container\">\n<hr>\n\t\t<div class=\"row g-4\">\n\n      <div class=\"col-12 customBox pt-3\">\n\t\t\t<div class=\"bg-primary-soft p-4 p-md-5 rounded-3 text-center\">\n\t\t\t\t\t<h1 class=\"text-primary text-white\">MATCHMAKING PLATFORM</h1>\n                                         <h2>Coming soon!</h2>\n\t\t\t\t\t<p class=\"d-flex  text-white\">\n\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat \n                                                volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. \n                                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero \n                                                eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi\n\t\t\t\t\t</p>\n                                <div class=\"col-12 text-center mt-5  text-white\">\n\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-primary\">FIND OUT MORE</button>\n                                                <button type=\"button\" class=\"btn btn-primary\">PRE-REGISTER NOW</button>\n\t\t\t       </div>\n\t\t\t\t</div>\n\n                   </div>\n                </div>\n\t</div>\n</section>"
+                  }
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              },
+              {
+                "ContentItemId": "4qqmx5hc7t8kd3r99m2agst9ww",
+                "ContentItemVersionId": null,
+                "ContentType": "RawHtml",
+                "DisplayText": null,
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-11-19T07:07:30.281327Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "RawHtml": {
+                  "Content": {
+                    "Html": "\t<section class=\"pt-3 pb-0 card-grid\">\n\t\t<div class=\"container\">\n<hr>\n            <div class=\"row g-4\">\n                <div class=\"col-12\">\n                    <div class=\"row\">\n                        <div class=\"col-12\">\n                            <ul class=\"nav flex-column  text-center p-4\">\n                                <li class=\"nav-item\">\n                                    <h4 class=\"text-center  text-uppercase\">Partners</h4>\n                                </li>\n                            </ul>\n                        </div>\n                    </div>\n                </div>\n                \n                <div class=\"col-md-6 col-lg-3 mb-4\">\n                    <div class=\"row\">\n                        <div class=\"col-12\">\n                            <ul class=\"nav flex-column text-center\">\n                                <li class=\"nav-item\"><a class=\"nav-link pt-0\" href=\"#\"><img src=\"/media/Nature-Conservancy.png\"></a></li>\n                            </ul>\n                        </div>\n                    </div>\n                </div>\n\n                \n                <div class=\"col-md-6 col-lg-3 mb-4\">\n                    <div class=\"row\">\n                        <div class=\"col-12\">\n                            <ul class=\"nav flex-column  text-center\">\n                                <li class=\"nav-item\"><a class=\"nav-link pt-0\" href=\"#\"><img src=\"/media/EIHP.png\"></a></li>\n                            </ul>\n                        </div>\n                    </div>\n                </div>\n\n                \n                <div class=\"col-md-6 col-lg-3 mb-4\">\n                    <div class=\"row\">\n                        <div class=\"col-12\">\n                            <ul class=\"nav flex-column  text-center\">\n                                <li class=\"nav-item\"><a class=\"nav-link pt-0\" href=\"#\"><img src=\"/media/ENV-PRO.png\"></a></li>\n                            </ul>\n                        </div>\n                    </div>\n                </div>\n\n                \n                <div class=\"col-md-6 col-lg-3 mb-4\">\n                    <div class=\"row\">\n                        <div class=\"col-12\">\n                            <ul class=\"nav flex-column  text-center\">\n                                <li class=\"nav-item\"><a class=\"nav-link pt-0\" href=\"#\"><img src=\"/media/University-of_Ljubljana.png\"></a></li>\n                            </ul>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            \n\n            </div>\n</section>"
+                  }
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              }
+            ]
+          },
+          "TitlePart": {
+            "Title": "Solar Adria"
+          }
+        }
+
+      ]
+    },
+    {
+      "name": "layers",
+      "Layers": [
+        {
+          "Name": "Always",
+          "LayerRule": {
+            "ConditionId": "[js: uuid()]",
+            "Conditions": [
+              {
+                "$type": "OrchardCore.Rules.Models.BooleanCondition, OrchardCore.Rules",
+                "Name": "BooleanCondition",
+                "Value": true,
+                "ConditionId": "[js: uuid()]"
+              }
+            ]
+          },
+          "Description": "The widgets in this layer are displayed on any page of this site."
+        },
+        {
+          "Name": "Homepage",
+          "LayerRule": {
+            "ConditionId": "[js: uuid()]",
+            "Conditions": [
+              {
+                "$type": "OrchardCore.Rules.Models.HomepageCondition, OrchardCore.Rules",
+                "Name": "HomepageCondition",
+                "Value": true,
+                "ConditionId": "[js: uuid()]"
+              }
+            ]
+          },
+          "Description": "The widgets in this layer are only displayed on the homepage."
+        }
+      ]
+    },
+    {
+      "name": "queries",
+      "Queries": [
+        {
+          "Source": "Lucene",
+          "Name": "RecentBlogPosts",
+          "Index": "Search",
+          "Template": "[file:text('Snippets/recentBlogPosts.json')]",
+          "Schema": "[js:base64('ew0KICAgICJ0eXBlIjogIkNvbnRlbnRJdGVtL0Jsb2dQb3N0Ig0KfQ==')]",
+          "ReturnContentItems": true
+        }
+      ]
+    },
+    {
+      "name": "AdminMenu",
+      "data": [
+        {
+          "Id": "baef6f85ad13481681cde70ada401333",
+          "Name": "Admin menus",
+          "Enabled": true,
+          "MenuItems": [
+            {
+              "$type": "OrchardCore.AdminMenu.AdminNodes.LinkAdminNode, OrchardCore.AdminMenu",
+              "LinkText": "Blog",
+              "LinkUrl": "[js: variables('adminUrlPrefix') + '/Contents/ContentItems/' +  variables('blogContentItemId') + '/Display']",
+              "IconClass": "fas fa-rss",
+              "PermissionNames": [],
+              "UniqueId": "7b293d57056a4eebb3713f07f12c65d8",
+              "Enabled": true,
+              "Text": null,
+              "Id": null,
+              "Href": null,
+              "Url": null,
+              "Position": null,
+              "LinkToFirstChild": true,
+              "LocalNav": false,
+              "Culture": null,
+              "Items": [],
+              "Classes": []
+            },
+            {
+              "$type": "OrchardCore.AdminMenu.AdminNodes.LinkAdminNode, OrchardCore.AdminMenu",
+              "LinkText": "Main Menu",
+              "LinkUrl": "[js: variables('adminUrlPrefix') + '/Contents/ContentItems/' +  variables('menuContentItemId') + '/Edit']",
+              "IconClass": "fas fa-sitemap",
+              "PermissionNames": [],
+              "UniqueId": "5118cecfde834dacb26ac08980f1b5a7",
+              "Enabled": true,
+              "Text": null,
+              "Id": null,
+              "Href": null,
+              "Url": null,
+              "Position": null,
+              "LinkToFirstChild": true,
+              "LocalNav": false,
+              "Culture": null,
+              "Items": [],
+              "Classes": []
+            },
+            {
+              "$type": "OrchardCore.AdminMenu.AdminNodes.PlaceholderAdminNode, OrchardCore.AdminMenu",
+              "LinkText": "Content",
+              "IconClass": null,
+              "PermissionNames": [],
+              "UniqueId": "3e590d44f8704e4588e272dd966ce291",
+              "Enabled": true,
+              "Text": null,
+              "Id": null,
+              "Href": null,
+              "Url": null,
+              "Position": null,
+              "LinkToFirstChild": true,
+              "LocalNav": false,
+              "Culture": null,
+              "Items": [
+                {
+                  "$type": "OrchardCore.AdminMenu.AdminNodes.LinkAdminNode, OrchardCore.AdminMenu",
+                  "LinkText": "Content Items",
+                  "LinkUrl": "[js: variables('adminUrlPrefix') + '/Contents/ContentItems/']",
+                  "IconClass": null,
+                  "UniqueId": "7b293d57056a4eebb3713f07f12c65d9",
+                  "Enabled": true,
+                  "Text": null,
+                  "Id": null,
+                  "Href": null,
+                  "Url": null,
+                  "Position": 0,
+                  "LinkToFirstChild": true,
+                  "LocalNav": false,
+                  "Culture": null,
+                  "Items": [],
+                  "Classes": []
+                },
+                {
+                  "$type": "OrchardCore.AdminMenu.AdminNodes.PlaceholderAdminNode, OrchardCore.AdminMenu",
+                  "LinkText": "Content Types",
+                  "IconClass": null,
+                  "PermissionNames": [],
+                  "UniqueId": "2f1fc33133334a1abf7d1a0516ee8b4e",
+                  "Enabled": true,
+                  "Text": null,
+                  "Id": null,
+                  "Href": null,
+                  "Url": null,
+                  "Position": 1,
+                  "Priority": 50,
+                  "LinkToFirstChild": true,
+                  "LocalNav": false,
+                  "Culture": null,
+                  "Items": [
+                    {
+                      "$type": "OrchardCore.Contents.AdminNodes.ContentTypesAdminNode, OrchardCore.Contents",
+                      "ShowAll": true,
+                      "IconClass": null,
+                      "ContentTypes": [],
+                      "UniqueId": "ee18224e1b814c638b0732678b74cfd9",
+                      "Enabled": true,
+                      "Text": null,
+                      "Id": null,
+                      "Href": null,
+                      "Url": null,
+                      "Position": null,
+                      "LinkToFirstChild": true,
+                      "LocalNav": false,
+                      "Culture": null,
+                      "Items": [],
+                      "Classes": []
+                    }
+                  ],
+                  "Classes": []
+                }
+              ],
+              "Classes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MediaProfiles",
+      "MediaProfiles": {
+        "banner": {
+          "Hint": "A banner image (2048px x 600px, cropped)",
+          "Width": 2048,
+          "Height": 600,
+          "Mode": 2,
+          "Format": 0,
+          "Quality": 100
+        }
+      }
+    }
+
+  ]
+}

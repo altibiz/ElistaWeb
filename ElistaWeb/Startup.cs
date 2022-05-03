@@ -11,7 +11,7 @@ namespace ElistaWeb
         {
             services.AddOrchardCms()
 #if DEBUG
-                //.AddSetupFeatures("OrchardCore.AutoSetup")
+                .AddSetupFeatures("OrchardCore.AutoSetup")
 #else
                 //.AddAzureShellsConfiguration() //put shells info into blob
 #endif
