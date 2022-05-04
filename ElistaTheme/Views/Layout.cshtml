@@ -9,9 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
 
-
-
-
     <style asp-name="ElistaTheme-FontStyle"></style>
     <style asp-name="ElistaTheme-Swiper"></style>
     <style asp-name="ElistaTheme-Aos"></style>
@@ -810,9 +807,7 @@
     @if (IsSectionDefined("Footer"))
     {
         <footer>
-            <div class="container">
                 @await RenderSectionAsync("Footer", required: false)
-            </div>
         </footer>
     }
     <resources type="FootScript" />
