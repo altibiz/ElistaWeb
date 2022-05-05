@@ -1,0 +1,15 @@
+@inject OrchardCore.ContentManagement.Display.IContentItemDisplayManager DisplayManager
+
+<div class="container">
+    <div class="row">
+        @{
+            var allProducts = await Orchard.ContentQueryAsync("Products");
+
+
+            @foreach (var product in allProducts)
+            {
+                @await DisplayAsync(await DisplayManager.BuildDisplayAsync(product, null, "Summary"))
+            }
+        }
+    </div>
+</div>
