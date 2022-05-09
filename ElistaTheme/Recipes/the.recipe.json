@@ -224,6 +224,15 @@
                   "Position": "0"
                 }
               }
+            },
+            {
+              "PartName": "Gallery",
+              "Name": "Gallery",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "5"
+                }
+              }
             }
           ]
         },
@@ -359,6 +368,26 @@
             }
           },
           "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "Gallery",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true
+            }
+          },
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "MediaField",
+              "Name": "Images",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Images",
+                  "Position": "0"
+                }
+              }
+            }
+          ]
         },
         {
           "Name": "MenuPart",
