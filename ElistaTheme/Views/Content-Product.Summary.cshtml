@@ -1,0 +1,50 @@
+@using OrchardCore.ContentManagement
+@using OrchardCore.Menu.Models
+@inject OrchardCore.ContentManagement.Display.IContentItemDisplayManager DisplayManager
+
+<!-- product-->
+<div class="col-xl-3 col-md-4 col-6">
+    <div class="product product-type-0" data-aos="zoom-in" data-aos-delay="0">
+        <div class="product-image mb-md-3">
+            <a display-for="@Model.ContentItem">
+                <div class="product-swap-image">
+                    <img class="img-fluid product-swap-image-front" src="ElistaTheme/img/product/book.jpg" alt="product"/>
+                    <img class="img-fluid" src="ElistaTheme/img/product/book-2.jpg" alt="product"/>
+                </div>
+            </a>
+            <div class="product-hover-overlay">
+                <a class="text-dark text-sm" href="#!">
+                    <svg class="svg-icon text-primary-hover svg-icon-heavy d-sm-none">
+                        <use xlink:href="#retail-bag-1"> </use>
+                    </svg>
+                    <span class="d-none d-sm-inline">Add to cart</span>
+                </a>
+                <div>
+                    <a class="text-dark text-primary-hover me-2" href="#!">
+                        <svg class="svg-icon svg-icon-heavy">
+                            <use xlink:href="#heart-1"> </use>
+                        </svg>
+                    </a>
+                    <a class="text-dark text-primary-hover text-decoration-none" href="#!" data-bs-toggle="modal" data-bs-target="#quickView">
+                        <svg class="svg-icon svg-icon-heavy">
+                            <use xlink:href="#expand-1"> </use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="position-relative">
+            <h3 class="text-base mb-1">
+                <a class="text-dark" href="detail-1.html"> @Model.ContentItem.DisplayText </a>
+            </h3>
+            <p class="text-gray-600 text-sm">
+                <span>@Model.ContentItem.Content.PricePart.Price.currency @Model.ContentItem.Content.PricePart.Price.value</span>
+
+            </p>
+            <div class="product-stars text-xs">
+                <i class="fa fa-star text-primary"></i><i class="fa fa-star text-primary"></i><i class="fa fa-star text-primary"></i><i class="fa fa-star text-muted"></i><i class="fa fa-star text-muted"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /product   -->

@@ -1,0 +1,21 @@
+
+
+
+
+	{% shape_clear_alternates Model %}
+	{% shape_type Model "MenuItemLink" %}
+	{{ Model | shape_render }}
+
+	{% if Model.HasItems %}
+
+
+		<div class="dropdown-menu dropdown-menu-animated" aria-labelledby="homeDropdown">
+			{% for item in Model.Items %}
+				{{ item | shape_render }}
+			{% endfor %}
+		</div>
+
+	{% endif %}
+
+
+
