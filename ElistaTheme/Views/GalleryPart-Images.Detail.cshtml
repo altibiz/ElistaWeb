@@ -1,0 +1,39 @@
+@model OrchardCore.Media.ViewModels.DisplayMediaFieldViewModel
+@using OrchardCore.ContentManagement.Metadata.Models
+@using OrchardCore.Mvc.Utilities
+@{
+    var paths = Model.Paths ?? Array.Empty<string>();
+    var mediaTexts = Model.Field?.MediaTexts ?? Array.Empty<string>();
+    var name = (Model.PartFieldDefinition.PartDefinition.Name + "-" + Model.PartFieldDefinition.Name).HtmlClassify();
+}
+<div class="detail-carousel">
+    <div class="d-none product-badge badge bg-primary">Fresh</div>
+    <div class="d-none product-badge badge bg-dark">Sale</div>
+    <div class="swiper swiper-container detail-slider photoswipe-gallery" id="detailSlider">
+        <!-- Additional required wrapper-->
+        <div class="swiper-wrapper">
+            <!-- Slides-->
+            @foreach (string imageUrl in paths)
+            {
+                <div class="swiper-slide">
+                    <a class="btn btn-photoswipe" href="@Orchard.AssetUrl(imageUrl)" data-caption="Push-up Jeans 1 - Caption text" data-toggle="photoswipe" data-width="1200" data-height="1200">
+                        <svg class="svg-icon svg-icon-heavy">
+                            <use xlink:href="#expand-1"> </use>
+                        </svg>
+                    </a>
+                    <img class="img-fluid" src="@Orchard.AssetUrl(imageUrl)" alt="Push-up Jeans 1">
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div class="swiper-thumbs" data-swiper="#detailSlider">
+    @{
+        foreach (string imageUrl in paths)
+        {
+            <button class="swiper-thumb-item detail-thumb-item mb-3">
+                <img class="img-fluid" src="@Orchard.AssetUrl(imageUrl)" alt="">
+            </button>
+        }
+    }
+</div>

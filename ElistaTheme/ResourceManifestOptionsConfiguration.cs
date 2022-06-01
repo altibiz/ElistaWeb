@@ -55,9 +55,6 @@ namespace ElistaTheme
                 .SetVersion("1.0.0");
 
 
-
-
-
             _manifest
                 .DefineScript("ElistaTheme-Bootstrap")
                 .SetCdn("~/ElistaTheme/vendor/bootstrap/js/bootstrap.bundle.min.js", "~/ElistaTheme/vendor/bootstrap/js/bootstrap.bundle.js")
@@ -110,11 +107,36 @@ namespace ElistaTheme
 
             _manifest
                 .DefineScript("ElistaTheme-Sliders")
+                .SetDependencies("ElistaTheme-Swiper")
                 .SetCdn("~/ElistaTheme/js/sliders-init.js")
                 .SetVersion("1.0.0");
 
             _manifest
+                .DefineScript("ElistaTheme-Jquery.zoom")
+                .SetDependencies("ElistaTheme-Jquery")
+                .SetCdn("~/ElistaTheme/vendor/jquery-zoom/jquery.zoom.min.js", "~/ElistaTheme/vendor/jquery-zoom/jquery.zoom.js")
+                .SetVersion("1.0.0");
+
+            _manifest
+                .DefineScript("ElistaTheme-photoswipe")
+                .SetCdn("~/ElistaTheme/vendor/photoswipe/photoswipe.min.js", "~/ElistaTheme/vendor/photoswipe/photoswipe.js")
+                .SetVersion("1.0.0");
+
+            _manifest
+                .DefineScript("ElistaTheme-photoswipe-ui")
+                .SetDependencies("ElistaTheme-photoswipe")
+                .SetCdn("~/ElistaTheme/vendor/photoswipe/photoswipe-ui-default.min.js", "~/ElistaTheme/vendor/photoswipe/photoswipe-ui-default.js")
+                .SetVersion("1.0.0");
+
+            _manifest
+                .DefineScript("ElistaTheme-photoswipe-init")
+                .SetDependencies("ElistaTheme-photoswipe-ui", "ElistaTheme-Jquery")
+                .SetCdn("~/ElistaTheme/js/photoswipe-init.js")
+                .SetVersion("1.0.0");
+
+            _manifest
                 .DefineScript("ElistaTheme-Theme")
+                .SetDependencies("ElistaTheme-Jquery.zoom")
                 .SetCdn("~/ElistaTheme/js/theme.js")
                 .SetVersion("1.0.0");
         }

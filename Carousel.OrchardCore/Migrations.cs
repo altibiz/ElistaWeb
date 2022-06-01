@@ -5,29 +5,31 @@ using OrchardCore.Data.Migration;
 using OrchardCore.Flows.Models;
 using OrchardCore.Media.Settings;
 using OrchardCore.Recipes.Services;
-using System.Threading.Tasks;
 
-namespace Carousel.OrchardCore {
-    public class Migrations : DataMigration {
+namespace Carousel.OrchardCore
+{
+    public class Migrations : DataMigration
+    {
 
         private readonly IContentDefinitionManager _contentDefinitionManager;
         private readonly IRecipeMigrator _recipeMigrator;
 
-        public Migrations(IContentDefinitionManager contentDefinitionManager, IRecipeMigrator recipeMigrator) 
+        public Migrations(IContentDefinitionManager contentDefinitionManager, IRecipeMigrator recipeMigrator)
         {
 
             _contentDefinitionManager = contentDefinitionManager;
             _recipeMigrator = recipeMigrator;
         }
 
-        public int Create() {
+        public int Create()
+        {
             _contentDefinitionManager.AlterPartDefinition("Slide", cfg => cfg
                 .WithDescription("Contains the fields for the current type")
                 .WithField("Image",
                     fieldBuilder => fieldBuilder
                         .OfType("MediaField")
                         .WithDisplayName("Image")
-                        .WithSettings(new MediaFieldSettings { Required = true, Multiple = false}))
+                        .WithSettings(new MediaFieldSettings { Required = true, Multiple = false }))
                 .WithField("SubTitle",
                     fieldBuilder => fieldBuilder
                         .OfType("TextField")
@@ -84,12 +86,5 @@ namespace Carousel.OrchardCore {
 
             return 1;
         }
-
-        //public async Task<int> UpdateFrom1Async()
-        //{
-        //    await _recipeMigrator.ExecuteAsync("county.recipe.json", this);
-
-        //    return 2;
-        //}
     }
 }

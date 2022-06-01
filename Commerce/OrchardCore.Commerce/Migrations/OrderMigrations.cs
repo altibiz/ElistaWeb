@@ -3,6 +3,8 @@ using OrchardCore.ContentManagement.Metadata;
 using OrchardCore.Data.Migration;
 using OrchardCore.Commerce.Fields;
 using OrchardCore.Commerce.Settings;
+using OrchardCore.ContentFields.Settings;
+using OrchardCore.Title.Models;
 
 namespace OrchardCore.Commerce.Migrations
 {
@@ -25,8 +27,77 @@ namespace OrchardCore.Commerce.Migrations
                 .WithDescription("Makes a content item into an order."));
 
             _contentDefinitionManager.MigrateFieldSettings<AddressField, AddressPartFieldSettings>();
+            _contentDefinitionManager.AlterTypeDefinition("Order", type => type
+                .DisplayedAs("Order")
+                .Creatable()
+                .Listable()
+                .Draftable()
+                .Versionable()
+                .Securable()
+                .WithPart("TitlePart", part => part
+                    .WithPosition("0")
+                    .WithSettings(new TitlePartSettings
+                    {
+                        Options = TitlePartOptions.GeneratedDisabled,
+                        Pattern = "{{ ContentItem.Content.Order.BillingAddress.Address.Name  }} | {{ ContentItem.Content.Order.OrderId.Text }}",
+                    })
+                )
+                .WithPart("Annotations", part => part
+                    .WithPosition("1")
+                    .WithEditor("Wysiwyg")
+                )
+                .WithPart("Order", part => part
+                    .WithPosition("2")
+                )
+                .WithPart("OrderPart", part => part
+                    .WithPosition("3")
+                )
+            );
+
+            _contentDefinitionManager.AlterPartDefinition("Order", part => part
+                .WithField("OrderId", field => field
+                    .OfType("TextField")
+                    .WithDisplayName("Order Id")
+                    .WithPosition("0")
+                )
+                .WithField("ShippingAddress", field => field
+                    .OfType("AddressField")
+                    .WithDisplayName("Shipping Address")
+                    .WithPosition("4")
+                    .WithSettings(new AddressPartFieldSettings
+                    {
+                        Hint = "The address where the order should be shipped.",
+                    })
+                )
+                .WithField("BillingAddress", field => field
+                    .OfType("AddressField")
+                    .WithDisplayName("Billing Address")
+                    .WithPosition("3")
+                    .WithSettings(new AddressPartFieldSettings
+                    {
+                        Hint = "The address of the party that should be billed for this order.",
+                    })
+                )
+                .WithField("Email", field => field
+                    .OfType("TextField")
+                    .WithDisplayName("Email")
+                    .WithEditor("Email")
+                    .WithPosition("1")
+                    .WithSettings(new TextFieldSettings
+                    {
+                        Required = true,
+                    })
+                )
+                .WithField("Phone", field => field
+                    .OfType("TextField")
+                    .WithDisplayName("Phone")
+                    .WithEditor("Tel")
+                    .WithPosition("2")
+                )
+            );
 
             return 1;
         }
+
     }
 }

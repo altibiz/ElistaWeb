@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading.Tasks;
 using InternationalAddress;
 using Microsoft.AspNetCore.Html;
@@ -5,6 +6,7 @@ using OrchardCore.Commerce.Fields;
 using OrchardCore.Commerce.ViewModels;
 using OrchardCore.ContentManagement.Display.ContentDisplay;
 using OrchardCore.ContentManagement.Display.Models;
+using OrchardCore.DisplayManagement.ModelBinding;
 using OrchardCore.DisplayManagement.Views;
 
 namespace OrchardCore.Commerce.Drivers
@@ -23,12 +25,22 @@ namespace OrchardCore.Commerce.Drivers
             return Initialize<AddressFieldViewModel>(GetEditorShapeType(context), m => BuildViewModel(m, addressField, context));
         }
 
+        public override async Task<IDisplayResult> UpdateAsync(AddressField field, IUpdateModel updater, UpdateFieldEditorContext context)
+        {
+            if (await updater.TryUpdateModelAsync(field, Prefix))
+            {
+            }
+
+            return Edit(field, context);
+        }
+
+        private string[] names = new [] { "HR", "SI", "RS","BA" };
         private Task BuildViewModel(AddressFieldViewModel model, AddressField field, BuildFieldEditorContext context)
         {
             model.Address = field.Address;
             model.AddressHtml
                 = new HtmlString(_addressFormatterProvider.Format(field.Address).Replace(System.Environment.NewLine, "<br/>"));
-            model.Regions = Regions.All;
+            model.Regions = Regions.All.Where(x=>names.Contains(x.TwoLetterISORegionName)).ToList();
             model.Provinces = Regions.Provinces;
             model.ContentItem = field.ContentItem;
             model.AddressPart = field;

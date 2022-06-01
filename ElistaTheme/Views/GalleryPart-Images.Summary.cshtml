@@ -1,0 +1,12 @@
+@model OrchardCore.Media.ViewModels.DisplayMediaFieldViewModel
+@using OrchardCore.ContentManagement.Metadata.Models
+@using OrchardCore.Mvc.Utilities
+@{
+    var paths = Model.Paths ?? Array.Empty<string>();
+    var firstPic = paths.FirstOrDefault();
+    var secondPick = paths.Skip(1).FirstOrDefault() ?? firstPic;
+}
+<div class="product-swap-image">
+    <img class="img-fluid product-swap-image-front" src="@Orchard.AssetUrl(firstPic)" alt="product" />
+    <img class="img-fluid" src="@Orchard.AssetUrl(secondPick)" alt="product" />
+</div>

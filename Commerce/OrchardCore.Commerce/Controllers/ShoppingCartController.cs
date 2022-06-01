@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ using OrchardCore.Commerce.Abstractions;
 using OrchardCore.Commerce.Activities;
 using OrchardCore.Commerce.Models;
 using OrchardCore.Commerce.ViewModels;
+using OrchardCore.ContentFields.Fields;
 using OrchardCore.ContentManagement;
 using OrchardCore.DisplayManagement.Notify;
 using OrchardCore.Workflows.Services;
@@ -132,6 +134,32 @@ namespace OrchardCore.Commerce.Controllers
             cart.RemoveItem(parsedLine);
             await _shoppingCartPersistence.Store(cart, shoppingCartId);
             return RedirectToAction(nameof(Index), new { shoppingCartId });
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Order(ShoppingCartUpdateModel cart, string shoppingCartId)
+        {
+            ShoppingCart parsedCart = await _shoppingCartHelpers.ParseCart(cart);
+            await _shoppingCartPersistence.Store(parsedCart, shoppingCartId);
+            var order = await _contentManager.NewAsync("Order");
+            order.Alter<Order>(x =>
+            {
+                x.OrderId = new TextField { Text = DateTime.Now.ToString() };
+            });
+            var items = await _priceService.AddPrices(parsedCart.Items);
+            order.Alter<OrderPart>(x =>
+            {
+                x.LineItems = items.Select(x => new OrderLineItem
+                {
+                    LinePrice = x.Prices.FirstOrDefault().Price,
+                    ProductSku = x.ProductSku,
+                    Quantity = x.Quantity,
+                    UnitPrice = x.Prices.FirstOrDefault().Price
+
+                }).ToList();
+            });
+            await _contentManager.UpdateValidateAndCreateAsync(order, VersionOptions.Draft);
+            return RedirectToPage("/Order", new { contentItemId = order.ContentItemId });
         }
     }
 }

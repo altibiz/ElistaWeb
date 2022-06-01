@@ -8,7 +8,7 @@ using StartupBase = OrchardCore.Modules.StartupBase;
 
 namespace Carousel.OrchardCore
 {
-    public class Startup : StartupBase 
+    public class Startup : StartupBase
     {
         public IWebHostEnvironment CurrentEnvironment { get; }
 
@@ -16,11 +16,11 @@ namespace Carousel.OrchardCore
         {
             CurrentEnvironment = env;
         }
-        public override void ConfigureServices(IServiceCollection services) {
+        public override void ConfigureServices(IServiceCollection services)
+        {
             services.AddScoped<IDataMigration, Migrations>();
-
-                services.AddScoped<IShapeDisplayEvents, ShapeTracingShapeEvents>();
-                services.AddScoped<IContentTypeDefinitionDisplayDriver, CodeGenerationDisplayDriver>();
+            services.AddScoped<IShapeDisplayEvents, ShapeTracingShapeEvents>();
+            services.AddScoped<IContentTypeDefinitionDisplayDriver, CodeGenerationDisplayDriver>();
         }
     }
 }

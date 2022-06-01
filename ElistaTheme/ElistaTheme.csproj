@@ -12,6 +12,7 @@
   <ItemGroup>
         <PackageReference Include="OrchardCore.ContentManagement" Version="1.3.0" />
         <PackageReference Include="OrchardCore.DisplayManagement" Version="1.3.0" />
+        <PackageReference Include="OrchardCore.Html" Version="1.3.0" />
         <PackageReference Include="OrchardCore.ResourceManagement" Version="1.3.0" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Localization" Version="2.2.0" />
         <PackageReference Include="OrchardCore.Alias" Version="1.3.0" />
@@ -38,6 +39,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Carousel.OrchardCore\Carousel.OrchardCore.csproj" />
+    <ProjectReference Include="..\Commerce\OrchardCore.Commerce\OrchardCore.Commerce.csproj" />
   </ItemGroup>
 
 </Project>

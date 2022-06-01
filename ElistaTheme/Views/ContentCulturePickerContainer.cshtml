@@ -1,0 +1,17 @@
+﻿<div class="dropdown border-right px-3">
+    <a class="dropdown-toggle topbar-link" id="langsDropdown" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-haspopup="true" aria-expanded="false">@Model.CurrentCulture.DisplayName</a>
+    <div class="dropdown-menu dropdown-menu-animated dropdown-menu-end" aria-labelledby="langsDropdown">
+        @foreach (var culture in Model.SupportedCultures)
+        {
+            if (culture.Name != Model.CurrentCulture.Name)
+            {
+                <a asp-route="RedirectToLocalizedContent"
+           asp-route-area="OrchardCore.ContentLocalization"
+           asp-route-targetCulture="@culture.Name"
+           asp-route-contentItemUrl="@Context.Request.Path.Value"
+           asp-route-queryStringValue="@Context.Request.QueryString.Value"
+           class="dropdown-item">@culture.DisplayName</a>
+            }
+        }
+    </div>
+</div>

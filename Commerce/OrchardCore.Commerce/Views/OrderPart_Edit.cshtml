@@ -2,17 +2,13 @@
 @using OrchardCore.Commerce.Abstractions
 
 @* TODO: make the line items editable *@
-<zone name="Header">
-    <header class="masthead">
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in"></div>
-                <div class="intro-heading text-uppercase">@T["Order items"]</div>
-            </div>
-        </div>
-    </header>
-</zone>
 <section id="shopping-cart">
+    <div class="container">
+        <div class="intro-text">
+            <div class="intro-lead-in"></div>
+            <div class="intro-heading text-uppercase">@T["Order items"]</div>
+        </div>
+    </div>
     @if (Model.LineItems != null && Model.LineItems.Any())
     {
         <div class="container">
@@ -45,11 +41,11 @@
                 <div class="col-xs-12 col-sm-1">
                     <div>@Model.Total</div>
                 </div>
-                <div class="col-xs-12 col-sm-1">
+@*                <div class="col-xs-12 col-sm-1">
                     <form asp-action="Update" asp-controller="ShoppingCart" asp-area="OrchardCore.Commerce" id="shopping-cart-update">
                         <button type="submit" class="btn btn-primary">@T["Update"]</button>
                     </form>
-                </div>
+                </div>*@
             </div>
         </div>
     }

@@ -93,6 +93,7 @@ namespace OrchardCore.Commerce
             // Orders
             services.AddScoped<IDataMigration, OrderMigrations>();
             services.AddScoped<IAddressFormatterProvider, AddressFormatterProvider>();
+            services.AddContentPart<Order>();
 
             services.AddContentPart<OrderPart>()
                 .UseDisplayDriver<OrderPartDisplayDriver>();

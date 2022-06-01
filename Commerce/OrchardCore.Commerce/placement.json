@@ -16,5 +16,12 @@
       "displayType": "SummaryAdmin",
       "place": "-"
     }
+  ],
+  "TitlePart_Edit": [
+    {
+      "place": "-",
+      "contentType": [ "Order" ],
+      "displayType": "Edit"
+    }
   ]
 }

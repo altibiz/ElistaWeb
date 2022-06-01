@@ -1,6 +1,6 @@
 {
-  "name": "ElistaWeb",
-  "displayName": "Elista Web Theme",
+  "name": "formAdria",
+  "displayName": "formAdria Web Theme",
   "description": "Provides a functional Blog with CMS features.",
   "author": "The Orchard Core Team",
   "website": "https://orchardcore.net",
@@ -39,7 +39,6 @@
         "OrchardCore.Widgets",
         "OrchardCore.Flows",
         "OrchardCore.Media",
-        "Carousel.OrchardCore",
         "OrchardCore.Admin",
         "OrchardCore.AdminMenu",
         "OrchardCore.Templates",
@@ -81,7 +80,8 @@
         "OrchardCore.Shortcodes.Templates",
         "OrchardCore.Taxonomies",
         "OrchardCore.Themes",
-
+        "Carousel.OrchardCore",
+        "OrchardCore.Commerce",
 
         // Themes
         "ElistaTheme",
@@ -101,6 +101,10 @@
       "LocalizationSettings": {
         "DefaultCulture": "hr",
         "SupportedCultures": [ "hr", "en" ]
+      },
+      "CommerceSettings": {
+        "DefaultCurrency": "HRK",
+        "CurrentDisplayCurrency": "HRK"
       }
     },
     {
@@ -163,74 +167,6 @@
               "Settings": {
                 "ContentTypePartSettings": {
                   "Position": "1"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "Name": "Product",
-          "DisplayName": "Product",
-          "Settings": {
-            "ContentTypeSettings": {
-              "Creatable": true,
-              "Listable": true,
-              "Draftable": true
-            },
-            "FullTextAspectSettings": {}
-          },
-          "ContentTypePartDefinitionRecords": [
-            {
-              "PartName": "Product",
-              "Name": "Product",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "Position": "2"
-                }
-              }
-            },
-            {
-              "PartName": "PricePart",
-              "Name": "PricePart",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "Position": "3"
-                }
-              }
-            },
-            {
-              "PartName": "ProductPart",
-              "Name": "ProductPart",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "Position": "4"
-                }
-              }
-            },
-            {
-              "PartName": "AutoroutePart",
-              "Name": "AutoroutePart",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "Position": "1"
-                }
-              }
-            },
-            {
-              "PartName": "TitlePart",
-              "Name": "TitlePart",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "Position": "0"
-                }
-              }
-            },
-            {
-              "PartName": "Gallery",
-              "Name": "Gallery",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "Position": "5"
                 }
               }
             }
@@ -368,26 +304,6 @@
             }
           },
           "ContentPartFieldDefinitionRecords": []
-        },
-        {
-          "Name": "Gallery",
-          "Settings": {
-            "ContentPartSettings": {
-              "Attachable": true
-            }
-          },
-          "ContentPartFieldDefinitionRecords": [
-            {
-              "FieldName": "MediaField",
-              "Name": "Images",
-              "Settings": {
-                "ContentPartFieldSettings": {
-                  "DisplayName": "Images",
-                  "Position": "0"
-                }
-              }
-            }
-          ]
         },
         {
           "Name": "MenuPart",
@@ -650,14 +566,6 @@
       "Queries": [
         {
           "Index": "Search",
-          "Template": "{\n  \"query\": {\n    \"term\": { \"Content.ContentItem.ContentType\": \"BlogPost\" }\n  },\n  \"sort\": {\n    \"Content.ContentItem.CreatedUtc\": {\n      \"order\": \"desc\",\n      \"type\": \"double\"\n    }\n  },\n  \"size\": 3\n}\n",
-          "ReturnContentItems": true,
-          "Name": "RecentBlogPosts",
-          "Source": "Lucene",
-          "Schema": "{\r\n    \"type\": \"ContentItem/BlogPost\"\r\n}"
-        },
-        {
-          "Index": "Search",
           "Template": "{\r\n  \"query\": {\r\n    \"term\": { \"Content.ContentItem.ContentType\": \"Product\" }\r\n  },\r\n  \"sort\": {\r\n    \"Content.ContentItem.CreatedUtc\": {\r\n      \"order\": \"desc\",\r\n      \"type\": \"double\"\r\n    }\r\n  },\r\n  \"size\": 20\r\n}\r\n",
           "ReturnContentItems": true,
           "Name": "Products",
@@ -869,172 +777,6 @@
           "MenuPart": {},
           "MenuItemsListPart": {
             "MenuItems": [
-              {
-                "ContentItemId": "4z7xsqvehpg0psy0t0tgbwrfmz",
-                "ContentItemVersionId": null,
-                "ContentType": "LinkMenuItem",
-                "DisplayText": "Home",
-                "Latest": false,
-                "Published": false,
-                "ModifiedUtc": "2022-05-03T09:07:27.0443835Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
-                "Owner": null,
-                "Author": "admin",
-                "LinkMenuItemPart": {
-                  "Name": "Home",
-                  "Url": null
-                },
-                "LinkMenuItem": {},
-                "MenuItemsListPart": {
-                  "MenuItems": [
-                    {
-                      "ContentItemId": "4wrg8yhk94wk01dqfax516ran2",
-                      "ContentItemVersionId": null,
-                      "ContentType": "LinkMenuItem",
-                      "DisplayText": "Home 1",
-                      "Latest": false,
-                      "Published": false,
-                      "ModifiedUtc": "2022-05-03T09:08:35.2334985Z",
-                      "PublishedUtc": null,
-                      "CreatedUtc": null,
-                      "Owner": null,
-                      "Author": "admin",
-                      "LinkMenuItemPart": {
-                        "Name": "Home 1",
-                        "Url": null
-                      },
-                      "LinkMenuItem": {}
-                    },
-                    {
-                      "ContentItemId": "4efe1rkgpvma1w2ky0wyxjew5v",
-                      "ContentItemVersionId": null,
-                      "ContentType": "LinkMenuItem",
-                      "DisplayText": "Home 2",
-                      "Latest": false,
-                      "Published": false,
-                      "ModifiedUtc": "2022-05-03T09:08:55.342686Z",
-                      "PublishedUtc": null,
-                      "CreatedUtc": null,
-                      "Owner": null,
-                      "Author": "admin",
-                      "LinkMenuItemPart": {
-                        "Name": "Home 2",
-                        "Url": null
-                      },
-                      "LinkMenuItem": {}
-                    },
-                    {
-                      "ContentItemId": "4de7g7s5azsr9sk4tggygee047",
-                      "ContentItemVersionId": null,
-                      "ContentType": "LinkMenuItem",
-                      "DisplayText": "Home 3",
-                      "Latest": false,
-                      "Published": false,
-                      "ModifiedUtc": "2022-05-03T09:09:02.4520234Z",
-                      "PublishedUtc": null,
-                      "CreatedUtc": null,
-                      "Owner": null,
-                      "Author": "admin",
-                      "LinkMenuItemPart": {
-                        "Name": "Home 3",
-                        "Url": null
-                      },
-                      "LinkMenuItem": {}
-                    }
-                  ]
-                }
-              },
-              {
-                "ContentItemId": "4z2jenv4p705nwf8pdg07dhp5v",
-                "ContentItemVersionId": null,
-                "ContentType": "LinkMenuItem",
-                "DisplayText": "Shop",
-                "Latest": false,
-                "Published": false,
-                "ModifiedUtc": "2022-05-03T09:07:34.2218578Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
-                "Owner": null,
-                "Author": "admin",
-                "LinkMenuItemPart": {
-                  "Name": "Shop",
-                  "Url": null
-                },
-                "LinkMenuItem": {}
-              },
-              {
-                "ContentItemId": "4cndeyx3gp7hv7negts74c06c4",
-                "ContentItemVersionId": null,
-                "ContentType": "LinkMenuItem",
-                "DisplayText": "Product Cards",
-                "Latest": false,
-                "Published": false,
-                "ModifiedUtc": "2022-05-03T09:07:47.5578937Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
-                "Owner": null,
-                "Author": "admin",
-                "LinkMenuItemPart": {
-                  "Name": "Product Cards",
-                  "Url": null
-                },
-                "LinkMenuItem": {}
-              },
-              {
-                "ContentItemId": "4c8s78rfvwmbv2x95k1s8mqz5a",
-                "ContentItemVersionId": null,
-                "ContentType": "LinkMenuItem",
-                "DisplayText": "Icons",
-                "Latest": false,
-                "Published": false,
-                "ModifiedUtc": "2022-05-03T09:07:55.9068498Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
-                "Owner": null,
-                "Author": "admin",
-                "LinkMenuItemPart": {
-                  "Name": "Icons",
-                  "Url": null
-                },
-                "LinkMenuItem": {}
-              },
-              {
-                "ContentItemId": "4vjwew6dwpfdvvt2faeayg4vmg",
-                "ContentItemVersionId": null,
-                "ContentType": "LinkMenuItem",
-                "DisplayText": "Pages",
-                "Latest": false,
-                "Published": false,
-                "ModifiedUtc": "2022-05-03T09:08:04.0264945Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
-                "Owner": null,
-                "Author": "admin",
-                "LinkMenuItemPart": {
-                  "Name": "Pages",
-                  "Url": null
-                },
-                "LinkMenuItem": {}
-              },
-              {
-                "ContentItemId": "4djg9b09k0bnq6bykyk911jxmg",
-                "ContentItemVersionId": null,
-                "ContentType": "LinkMenuItem",
-                "DisplayText": "Docs",
-                "Latest": false,
-                "Published": false,
-                "ModifiedUtc": "2022-05-03T09:08:11.0147464Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
-                "Owner": null,
-                "Author": "admin",
-                "LinkMenuItemPart": {
-                  "Name": "Docs",
-                  "Url": null
-                },
-                "LinkMenuItem": {}
-              }
             ]
           },
           "@WeldedPartSettings": {
@@ -1044,182 +786,6 @@
             "MenuItemsListPart": {
               "Position": "4"
             }
-          }
-        },
-        {
-          "ContentItemId": "4f2pfm6hqhzb12nnhwq8nn6mm9",
-          "ContentItemVersionId": "4qvc827a82c2esy1fnc42xxg50",
-          "ContentType": "RawHtml",
-          "DisplayText": null,
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2022-05-04T08:34:55.8484771Z",
-          "PublishedUtc": "2022-05-04T08:34:56.1650883Z",
-          "CreatedUtc": "2022-05-03T06:37:52.5124458Z",
-          "Owner": "4v89tfvreha9tvqf29qe1xaddx",
-          "Author": "admin",
-          "Displaytext": "Footer",
-          "LayerMetadata": {
-            "Layer": "Always",
-            "Zone": "Footer",
-            "RenderTitle": false,
-            "Position": 10.0
-          },
-          "RawHtml": {
-            "Content": {
-              "Html": "\n\n      \n      <div class=\"py-5 py-lg-6 bg-gray-100\">\n        <div class=\"container\">\n          <div class=\"row\">\n            <div class=\"col-lg-3 col-sm-6 py-4 service-column\">\n              \n              <div class=\"service-text\">\n                <h6 class=\"text-sm mb-1\">Free shipping &amp; return</h6>\n                <p class=\"text-muted fw-light text-sm mb-0\">Free Shipping over $300</p>\n              </div>\n            </div>\n            <div class=\"col-lg-3 col-sm-6 py-4 service-column\">\n              \n              <div class=\"service-text\">\n                <h6 class=\"text-sm mb-1\">Money back guarantee</h6>\n                <p class=\"text-muted fw-light text-sm mb-0\">30 Days Money Back Guarantee</p>\n              </div>\n            </div>\n            <div class=\"col-lg-3 col-sm-6 py-4 service-column\">\n              \n              <div class=\"service-text\">\n                <h6 class=\"text-sm mb-1\">Best prices</h6>\n                <p class=\"text-muted fw-light text-sm mb-0\">Always the best prices</p>\n              </div>\n            </div>\n            <div class=\"col-lg-3 col-sm-6 py-4 service-column\">\n              \n              <div class=\"service-text\">\n                <h6 class=\"text-sm mb-1\">020-800-456-747</h6>\n                <p class=\"text-muted fw-light text-sm mb-0\">24/7 Available Support</p>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"py-6 text-muted\"> \n        <div class=\"container\">\n          <div class=\"row\">\n            <div class=\"col-lg-5 pe-lg-5 pe-xl-6 mb-5 mb-lg-0\">\n              <h6 class=\"text-dark letter-spacing-1 mb-4\">Be in touch</h6>\n              <p class=\"text-sm mb-3\"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. At itaque temporibus.</p>\n              <form action=\"#\">\n                <div class=\"input-group input-group-underlined mb-3\">\n                  <input class=\"form-control form-control-underlined\" type=\"email\" placeholder=\"Your Email Address\">\n                  <button class=\"btn btn-underlined text-gray-700 py-0\" type=\"button\"> \n                    \n                  </button>\n                </div>\n              </form>\n            </div>\n            <div class=\"col-lg-7\">      \n              <div class=\"row\">                \n                <div class=\"col-lg-4\"><a class=\"d-lg-none block-toggler my-3\" href=\"#footerMenu0\">Shop<span class=\"block-toggler-icon\"></span></a>\n                  \n                  <div class=\"expand-lg collapse\">\n                    <h6 class=\"text-dark letter-spacing-1 mb-4 d-none d-lg-block\">Shop</h6>\n                    <ul class=\"list-unstyled text-sm pt-2 pt-lg-0\">\n                      <li class=\"mb-2\"> <a class=\"text-muted text-dark-hover link-animated\" href=\"#\">For Women</a></li>\n                      <li class=\"mb-2\"> <a class=\"text-muted text-dark-hover link-animated\" href=\"#\">For Men</a></li>\n                      <li class=\"mb-2\"> <a class=\"text-muted text-dark-hover link-animated\" href=\"#\">Stores</a></li>\n                      <li class=\"mb-2\"> <a class=\"text-muted text-dark-hover link-animated\" href=\"#\">Our Blog</a></li>\n                      <li class=\"mb-2\"> <a class=\"text-muted text-dark-hover link-animated\" href=\"#\">Shop</a></li>\n                    </ul>\n                  </div>\n                </div>\n                <div class=\"col-lg-4\"><a class=\"d-lg-none block-toggler my-3\" href=\"#footerMenu1\">Company<span class=\"block-toggler-icon\"></span></a>\n                  \n                  <div class=\"expand-lg collapse\">\n                    <h6 class=\"text-dark letter-spacing-1 mb-4 d-none d-lg-block\">Company</h6>\n                    <ul class=\"list-unstyled text-sm pt-2 pt-lg-0\">\n                      <li class=\"mb-2\"> <a class=\"text-muted text-dark-hover link-animated\" href=\"#\">Login</a></li>\n                      <li class=\"mb-2\"> <a class=\"text-muted text-dark-hover link-animated\" href=\"#\">Register</a></li>\n                      <li class=\"mb-2\"> <a class=\"text-muted text-dark-hover link-animated\" href=\"#\">Wishlist</a></li>\n                      <li class=\"mb-2\"> <a class=\"text-muted text-dark-hover link-animated\" href=\"#\">Our Products</a></li>\n                      <li class=\"mb-2\"> <a class=\"text-muted text-dark-hover link-animated\" href=\"#\">Checkouts</a></li>\n                    </ul>\n                  </div>\n                </div>\n                <div class=\"col-lg-4\"><a class=\"d-lg-none block-toggler my-3\" href=\"#footerMenu2\">Your account<span class=\"block-toggler-icon\"></span></a>\n                  \n                  <div class=\"expand-lg collapse\">\n                    <h6 class=\"text-dark letter-spacing-1 mb-4 d-none d-lg-block\">Your account</h6>\n                    <ul class=\"list-unstyled text-sm pt-2 pt-lg-0\">\n                      <li class=\"mb-2\"> <a class=\"text-muted text-dark-hover link-animated\" href=\"#\">Login</a></li>\n                      <li class=\"mb-2\"> <a class=\"text-muted text-dark-hover link-animated\" href=\"#\">Register</a></li>\n                      <li class=\"mb-2\"> <a class=\"text-muted text-dark-hover link-animated\" href=\"#\">Wishlist</a></li>\n                      <li class=\"mb-2\"> <a class=\"text-muted text-dark-hover link-animated\" href=\"#\">Our Products</a></li>\n                      <li class=\"mb-2\"> <a class=\"text-muted text-dark-hover link-animated\" href=\"#\">Checkouts</a></li>\n                    </ul>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"py-4 fw-light text-muted\">\n        <div class=\"container\">\n          <div class=\"row align-items-center text-sm text-gray-500\">\n            <div class=\"col-lg-4 text-center text-lg-start\">\n              <p class=\"mb-lg-0\">© 2022, Your company.  All rights reserved.</p>\n            </div>\n            <div class=\"col-lg-8\">\n              <ul class=\"list-inline mb-0 mt-2 mt-md-0 text-center text-lg-end\">\n                <li class=\"list-inline-item\"> <a class=\"text-reset\" href=\"#\">Terms &amp; Conditions </a></li>\n                <li class=\"list-inline-item\"> <a class=\"text-reset\" href=\"#\">Privacy &amp; cookies </a></li>\n                <li class=\"list-inline-item\"> <a class=\"text-reset\" href=\"#\">Accessibility </a></li>\n                <li class=\"list-inline-item\"> <a class=\"text-reset\" href=\"#\">Customer Data Promise </a></li>\n              </ul>\n            </div>\n          </div>\n        </div>\n      </div>\n    "
-            }
-          }
-        },
-
-        {
-          "ContentItemId": "4sdsv4ebpxzfd1qahhgpwzcacr",
-          "ContentItemVersionId": "4rqzk4an26x5byt0arsgyfygcg",
-          "ContentType": "Product",
-          "DisplayText": "proizvod 1 ",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2022-05-05T09:26:16.0521159Z",
-          "PublishedUtc": "2022-05-05T09:26:16.2535371Z",
-          "CreatedUtc": "2022-05-04T09:36:14.1996341Z",
-          "Owner": "4v89tfvreha9tvqf29qe1xaddx",
-          "Author": "admin",
-          "Product": {},
-          "PricePart": {
-            "Price": {
-              "value": 70.0,
-              "currency": "HRK"
-            }
-          },
-          "PriceVariantsPart": {
-            "Variants": null
-          },
-          "ProductPart": {
-            "Sku": "122"
-          },
-          "TitlePart": {
-            "Title": "proizvod 1 "
-          },
-          "AutoroutePart": {
-            "Path": "proizvod-1-",
-            "SetHomepage": false,
-            "Disabled": false,
-            "RouteContainedItems": false,
-            "Absolute": false
-          }
-        },
-        {
-          "ContentItemId": "42g0j1x9f8yt805t1jk57t05xn",
-          "ContentItemVersionId": "4nnw8ajmmdy3bxkckct6emw9ng",
-          "ContentType": "Product",
-          "DisplayText": "proizvod 2",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2022-05-04T09:37:26.0343803Z",
-          "PublishedUtc": "2022-05-04T09:37:26.0495021Z",
-          "CreatedUtc": "2022-05-04T09:37:17.1716258Z",
-          "Owner": "4v89tfvreha9tvqf29qe1xaddx",
-          "Author": "admin",
-          "Product": {},
-          "PricePart": {
-            "Price": {
-              "value": 70.0,
-              "currency": "HRK"
-            }
-          },
-          "PriceVariantsPart": {
-            "Variants": null
-          },
-          "ProductPart": {
-            "Sku": "122"
-          },
-          "TitlePart": {
-            "Title": "proizvod 2"
-          }
-        },
-        {
-          "ContentItemId": "4a0wq1c94h6w278pk2xb09ht58",
-          "ContentItemVersionId": "4acfqfx05h4vssv045v5bpztma",
-          "ContentType": "Product",
-          "DisplayText": "proizvod 4",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2022-05-05T06:40:00.5769103Z",
-          "PublishedUtc": "2022-05-05T06:40:00.5837907Z",
-          "CreatedUtc": "2022-05-04T09:37:19.8356264Z",
-          "Owner": "4v89tfvreha9tvqf29qe1xaddx",
-          "Author": "admin",
-          "Product": {},
-          "PricePart": {
-            "Price": {
-              "value": 70.0,
-              "currency": "HRK"
-            }
-          },
-          "PriceVariantsPart": {
-            "Variants": null
-          },
-          "ProductPart": {
-            "Sku": "122"
-          },
-          "TitlePart": {
-            "Title": "proizvod 4"
-          }
-        },
-        {
-          "ContentItemId": "4t8v0xyqzbme56zefftzh1ha4d",
-          "ContentItemVersionId": "4v0nefw06f3tbsm336t49wq8wp",
-          "ContentType": "Product",
-          "DisplayText": "proizvod 3",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2022-05-04T09:37:32.094572Z",
-          "PublishedUtc": "2022-05-04T09:37:32.105388Z",
-          "CreatedUtc": "2022-05-04T09:37:21.3921527Z",
-          "Owner": "4v89tfvreha9tvqf29qe1xaddx",
-          "Author": "admin",
-          "Product": {},
-          "PricePart": {
-            "Price": {
-              "value": 70.0,
-              "currency": "HRK"
-            }
-          },
-          "PriceVariantsPart": {
-            "Variants": null
-          },
-          "ProductPart": {
-            "Sku": "122"
-          },
-          "TitlePart": {
-            "Title": "proizvod 3"
-          }
-        },
-        {
-          "ContentItemId": "4f60fqya8byxj0bdn4rba1jmx0",
-          "ContentItemVersionId": "40dmk63r64g6bt3g8ktzkpdznq",
-          "ContentType": "Product",
-          "DisplayText": "pr lis 1",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2022-05-05T06:45:37.7844774Z",
-          "PublishedUtc": "2022-05-05T06:45:37.8731384Z",
-          "CreatedUtc": "2022-05-05T06:45:37.7844774Z",
-          "Owner": "4v89tfvreha9tvqf29qe1xaddx",
-          "Author": "admin",
-          "Product": {},
-          "PricePart": {
-            "Price": {
-              "value": 23.0,
-              "currency": "USD"
-            }
-          },
-          "TitlePart": {
-            "Title": "pr lis 1"
-          },
-          "ContainedPart": {
-            "ListContentItemId": "4x429q9tqz4c7y9kykw0jctr48",
-            "Order": 0
           }
         },
         {
@@ -1238,15 +804,14 @@
           "PricePart": {
             "Price": {
               "value": 0.0022,
-              "currency": "USD"
+              "currency": "HRK"
             }
           },
           "TitlePart": {
             "Title": "p1"
           },
-          "ContainedPart": {
-            "ListContentItemId": "4qgc6nbv2382956d4xwjhh7ydr",
-            "Order": 0
+          "ProductPart": {
+            "Sku": "232"
           }
         },
         {
@@ -1265,15 +830,11 @@
           "PricePart": {
             "Price": {
               "value": 33.0,
-              "currency": "USD"
+              "currency": "HRK"
             }
           },
           "TitlePart": {
             "Title": "p2222"
-          },
-          "ContainedPart": {
-            "ListContentItemId": "4qgc6nbv2382956d4xwjhh7ydr",
-            "Order": 0
           },
           "ProductPart": {
             "Sku": "32"
@@ -1302,15 +863,14 @@
           "PricePart": {
             "Price": {
               "value": 12.0,
-              "currency": "USD"
+              "currency": "HRK"
             }
           },
           "TitlePart": {
             "Title": "p3"
           },
-          "ContainedPart": {
-            "ListContentItemId": "4qgc6nbv2382956d4xwjhh7ydr",
-            "Order": 0
+          "ProductPart": {
+            "Sku": "3662"
           }
         },
         {
@@ -1329,11 +889,11 @@
           "PricePart": {
             "Price": {
               "value": 63.0,
-              "currency": "SOS"
+              "currency": "HRK"
             }
           },
           "ProductPart": {
-            "Sku": "23"
+            "Sku": "237543"
           },
           "AutoroutePart": {
             "Path": "pro-1",
@@ -1344,238 +904,6 @@
           },
           "TitlePart": {
             "Title": "pro 1"
-          }
-        },
-        {
-          "ContentItemId": "4z9fpx9bb856k63w8j0d6f1sdj",
-          "ContentItemVersionId": "4cbz6e3xw1j5x247s99qtascd0",
-          "ContentType": "Page",
-          "DisplayText": "home",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2022-05-06T08:11:27.3909833Z",
-          "PublishedUtc": "2022-05-06T08:11:27.5318885Z",
-          "CreatedUtc": "2022-05-03T06:44:10.5811175Z",
-          "Owner": "4v89tfvreha9tvqf29qe1xaddx",
-          "Author": "admin",
-          "Page": {},
-          "AutoroutePart": {
-            "Path": "home",
-            "SetHomepage": true,
-            "Disabled": false,
-            "RouteContainedItems": false,
-            "Absolute": false
-          },
-          "FlowPart": {
-            "Widgets": [
-              {
-                "ContentItemId": "4arxycavrp0226cjtzv39vzyn0",
-                "ContentItemVersionId": null,
-                "ContentType": "Container",
-                "DisplayText": null,
-                "Latest": false,
-                "Published": false,
-                "ModifiedUtc": "2022-05-06T08:11:27.4336239Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
-                "Owner": null,
-                "Author": "admin",
-                "Container": {},
-                "FlowPart": {
-                  "Widgets": [
-                    {
-                      "ContentItemId": "42fh78qf82rcg0zyesfsgrsnm1",
-                      "ContentItemVersionId": null,
-                      "ContentType": "Carousel",
-                      "DisplayText": null,
-                      "Latest": false,
-                      "Published": false,
-                      "ModifiedUtc": "2022-05-06T08:11:27.4372882Z",
-                      "PublishedUtc": null,
-                      "CreatedUtc": null,
-                      "Owner": null,
-                      "Author": "admin",
-                      "Carousel": {
-                        "Interval": {
-                          "Value": 5000.0
-                        },
-                        "Pause": {
-                          "Value": false
-                        }
-                      },
-                      "Slides": {
-                        "ContentItems": [
-                          {
-                            "ContentItemId": "4h8346z9qqwbp5mj30btkejxdd",
-                            "ContentItemVersionId": null,
-                            "ContentType": "Slide",
-                            "DisplayText": null,
-                            "Latest": false,
-                            "Published": false,
-                            "ModifiedUtc": "2022-05-06T08:11:27.4547352Z",
-                            "PublishedUtc": null,
-                            "CreatedUtc": null,
-                            "Owner": null,
-                            "Author": "admin",
-                            "Slide": {
-                              "Image": {
-                                "Paths": [
-                                  "about-bg.jpg"
-                                ],
-                                "MediaTexts": [
-                                  ""
-                                ]
-                              },
-                              "SubTitle": {
-                                "Text": "SubTitle (up)"
-                              },
-                              "Title": {
-                                "Text": "title"
-                              },
-                              "ShortDescription": {
-                                "Text": "Short Description Short Description Short Description"
-                              },
-                              "ImageClass": {
-                                "Text": "c1"
-                              },
-                              "ImageAltText": {
-                                "Text": "alt"
-                              },
-                              "BtnText": {
-                                "Text": "button 1"
-                              },
-                              "BtnUrl": {
-                                "Text": "button dest"
-                              }
-                            }
-                          },
-                          {
-                            "ContentItemId": "4988shbz26cs67j315y1baffct",
-                            "ContentItemVersionId": null,
-                            "ContentType": "Slide",
-                            "DisplayText": null,
-                            "Latest": false,
-                            "Published": false,
-                            "ModifiedUtc": "2022-05-06T08:11:27.4961352Z",
-                            "PublishedUtc": null,
-                            "CreatedUtc": null,
-                            "Owner": null,
-                            "Author": "admin",
-                            "Slide": {
-                              "Image": {
-                                "Paths": [
-                                  "post-bg.jpg"
-                                ],
-                                "MediaTexts": [
-                                  ""
-                                ]
-                              },
-                              "SubTitle": {
-                                "Text": "s"
-                              },
-                              "Title": {
-                                "Text": "t"
-                              },
-                              "ShortDescription": {
-                                "Text": "sd"
-                              },
-                              "ImageClass": {
-                                "Text": "32"
-                              },
-                              "ImageAltText": {
-                                "Text": "alt"
-                              },
-                              "BtnText": {
-                                "Text": "dsd dddd"
-                              },
-                              "BtnUrl": {
-                                "Text": "asd"
-                              }
-                            }
-                          },
-                          {
-                            "ContentItemId": "44xk2n383r9szsjvzhnh9s41d7",
-                            "ContentItemVersionId": null,
-                            "ContentType": "Slide",
-                            "DisplayText": null,
-                            "Latest": false,
-                            "Published": false,
-                            "ModifiedUtc": "2022-05-06T08:11:27.5020314Z",
-                            "PublishedUtc": null,
-                            "CreatedUtc": null,
-                            "Owner": null,
-                            "Author": "admin",
-                            "Slide": {
-                              "Image": {
-                                "Paths": [
-                                  "home-bg.jpg"
-                                ],
-                                "MediaTexts": [
-                                  ""
-                                ]
-                              },
-                              "SubTitle": {
-                                "Text": "SubTitle (up) SubTitle (up)"
-                              },
-                              "Title": {
-                                "Text": "titletitletitletitletitle"
-                              },
-                              "ShortDescription": {
-                                "Text": "short desc short desc short desc short desc short desc short desc "
-                              },
-                              "ImageClass": {
-                                "Text": "ic"
-                              },
-                              "ImageAltText": {
-                                "Text": "alt"
-                              },
-                              "BtnText": {
-                                "Text": "btn 3 text"
-                              },
-                              "BtnUrl": {
-                                "Text": "sadasd"
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      "FlowMetadata": {
-                        "Alignment": 3,
-                        "Size": 100
-                      }
-                    },
-                    {
-                      "ContentItemId": "4npsrt6jt9b2yzce0qa9qhbyc7",
-                      "ContentItemVersionId": null,
-                      "ContentType": "Products",
-                      "DisplayText": "Shop",
-                      "Latest": false,
-                      "Published": false,
-                      "ModifiedUtc": "2022-05-06T08:11:27.5137913Z",
-                      "PublishedUtc": null,
-                      "CreatedUtc": null,
-                      "Owner": null,
-                      "Author": "admin",
-                      "Products": {},
-                      "TitlePart": {
-                        "Title": "Shop"
-                      },
-                      "FlowMetadata": {
-                        "Alignment": 3,
-                        "Size": 100
-                      }
-                    }
-                  ]
-                },
-                "FlowMetadata": {
-                  "Alignment": 3,
-                  "Size": 100
-                }
-              }
-            ]
-          },
-          "TitlePart": {
-            "Title": "home"
           }
         }
       ]
@@ -1627,8 +955,15 @@
           "Footer"
         ]
       }
+    },
+    {
+      "name": "recipes",
+      "Values": [
+        {
+          "executionid": "EllistaTheme",
+          "name": "Elista.Homepage"
+        }
+      ]
     }
-
-
   ]
 }

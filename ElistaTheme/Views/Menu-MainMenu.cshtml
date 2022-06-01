@@ -6,12 +6,6 @@
 @inject ISiteService SiteService
 @inject SignInManager<IUser> SignInManager
 
-<style type="text/css">
-    .nav.navbar-nav.menu-main-menu.menu {
-        margin-left: auto;
-    }
-</style>
-
 @{
     var allowChangeEmail = (await SiteService.GetSiteSettingsAsync()).As<ChangeEmailSettings>().AllowChangeEmail;
     var externalAuthenticationSchemes = await SignInManager.GetExternalAuthenticationSchemesAsync();
@@ -35,14 +29,12 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
         <svg class="svg-icon navbar-icon">
             <use xlink:href="#menu-hamburger-1"></use>
-        </svg>Menu (need fix)
+        </svg>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarContent">
-
+        <a class="navbar-brand" href="/">formAdria</a>
         @tag
-
-        <partial name="UserMenu" />
-
+        <partial name="UserMenu"/>
     </div>
 </nav>

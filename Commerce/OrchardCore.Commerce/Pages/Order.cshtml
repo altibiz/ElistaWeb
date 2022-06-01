@@ -1,0 +1,21 @@
+﻿@page "{contentItemId}"
+@model OrchardCore.Commerce.Pages.OrderModel
+
+@await RenderSectionAsync("Messages", required: false)
+@{
+    Model.Shape.Parts.Remove("TitlePart");
+}
+<section>
+    <div class="container pt-5">
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            @await DisplayAsync(Model.Shape)
+
+            @if (Model.Shape != null)
+            {
+                <button type="submit" class="btn btn-success publish mt-2">@T["Save Order"]</button>
+            }
+        </form>
+    </div>
+</section>

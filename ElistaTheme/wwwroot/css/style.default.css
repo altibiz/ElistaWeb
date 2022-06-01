@@ -243,8 +243,8 @@ sup {
 }
 
 a {
-  color: #bcac76;
-  text-decoration: none;
+    color: #968a5e;
+    text-decoration: none;
 }
 
 a:hover {
@@ -14035,7 +14035,8 @@ body {
   text-align: center;
   line-height: 40px;
   padding: 0;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, transform 0.15s ease-in-out, opacity 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
+ transform 0.15s ease-in-out, opacity 0.15s ease-in-out;
   text-align: center;
 }
 

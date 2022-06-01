@@ -56,11 +56,13 @@ namespace OrchardCore.Commerce.Settings
                 {
                     model.DefaultCurrency = section.DefaultCurrency ?? _moneyService.DefaultCurrency.CurrencyIsoCode;
                     model.CurrentDisplayCurrency = section.CurrentDisplayCurrency ?? _moneyService.DefaultCurrency.CurrencyIsoCode;
-                    model.Currencies = _moneyService.Currencies
+                    var currs=_moneyService.Currencies.ToList();
+                    model.Currencies = currs
+                    .Where(x=>!string.IsNullOrEmpty(x.EnglishName))
                         .OrderBy(c => c.CurrencyIsoCode)
                         .Select(c => new SelectListItem(
                             c.CurrencyIsoCode,
-                            $"{c.CurrencyIsoCode} {c.Symbol} - {S[c.EnglishName]}"));
+                            $"{c.CurrencyIsoCode} {c.Symbol} - {S[c.EnglishName]}")).ToList();
                 }).Location("Content:5").OnGroup(GroupId)
             };
 

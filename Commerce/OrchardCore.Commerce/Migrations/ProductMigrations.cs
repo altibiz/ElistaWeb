@@ -3,6 +3,8 @@ using OrchardCore.ContentManagement.Metadata;
 using OrchardCore.Data.Migration;
 using OrchardCore.Commerce.Indexes;
 using YesSql.Sql;
+using OrchardCore.Recipes.Services;
+using System.Threading.Tasks;
 
 namespace OrchardCore.Commerce.Migrations
 {
@@ -12,13 +14,15 @@ namespace OrchardCore.Commerce.Migrations
     public class ProductMigrations : DataMigration
     {
         IContentDefinitionManager _contentDefinitionManager;
+        private IRecipeMigrator _rm;
 
-        public ProductMigrations(IContentDefinitionManager contentDefinitionManager)
+        public ProductMigrations(IContentDefinitionManager contentDefinitionManager, IRecipeMigrator recipeMigrator)
         {
             _contentDefinitionManager = contentDefinitionManager;
+            _rm = recipeMigrator;
         }
 
-        public int Create()
+        public async Task<int> CreateAsync()
         {
             _contentDefinitionManager.AlterPartDefinition("ProductPart", builder => builder
                 .Attachable()
@@ -34,6 +38,7 @@ namespace OrchardCore.Commerce.Migrations
                 .CreateIndex("IDX_ProductPartIndex_Sku", "Sku")
             );
 
+            await _rm.ExecuteAsync("Product.recipe.json", this);
             return 1;
         }
     }

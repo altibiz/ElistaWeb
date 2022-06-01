@@ -1,0 +1,36 @@
+@model OrchardCore.Commerce.ViewModels.ProductPartViewModel
+@using OrchardCore.Commerce.Abstractions
+@{
+    int i = 0;
+    var id = $"product-{Model.Sku}";
+}
+<form asp-action="AddItem" asp-controller="ShoppingCart" asp-area="OrchardCore.Commerce">
+    <div class="input-group w-100 mb-4">
+        <input class="form-control form-control-lg detail-quantity" id="@id-quantity" name="line.Quantity" type="number" value="1">
+        <div class="flex-grow-1">
+            <div class="d-grid h-100">
+                <button class="btn btn-dark" type="submit" disabled="@(!Model.CanBeBought)"> <i class="fa fa-shopping-cart me-2"></i>@T["Add to cart"]</button>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" name="line.ProductSku" value="@Model.Sku" />
+    <ul class="product-attribute-list">
+        @foreach (ProductAttributeDescription attr in Model.Attributes)
+        {
+            <li><shape Type="@attr.Field.GetType().Name" prop-index="@(i++)" prop-attributeDescription="@attr" prop-idPrefix="@id" /></li>
+        }
+    </ul>
+</form>
+<div class="d-none row mb-4">
+    <div class="col-6"><a href="#"> <i class="far fa-heart me-2"></i>Add to wishlist </a></div>
+    <div class="col-6 text-end">
+        <ul class="list-inline mb-0">
+            <li class="list-inline-item me-2"><a class="text-dark text-primary-hover" href="#"><i class="fab fa-facebook-f"> </i></a></li>
+            <li class="list-inline-item"><a class="text-dark text-primary-hover" href="#"><i class="fab fa-twitter"> </i></a></li>
+        </ul>
+    </div>
+</div>
+<ul class="d-none list-unstyled">
+    <li><strong>Category:</strong> <a class="text-muted" href="#">Jeans</a></li>
+    <li><strong>Tags:</strong> <a class="text-muted" href="#">Leisure</a>, <a class="text-muted" href="#">Elegant</a></li>
+</ul>

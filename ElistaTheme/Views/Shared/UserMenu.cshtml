@@ -1,5 +1,10 @@
+@using OrchardCore.Commerce.Abstractions
+@inject IShoppingCartPersistence cart
+@{
+    var some=await cart.Retrieve();
+}
 <form class="d-lg-flex ms-auto me-lg-5 me-xl-6 my-4 my-lg-0" action="#">
-    <div class="input-group input-group-underlined">
+    <div class="d-none input-group input-group-underlined">
         <input class="form-control form-control-underlined ps-3" type="text" placeholder="Search" aria-label="Search" aria-describedby="button-search">
         <button class="btn btn-underlined" id="button-search" type="button">
             <svg class="svg-icon navbar-icon">
@@ -9,34 +14,12 @@
     </div>
 </form>
 <ul class="list-inline mb-0 d-none d-lg-block">
-    <li class="list-inline-item me-3">
-        <a class="text-dark text-primary-hover" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
-            <svg class="svg-icon navbar-icon">
-                <use xlink:href="#avatar-1"> </use>
-            </svg>
-        </a>
-    </li>
-    <li class="list-inline-item me-3">
-        <a class="text-dark text-primary-hover position-relative" href="wishlist.html">
-            <svg class="svg-icon navbar-icon" id="11">
-                <use xlink:href="#heart-1"> </use>
-            </svg>
-            <div class="navbar-icon-badge">3</div>
-        </a>
-    </li>
     <li class="list-inline-item position-relative me-3">
-        <a class="text-dark text-primary-hover" href="#" data-bs-toggle="modal" data-bs-target="#sidebarCart">
+        <a class="text-dark text-primary-hover" href="/cart">
             <svg class="svg-icon navbar-icon">
                 <use xlink:href="#retail-bag-1"> </use>
             </svg>
-            <div class="navbar-icon-badge">5</div>
-        </a>
-    </li>
-    <li class="list-inline-item">
-        <a class="text-dark text-primary-hover" href="#" data-bs-toggle="modal" data-bs-target="#sidebarRight">
-            <svg class="svg-icon navbar-icon">
-                <use xlink:href="#menu-hamburger-1"> </use>
-            </svg>
+            <div class="navbar-icon-badge">@some.Count</div>
         </a>
     </li>
 </ul>

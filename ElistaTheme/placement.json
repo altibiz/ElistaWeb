@@ -1,0 +1,23 @@
+{
+  "ContentPart": [
+    {
+      "place": "Gallery",
+      "differentiator": "GalleryPart"
+    }
+  ],
+  "ContentPart_Summary": [
+    {
+      "place": "Gallery",
+      "differentiator": "GalleryPart"
+    }
+  ],
+  "ProductPart": [
+    {
+      "place": "Content:last"
+    },
+    {
+      "displayType": "SummaryAdmin",
+      "place": "-"
+    }
+  ]
+}

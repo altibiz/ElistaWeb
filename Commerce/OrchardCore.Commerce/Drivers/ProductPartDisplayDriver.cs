@@ -20,8 +20,11 @@ namespace OrchardCore.Commerce.Drivers
 
         public override IDisplayResult Display(ProductPart productPart, BuildPartDisplayContext context)
         {
-            return Initialize<ProductPartViewModel>(GetDisplayShapeType(context), m => BuildViewModel(m, productPart))
-                .Location("Detail", "Content:20")
+            return Initialize<ProductPartViewModel>(GetDisplayShapeType(context), m =>
+            {
+                BuildViewModel(m, productPart);
+            })
+                .Location("Detail", "Gallery:20")
                 .Location("Summary", "Meta:5");
         }
 
