@@ -103,8 +103,8 @@
         "SupportedCultures": [ "hr", "en" ]
       },
       "CommerceSettings": {
-        "DefaultCurrency": "HRK",
-        "CurrentDisplayCurrency": "HRK"
+        "DefaultCurrency": "EUR",
+        "CurrentDisplayCurrency": "EUR"
       }
     },
     {
@@ -803,7 +803,7 @@
           "PricePart": {
             "Price": {
               "value": 0.0022,
-              "currency": "HRK"
+              "currency": "EUR"
             }
           },
           "TitlePart": {
@@ -829,7 +829,7 @@
           "PricePart": {
             "Price": {
               "value": 33.0,
-              "currency": "HRK"
+              "currency": "EUR"
             }
           },
           "TitlePart": {
@@ -862,7 +862,7 @@
           "PricePart": {
             "Price": {
               "value": 12.0,
-              "currency": "HRK"
+              "currency": "EUR"
             }
           },
           "TitlePart": {
@@ -888,7 +888,7 @@
           "PricePart": {
             "Price": {
               "value": 63.0,
-              "currency": "HRK"
+              "currency": "EUR"
             }
           },
           "ProductPart": {

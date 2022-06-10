@@ -41,7 +41,7 @@
                 <a class="text-dark" display-for="@Model.ContentItem"> @Model.ContentItem.DisplayText </a>
             </h3>
             <p class="text-gray-600 text-sm">
-                <span>@Model.ContentItem.Content.PricePart.Price.currency @Model.ContentItem.Content.PricePart.Price.value</span>
+                <span>@price @curr</span>
 
             </p>
             <div class="d-none product-stars text-xs">
