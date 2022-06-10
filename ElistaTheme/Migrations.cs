@@ -1,4 +1,5 @@
-﻿using OrchardCore.ContentManagement.Metadata;
+﻿using OrchardCore.ContentFields.Settings;
+using OrchardCore.ContentManagement.Metadata;
 using OrchardCore.ContentManagement.Metadata.Settings;
 using OrchardCore.Data.Migration;
 
@@ -42,6 +43,7 @@ internal class Migrations : DataMigration
             )
             .WithField("ExchangeRate", field => field.OfType("NumericField")
                          .WithDisplayName("Conversion Kn")
+                         .WithSettings(new NumericFieldSettings { Scale = 2 })
             )
         );
         return 1;

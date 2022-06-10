@@ -19,7 +19,9 @@ namespace Carousel.OrchardCore
         public override void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IDataMigration, Migrations>();
+#if DEBUG
             services.AddScoped<IShapeDisplayEvents, ShapeTracingShapeEvents>();
+#endif
             services.AddScoped<IContentTypeDefinitionDisplayDriver, CodeGenerationDisplayDriver>();
         }
     }
