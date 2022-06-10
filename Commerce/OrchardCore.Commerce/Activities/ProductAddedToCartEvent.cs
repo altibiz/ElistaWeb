@@ -18,7 +18,7 @@ namespace OrchardCore.Commerce.Activities
 
         public override string Name => nameof(ProductAddedToCartEvent);
 
-        public override LocalizedString DisplayText => S["Product addded to cart"];
+        public override LocalizedString DisplayText => S["Product added to cart"];
 
         public override LocalizedString Category => S["Commerce"];
 

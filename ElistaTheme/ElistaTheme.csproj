@@ -34,12 +34,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <ProjectReference Include="..\Carousel.OrchardCore\Carousel.OrchardCore.csproj" />
+    <ProjectReference Include="..\Commerce\OrchardCore.Commerce\OrchardCore.Commerce.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Carousel.OrchardCore\Carousel.OrchardCore.csproj" />
-    <ProjectReference Include="..\Commerce\OrchardCore.Commerce\OrchardCore.Commerce.csproj" />
+		<Content Include="Localization\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Localization\hr\Carousel.OrchardCore.po" />
+    <Content Include="Localization\hr\ElistaTheme.po" />
+    <Content Include="Localization\hr\OrchardCore.Commerce.po" />
   </ItemGroup>
 
 </Project>

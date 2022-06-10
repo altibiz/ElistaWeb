@@ -1,10 +1,20 @@
 @using OrchardCore.Commerce.Models
 @using OrchardCore.ContentManagement
 @using OrchardCore.DisplayManagement.Shapes
+@using System.Globalization
 @{
+
     ContentItem ci = Model.ContentItem;
-    var price = ci.As<PricePart>();
+    var pricep = ci.As<PricePart>();
     Model.Content.Remove("PricePart"); //remove from displaying
+    var price = pricep.Price.Value.ToString("n2");
+    var curr = pricep.Price.Currency.ToString();
+    if (CultureInfo.CurrentCulture.Name == "hr")
+    {
+        price = (pricep.Price.Value * 7.5m).ToString("n2");
+        curr = "kn";
+    }
+
 }
 
 <section>
@@ -33,9 +43,9 @@
                 <h1 class="mb-4">@ci.DisplayText</h1>
                 <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between mb-4">
                     <ul class="list-inline mb-2 mb-sm-0">
-                        <li class="list-inline-item h4 fw-light mb-0">@price.Price.Value.ToString("n2") @price.Price.Currency</li>
+                        <li class="list-inline-item h4 fw-light mb-0">@price @curr</li>
                         <li class="d-none list-inline-item text-muted fw-light">
-                            <del>$90.00</del>
+                            $90.00
                         </li>
                     </ul>
                     <!-- rating -->

@@ -1,21 +1,48 @@
+@using OrchardCore.ContentManagement
+@using OrchardCore.Entities
+@using OrchardCore.Settings
+@inject ISiteService site
+
+@{
+    string GetText(ContentItem contentItem,string field)
+    {
+        if (contentItem.ContentType == null) return null;
+        var part = contentItem.Content[contentItem.ContentType];
+        if (part != null)
+        {
+            var fieldElement = part[field];
+            if (fieldElement != null)
+            {
+                return fieldElement.Text;
+            }
+        }
+        return null;
+    }
+    var contacts = (await site.GetSiteSettingsAsync()).As<ContentItem>("GeneralSettings");
+    var phone=GetText(contacts,"Phone");
+    var email = GetText(contacts,"Email");
+}
+
 <div class="top-bar text-sm">
     <div class="container-fluid px-lg-5 py-3">
         <div class="row align-items-center">
-            <div class="col-md-4 d-none d-md-block">
+            <div class="col-8">
                 <ul class="list-inline mb-0">
                     <li class="d-none list-inline-item me-2"><a class="text-reset text-primary-hover" href="#"><i class="fab fa-facebook-f"> </i></a></li>
                     <li class="d-none list-inline-item me-4"><a class="text-reset text-primary-hover" href="#"><i class="fab fa-twitter"> </i></a></li>
-                    <li class="list-inline-item me-2">
+                    <li class="list-inline-item me-4">
                         <svg class="svg-icon me-2">
                             <use xlink:href="#calls-1"> </use>
-                        </svg>+385 91 353 0012
+                        </svg>@phone
+                    </li>
+                    <li class="list-inline-item me-4">
+                        <svg class="svg-icon me-2">
+                            <use xlink:href="#open-mail-1"> </use>
+                        </svg>@email
                     </li>
                 </ul>
             </div>
-            <div class="col-sm-6 col-md-4 text-start text-md-center">
-                <p class="d-none mb-0">Free in-store delivery</p>
-            </div>
-            <div class="col-sm-6 col-md-4 d-none d-sm-flex justify-content-end">
+            <div class="col-4 d-flex justify-content-end">
                 <shape type="ContentCulturePicker" />
             </div>
         </div>

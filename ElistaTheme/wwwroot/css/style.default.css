@@ -4510,7 +4510,6 @@ fieldset:disabled .btn {
 @media (min-width: 992px) {
   .navbar-expand-lg {
     flex-wrap: nowrap;
-    justify-content: flex-start;
   }
   .navbar-expand-lg .navbar-nav {
     flex-direction: row;

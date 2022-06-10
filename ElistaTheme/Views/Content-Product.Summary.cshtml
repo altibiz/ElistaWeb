@@ -1,10 +1,19 @@
 @using OrchardCore.Commerce.Models
 @using OrchardCore.ContentManagement
 @using OrchardCore.Menu.Models
+@using System.Globalization
 @inject OrchardCore.ContentManagement.Display.IContentItemDisplayManager DisplayManager
 @{
     ContentItem ci = Model.ContentItem;
     var pro = ci.As<ProductPart>();
+    var pricep = ci.As<PricePart>();
+    var price = pricep.Price.Value.ToString("n2");
+    var curr = pricep.Price.Currency.ToString();
+    if (CultureInfo.CurrentCulture.Name == "hr")
+    {
+        price = (pricep.Price.Value * 7.5m).ToString("n2");
+        curr = "kn";
+    }
 }
 <!-- product-->
 <div class="col-xl-3 col-md-4 col-6">
@@ -19,7 +28,7 @@
                 </svg>
                 <form asp-action="AddItem" asp-controller="ShoppingCart" asp-area="OrchardCore.Commerce">
                     <button class="btn btn-link" type="submit">
-                        <span class="d-none d-sm-inline">Add to cart</span>
+                        <span class="d-none d-sm-inline">@T["Add to cart"]</span>
                     </button>
                     <input id="@ci.ContentItemId-quantity" name="line.Quantity" type="hidden" value="1" />
 

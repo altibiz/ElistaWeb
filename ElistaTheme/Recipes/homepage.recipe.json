@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "Elista.Homepage",
   "steps": [
     {
@@ -78,20 +78,20 @@
                             "Slide": {
                               "Image": {
                                 "Paths": [
-                                  "about-bg.jpg"
+                                  "slide-2.jpg"
                                 ],
                                 "MediaTexts": [
                                   ""
                                 ]
                               },
                               "SubTitle": {
-                                "Text": "SubTitle (up)"
+                                "Text": "Kameleon među materijalima"
                               },
                               "Title": {
-                                "Text": "title"
+                                "Text": "1 materijal, 1000 lica"
                               },
                               "ShortDescription": {
-                                "Text": "Short Description Short Description Short Description"
+                                "Text": "Eksterijeri, interijeri, ručni radovi, uz Jesmonite vaše ideje postaju stvarnost."
                               },
                               "ImageClass": {
                                 "Text": "c1"
@@ -100,10 +100,10 @@
                                 "Text": "alt"
                               },
                               "BtnText": {
-                                "Text": "button 1"
+                                "Text": "pogledaj ponudu"
                               },
                               "BtnUrl": {
-                                "Text": "button dest"
+                                "Text": "#products"
                               }
                             }
                           },
@@ -122,76 +122,32 @@
                             "Slide": {
                               "Image": {
                                 "Paths": [
-                                  "post-bg.jpg"
+                                  "slide-1.png"
                                 ],
                                 "MediaTexts": [
                                   ""
                                 ]
                               },
                               "SubTitle": {
-                                "Text": "s"
+                                "Text": "Za kreativce, obrtnike i umjetnike"
                               },
                               "Title": {
-                                "Text": "t"
+                                "Text": "Eco-friendly i baziran na vodi"
                               },
                               "ShortDescription": {
-                                "Text": "sd"
+                                "Text": "Lagan, izdržljiv, pogodan za izradu najfinijih detalja"
                               },
                               "ImageClass": {
-                                "Text": "32"
+                                "Text": "c1"
                               },
                               "ImageAltText": {
                                 "Text": "alt"
                               },
                               "BtnText": {
-                                "Text": "dsd dddd"
+                                "Text": "pogledaj ponudu"
                               },
                               "BtnUrl": {
-                                "Text": "asd"
-                              }
-                            }
-                          },
-                          {
-                            "ContentItemId": "44xk2n383r9szsjvzhnh9s41d7",
-                            "ContentItemVersionId": null,
-                            "ContentType": "Slide",
-                            "DisplayText": null,
-                            "Latest": false,
-                            "Published": false,
-                            "ModifiedUtc": "2022-05-06T08:11:27.5020314Z",
-                            "PublishedUtc": null,
-                            "CreatedUtc": null,
-                            "Owner": null,
-                            "Author": "admin",
-                            "Slide": {
-                              "Image": {
-                                "Paths": [
-                                  "home-bg.jpg"
-                                ],
-                                "MediaTexts": [
-                                  ""
-                                ]
-                              },
-                              "SubTitle": {
-                                "Text": "SubTitle (up) SubTitle (up)"
-                              },
-                              "Title": {
-                                "Text": "titletitletitletitletitle"
-                              },
-                              "ShortDescription": {
-                                "Text": "short desc short desc short desc short desc short desc short desc "
-                              },
-                              "ImageClass": {
-                                "Text": "ic"
-                              },
-                              "ImageAltText": {
-                                "Text": "alt"
-                              },
-                              "BtnText": {
-                                "Text": "btn 3 text"
-                              },
-                              "BtnUrl": {
-                                "Text": "sadasd"
+                                "Text": "#products"
                               }
                             }
                           }
@@ -235,6 +191,19 @@
           "TitlePart": {
             "Title": "home"
           }
+        }
+      ]
+    },
+    {
+      "name": "media",
+      "Files": [
+        {
+          "TargetPath": "slide-1.png",
+          "SourcePath": "slide-1.png"
+        },
+        {
+          "TargetPath": "slide-2.jpg",
+          "SourcePath": "slide-2.jpg"
         }
       ]
     }

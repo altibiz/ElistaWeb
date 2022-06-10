@@ -250,14 +250,13 @@
               }
             },
             {
+              "PartName": "LocalizationPart",
               "Name": "LocalizationPart",
               "Settings": {
-                "ContentPartSettings": {
-                  "Attachable": true,
-                  "Description": "Provides a way to create localized version of content."
+                "ContentTypePartSettings": {
+                  "Position": "4"
                 }
-              },
-              "ContentPartFieldDefinitionRecords": []
+              }
             }
           ]
         }

@@ -1,0 +1,6 @@
+#: Carousel.OrchardCore\Base\CodeGeneration\CodeGenerationDisplayDriver.cs:170
+#. return T["\"FIX ME! Couldn't determine the actual type to instantiate.\" {0}", jObject.ToString()];
+msgctxt "Carousel.OrchardCore.Base.CodeGeneration.CodeGenerationDisplayDriver"
+msgid "\"FIX ME! Couldn't determine the actual type to instantiate.\" {0}"
+msgstr ""
+

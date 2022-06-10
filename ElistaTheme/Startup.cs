@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using OrchardCore.ResourceManagement;
-using OrchardCore.DisplayManagement.Descriptors;
+using OrchardCore.Data.Migration;
 
 namespace ElistaTheme
 {
@@ -10,6 +10,7 @@ namespace ElistaTheme
         public override void ConfigureServices(IServiceCollection serviceCollection)
         {
             serviceCollection.AddTransient<IConfigureOptions<ResourceManagementOptions>, ResourceManagementOptionsConfiguration>();
+            serviceCollection.AddScoped<IDataMigration, Migrations>();
         }
     }
 }
