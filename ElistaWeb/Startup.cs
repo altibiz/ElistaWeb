@@ -13,7 +13,7 @@ namespace ElistaWeb
 #if DEBUG
                 .AddSetupFeatures("OrchardCore.AutoSetup")
 #else
-                //.AddAzureShellsConfiguration() //put shells info into blob
+                .AddAzureShellsConfiguration() //put shells info into blob
 #endif
                 ;
         }

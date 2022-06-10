@@ -38,7 +38,7 @@
         "OrchardCore.ContentFields",
         "OrchardCore.Widgets",
         "OrchardCore.Flows",
-        "OrchardCore.Media.Azure",
+        "OrchardCore.Media.Azure.Storage",
         "OrchardCore.Admin",
         "OrchardCore.AdminMenu",
         "OrchardCore.Templates",
