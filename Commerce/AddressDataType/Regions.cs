@@ -7,13 +7,13 @@ namespace InternationalAddress
 {
     public static class Regions
     {
+        private static string[] regions = new[] { "HR", "SI", "BA", "RS" };
         /// <summary>
         /// The list of regions.
         /// </summary>
         public static readonly IList<RegionInfo> All
-            = CultureInfo
-                .GetCultures(CultureTypes.SpecificCultures)
-                .Select(culture => new RegionInfo(culture.LCID))
+            = regions
+                .Select(x => new RegionInfo(x))
                 .Where(region => region.TwoLetterISORegionName.Length == 2) // Filter out world and other 3-digit regions
                 .Distinct()
                 .ToList();

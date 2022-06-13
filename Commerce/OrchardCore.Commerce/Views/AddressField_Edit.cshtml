@@ -6,7 +6,7 @@
 }
 @if (!string.IsNullOrWhiteSpace(settings.Hint))
 {
-    <span class="hint">@settings.Hint</span>
+    <h5 class="text-primary mt-3">@settings.Hint</h5>
 }
 <div class="row">
     <div class="form-group col-md-12">
@@ -70,7 +70,7 @@
     </div>
     <div class="form-group col-md-6" asp-validation-class-for="Address.Region">
         <select asp-for="Address.Region"
-                asp-items="@Model.Regions.OrderBy(region => region.DisplayName).Select(region => new SelectListItem(
+                asp-items="@Model.Regions.Select(region => new SelectListItem(
                     region.DisplayName,
                     region.TwoLetterISORegionName))"
                 class="form-control content-preview-text" required="required"></select>

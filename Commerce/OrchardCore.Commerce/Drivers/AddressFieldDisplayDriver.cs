@@ -33,14 +33,12 @@ namespace OrchardCore.Commerce.Drivers
 
             return Edit(field, context);
         }
-
-        private string[] names = new [] { "HR", "SI", "RS","BA" };
         private Task BuildViewModel(AddressFieldViewModel model, AddressField field, BuildFieldEditorContext context)
         {
             model.Address = field.Address;
             model.AddressHtml
                 = new HtmlString(_addressFormatterProvider.Format(field.Address).Replace(System.Environment.NewLine, "<br/>"));
-            model.Regions = Regions.All.Where(x=>names.Contains(x.TwoLetterISORegionName)).ToList();
+            model.Regions = Regions.All;
             model.Provinces = Regions.Provinces;
             model.ContentItem = field.ContentItem;
             model.AddressPart = field;
