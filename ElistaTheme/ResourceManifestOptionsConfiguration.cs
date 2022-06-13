@@ -135,6 +135,23 @@ namespace ElistaTheme
                 .SetVersion("1.0.0");
 
             _manifest
+                .DefineScript("ElistaTheme-masonry")
+                .SetUrl("~/ElistaTheme/vendor/masonry-layout/masonry.pkgd.js")
+                .SetDependencies("ElistaTheme-Jquery")
+                .SetVersion("1.0.0");
+            _manifest
+                .DefineScript("ElistaTheme-imagesloaded")
+                .SetUrl("~/ElistaTheme/vendor/imagesloaded/imagesloaded.js")
+                .SetDependencies("ElistaTheme-Jquery")
+                .SetVersion("1.0.0");
+
+            _manifest
+                .DefineScript("ElistaTheme-masonry-init")
+                .SetDependencies("ElistaTheme-masonry", "ElistaTheme-imagesloaded")
+                .SetCdn("~/ElistaTheme/js/masonry-init.js")
+                .SetVersion("1.0.0");
+
+            _manifest
                 .DefineScript("ElistaTheme-Theme")
                 .SetDependencies("ElistaTheme-Jquery.zoom")
                 .SetCdn("~/ElistaTheme/js/theme.js")

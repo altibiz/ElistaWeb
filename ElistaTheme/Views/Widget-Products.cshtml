@@ -1,15 +1,20 @@
 @inject OrchardCore.ContentManagement.Display.IContentItemDisplayManager DisplayManager
 
+
 <div class="container" id="products">
-    <div class="row">
-        @{
-            var allProducts = await Orchard.ContentQueryAsync("Products");
+    <div class="masonry-wrapper mx-n3">
+        <div class="row">
+            @{
+                var allProducts = await Orchard.ContentQueryAsync("Products");
 
 
-            @foreach (var product in allProducts)
-            {
-                @await DisplayAsync(await DisplayManager.BuildDisplayAsync(product, null, "Summary"))
+                @foreach (var product in allProducts)
+                {
+                    @await DisplayAsync(await DisplayManager.BuildDisplayAsync(product, null, "Summary"))
+                }
             }
-        }
+        </div>
     </div>
 </div>
+
+<script asp-name="ElistaTheme-masonry-init" at="Foot" />
