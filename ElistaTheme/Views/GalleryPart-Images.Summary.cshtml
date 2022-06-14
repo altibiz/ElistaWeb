@@ -10,6 +10,6 @@
     var bgColor = Helpers.Pop();
 }
 <div class="product-swap-image">
-    <img class="img-fluid product-swap-image-front" style="background-color:@bgColor" src="@Orchard.AssetUrl(firstPic)" alt="product" />
-    <img class="img-fluid" style="background-color:@bgColor" src="@Orchard.AssetUrl(secondPick)" alt="product" />
+    <img class="img-fluid product-swap-image-front" style="background-color:@bgColor" asset-src="@firstPic" img-width="480" alt="product" />
+    <img class="img-fluid" style="background-color:@bgColor" asset-src="@secondPick" img-width="480" alt="product" />
 </div>
