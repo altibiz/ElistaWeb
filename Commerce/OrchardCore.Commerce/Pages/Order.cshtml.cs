@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Localization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -26,7 +27,7 @@ namespace OrchardCore.Commerce.Pages
 
         public OrderModel(IHtmlLocalizer<OrderModel> htmlLocalizer,
             IContentManager contentManager, INotifier notifier,
-            IUpdateModelAccessor uma, IContentItemDisplayManager contentItemDisplayManager, ISmtpService emailService,ISiteService siteService)
+            IUpdateModelAccessor uma, IContentItemDisplayManager contentItemDisplayManager, ISmtpService emailService, ISiteService siteService)
         {
             _notifier = notifier;
             H = htmlLocalizer;
@@ -90,13 +91,16 @@ namespace OrchardCore.Commerce.Pages
                     {
                         Subject = H["Thank you! Your order has been received"].Value,
                         To = part.Email?.Text,
-                        Body = string.Format(H["<p>Your order link is the following {0}</p><p>Thank you!<p><p>formAdria team</p>"].Value, Url)
+                        Body = string.Format(H["<p>Your order link is the following {0}</p><p>Thank you!<p><p>formAdria team</p>"].Value, Request.GetDisplayUrl()),
+                        IsBodyHtml = true
+
                     });
                     await _emailService.SendAsync(new MailMessage
                     {
                         Subject = H["New order!"].Value,
                         To = email,
-                        Body = string.Format(H["<p>Order link is the following {0}</p>"].Value, Url)
+                        Body = string.Format(H["<p>Order link is the following {0}</p>"].Value, Request.GetDisplayUrl()),
+                        IsBodyHtml = true
                     });
                 }
             }
