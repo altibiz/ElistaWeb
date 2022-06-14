@@ -22,7 +22,6 @@ namespace OrchardCore.Commerce.Pages
         private readonly ISiteService _siteService;
         private readonly IContentItemDisplayManager _contentItemDisplayManager;
         private readonly IUpdateModelAccessor _updateModelAccessor;
-        private readonly ISiteService site;
         public dynamic Shape { get; set; }
 
         public OrderModel(IHtmlLocalizer<OrderModel> htmlLocalizer,
@@ -76,7 +75,7 @@ namespace OrchardCore.Commerce.Pages
             var order = await _contentManager.GetAsync(contentItemId, VersionOptions.Latest);
             Shape = await _contentItemDisplayManager.UpdateEditorAsync(order, _updateModelAccessor.ModelUpdater, true);
             var part = order.As<Order>();
-            var contacts = (await site.GetSiteSettingsAsync()).As<ContentItem>("GeneralSettings");
+            var contacts = (await _siteService.GetSiteSettingsAsync()).As<ContentItem>("GeneralSettings");
             var email = GetText(contacts, "Email");
             if (ModelState.IsValid)
             {
