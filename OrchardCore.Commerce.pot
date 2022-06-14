@@ -48,10 +48,34 @@ msgctxt "OrchardCore.Commerce.Controllers.ShoppingCartController"
 msgid "Can't add product {0} because it doesn't have a price."
 msgstr ""
 
-#: OrchardCore.Commerce\Pages\Order.cshtml.cs:69
-#. await _notifier.SuccessAsync(H["Offer updated successful"]);
+#: OrchardCore.Commerce\Pages\Order.cshtml.cs:88
+#. await _notifier.SuccessAsync(H["Order updated successful"]);
 msgctxt "OrchardCore.Commerce.Pages.OrderModel"
-msgid "Offer updated successful"
+msgid "Order updated successful"
+msgstr ""
+
+#: OrchardCore.Commerce\Pages\Order.cshtml.cs:91
+#. Subject = H["Thank you! Your order has been received"].Value,
+msgctxt "OrchardCore.Commerce.Pages.OrderModel"
+msgid "Thank you! Your order has been received"
+msgstr ""
+
+#: OrchardCore.Commerce\Pages\Order.cshtml.cs:93
+#. Body = string.Format(H["<p>Your order link is the following {0}</p><p>Thank you!<p><p>formAdria team</p>"].Value, Url)
+msgctxt "OrchardCore.Commerce.Pages.OrderModel"
+msgid "<p>Your order link is the following {0}</p><p>Thank you!<p><p>formAdria team</p>"
+msgstr ""
+
+#: OrchardCore.Commerce\Pages\Order.cshtml.cs:97
+#. Subject = H["New order!"].Value,
+msgctxt "OrchardCore.Commerce.Pages.OrderModel"
+msgid "New order!"
+msgstr ""
+
+#: OrchardCore.Commerce\Pages\Order.cshtml.cs:99
+#. Body = string.Format(H["<p>Order link is the following {0}</p>"].Value, Url)
+msgctxt "OrchardCore.Commerce.Pages.OrderModel"
+msgid "<p>Order link is the following {0}</p>"
 msgstr ""
 
 #: OrchardCore.Commerce\Services\CreditCardPaymentProvider.cs:39
@@ -236,31 +260,31 @@ msgctxt "OrchardCore.Commerce.Views.CommerceSettings.Edit"
 msgid "The currently used currency for displaying prices to customers."
 msgstr ""
 
-#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:9
+#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:10
 #. <div class="intro-heading text-uppercase">@T["Your cart"]</div>
 msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Your cart"
 msgstr ""
 
-#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:19
+#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:21
 #. <div class="col-xs-12 col-sm-1">@T["Quantity"]</div>
 msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Quantity"
 msgstr ""
 
-#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:20
+#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:22
 #. <div class="col-xs-12 col-sm-9">@T["Product"]</div>
 msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Product"
 msgstr ""
 
-#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:21
+#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:23
 #. <div class="col-xs-12 col-sm-1">@T["Price"]</div>
 msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Price"
 msgstr ""
 
-#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:22
+#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:24
 #. <div class="col-xs-12 col-sm-1">@T["Action"]</div>
 msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Action"
@@ -290,7 +314,7 @@ msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Order"
 msgstr ""
 
-#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:91
+#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:90
 #. <p>@T["Your shopping cart is empty."]</p>
 msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Your shopping cart is empty."
@@ -440,7 +464,7 @@ msgid "{0}: {1}"
 msgstr ""
 
 #: OrchardCore.Commerce\Pages\Order.cshtml:17
-#. <button type="submit" class="btn btn-success publish mt-2">@T["Save Order"]</button>
+#. <button type="submit" class="btn btn-dark btn-lg mb-5">@T["Save Order"]</button>
 msgctxt "OrchardCore.Commerce.Pages.Order"
 msgid "Save Order"
 msgstr ""

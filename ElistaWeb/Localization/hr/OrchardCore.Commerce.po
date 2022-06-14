@@ -10,12 +10,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language-Team: Croatian\n"
 "Language: hr_HR\n"
-"PO-Revision-Date: 2022-06-13 22:50\n"
+"PO-Revision-Date: 2022-06-14 12:51\n"
 
-#. public override LocalizedString DisplayText => S["Product addded to cart"];
+#. public override LocalizedString DisplayText => S["Product added to cart"];
 #: OrchardCore.Commerce\Activities\ProductAddedToCartEvent.cs:21
 msgctxt "OrchardCore.Commerce.Activities.ProductAddedToCartEvent"
-msgid "Product addded to cart"
+msgid "Product added to cart"
 msgstr "Proizvod dodan u košaricu"
 
 #. public override LocalizedString Category => S["Commerce"];
@@ -62,11 +62,35 @@ msgctxt "OrchardCore.Commerce.Controllers.ShoppingCartController"
 msgid "Can't add product {0} because it doesn't have a price."
 msgstr "Nemoguće dodati proizvod {0} jer nema postavljenu cijenu u valuti."
 
-#. await _notifier.SuccessAsync(H["Offer updated successful"]);
-#: OrchardCore.Commerce\Pages\Order.cshtml.cs:69
+#. await _notifier.SuccessAsync(H["Order updated successful"]);
+#: OrchardCore.Commerce\Pages\Order.cshtml.cs:88
 msgctxt "OrchardCore.Commerce.Pages.OrderModel"
-msgid "Offer updated successful"
-msgstr "Ponuda ažurirana"
+msgid "Order updated successful"
+msgstr "Narudžba uspješno poslana i ažurirana"
+
+#. Subject = H["Thank you! Your order has been received"].Value,
+#: OrchardCore.Commerce\Pages\Order.cshtml.cs:91
+msgctxt "OrchardCore.Commerce.Pages.OrderModel"
+msgid "Thank you! Your order has been received"
+msgstr "Hvala vam! Vaša narudžba je zaprimljena"
+
+#. Body = string.Format(H["<p>Your order link is the following {0}</p><p>Thank you!<p><p>formAdria team</p>"].Value, Url)
+#: OrchardCore.Commerce\Pages\Order.cshtml.cs:93
+msgctxt "OrchardCore.Commerce.Pages.OrderModel"
+msgid "<p>Your order link is the following {0}</p><p>Thank you!<p><p>formAdria team</p>"
+msgstr "<p>Link za vašu narudžbu je sljedeći {0}</p><p>Hvala vam!<p><p>formAdria team</p>"
+
+#. Subject = H["New order!"].Value,
+#: OrchardCore.Commerce\Pages\Order.cshtml.cs:97
+msgctxt "OrchardCore.Commerce.Pages.OrderModel"
+msgid "New order!"
+msgstr "Nova narudžba!"
+
+#. Body = string.Format(H["<p>Order link is the following {0}</p>"].Value, Url)
+#: OrchardCore.Commerce\Pages\Order.cshtml.cs:99
+msgctxt "OrchardCore.Commerce.Pages.OrderModel"
+msgid "<p>Order link is the following {0}</p>"
+msgstr "<p>Link za narudžbu je sljedeći {0}</p>"
 
 #. ChargeText = S["Card **** **** **** {0} expiring {1}/{2}.", data[Last4], data[ExpirationMonth], data[ExpirationYear]].ToString(),
 #: OrchardCore.Commerce\Services\CreditCardPaymentProvider.cs:39
@@ -251,31 +275,31 @@ msgid "The currently used currency for displaying prices to customers."
 msgstr "Trenutno korištena valuta za prikaz cijena kupcima."
 
 #. <div class="intro-heading text-uppercase">@T["Your cart"]</div>
-#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:9
+#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:10
 msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Your cart"
 msgstr "Vaša košarica"
 
 #. <div class="col-xs-12 col-sm-1">@T["Quantity"]</div>
-#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:19
+#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:21
 msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Quantity"
 msgstr "Količina"
 
 #. <div class="col-xs-12 col-sm-9">@T["Product"]</div>
-#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:20
+#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:22
 msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Product"
 msgstr "Proizvod"
 
 #. <div class="col-xs-12 col-sm-1">@T["Price"]</div>
-#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:21
+#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:23
 msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Price"
 msgstr "Cijena"
 
 #. <div class="col-xs-12 col-sm-1">@T["Action"]</div>
-#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:22
+#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:24
 msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Action"
 msgstr "Akcije"
@@ -305,7 +329,7 @@ msgid "Order"
 msgstr "Naruči"
 
 #. <p>@T["Your shopping cart is empty."]</p>
-#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:91
+#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:90
 msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Your shopping cart is empty."
 msgstr "Vaša košarica je prazna."
@@ -453,7 +477,7 @@ msgctxt "OrchardCore.Commerce.Views.NumericProductAttributeValue"
 msgid "{0}: {1}"
 msgstr "{0}: {1}"
 
-#. <button type="submit" class="btn btn-success publish mt-2">@T["Save Order"]</button>
+#. <button type="submit" class="btn btn-dark btn-lg mb-5">@T["Save Order"]</button>
 #: OrchardCore.Commerce\Pages\Order.cshtml:17
 msgctxt "OrchardCore.Commerce.Pages.Order"
 msgid "Save Order"

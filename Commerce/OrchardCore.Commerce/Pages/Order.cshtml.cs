@@ -90,13 +90,13 @@ namespace OrchardCore.Commerce.Pages
                     {
                         Subject = H["Thank you! Your order has been received"].Value,
                         To = part.Email?.Text,
-                        BodyText = string.Format(H["Your order link is the following {0}"].Value, Url)
+                        Body = string.Format(H["<p>Your order link is the following {0}</p><p>Thank you!<p><p>formAdria team</p>"].Value, Url)
                     });
                     await _emailService.SendAsync(new MailMessage
                     {
                         Subject = H["New order!"].Value,
                         To = email,
-                        BodyText = string.Format(H["Order link is the following {0}"].Value, Url)
+                        Body = string.Format(H["<p>Order link is the following {0}</p>"].Value, Url)
                     });
                 }
             }

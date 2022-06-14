@@ -10,52 +10,52 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language-Team: Croatian\n"
 "Language: hr_HR\n"
-"PO-Revision-Date: 2022-06-09 21:10\n"
+"PO-Revision-Date: 2022-06-14 12:51\n"
 
 #. <span class="d-none d-sm-inline">@T["Add to cart"]</span>
-#: ElistaTheme\Views\Content-Product.Summary.cshtml:22
+#: ElistaTheme\Views\Content-Product.Summary.cshtml:31
 msgctxt "ElistaTheme.Views.Content-Product.Summary"
 msgid "Add to cart"
 msgstr "Dodaj u košaricu"
 
 #. <h6 class="text-sm mb-1">@T["Exclusive Jesmonite distributor for Adria region"]</h6>
-#: ElistaTheme\Views\Shared\Footer.cshtml:36
+#: ElistaTheme\Views\Shared\Footer.cshtml:23
 msgctxt "ElistaTheme.Views.Shared.Footer"
 msgid "Exclusive Jesmonite distributor for Adria region"
 msgstr "Ekskluzivni Jesmonite zastupnik za Adria regiju"
 
 #. <p class="text-muted fw-light text-sm mb-0">@T["Shipping to BiH, Croatia, Slovenia and Serbia"]</p>
-#: ElistaTheme\Views\Shared\Footer.cshtml:37
+#: ElistaTheme\Views\Shared\Footer.cshtml:24
 msgctxt "ElistaTheme.Views.Shared.Footer"
 msgid "Shipping to BiH, Croatia, Slovenia and Serbia"
 msgstr "Isporuka u BiH, Hrvatsku, Sloveniju i Srbiju"
 
 #. <h6 class="text-sm mb-1">@T["No product in our stock?"]</h6>
-#: ElistaTheme\Views\Shared\Footer.cshtml:42
+#: ElistaTheme\Views\Shared\Footer.cshtml:29
 msgctxt "ElistaTheme.Views.Shared.Footer"
 msgid "No product in our stock?"
 msgstr "Nemamo artikl u ponudi?"
 
 #. <p class="text-muted fw-light text-sm mb-0">@T["Contact us to order your desired Jesmonite product"]</p>
-#: ElistaTheme\Views\Shared\Footer.cshtml:43
+#: ElistaTheme\Views\Shared\Footer.cshtml:30
 msgctxt "ElistaTheme.Views.Shared.Footer"
 msgid "Contact us to order your desired Jesmonite product"
 msgstr "Kontaktirajte nas za vaš željeni Jesmonite proizvod"
 
 #. <p class="text-muted fw-light text-sm mb-0">@T["Every day 0 - 24 h"]</p>
-#: ElistaTheme\Views\Shared\Footer.cshtml:49
+#: ElistaTheme\Views\Shared\Footer.cshtml:36
 msgctxt "ElistaTheme.Views.Shared.Footer"
 msgid "Every day 0 - 24 h"
 msgstr "Svaki dan 0 - 24 h"
 
 #. <p class="text-muted fw-light text-sm mb-0">@T["Workdays 9 - 17 h"]</p>
-#: ElistaTheme\Views\Shared\Footer.cshtml:55
+#: ElistaTheme\Views\Shared\Footer.cshtml:42
 msgctxt "ElistaTheme.Views.Shared.Footer"
 msgid "Workdays 9 - 17 h"
 msgstr "Radnim danom 9 - 17 h"
 
 #. <p class="mb-lg-0">@T["Copyright KERM Promet d.o.o."]</p>
-#: ElistaTheme\Views\Shared\Footer.cshtml:125
+#: ElistaTheme\Views\Shared\Footer.cshtml:112
 msgctxt "ElistaTheme.Views.Shared.Footer"
 msgid "Copyright KERM Promet d.o.o."
 msgstr "KERM Promet d.o.o. Sva prava zadržana."
