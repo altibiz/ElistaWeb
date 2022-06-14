@@ -19,7 +19,7 @@
                   </div>
                   <div class="col-sm-6 text-center">
 
-                        <img class="img-fluid home-slider-image" src="{{ slide.Slide.Image.Paths.first | asset_url }}" alt="{{ slide.Slide.ImageAltText.Text }}">
+                        <img class="img-fluid home-slider-image" src="{{ slide.Slide.Image.Paths.first | asset_url | resize_url: width:1024 }}" alt="{{ slide.Slide.ImageAltText.Text }}" />
 
                     <svg class="svg-blob d-none d-md-inline-block svg-blob-fill-current svg-blob-swiper" style="color: #e7eaf9">
                       <use xlink:href="#blob-shape-3"> </use>
