@@ -22,6 +22,8 @@
     <PackageReference Include="OrchardCore.ContentFields" Version="1.3.0" />
     <PackageReference Include="OrchardCore.ContentManagement" Version="1.3.0" />
     <PackageReference Include="OrchardCore.ContentTypes.Abstractions" Version="1.3.0" />
+    <PackageReference Include="OrchardCore.Email.Abstractions" Version="1.3.0" />
+    <PackageReference Include="OrchardCore.Infrastructure.Abstractions" Version="1.3.0" />
     <PackageReference Include="OrchardCore.Module.Targets" Version="1.3.0" />
     <PackageReference Include="OrchardCore.Navigation.Core" Version="1.3.0" />
     <PackageReference Include="OrchardCore.Title" Version="1.3.0" />

@@ -1,6 +1,7 @@
 @model ShoppingCartViewModel
 @using OrchardCore.Commerce.Abstractions
 @using Money
+
 <zone name="Header">
     <header class="masthead">
         <div class="container">
@@ -12,18 +13,17 @@
     </header>
 </zone>
 <section id="shopping-cart">
-    @if (Model.Lines != null && Model.Lines.Any())
-    {
-        <div class="container">
+    <div class="container">
+        @if (Model.Lines != null && Model.Lines.Any())
+        {
+            int line = 0;
             <div class="d-none d-sm-flex row border-bottom mt-3 pb-2 font-weight-bold">
                 <div class="col-xs-12 col-sm-1">@T["Quantity"]</div>
                 <div class="col-xs-12 col-sm-9">@T["Product"]</div>
                 <div class="col-xs-12 col-sm-1">@T["Price"]</div>
                 <div class="col-xs-12 col-sm-1">@T["Action"]</div>
             </div>
-            @{
-                int line = 0;
-            }
+
             @foreach (ShoppingCartLineViewModel item in Model.Lines)
             {
                 <div class="row border-bottom mt-3 pb-2">
@@ -84,10 +84,10 @@
 
                 </div>
             </div>
-        </div>
-    }
-    else
-    {
-        <p>@T["Your shopping cart is empty."]</p>
-    }
+        }
+        else
+        {
+            <p>@T["Your shopping cart is empty."]</p>
+        }
+    </div>
 </section>

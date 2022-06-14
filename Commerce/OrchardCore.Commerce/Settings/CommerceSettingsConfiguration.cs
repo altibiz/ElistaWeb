@@ -1,4 +1,3 @@
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OrchardCore.Entities;
 using OrchardCore.Settings;
@@ -8,14 +7,11 @@ namespace OrchardCore.Commerce.Settings
     public class CommerceSettingsConfiguration : IConfigureOptions<CommerceSettings>
     {
         private readonly ISiteService _site;
-        private readonly ILogger<CommerceSettingsConfiguration> _logger;
 
         public CommerceSettingsConfiguration(
-            ISiteService site,
-            ILogger<CommerceSettingsConfiguration> logger)
+            ISiteService site)
         {
             _site = site;
-            _logger = logger;
         }
 
         public void Configure(CommerceSettings options)

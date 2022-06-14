@@ -1,40 +1,10 @@
 @using Microsoft.AspNetCore.Identity
 @using OrchardCore.Entities
 @using OrchardCore.Settings
-@using OrchardCore.Users
-@using OrchardCore.Users.Models
-@using OrchardCore.Commerce.Abstractions
-@inject IShoppingCartPersistence cart
-@inject ISiteService SiteService
-@inject SignInManager<IUser> SignInManager
-
-@{
-    var allowChangeEmail = (await SiteService.GetSiteSettingsAsync()).As<ChangeEmailSettings>().AllowChangeEmail;
-    var externalAuthenticationSchemes = await SignInManager.GetExternalAuthenticationSchemesAsync();
-}
-
-@{
-    TagBuilder tag = Tag(Model, "ul");
-    tag.AddCssClass("navbar-nav mt-3 mt-lg-0");
-
-    foreach (var item in Model.Items)
-    {
-
-        tag.InnerHtml.AppendHtml("<li class='nav-item dropdown'>");
-        tag.InnerHtml.AppendHtml(await DisplayAsync(item));
-        tag.InnerHtml.AppendHtml("<li/>");
-
-    }
-}
-
-@{
-    var some = await cart.Retrieve();
-}
-
 <nav class="navbar navbar-expand-lg bg-transparent border-0 shadow-0 navbar-light px-lg-5 z-index-20 ">
     <a class="navbar-brand" href="/"><img width="160" src="~/ElistaTheme/img/jesmonite-logo.png" /> by formAdria</a>
     <ul class="list-inline mb-0 d-block d-lg-none">
-        <partial name="UserMenu" />
+        <partial name="NavBarButtons" />
     </ul>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
         <svg class="svg-icon navbar-icon">
@@ -42,7 +12,7 @@
         </svg>
     </button>
     <div class="collapse navbar-collapse" id="navbarContent">
-        @tag
+        <menu alias="alias:main-menu" cache-id="main-menu" cache-fixed-duration="00:05:00" cache-tag="alias:main-menu" />
         <form class="d-lg-flex ms-auto me-lg-5 me-xl-6 my-4 my-lg-0" action="#">
             <div class="d-none input-group input-group-underlined">
                 <input class="form-control form-control-underlined ps-3" type="text" placeholder="Search" aria-label="Search" aria-describedby="button-search">
@@ -54,7 +24,7 @@
             </div>
         </form>
         <ul class="list-inline mb-0 d-none d-lg-block">
-            <partial name="UserMenu" />
+            <partial name="NavBarButtons" />
         </ul>
     </div>
 </nav>

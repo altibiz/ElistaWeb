@@ -1,12 +1,12 @@
 ﻿@page "{contentItemId}"
 @model OrchardCore.Commerce.Pages.OrderModel
 
-@await RenderSectionAsync("Messages", required: false)
 @{
     Model.Shape.Parts.Remove("TitlePart");
 }
 <section>
     <div class="container pt-5">
+        @await RenderSectionAsync("Messages", required: false)
         <form method="post" enctype="multipart/form-data">
             <div asp-validation-summary="All" class="text-danger"></div>
 

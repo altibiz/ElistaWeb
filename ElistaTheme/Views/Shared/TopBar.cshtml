@@ -1,26 +1,13 @@
+@using ElistaTheme
 @using OrchardCore.ContentManagement
 @using OrchardCore.Entities
 @using OrchardCore.Settings
 @inject ISiteService site
 
 @{
-    string GetText(ContentItem contentItem,string field)
-    {
-        if (contentItem.ContentType == null) return null;
-        var part = contentItem.Content[contentItem.ContentType];
-        if (part != null)
-        {
-            var fieldElement = part[field];
-            if (fieldElement != null)
-            {
-                return fieldElement.Text;
-            }
-        }
-        return null;
-    }
     var contacts = (await site.GetSiteSettingsAsync()).As<ContentItem>("GeneralSettings");
-    var phone=GetText(contacts,"Phone");
-    var email = GetText(contacts,"Email");
+    var phone=contacts.GetText("Phone");
+    var email = contacts.GetText("Email");
 }
 
 <div class="top-bar text-sm">

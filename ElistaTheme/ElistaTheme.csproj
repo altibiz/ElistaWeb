@@ -34,10 +34,4 @@
     <ProjectReference Include="..\Carousel.OrchardCore\Carousel.OrchardCore.csproj" />
     <ProjectReference Include="..\Commerce\OrchardCore.Commerce\OrchardCore.Commerce.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Localization\*">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
 </Project>
