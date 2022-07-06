@@ -1,0 +1,48 @@
+{
+  "name": "",
+  "displayName": "",
+  "description": "",
+  "author": "",
+  "website": "",
+  "version": "",
+  "issetuprecipe": false,
+  "categories": [],
+  "tags": [],
+  "steps": [
+    {
+      "name": "content",
+      "data": [
+        {
+          "ContentItemId": "4jv2vjnd353k94wdw3y3c6w3m0",
+          "ContentItemVersionId": "4bzcqnef0ybper3qv7jfmqnxc8",
+          "ContentType": "Taxonomy",
+          "DisplayText": "Order Status",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2022-07-06T11:43:52.8007664Z",
+          "PublishedUtc": "2022-07-06T11:43:52.8799525Z",
+          "CreatedUtc": "2022-07-06T11:43:52.8007664Z",
+          "Owner": "454bh7bszkrq7wqpk326497yxq",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Order Status"
+          },
+          "AliasPart": {
+            "Alias": "order-status"
+          },
+          "AutoroutePart": {
+            "Path": "order-status",
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": true,
+            "Absolute": false
+          },
+          "TaxonomyPart": {
+            "TermContentType": "Tag",
+            "Terms": []
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -5,6 +5,9 @@ using OrchardCore.Commerce.Fields;
 using OrchardCore.Commerce.Settings;
 using OrchardCore.ContentFields.Settings;
 using OrchardCore.Title.Models;
+using OrchardCore.Taxonomies.Settings;
+using OrchardCore.Recipes.Services;
+using System.Threading.Tasks;
 
 namespace OrchardCore.Commerce.Migrations
 {
@@ -14,10 +17,12 @@ namespace OrchardCore.Commerce.Migrations
     public class OrderMigrations : DataMigration
     {
         IContentDefinitionManager _contentDefinitionManager;
+        private IRecipeMigrator _recipeMigrator;
 
-        public OrderMigrations(IContentDefinitionManager contentDefinitionManager)
+        public OrderMigrations(IContentDefinitionManager contentDefinitionManager, IRecipeMigrator recipeMigrator)
         {
             _contentDefinitionManager = contentDefinitionManager;
+            _recipeMigrator = recipeMigrator;
         }
 
         public int Create()
@@ -95,8 +100,31 @@ namespace OrchardCore.Commerce.Migrations
                     .WithPosition("2")
                 )
             );
-
             return 1;
+        }
+
+        public async Task<int> UpdateFrom1()
+        {
+            _contentDefinitionManager.AlterPartDefinition("Order", part => part
+                    .WithField("Status", field => field
+                            .OfType("TaxonomyField")
+                            .WithDisplayName("Status")
+                            .WithEditor("Tags")
+                            .WithDisplayMode("Tags")
+                            .WithPosition("1")
+                            .WithSettings(new TaxonomyFieldSettings
+                            {
+                                TaxonomyContentItemId = "4jv2vjnd353k94wdw3y3c6w3m0",
+                                Unique = true,
+                            })
+                            .WithSettings(new TaxonomyFieldTagsEditorSettings
+                            {
+                                Open = false,
+                            })
+                        )
+                    );
+            await _recipeMigrator.ExecuteAsync("order-status.recipe.json", this);
+            return 2;
         }
 
     }
