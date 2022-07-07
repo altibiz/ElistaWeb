@@ -19,5 +19,11 @@
       "displayType": "SummaryAdmin",
       "place": "-"
     }
+  ],
+  "TaxonomyField_Edit__Tags": [
+    {
+      "differentiator": "Order-Status",
+      "place": "-"
+    }
   ]
 }

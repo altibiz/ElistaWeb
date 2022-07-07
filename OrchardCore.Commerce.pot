@@ -48,32 +48,32 @@ msgctxt "OrchardCore.Commerce.Controllers.ShoppingCartController"
 msgid "Can't add product {0} because it doesn't have a price."
 msgstr ""
 
-#: OrchardCore.Commerce\Pages\Order.cshtml.cs:88
+#: OrchardCore.Commerce\Pages\Order.cshtml.cs:89
 #. await _notifier.SuccessAsync(H["Order updated successful"]);
 msgctxt "OrchardCore.Commerce.Pages.OrderModel"
 msgid "Order updated successful"
 msgstr ""
 
-#: OrchardCore.Commerce\Pages\Order.cshtml.cs:91
+#: OrchardCore.Commerce\Pages\Order.cshtml.cs:92
 #. Subject = H["Thank you! Your order has been received"].Value,
 msgctxt "OrchardCore.Commerce.Pages.OrderModel"
 msgid "Thank you! Your order has been received"
 msgstr ""
 
-#: OrchardCore.Commerce\Pages\Order.cshtml.cs:93
-#. Body = string.Format(H["<p>Your order link is the following {0}</p><p>Thank you!<p><p>formAdria team</p>"].Value, Url)
+#: OrchardCore.Commerce\Pages\Order.cshtml.cs:94
+#. Body = string.Format(H["<p>Your order link is the following {0}</p><p>Thank you!<p><p>formAdria team</p>"].Value, Request.GetDisplayUrl()),
 msgctxt "OrchardCore.Commerce.Pages.OrderModel"
 msgid "<p>Your order link is the following {0}</p><p>Thank you!<p><p>formAdria team</p>"
 msgstr ""
 
-#: OrchardCore.Commerce\Pages\Order.cshtml.cs:97
+#: OrchardCore.Commerce\Pages\Order.cshtml.cs:100
 #. Subject = H["New order!"].Value,
 msgctxt "OrchardCore.Commerce.Pages.OrderModel"
 msgid "New order!"
 msgstr ""
 
-#: OrchardCore.Commerce\Pages\Order.cshtml.cs:99
-#. Body = string.Format(H["<p>Order link is the following {0}</p>"].Value, Url)
+#: OrchardCore.Commerce\Pages\Order.cshtml.cs:102
+#. Body = string.Format(H["<p>Order link is the following {0}</p>"].Value, Request.GetDisplayUrl()),
 msgctxt "OrchardCore.Commerce.Pages.OrderModel"
 msgid "<p>Order link is the following {0}</p>"
 msgstr ""
@@ -296,25 +296,31 @@ msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Remove"
 msgstr ""
 
-#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:71
-#. <div class="col-xs-12 col-sm-10 font-weight-bold">@T["Total"]</div>
+#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:73
+#. <div>@T["Total"]</div>
 msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Total"
 msgstr ""
 
-#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:80
+#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:82
 #. <button asp-action="Update" asp-controller="ShoppingCart" asp-area="OrchardCore.Commerce" type="submit" class="btn btn-primary">@T["Update"]</button>
 msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Update"
 msgstr ""
 
-#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:82
-#. <button asp-action="Order" asp-controller="ShoppingCart" asp-area="OrchardCore.Commerce" type="submit" class="btn btn-primary">@T["Order"]</button>
+#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:88
+#. <label for="Order_Email_Text">@T["Your Contact Email"]</label>
+msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
+msgid "Your Contact Email"
+msgstr ""
+
+#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:101
+#. <button asp-action="Order" asp-controller="ShoppingCart" asp-area="OrchardCore.Commerce" type="submit" class="btn btn-dark btn-lg mb-5">@T["Order"]</button>
 msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Order"
 msgstr ""
 
-#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:90
+#: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:110
 #. <p>@T["Your shopping cart is empty."]</p>
 msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Your shopping cart is empty."

@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language-Team: Croatian\n"
 "Language: hr_HR\n"
-"PO-Revision-Date: 2022-06-14 12:51\n"
+"PO-Revision-Date: 2022-07-07 19:14\n"
 
 #. <span class="d-none d-sm-inline">@T["Add to cart"]</span>
 #: ElistaTheme\Views\Content-Product.Summary.cshtml:31

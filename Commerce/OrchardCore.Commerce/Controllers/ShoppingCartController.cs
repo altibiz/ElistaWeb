@@ -145,6 +145,7 @@ namespace OrchardCore.Commerce.Controllers
             order.Alter<Order>(x =>
             {
                 x.OrderId = new TextField { Text = DateTime.Now.ToString() };
+                x.Email = new TextField { Text = cart.Email };
             });
             var items = await _priceService.AddPrices(parsedCart.Items);
             order.Alter<OrderPart>(x =>
