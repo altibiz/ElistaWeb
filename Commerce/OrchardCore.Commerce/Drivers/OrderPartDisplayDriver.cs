@@ -27,12 +27,12 @@ namespace OrchardCore.Commerce.Drivers
 
         public override IDisplayResult Display(OrderPart orderPart, BuildPartDisplayContext context)
             // TODO: add permissions
-            => Initialize<OrderPartViewModel>(GetDisplayShapeType(context), m => BuildViewModel(m, orderPart))
+            => Initialize<OrderPartViewModel>(GetDisplayShapeType(context), async m => await BuildViewModel(m, orderPart))
                 .Location("Detail", "Content:25")
                 .Location("Summary", "Meta:10");
 
         public override IDisplayResult Edit(OrderPart orderPart, BuildPartEditorContext context)
-            => Initialize<OrderPartViewModel>(GetEditorShapeType(context), m => BuildViewModel(m, orderPart));
+            => Initialize<OrderPartViewModel>(GetEditorShapeType(context), async m => await BuildViewModel(m, orderPart));
 
         public override async Task<IDisplayResult> UpdateAsync(OrderPart orderPart, IUpdateModel updater, UpdatePartEditorContext context)
         {
