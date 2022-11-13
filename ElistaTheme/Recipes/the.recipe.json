@@ -1,7 +1,7 @@
 {
   "name": "formAdria",
   "displayName": "formAdria Web Theme",
-  "description": "Provides a functional Blog with CMS features.",
+  "description": "formAdria Web theme",
   "author": "The Orchard Core Team",
   "website": "https://orchardcore.net",
   "version": "1.0.0-rc2",
@@ -12,7 +12,6 @@
   // The variables are evaluated the first time they are accessed, and reused across steps
   "variables": {
     "adminUrlPrefix": "[js: configuration('OrchardCore_Admin:AdminUrlPrefix', 'Admin')]",
-    "blogContentItemId": "[js:uuid()]",
     "menuContentItemId": "[js:uuid()]",
     "tagsContentItemId": "[js:uuid()]",
     "tagContentItemId": "[js:uuid()]",
@@ -635,44 +634,6 @@
           "Name": "Admin menus",
           "Enabled": true,
           "MenuItems": [
-            {
-              "$type": "OrchardCore.AdminMenu.AdminNodes.LinkAdminNode, OrchardCore.AdminMenu",
-              "LinkText": "Blog",
-              "LinkUrl": "[js: variables('adminUrlPrefix') + '/Contents/ContentItems/' +  variables('blogContentItemId') + '/Display']",
-              "IconClass": "fas fa-rss",
-              "PermissionNames": [],
-              "UniqueId": "7b293d57056a4eebb3713f07f12c65d8",
-              "Enabled": true,
-              "Text": null,
-              "Id": null,
-              "Href": null,
-              "Url": null,
-              "Position": null,
-              "LinkToFirstChild": true,
-              "LocalNav": false,
-              "Culture": null,
-              "Items": [],
-              "Classes": []
-            },
-            {
-              "$type": "OrchardCore.AdminMenu.AdminNodes.LinkAdminNode, OrchardCore.AdminMenu",
-              "LinkText": "Main Menu",
-              "LinkUrl": "[js: variables('adminUrlPrefix') + '/Contents/ContentItems/' +  variables('menuContentItemId') + '/Edit']",
-              "IconClass": "fas fa-sitemap",
-              "PermissionNames": [],
-              "UniqueId": "5118cecfde834dacb26ac08980f1b5a7",
-              "Enabled": true,
-              "Text": null,
-              "Id": null,
-              "Href": null,
-              "Url": null,
-              "Position": null,
-              "LinkToFirstChild": true,
-              "LocalNav": false,
-              "Culture": null,
-              "Items": [],
-              "Classes": []
-            },
             {
               "$type": "OrchardCore.AdminMenu.AdminNodes.PlaceholderAdminNode, OrchardCore.AdminMenu",
               "LinkText": "Content",
