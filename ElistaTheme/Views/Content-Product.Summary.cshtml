@@ -9,11 +9,6 @@
     var pricep = ci.As<PricePart>();
     var price = pricep.Price.Value.ToString("n2");
     var curr = pricep.Price.Currency.ToString();
-    if (CultureInfo.CurrentCulture.Name == "hr")
-    {
-        price = (pricep.Price.Value * 7.5m).ToString("n2");
-        curr = "kn";
-    }
 }
 <!-- product-->
 <div class="item col-xl-3 col-lg-4 col-6">
