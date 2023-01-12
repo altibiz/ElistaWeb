@@ -24,10 +24,10 @@ msgctxt "ElistaTheme.Views.Shared.Footer"
 msgid "Exclusive Jesmonite distributor for Adria region"
 msgstr "Ekskluzivni Jesmonite zastupnik za Adria regiju"
 
-#. <p class="text-muted fw-light text-sm mb-0">@T["Shipping to BiH, Croatia, Slovenia and Serbia"]</p>
+#. <p class="text-muted fw-light text-sm mb-0">@T["Shipping to all of Adria region"]</p>
 #: ElistaTheme\Views\Shared\Footer.cshtml:24
 msgctxt "ElistaTheme.Views.Shared.Footer"
-msgid "Shipping to BiH, Croatia, Slovenia and Serbia"
+msgid "Shipping to all of Adria region"
 msgstr "Isporuka u BiH, Hrvatsku, Sloveniju i Srbiju"
 
 #. <h6 class="text-sm mb-1">@T["No product in our stock?"]</h6>
