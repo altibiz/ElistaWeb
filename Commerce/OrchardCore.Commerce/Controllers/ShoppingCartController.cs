@@ -142,9 +142,10 @@ namespace OrchardCore.Commerce.Controllers
             ShoppingCart parsedCart = await _shoppingCartHelpers.ParseCart(cart);
             await _shoppingCartPersistence.Store(parsedCart, shoppingCartId);
             var order = await _contentManager.NewAsync("Order");
+            var date= DateTime.Now;
             order.Alter<Order>(x =>
             {
-                x.OrderId = new TextField { Text = DateTime.Now.ToString() };
+                x.OrderId = new TextField { Text = $"{date:yy}-{date:ddMM}-{date.TimeOfDay.TotalSeconds}" };
                 x.Email = new TextField { Text = cart.Email };
             });
             var items = await _priceService.AddPrices(parsedCart.Items);
