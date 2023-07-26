@@ -7,7 +7,7 @@ namespace InternationalAddress
 {
     public static class Regions
     {
-        private static string[] regions = new[] { "HR", "SI", "RS", "AT", "IT", "ME", "MK" };
+        private static string[] regions = new[] { "HR", "SI", "RS", "AT", "IT", "ME", "MK", "BA" };
         /// <summary>
         /// The list of regions.
         /// </summary>
