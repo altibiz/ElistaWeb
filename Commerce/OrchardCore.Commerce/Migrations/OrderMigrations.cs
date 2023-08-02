@@ -124,7 +124,28 @@ namespace OrchardCore.Commerce.Migrations
                         )
                     );
             await _recipeMigrator.ExecuteAsync("order-status.recipe.json", this);
-            return 2;
+            return 4; //skip next 2 since it's just add and delete
+        }
+
+        public async Task<int> UpdateFrom2()
+        {
+            _contentDefinitionManager.AlterPartDefinition("Order", part => part
+                .WithField("NoShipping", field => field
+                    .OfType("BooleanField")
+                    .WithDisplayName("No Shipping")
+                    .WithEditor("Switch")
+                    .WithPosition("6")
+                )
+
+            );
+            return 3;
+        }
+
+        public async Task<int> UpdateFrom3()
+        {
+            _contentDefinitionManager.AlterPartDefinition("Order", part => part
+                .RemoveField("NoShipping"));
+            return 4;
         }
 
     }

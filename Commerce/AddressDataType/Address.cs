@@ -5,6 +5,7 @@ namespace InternationalAddress
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
     public class Address
     {
+        public bool Disabled { get; set; }
         public string Name { get; set; }
 
         public string Department { get; set; }

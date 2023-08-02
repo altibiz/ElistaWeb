@@ -7,3 +7,24 @@
         <span class="hint">@T["The hint text to display for this attribute in the product page."]</span>
     </div>
 </div>
+<div class="form-group">
+    <div class="custom-control custom-checkbox">
+        <input asp-for="CanBeDisabled" type="checkbox" class="custom-control-input">
+        <label class="custom-control-label" asp-for="CanBeDisabled">@T["Can be disabled"]</label>
+        <span class="hint">@T["Wheter address can be disabled."]</span>
+    </div>
+</div>
+<div class="form-group">
+    <div class="row col-md">
+        <label asp-for="DisableLabel">@T["Disable checkbox label"]</label>
+        <input class="form-control" asp-for="DisableLabel" />
+    </div>
+</div>
+<div class="form-group">
+    <div class="row col-md">
+        <label asp-for="DisabledText">@T["Text when disabled"]</label>
+        <textarea asp-for="DisabledText" rows="2" class="form-control"></textarea>
+        <span class="hint">@T["Text to display when address is disabled"]</span>
+    </div>
+</div>
+
