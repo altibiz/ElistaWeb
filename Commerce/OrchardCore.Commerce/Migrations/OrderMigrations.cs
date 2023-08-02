@@ -127,7 +127,7 @@ namespace OrchardCore.Commerce.Migrations
             return 4; //skip next 2 since it's just add and delete
         }
 
-        public async Task<int> UpdateFrom2()
+        public int UpdateFrom2()
         {
             _contentDefinitionManager.AlterPartDefinition("Order", part => part
                 .WithField("NoShipping", field => field
@@ -141,7 +141,7 @@ namespace OrchardCore.Commerce.Migrations
             return 3;
         }
 
-        public async Task<int> UpdateFrom3()
+        public int UpdateFrom3()
         {
             _contentDefinitionManager.AlterPartDefinition("Order", part => part
                 .RemoveField("NoShipping"));
