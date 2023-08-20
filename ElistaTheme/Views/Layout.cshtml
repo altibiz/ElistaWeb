@@ -36,7 +36,12 @@
     <resources type="HeadScript" />
     @await RenderSectionAsync("HeadMeta", required: false)
 </head>
-
+@{
+    if (!ThemeLayout.Attributes.TryGetValue("mainClass", out var disableContainer))
+    {
+        disableContainer = "container";
+    }
+}
 <body>
     <partial name="Svgs" />
     <!-- Header START -->
@@ -54,7 +59,9 @@
     <!-- **************** MAIN CONTENT START **************** -->
     <main>
         @await RenderSectionAsync("Messages", required: false)
-        @await RenderBodyAsync()
+        <div class="@disableContainer">
+            @await RenderBodyAsync()
+        </div>
     </main>
     <!-- **************** MAIN CONTENT END **************** -->
     <!-- Back to top -->
