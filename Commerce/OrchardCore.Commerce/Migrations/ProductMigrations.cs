@@ -5,6 +5,7 @@ using OrchardCore.Commerce.Indexes;
 using YesSql.Sql;
 using OrchardCore.Recipes.Services;
 using System.Threading.Tasks;
+using OrchardCore.Lists.Models;
 
 namespace OrchardCore.Commerce.Migrations
 {
@@ -39,7 +40,42 @@ namespace OrchardCore.Commerce.Migrations
             );
 
             await _rm.ExecuteAsync("Product.recipe.json", this);
-            return 1;
+            return 2;
+        }
+
+        public int UpdateFrom1()
+        {
+            return 2;
+        }
+
+        public async Task<int> UpdateFrom2()
+        {
+            _contentDefinitionManager.AlterTypeDefinition("ProductList", type => type
+                .DisplayedAs("Product List")
+                .Creatable()
+                .Listable()
+                .Securable()
+                .WithPart("ProductList", part => part
+                    .WithPosition("1")
+                )
+                .WithPart("AutoroutePart", part => part
+                    .WithPosition("2")
+                )
+                .WithPart("ListPart", part => part
+                    .WithPosition("3")
+                    .WithSettings(new ListPartSettings
+                    {
+                        PageSize = 30,
+                        ContainedContentTypes = new[] { "Product" },
+                    })
+                )
+                .WithPart("TitlePart", part => part
+                    .WithPosition("0")
+                )
+            );
+            await _rm.ExecuteAsync("productList.recipe.json", this);
+
+            return 3;
         }
     }
 }

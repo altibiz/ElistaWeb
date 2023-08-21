@@ -13,16 +13,18 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarContent">
         <menu alias="alias:main-menu" cache-id="main-menu" cache-fixed-duration="00:05:00" cache-tag="alias:main-menu" />
-        <form class="d-lg-flex ms-auto me-lg-5 me-xl-6 my-4 my-lg-0" action="#">
-            <div class="d-none input-group input-group-underlined">
-                <input class="form-control form-control-underlined ps-3" type="text" placeholder="Search" aria-label="Search" aria-describedby="button-search">
-                <button class="btn btn-underlined" id="button-search" type="button">
+        <form class="d-lg-flex ms-auto me-lg-5 me-xl-6 my-4 my-lg-0" method="get" action="/Search">
+            <div class="input-group input-group-underlined">
+                <input name="Terms" class="form-control form-control-underlined ps-3" type="text" placeholder="Search" aria-label="Search" aria-describedby="button-search">
+                <button class="btn btn-underlined" id="button-search">
                     <svg class="svg-icon navbar-icon">
                         <use xlink:href="#search-1"> </use>
                     </svg>
                 </button>
             </div>
         </form>
+
+
         <ul class="list-inline mb-0 d-none d-lg-block">
             <partial name="NavBarButtons" />
         </ul>

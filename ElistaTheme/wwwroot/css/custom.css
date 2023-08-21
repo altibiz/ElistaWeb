@@ -2,3 +2,10 @@
 .nav.navbar-nav.menu-main-menu.menu {
     margin-left: auto;
 }
+
+ul.term.term-tags {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

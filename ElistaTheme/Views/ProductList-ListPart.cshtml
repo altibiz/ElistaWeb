@@ -1,0 +1,26 @@
+@model OrchardCore.Lists.ViewModels.ListPartViewModel
+
+@inject OrchardCore.ContentManagement.Display.IContentItemDisplayManager ContentItemDisplayManager
+
+<shape type="Term" alias="alias:tags"  />
+@if (Model.ContentItems.Any())
+{
+    <div class="masonry-wrapper mx-n3">
+        <div class="row">
+            @{
+
+
+                @foreach (var contentItem in Model.ContentItems)
+                {
+                    @await DisplayAsync(await ContentItemDisplayManager.BuildDisplayAsync(contentItem, null, "Summary"))
+                }
+            }
+        </div>
+    </div>
+}
+else
+{
+    <p class="alert alert-warning">@T["The list is empty"]</p>
+}
+@await DisplayAsync(Model.Pager)
+<script asp-name="ElistaTheme-masonry-init" at="Foot" />

@@ -1,0 +1,45 @@
+{
+  "name": "",
+  "displayName": "",
+  "description": "",
+  "author": "",
+  "website": "",
+  "version": "",
+  "issetuprecipe": false,
+  "categories": [],
+  "tags": [],
+  "steps": [
+    {
+      "name": "content",
+      "data": [
+        {
+          "ContentItemId": "4q26ztbkdgggf75x4dc3g6p5cr",
+          "ContentType": "ProductList",
+          "DisplayText": "Product List",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2023-08-19T22:56:59.7975005Z",
+          "PublishedUtc": "2023-08-19T22:56:59.8048724Z",
+          "CreatedUtc": "2023-08-19T22:51:34.9827015Z",
+          "Owner": "454bh7bszkrq7wqpk326497yxq",
+          "Author": "admin",
+          "ProductList": {},
+          "AutoroutePart": {
+            "Path": "products",
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false
+          },
+          "ListPart": {
+            "FeedProxyUrl": null,
+            "FeedItemsCount": 20
+          },
+          "TitlePart": {
+            "Title": "Product List"
+          }
+        }
+      ]
+    }
+  ]
+}
