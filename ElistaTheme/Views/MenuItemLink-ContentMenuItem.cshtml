@@ -1,11 +1,14 @@
+@using Microsoft.AspNetCore.Routing;
+@using Microsoft.Extensions.Options;
+@using OrchardCore.ContentManagement;
+@using OrchardCore.ContentManagement.Routing;
+@using OrchardCore.Menu.Models;
+
+@inject IOptions<AutorouteOptions> AutorouteOptions
 @{
-    var link = Model.ContentItem.Content.LinkMenuItemPart;
-    if (Model.HasItems)
-    {
-        <a class="nav-link dropdown-toggle" id="homeDropdown" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Model.ContentItem}} </a>
-    }
-    else
-    {
-        <a class="nav-link" display-for="Model.ContentItem"> @Model.ContentItem.DisplayText</a>
-    }
+    ContentItem contentItem = Model.ContentItem;
+    var routeValues = new RouteValueDictionary(AutorouteOptions.Value.GlobalRouteValues);
+    routeValues[AutorouteOptions.Value.ContentItemIdKey] = contentItem.Content.ContentMenuItemPart.SelectedContentItem.ContentItemIds[0];
+    var linkUrl = Url.RouteUrl(routeValues);
 }
+<a class="nav-link" href="@linkUrl">@contentItem.DisplayText</a>
