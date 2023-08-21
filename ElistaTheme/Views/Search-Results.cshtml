@@ -1,0 +1,24 @@
+@model OrchardCore.Search.Abstractions.ViewModels.SearchResultsViewModel
+
+@inject OrchardCore.ContentManagement.Display.IContentItemDisplayManager ContentItemDisplayManager
+
+@if (Model.ContentItems.Any())
+{
+    <div class="masonry-wrapper mx-n3">
+        <div class="row">
+            @{
+
+
+                @foreach (var contentItem in Model.ContentItems)
+                {
+                    @await DisplayAsync(await ContentItemDisplayManager.BuildDisplayAsync(contentItem, null, "Summary"))
+                }
+            }
+        </div>
+    </div>
+}
+else
+{
+    <p class="alert alert-warning">@T["The list is empty"]</p>
+}
+<script asp-name="ElistaTheme-masonry-init" at="Foot" />

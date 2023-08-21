@@ -9,3 +9,7 @@ ul.term.term-tags {
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+ul.term.term-tags li {
+    padding: 0 5px 3px 0;
+}

@@ -1,0 +1,9 @@
+@model OrchardCore.Search.Abstractions.ViewModels.SearchFormViewModel
+
+<form action="@Url.Action("Search", "Search",new{area="OrchardCore.Lucene"})" method="get">
+    <div class="input-group mb-3 mt-5">
+        <input name="Index" type="hidden" value="@Model.Index" />
+        <input name="Terms" type="text" value="@Model.Terms" class="form-control form-control-sm" placeholder="@T["Enter your search term(s)"]" autofocus />
+        <button type="submit" class="btn btn-primary btn-lg">@T["Search"]</button>
+    </div>
+</form>
