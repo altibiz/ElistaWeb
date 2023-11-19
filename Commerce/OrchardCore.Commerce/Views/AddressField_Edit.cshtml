@@ -3,7 +3,8 @@
 
 @{
     var settings = Model.PartFieldDefinition.GetSettings<AddressPartFieldSettings>();
-    var hideAddress = Model.Address != null && Model.Address.Disabled;
+    var hideAddress = Model.Address != null && Model.Address.Disabled ? "none" : "block";
+    var addressId = @Html.IdFor(m => m.Address);
 }
 @if (!string.IsNullOrWhiteSpace(settings.Hint))
 {
@@ -18,8 +19,7 @@
         </span>
     </div>
 }
-<div style="display:@(hideAddress ? "none":"block")"
-     id="@Html.IdFor(m => m.Address)">
+<div style="display:@hideAddress" id="@addressId">
     <div class="row">
         <div class="form-group col-md-12">
             <label asp-for="Address.Name">@T["Name"]</label>
@@ -89,7 +89,7 @@
         </div>
     </div>
 </div>
-<div style="display:@(hideAddress?"block":"none")" id="@Html.IdFor(m=>m.Address)_Instructions">
+<div style="display:@hideAddress" id="@(addressId)_Instructions">
     @settings.DisabledText
 </div>
 <script asp-name="commerce-regions" asp-src="~/OrchardCore.Commerce/Scripts/commerce-regions.js" at="Foot" depends-on="jQuery"></script>
@@ -99,16 +99,17 @@
         <text>commerceRegionsInitialize(@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.Provinces))); </text>
         Context.Items["commerce-regions-initialized"] = true;
     }
-    commerceRegionsBind("#@Html.IdFor(m => m.Address.Province)", "#@Html.IdFor(m => m.Address.Region)");
+        commerceRegionsBind("#@Html.IdFor(m => m.Address.Province)", "#@Html.IdFor(m => m.Address.Region)");
     $("#@Html.IdFor(m => m.Address.Disabled)").change(function () {
+        let addressDiv = $("#@(addressId)");
         if (this.checked) {
-            $("#@Html.IdFor(m=>m.Address)").hide();
-            $("#@Html.IdFor(m=>m.Address)_Instructions").show();
-            $(["input:hidden, textarea:hidden, select:hidden"]).attr("disabled", true);
+            addressDiv.hide();
+            $("#@(addressId)_Instructions", addressDiv).show();
+            $(["input:hidden, textarea:hidden, select:hidden"], addressDiv).attr("disabled", true);
         } else {
-            $("#@Html.IdFor(m=>m.Address)").show();
-            $("#@Html.IdFor(m=>m.Address)_Instructions").hide();
-            $(["input:hidden, textarea:hidden, select:hidden"]).attr("disabled", false);
+            addressDiv.show();
+            $("#@(addressId)_Instructions", addressDiv).hide();
+            $(["input:hidden", "textarea:hidden", "select:hidden"], addressDiv).attr("disabled", false);
         }
     })
 </script>
