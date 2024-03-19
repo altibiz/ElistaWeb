@@ -103,13 +103,13 @@
     $("#@Html.IdFor(m => m.Address.Disabled)").change(function () {
         let addressDiv = $("#@(addressId)");
         if (this.checked) {
+            $(["input:hidden, textarea:hidden, select:hidden"], addressDiv).attr("disabled", true);
             addressDiv.hide();
             $("#@(addressId)_Instructions", addressDiv).show();
-            $(["input:hidden, textarea:hidden, select:hidden"], addressDiv).attr("disabled", true);
         } else {
             addressDiv.show();
-            $("#@(addressId)_Instructions", addressDiv).hide();
             $(["input:hidden", "textarea:hidden", "select:hidden"], addressDiv).attr("disabled", false);
+            $("#@(addressId)_Instructions", addressDiv).hide();
         }
     })
 </script>
