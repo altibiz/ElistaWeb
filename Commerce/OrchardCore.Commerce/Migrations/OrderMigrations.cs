@@ -25,14 +25,14 @@ namespace OrchardCore.Commerce.Migrations
             _recipeMigrator = recipeMigrator;
         }
 
-        public int Create()
+        public async Task<int> CreateAsync()
         {
-            _contentDefinitionManager.AlterPartDefinition("OrderPart", builder => builder
+            await _contentDefinitionManager.AlterPartDefinitionAsync("OrderPart", builder => builder
                 .Attachable()
                 .WithDescription("Makes a content item into an order."));
 
-            _contentDefinitionManager.MigrateFieldSettings<AddressField, AddressPartFieldSettings>();
-            _contentDefinitionManager.AlterTypeDefinition("Order", type => type
+            await _contentDefinitionManager.MigrateFieldSettingsAsync<AddressField, AddressPartFieldSettings>();
+            await _contentDefinitionManager.AlterTypeDefinitionAsync("Order", type => type
                 .DisplayedAs("Order")
                 .Creatable()
                 .Listable()
@@ -59,7 +59,7 @@ namespace OrchardCore.Commerce.Migrations
                 )
             );
 
-            _contentDefinitionManager.AlterPartDefinition("Order", part => part
+            await _contentDefinitionManager.AlterPartDefinitionAsync("Order", part => part
                 .WithField("OrderId", field => field
                     .OfType("TextField")
                     .WithDisplayName("Order Id")
@@ -103,9 +103,9 @@ namespace OrchardCore.Commerce.Migrations
             return 1;
         }
 
-        public async Task<int> UpdateFrom1()
+        public async Task<int> UpdateFrom1Async()
         {
-            _contentDefinitionManager.AlterPartDefinition("Order", part => part
+            await _contentDefinitionManager.AlterPartDefinitionAsync("Order", part => part
                     .WithField("Status", field => field
                             .OfType("TaxonomyField")
                             .WithDisplayName("Status")
@@ -127,9 +127,9 @@ namespace OrchardCore.Commerce.Migrations
             return 4; //skip next 2 since it's just add and delete
         }
 
-        public int UpdateFrom2()
+        public async Task<int> UpdateFrom2Async()
         {
-            _contentDefinitionManager.AlterPartDefinition("Order", part => part
+            await _contentDefinitionManager.AlterPartDefinitionAsync("Order", part => part
                 .WithField("NoShipping", field => field
                     .OfType("BooleanField")
                     .WithDisplayName("No Shipping")
@@ -141,9 +141,9 @@ namespace OrchardCore.Commerce.Migrations
             return 3;
         }
 
-        public int UpdateFrom3()
+        public async Task<int> UpdateFrom3Async()
         {
-            _contentDefinitionManager.AlterPartDefinition("Order", part => part
+            await _contentDefinitionManager.AlterPartDefinitionAsync("Order", part => part
                 .RemoveField("NoShipping"));
             return 4;
         }

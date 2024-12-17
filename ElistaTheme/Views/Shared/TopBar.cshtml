@@ -1,13 +1,21 @@
 @using ElistaTheme
+@using OrchardCore.Admin.Models
 @using OrchardCore.ContentManagement
+@using OrchardCore.DisplayManagement.ModelBinding
 @using OrchardCore.Entities
 @using OrchardCore.Settings
 @inject ISiteService site
+@inject IDisplayManager<Navbar> NavbarDisplay
+@inject IUpdateModelAccessor UpdateModelAccessor
 
 @{
     var contacts = (await site.GetSiteSettingsAsync()).As<ContentItem>("GeneralSettings");
+
     var phone = contacts.GetText("Phone") ?? "+385 98 210 756";
     var email = contacts.GetText("Email") ?? "info@formadria.com";
+    // Navbar is pre-rendered to allow resource injection.
+    var navbar = await DisplayAsync(await NavbarDisplay.BuildDisplayAsync(UpdateModelAccessor.ModelUpdater));
+
 }
 
 <div class="top-bar text-sm">
@@ -29,7 +37,7 @@
             <div class="col-6">
                 <ul class="list-inline mb-0">
                     <li class="list-inline-item float-end align-top me-4">
-                        <shape type="ContentCulturePicker" />
+                        @navbar
                     </li>
                     <li class="list-inline-item float-end align-top me-4">
                         <svg class="svg-icon me-2">

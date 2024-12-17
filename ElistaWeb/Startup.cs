@@ -25,7 +25,6 @@ namespace ElistaWeb
                 app.UseDeveloperExceptionPage();
             //}
 
-            app.UseRouting();
             app.UseOrchardCore();
         }
     }

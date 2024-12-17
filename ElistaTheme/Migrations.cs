@@ -2,6 +2,7 @@
 using OrchardCore.ContentManagement.Metadata;
 using OrchardCore.ContentManagement.Metadata.Settings;
 using OrchardCore.Data.Migration;
+using System.Threading.Tasks;
 
 namespace ElistaTheme;
 internal class Migrations : DataMigration
@@ -12,9 +13,9 @@ internal class Migrations : DataMigration
     {
         _contentDefinitionManager = contentDefinitionManager;
     }
-    public int Create()
+    public async Task<int> CreateAsync()
     {
-        _contentDefinitionManager.AlterTypeDefinition("GeneralSettings", type => type
+        await _contentDefinitionManager.AlterTypeDefinitionAsync("GeneralSettings", type => type
             .DisplayedAs("General Settings")
             .Stereotype("CustomSettings")
             .WithPart("GeneralSettings", part => part
@@ -22,7 +23,7 @@ internal class Migrations : DataMigration
             )
         );
 
-        _contentDefinitionManager.AlterPartDefinition("GeneralSettings", part => part
+        await _contentDefinitionManager.AlterPartDefinitionAsync("GeneralSettings", part => part
             .WithField("Email", field => field
                 .OfType("TextField")
                 .WithDisplayName("Email")

@@ -1,6 +1,7 @@
 using OrchardCore.ContentManagement.Metadata.Settings;
 using OrchardCore.ContentManagement.Metadata;
 using OrchardCore.Data.Migration;
+using System.Threading.Tasks;
 
 namespace OrchardCore.Commerce.Migrations
 {
@@ -16,9 +17,9 @@ namespace OrchardCore.Commerce.Migrations
             _contentDefinitionManager = contentDefinitionManager;
         }
 
-        public int Create()
+        public async Task<int> CreateAsync()
         {
-            _contentDefinitionManager.AlterPartDefinition("PricePart", builder => builder
+            await _contentDefinitionManager.AlterPartDefinitionAsync("PricePart", builder => builder
                 .Attachable()
                 .Reusable()
                 .WithDescription("Adds a simple price to a product."));

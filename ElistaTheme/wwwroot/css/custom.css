@@ -3,6 +3,11 @@
     margin-left: auto;
 }
 
+.user-top-navbar .nav-link {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 ul.term.term-tags {
     list-style: none;
     display: flex;

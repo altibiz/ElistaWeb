@@ -1,4 +1,4 @@
-@model OrchardCore.Commerce.ViewModels.AddressFieldViewModel
+﻿@model OrchardCore.Commerce.ViewModels.AddressFieldViewModel
 @using OrchardCore.Commerce.Settings
 
 @{
@@ -26,14 +26,6 @@
         </div>
         <div class="form-group col-md-6" asp-validation-class-for="Address.Name">
             <input asp-for="Address.Name" class="form-control content-preview-text" required="required" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-md-12">
-            <label asp-for="Address.Department">@T["Department"]</label>
-        </div>
-        <div class="form-group col-md-6" asp-validation-class-for="Address.Department">
-            <input asp-for="Address.Department" class="form-control content-preview-text" />
         </div>
     </div>
     <div class="row">
@@ -101,14 +93,17 @@
     }
         commerceRegionsBind("#@Html.IdFor(m => m.Address.Province)", "#@Html.IdFor(m => m.Address.Region)");
     $("#@Html.IdFor(m => m.Address.Disabled)").change(function () {
+        let requiredCtls = ["#@Html.IdFor(m => m.Address.Name)", "#@Html.IdFor(m => m.Address.StreetAddress1)", "#@Html.IdFor(m => m.Address.City)"];
         let addressDiv = $("#@(addressId)");
         if (this.checked) {
-            $(["input:hidden, textarea:hidden, select:hidden"], addressDiv).attr("disabled", true);
+            requiredCtls.forEach(x=>$(x).removeAttr('required'));
             addressDiv.hide();
             $("#@(addressId)_Instructions", addressDiv).show();
         } else {
             addressDiv.show();
-            $(["input:hidden", "textarea:hidden", "select:hidden"], addressDiv).attr("disabled", false);
+            requiredCtls.forEach(x=>$(x).attr('required',true));
+            //$(["input:hidden", "textarea:hidden", "select:hidden"], addressDiv).attr("disabled", false);
+
             $("#@(addressId)_Instructions", addressDiv).hide();
         }
     })

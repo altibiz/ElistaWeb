@@ -25,17 +25,17 @@ namespace OrchardCore.Commerce.Migrations
 
         public async Task<int> CreateAsync()
         {
-            _contentDefinitionManager.AlterPartDefinition("ProductPart", builder => builder
+            await _contentDefinitionManager.AlterPartDefinitionAsync("ProductPart", builder => builder
                 .Attachable()
                 .WithDescription("Makes a content item into a product."));
 
-            SchemaBuilder.CreateMapIndexTable<ProductPartIndex>(
+            await SchemaBuilder.CreateMapIndexTableAsync<ProductPartIndex>(
                 table => table
                     .Column<string>("Sku", col => col.WithLength(128))
                     .Column<string>("ContentItemId", c => c.WithLength(26))
             );
 
-            SchemaBuilder.AlterTable(nameof(ProductPartIndex), table => table
+            await SchemaBuilder.AlterTableAsync(nameof(ProductPartIndex), table => table
                 .CreateIndex("IDX_ProductPartIndex_Sku", "Sku")
             );
 
@@ -43,14 +43,14 @@ namespace OrchardCore.Commerce.Migrations
             return 2;
         }
 
-        public int UpdateFrom1()
+        public int UpdateFrom1Async()
         {
             return 2;
         }
 
-        public async Task<int> UpdateFrom2()
+        public async Task<int> UpdateFrom2Async()
         {
-            _contentDefinitionManager.AlterTypeDefinition("ProductList", type => type
+            await _contentDefinitionManager.AlterTypeDefinitionAsync("ProductList", type => type
                 .DisplayedAs("Product List")
                 .Creatable()
                 .Listable()

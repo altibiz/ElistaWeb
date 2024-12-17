@@ -160,7 +160,14 @@ namespace OrchardCore.Commerce.Controllers
 
                 }).ToList();
             });
-            await _contentManager.UpdateValidateAndCreateAsync(order, VersionOptions.Draft);
+            var result = await _contentManager.UpdateValidateAndCreateAsync(order, VersionOptions.Draft);
+            if (!result.Succeeded)
+            {
+                if (result.Errors.Count > 0)
+                    await _notifier.ErrorAsync(H[result.Errors.First().ErrorMessage]);
+                else await _notifier.ErrorAsync(H["Error ordering"]);
+                return RedirectToAction(nameof(Index), new { shoppingCartId });
+            }
             return RedirectToPage("/Order", new { contentItemId = order.ContentItemId });
         }
     }

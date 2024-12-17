@@ -51,7 +51,7 @@ namespace OrchardCore.Commerce.Pages
             }
             else
             {
-                Shape = await _contentItemDisplayManager.BuildEditorAsync(order, null, true);
+                Shape = await _contentItemDisplayManager.BuildEditorAsync(order, _updateModelAccessor.ModelUpdater, true);
             }
             return Page();
         }
@@ -92,7 +92,7 @@ namespace OrchardCore.Commerce.Pages
                         Subject = H["Thank you! Your order has been received"].Value,
                         To = part.Email?.Text,
                         Body = string.Format(H["<p>Your order link is the following {0}</p><p>Thank you!<p><p>formAdria team</p>"].Value, Request.GetDisplayUrl()),
-                        IsBodyHtml = true
+                        IsHtmlBody = true
 
                     });
                     await _emailService.SendAsync(new MailMessage
@@ -100,7 +100,7 @@ namespace OrchardCore.Commerce.Pages
                         Subject = H["New order!"].Value,
                         To = email,
                         Body = string.Format(H["<p>Order link is the following {0}</p>"].Value, Request.GetDisplayUrl()),
-                        IsBodyHtml = true
+                        IsHtmlBody = true
                     });
                 }
             }

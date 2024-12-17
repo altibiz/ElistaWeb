@@ -1,6 +1,7 @@
 using OrchardCore.ContentManagement.Metadata.Settings;
 using OrchardCore.ContentManagement.Metadata;
 using OrchardCore.Data.Migration;
+using System.Threading.Tasks;
 
 namespace OrchardCore.Commerce.Migrations
 {
@@ -16,9 +17,9 @@ namespace OrchardCore.Commerce.Migrations
             _contentDefinitionManager = contentDefinitionManager;
         }
 
-        public int Create()
+        public async Task<int> CreateAsync()
         {
-            _contentDefinitionManager.AlterPartDefinition("PriceVariantsPart", builder => builder
+            await _contentDefinitionManager.AlterPartDefinitionAsync("PriceVariantsPart", builder => builder
                 .Attachable()
                 .WithDescription("A product variants prices based on predefined attributes."));
             return 1;

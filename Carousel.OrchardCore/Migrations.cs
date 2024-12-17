@@ -5,6 +5,7 @@ using OrchardCore.Data.Migration;
 using OrchardCore.Flows.Models;
 using OrchardCore.Media.Settings;
 using OrchardCore.Recipes.Services;
+using System.Threading.Tasks;
 
 namespace Carousel.OrchardCore
 {
@@ -21,9 +22,9 @@ namespace Carousel.OrchardCore
             _recipeMigrator = recipeMigrator;
         }
 
-        public int Create()
+        public async Task<int> CreateAsync()
         {
-            _contentDefinitionManager.AlterPartDefinition("Slide", cfg => cfg
+            await _contentDefinitionManager.AlterPartDefinitionAsync("Slide", cfg => cfg
                 .WithDescription("Contains the fields for the current type")
                 .WithField("Image",
                     fieldBuilder => fieldBuilder
@@ -60,10 +61,10 @@ namespace Carousel.OrchardCore
                         .WithDisplayName("Button click destination"))
             );
 
-            _contentDefinitionManager.AlterTypeDefinition("Slide", type => type
+            await _contentDefinitionManager.AlterTypeDefinitionAsync("Slide", type => type
                 .WithPart("Slide"));
 
-            _contentDefinitionManager.AlterPartDefinition("Carousel", cfg => cfg
+            await _contentDefinitionManager.AlterPartDefinitionAsync("Carousel", cfg => cfg
                 .WithDescription("Contains the fields for the current type")
                 .WithField("Interval",
                     fieldBuilder => fieldBuilder
@@ -76,7 +77,7 @@ namespace Carousel.OrchardCore
                         .WithDisplayName("Pause on hover/touch"))
             );
 
-            _contentDefinitionManager.AlterTypeDefinition("Carousel", type => type
+            await _contentDefinitionManager.AlterTypeDefinitionAsync("Carousel", type => type
                 .WithPart("Carousel")
                 .WithPart("Slides", "BagPart", cfg => cfg
                     .WithDisplayName("Slides")
