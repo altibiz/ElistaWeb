@@ -9,7 +9,7 @@ namespace ElistaWeb
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddOrchardCms()
+            services.AddOrchardCms().WithTenants()
 #if DEBUG
                 .AddSetupFeatures("OrchardCore.AutoSetup")
 #else
