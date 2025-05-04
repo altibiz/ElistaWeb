@@ -1,5 +1,5 @@
 ﻿{
-  "name": "Elista.Homepage",
+  "name": "Elista.HomepageSr",
   "steps": [
     {
       "name": "content",
@@ -8,7 +8,7 @@
           "ContentItemId": "4z9fpx9bb856k63w8j0d6f1sdj",
           "ContentItemVersionId": "4cbz6e3xw1j5x247s99qtascd0",
           "ContentType": "Page",
-          "DisplayText": "home",
+          "DisplayText": "Početna",
           "Latest": true,
           "Published": true,
           "ModifiedUtc": "2022-05-06T08:11:27.3909833Z",
@@ -129,7 +129,7 @@
                                 ]
                               },
                               "SubTitle": {
-                                "Text": "Za kreativce, obrtnike i umjetnike"
+                                "Text": "Za kreativce, zanatlije i umetnike"
                               },
                               "Title": {
                                 "Text": "Eco-friendly i baziran na vodi"
@@ -162,7 +162,7 @@
                       "ContentItemId": "4npsrt6jt9b2yzce0qa9qhbyc7",
                       "ContentItemVersionId": null,
                       "ContentType": "Products",
-                      "DisplayText": "Shop",
+                      "DisplayText": "Prodavnica",
                       "Latest": false,
                       "Published": false,
                       "ModifiedUtc": "2022-05-06T08:11:27.5137913Z",
@@ -172,7 +172,7 @@
                       "Author": "admin",
                       "Products": {},
                       "TitlePart": {
-                        "Title": "Shop"
+                        "Title": "Prodavnica"
                       },
                       "FlowMetadata": {
                         "Alignment": 3,
@@ -189,7 +189,7 @@
             ]
           },
           "TitlePart": {
-            "Title": "home"
+            "Title": "Početna"
           }
         }
       ]
