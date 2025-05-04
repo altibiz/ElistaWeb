@@ -192,5 +192,6 @@ ElistaWeb/wwwroot
 /ElistaWeb/App_Data3
 /ElistaWeb/Localization/*
 !ElistaWeb/Localization/hr
+!ElistaWeb/Localization/sr
 /ElistaWeb/wwwroot/is-cache/*
 /ElistaWeb/App_DataOLD/*

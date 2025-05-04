@@ -1,0 +1,67 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Crowdin-Project: elistaweb\n"
+"X-Crowdin-Project-ID: 521028\n"
+"X-Crowdin-Language: sr-Latn\n"
+"X-Crowdin-File: ElistaTheme.pot\n"
+"X-Crowdin-File-ID: 6\n"
+"Project-Id-Version: elistaweb\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Serbian\n"
+"Language: sr-Latn-RS\n"
+"PO-Revision-Date: 2022-07-07 19:14\n"
+
+#. <span class="d-none d-sm-inline">@T["Add to cart"]</span>
+#: ElistaTheme\Views\Content-Product.Summary.cshtml:31
+msgctxt "ElistaTheme.Views.Content-Product.Summary"
+msgid "Add to cart"
+msgstr "Dodaj u korpu"
+
+#. <h6 class="text-sm mb-1">@T["Exclusive Jesmonite distributor for Adria region"]</h6>
+#: ElistaTheme\Views\Shared\Footer.cshtml:23
+msgctxt "ElistaTheme.Views.Shared.Footer"
+msgid "Exclusive Jesmonite distributor for Adria region"
+msgstr "Ekskluzivni distributer Jesmonite-a za Adria region"
+
+#. <p class="text-muted fw-light text-sm mb-0">@T["Shipping to all of Adria region"]</p>
+#: ElistaTheme\Views\Shared\Footer.cshtml:24
+msgctxt "ElistaTheme.Views.Shared.Footer"
+msgid "Shipping to all of Adria region"
+msgstr "Dostava za ceo Adria region"
+
+#. <h6 class="text-sm mb-1">@T["No product in our stock?"]</h6>
+#: ElistaTheme\Views\Shared\Footer.cshtml:29
+msgctxt "ElistaTheme.Views.Shared.Footer"
+msgid "No product in our stock?"
+msgstr "Proizvod nije na stanju?"
+
+#. <p class="text-muted fw-light text-sm mb-0">@T["Contact us to order your desired Jesmonite product"]</p>
+#: ElistaTheme\Views\Shared\Footer.cshtml:30
+msgctxt "ElistaTheme.Views.Shared.Footer"
+msgid "Contact us to order your desired Jesmonite product"
+msgstr "Kontaktirajte nas da naručite željeni Jesmonite proizvod"
+
+#. <p class="text-muted fw-light text-sm mb-0">@T["Every day 0 - 24 h"]</p>
+#: ElistaTheme\Views\Shared\Footer.cshtml:36
+msgctxt "ElistaTheme.Views.Shared.Footer"
+msgid "Every day 0 - 24 h"
+msgstr "Svaki dan 0 - 24 h"
+
+#. <p class="text-muted fw-light text-sm mb-0">@T["Workdays 9 - 17 h"]</p>
+#: ElistaTheme\Views\Shared\Footer.cshtml:42
+msgctxt "ElistaTheme.Views.Shared.Footer"
+msgid "Workdays 9 - 17 h"
+msgstr "Radni dani 9 - 17 h"
+
+#. <p class="mb-lg-0">@T["Copyright KERM Promet d.o.o."]</p>
+#: ElistaTheme\Views\Shared\Footer.cshtml:112
+msgctxt "ElistaTheme.Views.Shared.Footer"
+msgid "Copyright KERM Promet d.o.o."
+msgstr "Autorska prava KERM Promet d.o.o."
+
+#. <button class="btn btn-dark" type="submit" disabled="@(!Model.CanBeBought)"> <i class="fa fa-shopping-cart me-2"></i>@T["Add to cart"]</button>
+#: ElistaTheme\Views\ProductPart.cshtml:12
+msgctxt "ElistaTheme.Views.ProductPart"
+msgid "Add to cart"
+msgstr "Dodaj u korpu"

@@ -1,0 +1,929 @@
+{
+  "name": "formAdriaRs",
+  "displayName": "formAdriaRs Web Theme",
+  "description": "formAdriaRs Web theme",
+  "author": "The Orchard Core Team",
+  "website": "https://orchardcore.net",
+  "version": "1.0.0-rc2",
+  "issetuprecipe": true,
+  "categories": [ "default" ],
+  "tags": [ "blog" ],
+
+  // The variables are evaluated the first time they are accessed, and reused across steps
+  "variables": {
+    "adminUrlPrefix": "[js: configuration('OrchardCore_Admin:AdminUrlPrefix', 'Admin')]",
+    "menuContentItemId": "[js:uuid()]",
+    "tagsContentItemId": "[js:uuid()]",
+    "tagContentItemId": "[js:uuid()]",
+    "earthTagContentItemId": "[js:uuid()]",
+    "explorationTagContentItemId": "[js:uuid()]",
+    "spaceTagContentItemId": "[js:uuid()]",
+    "categoriesContentItemId": "[js:uuid()]",
+    "categoryTravelContentItemId": "[js:uuid()]"
+    // "now": "[js: new Date().toISOString()]"
+  },
+
+  "steps": [
+    {
+      "name": "feature",
+      "enable": [
+        "Application.Default",
+        "ElistaWeb",
+        "OrchardCore.Liquid",
+        "OrchardCore.Settings",
+        "OrchardCore.Contents",
+        "OrchardCore.ContentTypes",
+        "OrchardCore.Shortcodes",
+        "OrchardCore.ContentFields",
+        "OrchardCore.Widgets",
+        "OrchardCore.Flows",
+        "OrchardCore.Media.Azure.Storage",
+        "OrchardCore.Admin",
+        "OrchardCore.AdminMenu",
+        "OrchardCore.Templates",
+        "OrchardCore.Alias",
+        "OrchardCore.Autoroute",
+        "OrchardCore.Resources",
+        "OrchardCore.Features",
+        "OrchardCore.Scripting",
+        "OrchardCore.Recipes",
+        "OrchardCore.Workflows",
+        "OrchardCore.Commerce",
+        "OrchardCore.Commerce.CommerceSettingsCurrencySelector",
+        "OrchardCore.Commerce.SessionCartStorage",
+        "OrchardCore.Users",
+        "OrchardCore.Localization",
+        "OrchardCore.ContentLocalization",
+        "OrchardCore.ContentLocalization.ContentCulturePicker",
+        "OrchardCore.ContentPreview",
+        "OrchardCore.Deployment",
+        "OrchardCore.CustomSettings",
+        "OrchardCore.Deployment.Remote",
+        "OrchardCore.Diagnostics",
+        "OrchardCore.DynamicCache",
+        "OrchardCore.Feeds",
+        "OrchardCore.HomeRoute",
+        "OrchardCore.Html",
+        "OrchardCore.Indexing",
+        "OrchardCore.Rules",
+        "OrchardCore.Layers",
+        "OrchardCore.Lists",
+        "OrchardCore.Search.Lucene",
+        "OrchardCore.Markdown",
+        "OrchardCore.Title",
+        "OrchardCore.Menu",
+        "OrchardCore.Navigation",
+        "OrchardCore.Placements",
+        "OrchardCore.Queries",
+        "OrchardCore.Roles",
+        "OrchardCore.Shortcodes.Templates",
+        "OrchardCore.Taxonomies",
+        "OrchardCore.Themes",
+        "Carousel.OrchardCore",
+        "OrchardCore.Commerce",
+
+        // Themes
+        "ElistaTheme",
+        "SafeMode",
+        "TheAdmin",
+        "TheAgencyTheme",
+        "TheBlogTheme"
+      ]
+    },
+    {
+      "name": "themes",
+      "admin": "TheAdmin",
+      "site": "ElistaTheme"
+    },
+    {
+      "name": "settings",
+      "LocalizationSettings": {
+        "DefaultCulture": "sr",
+        "SupportedCultures": [ "sr", "en" ]
+      },
+      "CommerceSettings": {
+        "DefaultCurrency": "RSD",
+        "CurrentDisplayCurrency": "RSD"
+      }
+    },
+    {
+      "name": "ContentDefinition",
+      "ContentTypes": [
+        {
+          "Name": "Products",
+          "DisplayName": "Products",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Stereotype": "Widget"
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Products",
+              "Name": "Products",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Container",
+          "DisplayName": "Container",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true,
+              "Stereotype": "Widget"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Container",
+              "Name": "Container",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "FlowPart",
+              "Name": "FlowPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "RawHtml",
+          "DisplayName": "Raw Html",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true,
+              "Stereotype": "Widget"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "RawHtml",
+              "Name": "RawHtml",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Page",
+          "DisplayName": "Page",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Draftable": true,
+              "Versionable": true,
+              "Listable": true,
+              "Securable": true
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Page",
+              "Name": "Page",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "3"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                },
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true,
+                  "Pattern": "{{ Model.ContentItem | display_text | slugify }}",
+                  "ShowHomepageOption": true
+                }
+              }
+            },
+            {
+              "PartName": "FlowPart",
+              "Name": "FlowPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "LocalizationPart",
+              "Name": "LocalizationPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "4"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "ContentParts": [
+        {
+          "Name": "FlowPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides a customizable body for your content item where you can build a content structure with widgets."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "BagPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Reusable": true,
+              "Description": "Provides a collection behavior for your content item where you can place other content items."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "AutoroutePart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides a custom url for your content item."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "TitlePart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides a Title for your content item.",
+              "DefaultPosition": "0"
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "MenuPart",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "LinkMenuItemPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides a menu link behavior for your content item."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "ContentMenuItemPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "DisplayName": "Content Menu Item",
+              "Description": "Provides a menu link behavior with the Content Picker for your content item."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "ContentPickerField",
+              "Name": "SelectedContentItem",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Selected Content Item",
+                  "Position": "0"
+                },
+                "ContentPickerFieldSettings": {
+                  "Required": true,
+                  "DisplayAllContentTypes": true,
+                  "DisplayedContentTypes": []
+                },
+                "ContentIndexSettings": {}
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Blockquote",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "Quote",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Quote",
+                  "Editor": "TextArea",
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Slide",
+          "Settings": {
+            "ContentPartSettings": {
+              "Description": "Contains the fields for the current type"
+            }
+          },
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "MediaField",
+              "Name": "Image",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Image"
+                },
+                "MediaFieldSettings": {
+                  "Required": true,
+                  "Multiple": false
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "SubTitle",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "SubTitle (up)"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Title",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Title"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "ShortDescription",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Short Description"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "ImageClass",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Image Class"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "ImageAltText",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Image Alt Text"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "BtnText",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Button display text"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "BtnUrl",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Button click destination"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Carousel",
+          "Settings": {
+            "ContentPartSettings": {
+              "Description": "Contains the fields for the current type"
+            }
+          },
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "NumericField",
+              "Name": "Interval",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Interval"
+                },
+                "NumericFieldSettings": {
+                  "Hint": "Delay between slides (ms)",
+                  "Required": true,
+                  "DefaultValue": "5000"
+                }
+              }
+            },
+            {
+              "FieldName": "BooleanField",
+              "Name": "Pause",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Pause on hover/touch"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "ProductPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Makes a content item into a product."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "RawHtml",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "HtmlField",
+              "Name": "Content",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Content",
+                  "Position": "0",
+                  "Editor": "Multiline"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "PricePart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Reusable": true,
+              "Description": "Adds a simple price to a product."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        }
+      ]
+    },
+    {
+      // Create the indices before the content items so they are indexed automatically.
+      "name": "lucene-index",
+      "Indices": [
+        {
+          "Search": {
+            "AnalyzerName": "standardanalyzer",
+            "IndexLatest": false,
+            "IndexedContentTypes": [
+              "Article",
+              "Blockquote",
+              "Blog",
+              "BlogPost",
+              "Container",
+              "Image",
+              "LinkMenuItem",
+              "Menu",
+              "Page",
+              "Paragraph",
+              "Product",
+              "RawHtml"
+            ],
+            "Culture": "any"
+          }
+        }
+      ]
+    },
+    {
+      // Create the search settings.
+      "name": "Settings",
+      "LuceneSettings": {
+        "SearchIndex": "Search",
+        "DefaultSearchFields": [
+          "Content.ContentItem.FullText"
+        ]
+      }
+    },
+    {
+      "name": "Queries",
+      "Queries": [
+        {
+          "Index": "Search",
+          "Template": "{\r\n  \"query\": {\r\n    \"term\": { \"Content.ContentItem.ContentType\": \"Product\" }\r\n  },\r\n  \"sort\": {\r\n    \"Content.ContentItem.CreatedUtc\": {\r\n      \"order\": \"desc\",\r\n      \"type\": \"double\"\r\n    }\r\n  },\r\n  \"size\": 20\r\n}\r\n",
+          "ReturnContentItems": true,
+          "Name": "Products",
+          "Source": "Lucene",
+          "Schema": null
+        }
+      ]
+    },
+    {
+      // Create the search index permissions.
+      "name": "Roles",
+      "Roles": [
+        {
+          "Name": "Anonymous",
+          "Description": "Anonymous role",
+          "Permissions": [
+            "ViewContent",
+            "QueryLuceneSearchIndex"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "media",
+      "Files": [
+      ]
+    },
+    {
+      "name": "layers",
+      "Layers": [
+        {
+          "Name": "Always",
+          "LayerRule": {
+            "ConditionId": "[js: uuid()]",
+            "Conditions": [
+              {
+                "$type": "OrchardCore.Rules.Models.BooleanCondition, OrchardCore.Rules",
+                "Name": "BooleanCondition",
+                "Value": true,
+                "ConditionId": "[js: uuid()]"
+              }
+            ]
+          },
+          "Description": "The widgets in this layer are displayed on any page of this site."
+        },
+        {
+          "Name": "Homepage",
+          "LayerRule": {
+            "ConditionId": "[js: uuid()]",
+            "Conditions": [
+              {
+                "$type": "OrchardCore.Rules.Models.HomepageCondition, OrchardCore.Rules",
+                "Name": "HomepageCondition",
+                "Value": true,
+                "ConditionId": "[js: uuid()]"
+              }
+            ]
+          },
+          "Description": "The widgets in this layer are only displayed on the homepage."
+        }
+      ]
+    },
+    {
+      "name": "AdminMenu",
+      "data": [
+        {
+          "Id": "baef6f85ad13481681cde70ada401333",
+          "Name": "Admin menus",
+          "Enabled": true,
+          "MenuItems": [
+            {
+              "$type": "OrchardCore.AdminMenu.AdminNodes.PlaceholderAdminNode, OrchardCore.AdminMenu",
+              "LinkText": "Content",
+              "IconClass": null,
+              "PermissionNames": [],
+              "UniqueId": "3e590d44f8704e4588e272dd966ce291",
+              "Enabled": true,
+              "Text": null,
+              "Id": null,
+              "Href": null,
+              "Url": null,
+              "Position": null,
+              "LinkToFirstChild": true,
+              "LocalNav": false,
+              "Culture": null,
+              "Items": [
+                {
+                  "$type": "OrchardCore.AdminMenu.AdminNodes.LinkAdminNode, OrchardCore.AdminMenu",
+                  "LinkText": "Content Items",
+                  "LinkUrl": "[js: variables('adminUrlPrefix') + '/Contents/ContentItems/']",
+                  "IconClass": null,
+                  "UniqueId": "7b293d57056a4eebb3713f07f12c65d9",
+                  "Enabled": true,
+                  "Text": null,
+                  "Id": null,
+                  "Href": null,
+                  "Url": null,
+                  "Position": 0,
+                  "LinkToFirstChild": true,
+                  "LocalNav": false,
+                  "Culture": null,
+                  "Items": [],
+                  "Classes": []
+                },
+                {
+                  "$type": "OrchardCore.AdminMenu.AdminNodes.PlaceholderAdminNode, OrchardCore.AdminMenu",
+                  "LinkText": "Content Types",
+                  "IconClass": null,
+                  "PermissionNames": [],
+                  "UniqueId": "2f1fc33133334a1abf7d1a0516ee8b4e",
+                  "Enabled": true,
+                  "Text": null,
+                  "Id": null,
+                  "Href": null,
+                  "Url": null,
+                  "Position": 1,
+                  "Priority": 50,
+                  "LinkToFirstChild": true,
+                  "LocalNav": false,
+                  "Culture": null,
+                  "Items": [
+                    {
+                      "$type": "OrchardCore.Contents.AdminNodes.ContentTypesAdminNode, OrchardCore.Contents",
+                      "ShowAll": true,
+                      "IconClass": null,
+                      "ContentTypes": [],
+                      "UniqueId": "ee18224e1b814c638b0732678b74cfd9",
+                      "Enabled": true,
+                      "Text": null,
+                      "Id": null,
+                      "Href": null,
+                      "Url": null,
+                      "Position": null,
+                      "LinkToFirstChild": true,
+                      "LocalNav": false,
+                      "Culture": null,
+                      "Items": [],
+                      "Classes": []
+                    }
+                  ],
+                  "Classes": []
+                }
+              ],
+              "Classes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "content",
+      "data": [
+        {
+          "ContentItemId": "4rrmw7d0j9j9qrtpsqsv176b4j",
+          "ContentItemVersionId": "4sfyhgwmkv8gj74vb8rjd1zz4j",
+          "ContentType": "Menu",
+          "DisplayText": "Main Menu",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2022-05-03T10:16:09.2144697Z",
+          "PublishedUtc": "2022-05-03T10:16:09.274102Z",
+          "CreatedUtc": "2022-05-03T09:06:52.0300701Z",
+          "Owner": "4v89tfvreha9tvqf29qe1xaddx",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Main Menu"
+          },
+          "AliasPart": {
+            "Alias": "main-menu"
+          },
+          "MenuPart": {},
+          "MenuItemsListPart": {
+            "MenuItems": [
+            ]
+          },
+          "@WeldedPartSettings": {
+            "MenuPart": {
+              "Position": "3"
+            },
+            "MenuItemsListPart": {
+              "Position": "4"
+            }
+          }
+        },
+        {
+          "ContentItemId": "496wkf4p5hbsjrg68dbzzp36we",
+          "ContentItemVersionId": "4sm0754pyxhnktk07w75z0t0cq",
+          "ContentType": "Product",
+          "DisplayText": "p1",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2022-05-05T06:46:37.6663451Z",
+          "PublishedUtc": "2022-05-05T06:46:37.6757088Z",
+          "CreatedUtc": "2022-05-05T06:46:37.6663451Z",
+          "Owner": "4v89tfvreha9tvqf29qe1xaddx",
+          "Author": "admin",
+          "Product": {},
+          "PricePart": {
+            "Price": {
+              "value": 0.0022,
+              "currency": "EUR"
+            }
+          },
+          "TitlePart": {
+            "Title": "p1"
+          },
+          "ProductPart": {
+            "Sku": "232"
+          }
+        },
+        {
+          "ContentItemId": "4fhbmy2w9mwb663x01fpe25xx4",
+          "ContentItemVersionId": "4abmjt8qtskfbr58vw4dmr7m4g",
+          "ContentType": "Product",
+          "DisplayText": "p2222",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2022-05-05T09:12:06.8964198Z",
+          "PublishedUtc": "2022-05-05T09:12:06.9089614Z",
+          "CreatedUtc": "2022-05-05T06:46:47.5242952Z",
+          "Owner": "4v89tfvreha9tvqf29qe1xaddx",
+          "Author": "admin",
+          "Product": {},
+          "PricePart": {
+            "Price": {
+              "value": 33.0,
+              "currency": "EUR"
+            }
+          },
+          "TitlePart": {
+            "Title": "p2222"
+          },
+          "ProductPart": {
+            "Sku": "32"
+          },
+          "AutoroutePart": {
+            "Path": "p2222",
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false
+          }
+        },
+        {
+          "ContentItemId": "4w8z3e2hfszva049y1360rt45t",
+          "ContentItemVersionId": "4xcnt66t4z4f83yc0fr45q2mny",
+          "ContentType": "Product",
+          "DisplayText": "p3",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2022-05-05T06:46:56.779304Z",
+          "PublishedUtc": "2022-05-05T06:46:56.7862872Z",
+          "CreatedUtc": "2022-05-05T06:46:56.779304Z",
+          "Owner": "4v89tfvreha9tvqf29qe1xaddx",
+          "Author": "admin",
+          "Product": {},
+          "PricePart": {
+            "Price": {
+              "value": 12.0,
+              "currency": "EUR"
+            }
+          },
+          "TitlePart": {
+            "Title": "p3"
+          },
+          "ProductPart": {
+            "Sku": "3662"
+          }
+        },
+        {
+          "ContentItemId": "49vbfjypwna9az0xq9b7c2xydt",
+          "ContentItemVersionId": "4nnqwsyfcqf0hw5p6317vx3nmq",
+          "ContentType": "Product",
+          "DisplayText": "pro 1",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2022-05-05T13:50:40.929241Z",
+          "PublishedUtc": "2022-05-05T13:50:41.0140195Z",
+          "CreatedUtc": "2022-05-05T09:09:31.1991375Z",
+          "Owner": "4v89tfvreha9tvqf29qe1xaddx",
+          "Author": "admin",
+          "Product": {},
+          "PricePart": {
+            "Price": {
+              "value": 63.0,
+              "currency": "EUR"
+            }
+          },
+          "ProductPart": {
+            "Sku": "237543"
+          },
+          "AutoroutePart": {
+            "Path": "pro-1",
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false
+          },
+          "TitlePart": {
+            "Title": "pro 1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Layers",
+      "Layers": [
+        {
+          "Name": "Always",
+          "Rule": null,
+          "Description": "The widgets in this layer are displayed on any page of this site.",
+          "LayerRule": {
+            "Conditions": [
+              {
+                "$type": "OrchardCore.Rules.Models.BooleanCondition, OrchardCore.Rules",
+                "Value": true,
+                "Name": "BooleanCondition",
+                "ConditionId": "4wmmz4r0kr8pvxy0w6ce4as4m5"
+              }
+            ],
+            "Name": null,
+            "ConditionId": "4z8yqc940mterr76jsjfavr5cq"
+          }
+        },
+        {
+          "Name": "Homepage",
+          "Rule": null,
+          "Description": "The widgets in this layer are only displayed on the homepage.",
+          "LayerRule": {
+            "Conditions": [
+              {
+                "$type": "OrchardCore.Rules.Models.HomepageCondition, OrchardCore.Rules",
+                "Value": true,
+                "Name": "HomepageCondition",
+                "ConditionId": "40fp6ssxra356yff6km6mj37da"
+              }
+            ],
+            "Name": null,
+            "ConditionId": "40zx9a0z1f8v86qfd0520cwgw4"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Settings",
+      "LayerSettings": {
+        "Zones": [
+          "Content",
+          "Footer"
+        ]
+      }
+    },
+    {
+      "name": "recipes",
+      "Values": [
+        {
+          "executionid": "EllistaTheme",
+          "name": "Elista.Homepage"
+        }
+      ]
+    }
+  ]
+}
