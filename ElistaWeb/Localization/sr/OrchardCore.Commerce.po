@@ -3,32 +3,32 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Crowdin-Project: elistaweb\n"
 "X-Crowdin-Project-ID: 521028\n"
-"X-Crowdin-Language: hr\n"
+"X-Crowdin-Language: sr-Latn\n"
 "X-Crowdin-File: OrchardCore.Commerce.pot\n"
 "X-Crowdin-File-ID: 8\n"
 "Project-Id-Version: elistaweb\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Language-Team: Croatian\n"
-"Language: hr_HR\n"
+"Language-Team: Serbian\n"
+"Language: sr-Latn-RS\n"
 "PO-Revision-Date: 2022-07-07 19:14\n"
 
 #. public override LocalizedString DisplayText => S["Product added to cart"];
 #: OrchardCore.Commerce\Activities\ProductAddedToCartEvent.cs:21
 msgctxt "OrchardCore.Commerce.Activities.ProductAddedToCartEvent"
 msgid "Product added to cart"
-msgstr "Proizvod dodan u košaricu"
+msgstr "Proizvod dodat u korpu"
 
 #. public override LocalizedString Category => S["Commerce"];
 #: OrchardCore.Commerce\Activities\ProductAddedToCartEvent.cs:23
 msgctxt "OrchardCore.Commerce.Activities.ProductAddedToCartEvent"
 msgid "Commerce"
-msgstr "Commerce"
+msgstr "Trgovina"
 
 #. => Outcomes(S["Done"]);
 #: OrchardCore.Commerce\Activities\ProductAddedToCartEvent.cs:26
 msgctxt "OrchardCore.Commerce.Activities.ProductAddedToCartEvent"
 msgid "Done"
-msgstr "Učinjeno"
+msgstr "Završeno"
 
 #. .Add(T["Configuration"], configuration => configuration
 #: OrchardCore.Commerce\AdminMenu.cs:24
@@ -40,7 +40,7 @@ msgstr "Konfiguracija"
 #: OrchardCore.Commerce\AdminMenu.cs:25
 msgctxt "OrchardCore.Commerce.AdminMenu"
 msgid "Settings"
-msgstr "Postavke"
+msgstr "Podešavanja"
 
 #. .Add(T["Commerce"], T["Commerce"], entry => entry
 #. .Add(T["Commerce"], T["Commerce"], entry => entry
@@ -48,7 +48,7 @@ msgstr "Postavke"
 #: OrchardCore.Commerce\AdminMenu.cs:26
 msgctxt "OrchardCore.Commerce.AdminMenu"
 msgid "Commerce"
-msgstr "Commerce"
+msgstr "Trgovina"
 
 #. await _notifier.AddAsync(NotifyType.Error, H["Product with SKU {0} not found.", line.ProductSku]);
 #: OrchardCore.Commerce\Controllers\ShoppingCartController.cs:104
@@ -60,43 +60,43 @@ msgstr "Proizvod sa SKU {0} nije pronađen."
 #: OrchardCore.Commerce\Controllers\ShoppingCartController.cs:110
 msgctxt "OrchardCore.Commerce.Controllers.ShoppingCartController"
 msgid "Can't add product {0} because it doesn't have a price."
-msgstr "Nemoguće dodati proizvod {0} jer nema postavljenu cijenu u valuti."
+msgstr "Ne može se dodati proizvod {0} jer nema cenu."
 
 #. await _notifier.SuccessAsync(H["Order updated successful"]);
 #: OrchardCore.Commerce\Pages\Order.cshtml.cs:89
 msgctxt "OrchardCore.Commerce.Pages.OrderModel"
 msgid "Order updated successful"
-msgstr "Narudžba uspješno poslana i ažurirana"
+msgstr "Porudžbina uspešno ažurirana"
 
 #. Subject = H["Thank you! Your order has been received"].Value,
 #: OrchardCore.Commerce\Pages\Order.cshtml.cs:92
 msgctxt "OrchardCore.Commerce.Pages.OrderModel"
 msgid "Thank you! Your order has been received"
-msgstr "Hvala vam! Vaša narudžba je zaprimljena"
+msgstr "Hvala! Vaša porudžbina je primljena"
 
 #. Body = string.Format(H["<p>Your order link is the following {0}</p><p>Thank you!<p><p>formAdria team</p>"].Value, Request.GetDisplayUrl()),
 #: OrchardCore.Commerce\Pages\Order.cshtml.cs:94
 msgctxt "OrchardCore.Commerce.Pages.OrderModel"
 msgid "<p>Your order link is the following {0}</p><p>Thank you!<p><p>formAdria team</p>"
-msgstr "<p>Link za vašu narudžbu je sljedeći {0}</p><p>Hvala vam!<p><p>formAdria team</p>"
+msgstr "<p>Link za vašu porudžbinu je sledeći {0}</p><p>Hvala!<p><p>formAdria tim</p>"
 
 #. Subject = H["New order!"].Value,
 #: OrchardCore.Commerce\Pages\Order.cshtml.cs:100
 msgctxt "OrchardCore.Commerce.Pages.OrderModel"
 msgid "New order!"
-msgstr "Nova narudžba!"
+msgstr "Nova porudžbina!"
 
 #. Body = string.Format(H["<p>Order link is the following {0}</p>"].Value, Request.GetDisplayUrl()),
 #: OrchardCore.Commerce\Pages\Order.cshtml.cs:102
 msgctxt "OrchardCore.Commerce.Pages.OrderModel"
 msgid "<p>Order link is the following {0}</p>"
-msgstr "<p>Link za narudžbu je sljedeći {0}</p>"
+msgstr "<p>Link za porudžbinu je sledeći {0}</p>"
 
 #. ChargeText = S["Card **** **** **** {0} expiring {1}/{2}.", data[Last4], data[ExpirationMonth], data[ExpirationYear]].ToString(),
 #: OrchardCore.Commerce\Services\CreditCardPaymentProvider.cs:39
 msgctxt "OrchardCore.Commerce.Services.CreditCardPaymentProvider"
 msgid "Card **** **** **** {0} expiring {1}/{2}."
-msgstr "Kartica **** **** **** {0} istječe {1}/{2}."
+msgstr "Kartica **** **** **** {0} ističe {1}/{2}."
 
 #. new SelectListItem(CurrencySelectionModeEnum.AllCurrencies.ToString(), S["All Currencies"]),
 #: OrchardCore.Commerce\Settings\PricePartSettingsDisplayDriver.cs:42
@@ -108,7 +108,7 @@ msgstr "Sve valute"
 #: OrchardCore.Commerce\Settings\PricePartSettingsDisplayDriver.cs:43
 msgctxt "OrchardCore.Commerce.Settings.PricePartSettingsDisplayDriver"
 msgid "Default Currency"
-msgstr "Zadana valuta"
+msgstr "Podrazumevana valuta"
 
 #. new SelectListItem(CurrencySelectionModeEnum.SpecificCurrency.ToString(), S["Specific Currency"])
 #: OrchardCore.Commerce\Settings\PricePartSettingsDisplayDriver.cs:44
@@ -126,13 +126,13 @@ msgstr "Ime"
 #: OrchardCore.Commerce\Views\AddressField_Edit.cshtml:21
 msgctxt "OrchardCore.Commerce.Views.AddressField_Edit"
 msgid "Department"
-msgstr "Odjel"
+msgstr "Odeljenje"
 
 #. <label asp-for="Address.Company">@T["Company or institution"]</label>
 #: OrchardCore.Commerce\Views\AddressField_Edit.cshtml:29
 msgctxt "OrchardCore.Commerce.Views.AddressField_Edit"
 msgid "Company or institution"
-msgstr "Tvrtka ili organizacija"
+msgstr "Kompanija ili institucija"
 
 #. <label asp-for="Address.StreetAddress1">@T["Street address"]</label>
 #. <label asp-for="Address.StreetAddress2">@T["Street address"]</label>
@@ -140,7 +140,7 @@ msgstr "Tvrtka ili organizacija"
 #: OrchardCore.Commerce\Views\AddressField_Edit.cshtml:45
 msgctxt "OrchardCore.Commerce.Views.AddressField_Edit"
 msgid "Street address"
-msgstr "Ulica"
+msgstr "Adresa"
 
 #. <label asp-for="Address.City">@T["City"]</label>
 #: OrchardCore.Commerce\Views\AddressField_Edit.cshtml:53
@@ -158,25 +158,25 @@ msgstr "Poštanski broj"
 #: OrchardCore.Commerce\Views\AddressField_Edit.cshtml:69
 msgctxt "OrchardCore.Commerce.Views.AddressField_Edit"
 msgid "Country or region"
-msgstr "Zemlja ili regija"
+msgstr "Država ili region"
 
 #. <label asp-for="Hint">@T["Hint"]</label>
 #: OrchardCore.Commerce\Views\AddressFieldSettings.Edit.cshtml:5
 msgctxt "OrchardCore.Commerce.Views.AddressFieldSettings.Edit"
 msgid "Hint"
-msgstr "Naputak"
+msgstr "Napomena"
 
 #. <span class="hint">@T["The hint text to display for this attribute in the product page."]</span>
 #: OrchardCore.Commerce\Views\AddressFieldSettings.Edit.cshtml:7
 msgctxt "OrchardCore.Commerce.Views.AddressFieldSettings.Edit"
 msgid "The hint text to display for this attribute in the product page."
-msgstr "Naputak za prikazati za ovaj atribut na stranici proizvoda."
+msgstr "Napomena za prikazivanje ovog atributa na stranici proizvoda."
 
 #. <label>@name @T["(Boolean product attribute)"]</label>
 #: OrchardCore.Commerce\Views\BooleanProductAttributeField_Edit.cshtml:11
 msgctxt "OrchardCore.Commerce.Views.BooleanProductAttributeField_Edit"
 msgid "(Boolean product attribute)"
-msgstr "(Boolean atribut proizvoda)"
+msgstr "(Booleanski atribut proizvoda)"
 
 #. <li class="hint">@T["Label: {0}", settings.Label]</li>
 #: OrchardCore.Commerce\Views\BooleanProductAttributeField_Edit.cshtml:13
@@ -188,31 +188,31 @@ msgstr "Oznaka: {0}"
 #: OrchardCore.Commerce\Views\BooleanProductAttributeField_Edit.cshtml:14
 msgctxt "OrchardCore.Commerce.Views.BooleanProductAttributeField_Edit"
 msgid "Default value: on"
-msgstr "Zadana vrijednost: uključeno"
+msgstr "Podrazumevana vrednost: uključeno"
 
 #. <li class="hint">@(settings.DefaultValue ? T["Default value: on"] : T["Default value: off"])</li>
 #: OrchardCore.Commerce\Views\BooleanProductAttributeField_Edit.cshtml:14
 msgctxt "OrchardCore.Commerce.Views.BooleanProductAttributeField_Edit"
 msgid "Default value: off"
-msgstr "Zadana vrijednost: isključeno"
+msgstr "Podrazumevana vrednost: isključeno"
 
 #. <li class="hint">@T["Hint: {0}", settings.Hint]</li>
 #: OrchardCore.Commerce\Views\BooleanProductAttributeField_Edit.cshtml:15
 msgctxt "OrchardCore.Commerce.Views.BooleanProductAttributeField_Edit"
 msgid "Hint: {0}"
-msgstr "Naputak: {0}"
+msgstr "Napomena: {0}"
 
 #. <label asp-for="Hint">@T["Hint"]</label>
 #: OrchardCore.Commerce\Views\BooleanProductAttributeFieldSettings.Edit.cshtml:5
 msgctxt "OrchardCore.Commerce.Views.BooleanProductAttributeFieldSettings.Edit"
 msgid "Hint"
-msgstr "Naputak"
+msgstr "Napomena"
 
 #. <span class="hint">@T["The description text to display for this attribute in the product page."]</span>
 #: OrchardCore.Commerce\Views\BooleanProductAttributeFieldSettings.Edit.cshtml:7
 msgctxt "OrchardCore.Commerce.Views.BooleanProductAttributeFieldSettings.Edit"
 msgid "The description text to display for this attribute in the product page."
-msgstr "Opis za prikazati za ovaj atribut na stranici proizvoda."
+msgstr "Opis za prikazivanje ovog atributa na stranici proizvoda."
 
 #. <label asp-for="Label">@T["Label"]</label>
 #: OrchardCore.Commerce\Views\BooleanProductAttributeFieldSettings.Edit.cshtml:13
@@ -224,13 +224,13 @@ msgstr "Oznaka"
 #: OrchardCore.Commerce\Views\BooleanProductAttributeFieldSettings.Edit.cshtml:15
 msgctxt "OrchardCore.Commerce.Views.BooleanProductAttributeFieldSettings.Edit"
 msgid "The text associated to the checkbox for this attribute in the product page."
-msgstr "Tekst za prikazati uz kvačicu za ovaj atribut na stranici proizvoda."
+msgstr "Tekst povezan sa poljem za potvrdu za ovaj atribut na stranici proizvoda."
 
 #. <label asp-for="Label">@T["Default value"]</label>
 #: OrchardCore.Commerce\Views\BooleanProductAttributeFieldSettings.Edit.cshtml:21
 msgctxt "OrchardCore.Commerce.Views.BooleanProductAttributeFieldSettings.Edit"
 msgid "Default value"
-msgstr "Zadana vrijednost"
+msgstr "Podrazumevana vrednost"
 
 #. <label class="custom-control-label" asp-for="DefaultValue">@T["On/Off"]</label>
 #: OrchardCore.Commerce\Views\BooleanProductAttributeFieldSettings.Edit.cshtml:25
@@ -242,25 +242,25 @@ msgstr "Uključeno/Isključeno"
 #: OrchardCore.Commerce\Views\BooleanProductAttributeFieldSettings.Edit.cshtml:28
 msgctxt "OrchardCore.Commerce.Views.BooleanProductAttributeFieldSettings.Edit"
 msgid "The default value associated with this attribute."
-msgstr "Zadana vrijednost vezana uz ovaj atribut."
+msgstr "Podrazumevana vrednost povezana sa ovim atributom."
 
 #. <p class="alert alert-warning">@T["The current tenant will be reloaded when the settings are saved."]</p>
 #: OrchardCore.Commerce\Views\CommerceSettings.Edit.cshtml:3
 msgctxt "OrchardCore.Commerce.Views.CommerceSettings.Edit"
 msgid "The current tenant will be reloaded when the settings are saved."
-msgstr "Trenutna stranica će se nanovo učitati kad se postavke sačuvaju."
+msgstr "Trenutni zakupac će biti ponovo učitan kada se podešavanja sačuvaju."
 
 #. <label asp-for="DefaultCurrency">@T["Default currency"]</label>
 #: OrchardCore.Commerce\Views\CommerceSettings.Edit.cshtml:6
 msgctxt "OrchardCore.Commerce.Views.CommerceSettings.Edit"
 msgid "Default currency"
-msgstr "Zadana valuta"
+msgstr "Podrazumevana valuta"
 
 #. <span class="hint">@T["The default currency used by the system."]</span>
 #: OrchardCore.Commerce\Views\CommerceSettings.Edit.cshtml:15
 msgctxt "OrchardCore.Commerce.Views.CommerceSettings.Edit"
 msgid "The default currency used by the system."
-msgstr "Zadana valuta koja se koristi u sustavu."
+msgstr "Podrazumevana valuta koju koristi sistem."
 
 #. <label asp-for="CurrentDisplayCurrency">@T["Current display currency"]</label>
 #: OrchardCore.Commerce\Views\CommerceSettings.Edit.cshtml:19
@@ -272,13 +272,13 @@ msgstr "Trenutna prikazana valuta"
 #: OrchardCore.Commerce\Views\CommerceSettings.Edit.cshtml:28
 msgctxt "OrchardCore.Commerce.Views.CommerceSettings.Edit"
 msgid "The currently used currency for displaying prices to customers."
-msgstr "Trenutno korištena valuta za prikaz cijena kupcima."
+msgstr "Trenutno korišćena valuta za prikazivanje cena kupcima."
 
 #. <div class="intro-heading text-uppercase">@T["Your cart"]</div>
 #: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:10
 msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Your cart"
-msgstr "Vaša košarica"
+msgstr "Vaša korpa"
 
 #. <div class="col-xs-12 col-sm-1">@T["Quantity"]</div>
 #: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:21
@@ -296,13 +296,13 @@ msgstr "Proizvod"
 #: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:23
 msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Price"
-msgstr "Cijena"
+msgstr "Cena"
 
 #. <div class="col-xs-12 col-sm-1">@T["Action"]</div>
 #: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:24
 msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Action"
-msgstr "Akcije"
+msgstr "Akcija"
 
 #. <button type="submit" class="btn btn-primary">@T["Remove"]</button>
 #: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:65
@@ -326,19 +326,19 @@ msgstr "Ažuriraj"
 #: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:88
 msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Your Contact Email"
-msgstr "Kontakt e-mail"
+msgstr "Vaš kontakt e-mail"
 
 #. <button asp-action="Order" asp-controller="ShoppingCart" asp-area="OrchardCore.Commerce" type="submit" class="btn btn-dark btn-lg mb-5">@T["Order"]</button>
 #: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:101
 msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Order"
-msgstr "Naruči"
+msgstr "Poruči"
 
 #. <p>@T["Your shopping cart is empty."]</p>
 #: OrchardCore.Commerce\Views\ShoppingCart\Index.cshtml:110
 msgctxt "OrchardCore.Commerce.Views.ShoppingCart.Index"
 msgid "Your shopping cart is empty."
-msgstr "Vaša košarica je prazna."
+msgstr "Vaša korpa je prazna."
 
 #. <label>@name @T["(Numeric product attribute)"]</label>
 #: OrchardCore.Commerce\Views\NumericProductAttributeField_Edit.cshtml:11
@@ -356,43 +356,43 @@ msgstr "Obavezno polje"
 #: OrchardCore.Commerce\Views\NumericProductAttributeField_Edit.cshtml:16
 msgctxt "OrchardCore.Commerce.Views.NumericProductAttributeField_Edit"
 msgid "Decimal places: {0}"
-msgstr "Decimalnih mjesta: {0}"
+msgstr "Decimalna mesta: {0}"
 
 #. <li class="hint">@T["Default value: {0}", settings.DefaultValue.Value]</li>
 #: OrchardCore.Commerce\Views\NumericProductAttributeField_Edit.cshtml:18
 msgctxt "OrchardCore.Commerce.Views.NumericProductAttributeField_Edit"
 msgid "Default value: {0}"
-msgstr "Zadana vrijednost: {0}"
+msgstr "Podrazumevana vrednost: {0}"
 
 #. <li class="hint">@T["Value must be between {0} and {1}", settings.Minimum.Value, settings.Maximum.Value]</li>
 #: OrchardCore.Commerce\Views\NumericProductAttributeField_Edit.cshtml:21
 msgctxt "OrchardCore.Commerce.Views.NumericProductAttributeField_Edit"
 msgid "Value must be between {0} and {1}"
-msgstr "Vrijednost mora biti između {0} i {1}"
+msgstr "Vrednost mora biti između {0} i {1}"
 
 #. <li class="hint">@T["Minimum value: {0}", settings.Minimum.Value]</li>
 #: OrchardCore.Commerce\Views\NumericProductAttributeField_Edit.cshtml:23
 msgctxt "OrchardCore.Commerce.Views.NumericProductAttributeField_Edit"
 msgid "Minimum value: {0}"
-msgstr "Minimalna vrijednost: {0}"
+msgstr "Minimalna vrednost: {0}"
 
 #. <li class="hint">@T["Maximum value: {0}", settings.Maximum.Value]</li>
 #: OrchardCore.Commerce\Views\NumericProductAttributeField_Edit.cshtml:25
 msgctxt "OrchardCore.Commerce.Views.NumericProductAttributeField_Edit"
 msgid "Maximum value: {0}"
-msgstr "Maksimalna vrijednost: {0}"
+msgstr "Maksimalna vrednost: {0}"
 
 #. <li class="hint">@T["Placeholder: {0}", settings.Placeholder]</li>
 #: OrchardCore.Commerce\Views\NumericProductAttributeField_Edit.cshtml:27
 msgctxt "OrchardCore.Commerce.Views.NumericProductAttributeField_Edit"
 msgid "Placeholder: {0}"
-msgstr "Placeholder: {0}"
+msgstr "Unosni tekst: {0}"
 
 #. <li class="hint">@T["Hint: {0}", settings.Hint]</li>
 #: OrchardCore.Commerce\Views\NumericProductAttributeField_Edit.cshtml:28
 msgctxt "OrchardCore.Commerce.Views.NumericProductAttributeField_Edit"
 msgid "Hint: {0}"
-msgstr "Naputak: {0}"
+msgstr "Napomena: {0}"
 
 #. <label class="custom-control-label" asp-for="Required">@T["Required"]</label>
 #: OrchardCore.Commerce\Views\NumericProductAttributeFieldSettings.Edit.cshtml:14
@@ -404,43 +404,43 @@ msgstr "Obavezno polje"
 #: OrchardCore.Commerce\Views\NumericProductAttributeFieldSettings.Edit.cshtml:15
 msgctxt "OrchardCore.Commerce.Views.NumericProductAttributeFieldSettings.Edit"
 msgid "— Whether a value is required."
-msgstr "-- Vrijednost je tražena."
+msgstr "— Da li je vrednost obavezna."
 
 #. <label asp-for="Hint">@T["Hint"]</label>
 #: OrchardCore.Commerce\Views\NumericProductAttributeFieldSettings.Edit.cshtml:21
 msgctxt "OrchardCore.Commerce.Views.NumericProductAttributeFieldSettings.Edit"
 msgid "Hint"
-msgstr "Naputak"
+msgstr "Napomena"
 
 #. <span class="hint">@T["The hint text to display for this attribute in the product page."]</span>
 #: OrchardCore.Commerce\Views\NumericProductAttributeFieldSettings.Edit.cshtml:23
 msgctxt "OrchardCore.Commerce.Views.NumericProductAttributeFieldSettings.Edit"
 msgid "The hint text to display for this attribute in the product page."
-msgstr "Naputak za prikazati za ovaj atribut na stranici proizvoda."
+msgstr "Napomena za prikazivanje ovog atributa na stranici proizvoda."
 
 #. <label for="Placeholder">@T["Watermark (placeholder)"]</label>
 #: OrchardCore.Commerce\Views\NumericProductAttributeFieldSettings.Edit.cshtml:29
 msgctxt "OrchardCore.Commerce.Views.NumericProductAttributeFieldSettings.Edit"
 msgid "Watermark (placeholder)"
-msgstr "Watermark (placeholder)"
+msgstr "Unosni tekst (placeholder)"
 
 #. <span class="hint">@T["A hint to display when the input is empty. (optional)"]</span>
 #: OrchardCore.Commerce\Views\NumericProductAttributeFieldSettings.Edit.cshtml:31
 msgctxt "OrchardCore.Commerce.Views.NumericProductAttributeFieldSettings.Edit"
 msgid "A hint to display when the input is empty. (optional)"
-msgstr "Naputak za prikazati kad je unos prazan. (neobvezno)"
+msgstr "Napomena za prikazivanje kada je unos prazan. (opciono)"
 
 #. <label for="DecimalPlaces">@T["Decimal places"]</label>
 #: OrchardCore.Commerce\Views\NumericProductAttributeFieldSettings.Edit.cshtml:37
 msgctxt "OrchardCore.Commerce.Views.NumericProductAttributeFieldSettings.Edit"
 msgid "Decimal places"
-msgstr "Decimalnih mjesta"
+msgstr "Decimalna mesta"
 
 #. <span class="hint">@T["The number of digits after the decimal point."]</span>
 #: OrchardCore.Commerce\Views\NumericProductAttributeFieldSettings.Edit.cshtml:40
 msgctxt "OrchardCore.Commerce.Views.NumericProductAttributeFieldSettings.Edit"
 msgid "The number of digits after the decimal point."
-msgstr "Broj znamenki nakon decimale."
+msgstr "Broj cifara posle decimalne tačke."
 
 #. <label for="Minimum">@T["Minimum"]</label>
 #: OrchardCore.Commerce\Views\NumericProductAttributeFieldSettings.Edit.cshtml:46
@@ -452,7 +452,7 @@ msgstr "Minimum"
 #: OrchardCore.Commerce\Views\NumericProductAttributeFieldSettings.Edit.cshtml:49
 msgctxt "OrchardCore.Commerce.Views.NumericProductAttributeFieldSettings.Edit"
 msgid "The minimum value allowed. (optional)"
-msgstr "Minimalna dozvoljena vrijednost. (neobvezno)"
+msgstr "Minimalna dozvoljena vrednost. (opciono)"
 
 #. <label for="Maximum">@T["Maximum"]</label>
 #: OrchardCore.Commerce\Views\NumericProductAttributeFieldSettings.Edit.cshtml:55
@@ -464,19 +464,19 @@ msgstr "Maksimum"
 #: OrchardCore.Commerce\Views\NumericProductAttributeFieldSettings.Edit.cshtml:58
 msgctxt "OrchardCore.Commerce.Views.NumericProductAttributeFieldSettings.Edit"
 msgid "The maximum value allowed. (optional)"
-msgstr "Maksimalna dozvoljena vrijednost. (neobvezno)"
+msgstr "Maksimalna dozvoljena vrednost. (opciono)"
 
 #. <label for="DefaultValue">@T["Default value"]</label>
 #: OrchardCore.Commerce\Views\NumericProductAttributeFieldSettings.Edit.cshtml:64
 msgctxt "OrchardCore.Commerce.Views.NumericProductAttributeFieldSettings.Edit"
 msgid "Default value"
-msgstr "Zadana vrijednost"
+msgstr "Podrazumevana vrednost"
 
 #. <span class="hint">@T["The default value. (optional)"]</span>
 #: OrchardCore.Commerce\Views\NumericProductAttributeFieldSettings.Edit.cshtml:68
 msgctxt "OrchardCore.Commerce.Views.NumericProductAttributeFieldSettings.Edit"
 msgid "The default value. (optional)"
-msgstr "Zadana vrijednost. (neobvezno)"
+msgstr "Podrazumevana vrednost. (opciono)"
 
 #: OrchardCore.Commerce\Views\NumericProductAttributeValue.cshtml:0
 msgctxt "OrchardCore.Commerce.Views.NumericProductAttributeValue"
@@ -487,13 +487,13 @@ msgstr "{0}: {1}"
 #: OrchardCore.Commerce\Pages\Order.cshtml:17
 msgctxt "OrchardCore.Commerce.Pages.Order"
 msgid "Save Order"
-msgstr "Pošalji narudžbu"
+msgstr "Sačuvaj porudžbinu"
 
 #. <div class="intro-heading text-uppercase">@T["Order items"]</div>
 #: OrchardCore.Commerce\Views\OrderPart_Edit.cshtml:9
 msgctxt "OrchardCore.Commerce.Views.OrderPart_Edit"
 msgid "Order items"
-msgstr "Stavke narudžbe"
+msgstr "Stavke porudžbine"
 
 #. <div class="col-xs-12 col-sm-1">@T["Quantity"]</div>
 #: OrchardCore.Commerce\Views\OrderPart_Edit.cshtml:16
@@ -511,7 +511,7 @@ msgstr "Proizvod"
 #: OrchardCore.Commerce\Views\OrderPart_Edit.cshtml:18
 msgctxt "OrchardCore.Commerce.Views.OrderPart_Edit"
 msgid "Price"
-msgstr "Cijena"
+msgstr "Cena"
 
 #: OrchardCore.Commerce\Views\OrderPart_Edit.cshtml:0
 msgctxt "OrchardCore.Commerce.Views.OrderPart_Edit"
@@ -528,13 +528,13 @@ msgstr "Ukupno"
 #: OrchardCore.Commerce\Views\OrderPart_Edit.cshtml:54
 msgctxt "OrchardCore.Commerce.Views.OrderPart_Edit"
 msgid "This order is empty."
-msgstr "Narudžba je prazna."
+msgstr "Porudžbina je prazna."
 
 #. <div class="intro-heading text-uppercase">@T["Order items"]</div>
 #: OrchardCore.Commerce\Views\OrderPart.cshtml:8
 msgctxt "OrchardCore.Commerce.Views.OrderPart"
 msgid "Order items"
-msgstr "Stavke narudžbe"
+msgstr "Stavke porudžbine"
 
 #. <div class="col-xs-12 col-sm-1">@T["Quantity"]</div>
 #: OrchardCore.Commerce\Views\OrderPart.cshtml:15
@@ -552,7 +552,7 @@ msgstr "Proizvod"
 #: OrchardCore.Commerce\Views\OrderPart.cshtml:17
 msgctxt "OrchardCore.Commerce.Views.OrderPart"
 msgid "Price"
-msgstr "Cijena"
+msgstr "Cena"
 
 #: OrchardCore.Commerce\Views\OrderPart.cshtml:0
 msgctxt "OrchardCore.Commerce.Views.OrderPart"
@@ -575,19 +575,19 @@ msgstr "Ažuriraj"
 #: OrchardCore.Commerce\Views\OrderPart.cshtml:53
 msgctxt "OrchardCore.Commerce.Views.OrderPart"
 msgid "This order is empty."
-msgstr "Narudžba je prazna."
+msgstr "Porudžbina je prazna."
 
 #. <label asp-for="Price">@T["Price"] </label>
 #: OrchardCore.Commerce\Views\PricePart.Edit.cshtml:4
 msgctxt "OrchardCore.Commerce.Views.PricePart.Edit"
 msgid "Price"
-msgstr "Cijena"
+msgstr "Cena"
 
 #. @T["The base price of the product."]
 #: OrchardCore.Commerce\Views\PricePart.Edit.cshtml:14
 msgctxt "OrchardCore.Commerce.Views.PricePart.Edit"
 msgid "The base price of the product."
-msgstr "Osnovna cijena proizvoda."
+msgstr "Osnovna cena proizvoda."
 
 #. <label asp-for="CurrencySelectionMode">@T["Currency selection mode"]</label>
 #: OrchardCore.Commerce\Views\PricePartSettings.Edit.cshtml:4
@@ -605,31 +605,31 @@ msgstr "Određuje konfiguraciju valute za ovaj PricePart."
 #: OrchardCore.Commerce\Views\PricePartSettings.Edit.cshtml:23
 msgctxt "OrchardCore.Commerce.Views.PricePartSettings.Edit"
 msgid "Currency used for specific currency selection mode."
-msgstr "Valuta korištena za određeni način izbor valute."
+msgstr "Valuta korišćena za određeni način izbora valute."
 
 #. <label asp-for="VariantsValues[variantKey]">@variantKey @T["Price"] </label>
 #: OrchardCore.Commerce\Views\PriceVariantsPart.Edit.cshtml:10
 msgctxt "OrchardCore.Commerce.Views.PriceVariantsPart.Edit"
 msgid "Price"
-msgstr "Cijena"
+msgstr "Cena"
 
 #. <h4><i class="fa fa-shopping-cart"></i>@Model.Activity.GetTitleOrDefault(() => T["Product added to cart"])</h4>
 #: OrchardCore.Commerce\Views\Items\ProductAddedToCartEvent.Fields.Design.cshtml:6
 msgctxt "OrchardCore.Commerce.Views.Items.ProductAddedToCartEvent.Fields.Design"
 msgid "Product added to cart"
-msgstr "Proizvod dodan u košaricu"
+msgstr "Proizvod dodat u korpu"
 
 #. <h4 class="card-title"><i class="fa fa-shopping-cart"></i>@T["Product added"]</h4>
 #: OrchardCore.Commerce\Views\Items\ProductAddedToCartEvent.Fields.Thumbnail.cshtml:1
 msgctxt "OrchardCore.Commerce.Views.Items.ProductAddedToCartEvent.Fields.Thumbnail"
 msgid "Product added"
-msgstr "Proizvod dodan"
+msgstr "Proizvod dodat"
 
 #. <p>@T["Executes when a product is added to the shopping cart."]</p>
 #: OrchardCore.Commerce\Views\Items\ProductAddedToCartEvent.Fields.Thumbnail.cshtml:2
 msgctxt "OrchardCore.Commerce.Views.Items.ProductAddedToCartEvent.Fields.Thumbnail"
 msgid "Executes when a product is added to the shopping cart."
-msgstr "Izvrši se kad je proizvod dodan u košaricu."
+msgstr "Izvršava se kada je proizvod dodat u korpu."
 
 #. <label for="@id-quantity">@T["Quantity"]</label>
 #: OrchardCore.Commerce\Views\ProductPart.cshtml:9
@@ -641,7 +641,7 @@ msgstr "Količina"
 #: OrchardCore.Commerce\Views\ProductPart.cshtml:17
 msgctxt "OrchardCore.Commerce.Views.ProductPart"
 msgid "Add to cart"
-msgstr "Dodaj u košaricu"
+msgstr "Dodaj u korpu"
 
 #. <label asp-for="Sku">@T["SKU"] </label>
 #: OrchardCore.Commerce\Views\ProductPart.Edit.cshtml:4
@@ -659,133 +659,133 @@ msgstr "SKU proizvoda."
 #: OrchardCore.Commerce\Views\TextProductAttributeField_Edit.cshtml:11
 msgctxt "OrchardCore.Commerce.Views.TextProductAttributeField_Edit"
 msgid "(Text product attribute)"
-msgstr "(Tekst atribut proizvoda)"
+msgstr "(Tekstualni atribut proizvoda)"
 
 #. <li class="hint">@T["Required"]</li>
 #: OrchardCore.Commerce\Views\TextProductAttributeField_Edit.cshtml:14
 msgctxt "OrchardCore.Commerce.Views.TextProductAttributeField_Edit"
 msgid "Required"
-msgstr "Obavezno polje"
+msgstr "Obavezno"
 
 #. <li class="hint">@T["Predefined values: {0}", string.Join(", ", settings.PredefinedValues)]</li>
 #: OrchardCore.Commerce\Views\TextProductAttributeField_Edit.cshtml:17
 msgctxt "OrchardCore.Commerce.Views.TextProductAttributeField_Edit"
 msgid "Predefined values: {0}"
-msgstr "Zadane vrijednosti: {0}"
+msgstr "Predefinisane vrednosti: {0}"
 
 #. <li class="hint">@T["Choice is restricted to predefined values."]</li>
 #: OrchardCore.Commerce\Views\TextProductAttributeField_Edit.cshtml:19
 msgctxt "OrchardCore.Commerce.Views.TextProductAttributeField_Edit"
 msgid "Choice is restricted to predefined values."
-msgstr "Izbor je ograničen na zadane vrijednosti."
+msgstr "Izbor je ograničen na predefinisane vrednosti."
 
 #. <li class="hint">@T["The user may enter a value that is not one of the predefined values."]</li>
 #: OrchardCore.Commerce\Views\TextProductAttributeField_Edit.cshtml:21
 msgctxt "OrchardCore.Commerce.Views.TextProductAttributeField_Edit"
 msgid "The user may enter a value that is not one of the predefined values."
-msgstr "Korisnik može unijeti vrijednost koja nije u ponuđenim vrijednostima."
+msgstr "Korisnik može uneti vrednost koja nije među predefinisanim vrednostima."
 
 #. <li class="hint">@T["The user may select more than one value."]</li>
 #: OrchardCore.Commerce\Views\TextProductAttributeField_Edit.cshtml:24
 msgctxt "OrchardCore.Commerce.Views.TextProductAttributeField_Edit"
 msgid "The user may select more than one value."
-msgstr "Korisnik može izabrati više od jedne vrijednosti."
+msgstr "Korisnik može izabrati više od jedne vrednosti."
 
 #. <li class="hint">@T["Placeholder: {0}", settings.Placeholder]</li>
 #: OrchardCore.Commerce\Views\TextProductAttributeField_Edit.cshtml:27
 msgctxt "OrchardCore.Commerce.Views.TextProductAttributeField_Edit"
 msgid "Placeholder: {0}"
-msgstr "Placeholder: {0}"
+msgstr "Unosni tekst: {0}"
 
 #. <li class="hint">@T["Hint: {0}", settings.Hint]</li>
 #: OrchardCore.Commerce\Views\TextProductAttributeField_Edit.cshtml:28
 msgctxt "OrchardCore.Commerce.Views.TextProductAttributeField_Edit"
 msgid "Hint: {0}"
-msgstr "Naputak: {0}"
+msgstr "Napomena: {0}"
 
 #. <label class="custom-control-label" asp-for="Required">@T["Required"]</label>
 #: OrchardCore.Commerce\Views\TextProductAttributeFieldSettings.Edit.cshtml:6
 msgctxt "OrchardCore.Commerce.Views.TextProductAttributeFieldSettings.Edit"
 msgid "Required"
-msgstr "Obavezno polje"
+msgstr "Obavezno"
 
 #. <span class="hint">@T["— Whether a value is required."]</span>
 #: OrchardCore.Commerce\Views\TextProductAttributeFieldSettings.Edit.cshtml:7
 msgctxt "OrchardCore.Commerce.Views.TextProductAttributeFieldSettings.Edit"
 msgid "— Whether a value is required."
-msgstr "-- Vrijednost je tražena."
+msgstr "— Da li je vrednost obavezna."
 
 #. <label asp-for="Hint">@T["Hint"]</label>
 #: OrchardCore.Commerce\Views\TextProductAttributeFieldSettings.Edit.cshtml:13
 msgctxt "OrchardCore.Commerce.Views.TextProductAttributeFieldSettings.Edit"
 msgid "Hint"
-msgstr "Naputak"
+msgstr "Napomena"
 
 #. <span class="hint">@T["The hint text to display for this attribute in the product page."]</span>
 #: OrchardCore.Commerce\Views\TextProductAttributeFieldSettings.Edit.cshtml:15
 msgctxt "OrchardCore.Commerce.Views.TextProductAttributeFieldSettings.Edit"
 msgid "The hint text to display for this attribute in the product page."
-msgstr "Naputak za prikazati za ovaj atribut na stranici proizvoda."
+msgstr "Napomena za prikazivanje ovog atributa na stranici proizvoda."
 
 #. <label for="Placeholder">@T["Watermark (placeholder)"]</label>
 #: OrchardCore.Commerce\Views\TextProductAttributeFieldSettings.Edit.cshtml:21
 msgctxt "OrchardCore.Commerce.Views.TextProductAttributeFieldSettings.Edit"
 msgid "Watermark (placeholder)"
-msgstr "Watermark (placeholder)"
+msgstr "Unosni tekst (placeholder)"
 
 #. <span class="hint">@T["A hint to display when the input is empty. (optional)"]</span>
 #: OrchardCore.Commerce\Views\TextProductAttributeFieldSettings.Edit.cshtml:23
 msgctxt "OrchardCore.Commerce.Views.TextProductAttributeFieldSettings.Edit"
 msgid "A hint to display when the input is empty. (optional)"
-msgstr "Naputak za prikazati kad je unos prazan. (neobvezno)"
+msgstr "Napomena za prikazivanje kada je unos prazan. (opciono)"
 
 #. <label for="PredefinedValues">@T["Predefined values"]</label>
 #: OrchardCore.Commerce\Views\TextProductAttributeFieldSettings.Edit.cshtml:29
 msgctxt "OrchardCore.Commerce.Views.TextProductAttributeFieldSettings.Edit"
 msgid "Predefined values"
-msgstr "Predefinirane vrijednosti"
+msgstr "Predefinisane vrednosti"
 
 #. <span class="hint">@T["The set of suggested or allowed values. Enter one value per line."]</span>
 #: OrchardCore.Commerce\Views\TextProductAttributeFieldSettings.Edit.cshtml:31
 msgctxt "OrchardCore.Commerce.Views.TextProductAttributeFieldSettings.Edit"
 msgid "The set of suggested or allowed values. Enter one value per line."
-msgstr "Set predloženih ili dozvoljenih vrijednosti. Unijeti jednu vrijednost po liniji."
+msgstr "Skup predloženih ili dozvoljenih vrednosti. Unesite jednu vrednost po liniji."
 
 #. <label class="custom-control-label" asp-for="RestrictToPredefinedValues">@T["Restrict to predefined values"]</label>
 #: OrchardCore.Commerce\Views\TextProductAttributeFieldSettings.Edit.cshtml:38
 msgctxt "OrchardCore.Commerce.Views.TextProductAttributeFieldSettings.Edit"
 msgid "Restrict to predefined values"
-msgstr "Ograniči na ponuđene vrijednosti"
+msgstr "Ograniči na predefinisane vrednosti"
 
 #. <span class="hint">@T["— Whether values should be restricted to the set of predefined values."]</span>
 #: OrchardCore.Commerce\Views\TextProductAttributeFieldSettings.Edit.cshtml:39
 msgctxt "OrchardCore.Commerce.Views.TextProductAttributeFieldSettings.Edit"
 msgid "— Whether values should be restricted to the set of predefined values."
-msgstr "-- Trebaju li vrijednosti biti ograničene na predefinirane vrijednosti."
+msgstr "— Da li vrednosti treba ograničiti na predefinisane vrednosti."
 
 #. <label class="custom-control-label" asp-for="MultipleValues">@T["Multiple values"]</label>
 #: OrchardCore.Commerce\Views\TextProductAttributeFieldSettings.Edit.cshtml:46
 msgctxt "OrchardCore.Commerce.Views.TextProductAttributeFieldSettings.Edit"
 msgid "Multiple values"
-msgstr "Više vrijednosti"
+msgstr "Više vrednosti"
 
 #. <span class="hint">@T["— Whether multiple values can be selected."]</span>
 #: OrchardCore.Commerce\Views\TextProductAttributeFieldSettings.Edit.cshtml:47
 msgctxt "OrchardCore.Commerce.Views.TextProductAttributeFieldSettings.Edit"
 msgid "— Whether multiple values can be selected."
-msgstr "--- Može li se unijeti više vrijednosti."
+msgstr "— Da li se može izabrati više vrednosti."
 
 #. <label for="DefaultValue">@T["Default value"]</label>
 #: OrchardCore.Commerce\Views\TextProductAttributeFieldSettings.Edit.cshtml:53
 msgctxt "OrchardCore.Commerce.Views.TextProductAttributeFieldSettings.Edit"
 msgid "Default value"
-msgstr "Zadana vrijednost"
+msgstr "Podrazumevana vrednost"
 
 #. <span class="hint">@T["The default value. (optional)"]</span>
 #: OrchardCore.Commerce\Views\TextProductAttributeFieldSettings.Edit.cshtml:55
 msgctxt "OrchardCore.Commerce.Views.TextProductAttributeFieldSettings.Edit"
 msgid "The default value. (optional)"
-msgstr "Zadana vrijednost. (neobvezno)"
+msgstr "Podrazumevana vrednost. (opciono)"
 
 #: OrchardCore.Commerce\Views\TextProductAttributeValue.cshtml:0
 msgctxt "OrchardCore.Commerce.Views.TextProductAttributeValue"

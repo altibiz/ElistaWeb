@@ -1,0 +1,211 @@
+﻿{
+  "name": "Elista.Homepage",
+  "steps": [
+    {
+      "name": "content",
+      "data": [
+        {
+          "ContentItemId": "4z9fpx9bb856k63w8j0d6f1sdj",
+          "ContentItemVersionId": "4cbz6e3xw1j5x247s99qtascd0",
+          "ContentType": "Page",
+          "DisplayText": "home",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2022-05-06T08:11:27.3909833Z",
+          "PublishedUtc": "2022-05-06T08:11:27.5318885Z",
+          "CreatedUtc": "2022-05-03T06:44:10.5811175Z",
+          "Owner": "4v89tfvreha9tvqf29qe1xaddx",
+          "Author": "admin",
+          "Page": {},
+          "AutoroutePart": {
+            "Path": "home",
+            "SetHomepage": true,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false
+          },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "ContentItemId": "4arxycavrp0226cjtzv39vzyn0",
+                "ContentItemVersionId": null,
+                "ContentType": "Container",
+                "DisplayText": null,
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2022-05-06T08:11:27.4336239Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Container": {},
+                "FlowPart": {
+                  "Widgets": [
+                    {
+                      "ContentItemId": "42fh78qf82rcg0zyesfsgrsnm1",
+                      "ContentItemVersionId": null,
+                      "ContentType": "Carousel",
+                      "DisplayText": null,
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2022-05-06T08:11:27.4372882Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": null,
+                      "Author": "admin",
+                      "Carousel": {
+                        "Interval": {
+                          "Value": 5000.0
+                        },
+                        "Pause": {
+                          "Value": false
+                        }
+                      },
+                      "Slides": {
+                        "ContentItems": [
+                          {
+                            "ContentItemId": "4h8346z9qqwbp5mj30btkejxdd",
+                            "ContentItemVersionId": null,
+                            "ContentType": "Slide",
+                            "DisplayText": null,
+                            "Latest": false,
+                            "Published": false,
+                            "ModifiedUtc": "2022-05-06T08:11:27.4547352Z",
+                            "PublishedUtc": null,
+                            "CreatedUtc": null,
+                            "Owner": null,
+                            "Author": "admin",
+                            "Slide": {
+                              "Image": {
+                                "Paths": [
+                                  "slide-2.jpg"
+                                ],
+                                "MediaTexts": [
+                                  ""
+                                ]
+                              },
+                              "SubTitle": {
+                                "Text": "Kameleon među materijalima"
+                              },
+                              "Title": {
+                                "Text": "1 materijal, 1000 lica"
+                              },
+                              "ShortDescription": {
+                                "Text": "Eksterijeri, interijeri, ručni radovi, uz Jesmonite vaše ideje postaju stvarnost."
+                              },
+                              "ImageClass": {
+                                "Text": "c1"
+                              },
+                              "ImageAltText": {
+                                "Text": "alt"
+                              },
+                              "BtnText": {
+                                "Text": "pogledaj ponudu"
+                              },
+                              "BtnUrl": {
+                                "Text": "#products"
+                              }
+                            }
+                          },
+                          {
+                            "ContentItemId": "4988shbz26cs67j315y1baffct",
+                            "ContentItemVersionId": null,
+                            "ContentType": "Slide",
+                            "DisplayText": null,
+                            "Latest": false,
+                            "Published": false,
+                            "ModifiedUtc": "2022-05-06T08:11:27.4961352Z",
+                            "PublishedUtc": null,
+                            "CreatedUtc": null,
+                            "Owner": null,
+                            "Author": "admin",
+                            "Slide": {
+                              "Image": {
+                                "Paths": [
+                                  "slide-1.png"
+                                ],
+                                "MediaTexts": [
+                                  ""
+                                ]
+                              },
+                              "SubTitle": {
+                                "Text": "Za kreativce, obrtnike i umjetnike"
+                              },
+                              "Title": {
+                                "Text": "Eco-friendly i baziran na vodi"
+                              },
+                              "ShortDescription": {
+                                "Text": "Lagan, izdržljiv, pogodan za izradu najfinijih detalja"
+                              },
+                              "ImageClass": {
+                                "Text": "c1"
+                              },
+                              "ImageAltText": {
+                                "Text": "alt"
+                              },
+                              "BtnText": {
+                                "Text": "pogledaj ponudu"
+                              },
+                              "BtnUrl": {
+                                "Text": "#products"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    },
+                    {
+                      "ContentItemId": "4npsrt6jt9b2yzce0qa9qhbyc7",
+                      "ContentItemVersionId": null,
+                      "ContentType": "Products",
+                      "DisplayText": "Shop",
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2022-05-06T08:11:27.5137913Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": null,
+                      "Author": "admin",
+                      "Products": {},
+                      "TitlePart": {
+                        "Title": "Shop"
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    }
+                  ]
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              }
+            ]
+          },
+          "TitlePart": {
+            "Title": "home"
+          }
+        }
+      ]
+    },
+    {
+      "name": "media",
+      "Files": [
+        {
+          "TargetPath": "slide-1.png",
+          "SourcePath": "slide-1.png"
+        },
+        {
+          "TargetPath": "slide-2.jpg",
+          "SourcePath": "slide-2.jpg"
+        }
+      ]
+    }
+  ]
+}
