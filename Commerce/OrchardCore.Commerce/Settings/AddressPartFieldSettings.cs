@@ -7,5 +7,7 @@ namespace OrchardCore.Commerce.Settings
         public string DisabledText { get; set; }
 
         public string DisableLabel { get; set; }
+
+        public bool UseBoxNow { get; set; }
     }
 }

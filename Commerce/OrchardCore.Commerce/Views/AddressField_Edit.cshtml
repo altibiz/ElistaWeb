@@ -44,6 +44,13 @@
             <input asp-for="Address.StreetAddress1" class="form-control content-preview-text" required="required" />
         </div>
     </div>
+    @if (settings.UseBoxNow)
+    {
+        <div class="row">
+            <a href="javascript:;" class="boxnow-map-widget-button">Odabir BOX NOW pretinca za dostavu (do 20kg)</a>
+            <div id="boxnowmap" style=""></div>
+        </div>
+    }
     <div class="row">
         <div class="form-group col-md-12">
             <label asp-for="Address.StreetAddress2">@T["Street address"]</label>
@@ -91,21 +98,37 @@
         <text>commerceRegionsInitialize(@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.Provinces))); </text>
         Context.Items["commerce-regions-initialized"] = true;
     }
-        commerceRegionsBind("#@Html.IdFor(m => m.Address.Province)", "#@Html.IdFor(m => m.Address.Region)");
+    commerceRegionsBind("#@Html.IdFor(m => m.Address.Province)", "#@Html.IdFor(m => m.Address.Region)");
     $("#@Html.IdFor(m => m.Address.Disabled)").change(function () {
-        let requiredCtls = ["#@Html.IdFor(m => m.Address.Name)", "#@Html.IdFor(m => m.Address.StreetAddress1)", "#@Html.IdFor(m => m.Address.City)"];
-        let addressDiv = $("#@(addressId)");
-        if (this.checked) {
-            requiredCtls.forEach(x=>$(x).removeAttr('required'));
-            addressDiv.hide();
-            $("#@(addressId)_Instructions", addressDiv).show();
-        } else {
-            addressDiv.show();
-            requiredCtls.forEach(x=>$(x).attr('required',true));
-            //$(["input:hidden", "textarea:hidden", "select:hidden"], addressDiv).attr("disabled", false);
+    let requiredCtls = ["#@Html.IdFor(m => m.Address.Name)", "#@Html.IdFor(m => m.Address.StreetAddress1)", "#@Html.IdFor(m => m.Address.City)"];
+    let addressDiv = $("#@(addressId)");
+    if (this.checked) {
+    requiredCtls.forEach(x=>$(x).removeAttr('required'));
+    addressDiv.hide();
+    $("#@(addressId)_Instructions", addressDiv).show();
+    } else {
+    addressDiv.show();
+    requiredCtls.forEach(x=>$(x).attr('required',true));
+    //$(["input:hidden", "textarea:hidden", "select:hidden"], addressDiv).attr("disabled", false);
 
-            $("#@(addressId)_Instructions", addressDiv).hide();
-        }
+    $("#@(addressId)_Instructions", addressDiv).hide();
+    }
     })
 </script>
-
+@if (settings.UseBoxNow)
+{
+    <script at="Foot" type="text/javascript">
+        var _bn_map_widget_config = {
+        type: "popup",
+        partnerId: 123,
+        parentElement: "#boxnowmap",
+        afterSelect: function (selected) {
+        document.getElementById("@Html.IdFor(m => m.Address.PostalCode)").value = selected.boxnowLockerPostalCode;
+        document.getElementById("@Html.IdFor(m => m.Address.StreetAddress1)").value = selected.boxnowLockerAddressLine1;
+        document.getElementById("@Html.IdFor(m => m.Address.StreetAddress2)").value = "ID:"+selected.boxnowLockerId;
+        document.getElementById("@Html.IdFor(m => m.Address.City)").value = selected.boxnowLockerAddressLine2;
+        }
+        };
+        (function (d) { var e = d.createElement("script"); e.src = "https://widget-cdn.boxnow.hr/map-widget/client/v5.js"; e.async = true; e.defer = true; d.getElementsByTagName("head")[0].appendChild(e); })(document);
+    </script>
+}
