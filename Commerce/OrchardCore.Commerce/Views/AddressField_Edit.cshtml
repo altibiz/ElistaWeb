@@ -123,6 +123,9 @@
         partnerId: 123,
         parentElement: "#boxnowmap",
         afterSelect: function (selected) {
+        if(!selected || !selected.boxnowLockerId) {
+            return;
+        }
         document.getElementById("@Html.IdFor(m => m.Address.PostalCode)").value = selected.boxnowLockerPostalCode;
         document.getElementById("@Html.IdFor(m => m.Address.StreetAddress1)").value = selected.boxnowLockerAddressLine1;
         document.getElementById("@Html.IdFor(m => m.Address.StreetAddress2)").value = "ID:"+selected.boxnowLockerId;
