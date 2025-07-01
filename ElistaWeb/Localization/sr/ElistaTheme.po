@@ -28,7 +28,7 @@ msgstr "Ekskluzivni distributer Jesmonite-a za Adria region"
 #: ElistaTheme\Views\Shared\Footer.cshtml:24
 msgctxt "ElistaTheme.Views.Shared.Footer"
 msgid "Shipping to all of Adria region"
-msgstr "Dostava za ceo Adria region"
+msgstr "Dostava za Srbiju"
 
 #. <h6 class="text-sm mb-1">@T["No product in our stock?"]</h6>
 #: ElistaTheme\Views\Shared\Footer.cshtml:29

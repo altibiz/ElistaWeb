@@ -13,8 +13,10 @@
 
     var phone = contacts.GetText("Phone") ?? "+385 98 210 756";
     var email = contacts.GetText("Email") ?? "info@formadria.com";
+    var instagram = "https://www.instagram.com/" + contacts.GetText("Instagram") ?? "formadria";
     // Navbar is pre-rendered to allow resource injection.
     var navbar = await DisplayAsync(await NavbarDisplay.BuildDisplayAsync(UpdateModelAccessor.ModelUpdater));
+    var website = contacts.GetText("Website");
 
 }
 
@@ -25,7 +27,7 @@
                 <ul class="list-inline mb-0">
                     <li class="d-none list-inline-item me-2"><a class="text-reset text-primary-hover" href="#"><i class="fab fa-facebook-f"> </i></a></li>
                     <li class="list-inline-item me-4">
-                        <a class="text-reset text-primary-hover" target="_blank" href="https://www.instagram.com/formadria/"><i style="font-size:18px;margin-right:.5rem" class="fab fa-instagram"></i>instagram</a>
+                        <a class="text-reset text-primary-hover" target="_blank" href="@instagram"><i style="font-size:18px;margin-right:.5rem" class="fab fa-instagram"></i>instagram</a>
                     </li>
                     <li class="list-inline-item align-top me-4">
                         <svg class="svg-icon me-2">

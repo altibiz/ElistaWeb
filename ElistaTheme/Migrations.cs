@@ -49,4 +49,15 @@ internal class Migrations : DataMigration
         );
         return 1;
     }
+
+    public async Task<int> UpdateFrom1Async()
+    {
+        await _contentDefinitionManager.AlterPartDefinitionAsync("GeneralSettings", part => part
+            .WithField("Instagram", field => field
+                .OfType("TextField")
+                .WithDisplayName("Instagram")
+                .WithPosition("1")
+            ));
+        return 2;
+    }
 }
