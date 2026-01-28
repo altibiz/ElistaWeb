@@ -185,6 +185,7 @@ nuget.exe
 node_modules/*
 
 ElistaWeb/wwwroot
+!ElistaWeb/wwwroot/.placeholder
 /**/node_modules/
 /ElistaTheme/Assets/dist
 /ModuleName.OrchardCore/wwwroot
