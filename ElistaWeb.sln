@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElistaWeb", "ElistaWeb\Elis
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElistaTheme", "ElistaTheme\ElistaTheme.csproj", "{BBFD40E1-1DEF-4975-A148-1B34DDFA847B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IcfTheme", "IcfTheme\IcfTheme.csproj", "{15A514E4-9F01-4653-81B5-9C19EA5C4F8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{BBFD40E1-1DEF-4975-A148-1B34DDFA847B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBFD40E1-1DEF-4975-A148-1B34DDFA847B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBFD40E1-1DEF-4975-A148-1B34DDFA847B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15A514E4-9F01-4653-81B5-9C19EA5C4F8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15A514E4-9F01-4653-81B5-9C19EA5C4F8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15A514E4-9F01-4653-81B5-9C19EA5C4F8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15A514E4-9F01-4653-81B5-9C19EA5C4F8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

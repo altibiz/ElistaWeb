@@ -1,0 +1,14 @@
+@using Microsoft.AspNetCore.Routing;
+@using Microsoft.Extensions.Options;
+@using OrchardCore.ContentManagement;
+@using OrchardCore.ContentManagement.Routing;
+@using OrchardCore.Menu.Models;
+
+@inject IOptions<AutorouteOptions> AutorouteOptions
+@{
+    ContentItem contentItem = Model.ContentItem;
+    var routeValues = new RouteValueDictionary(AutorouteOptions.Value.GlobalRouteValues);
+    routeValues[AutorouteOptions.Value.ContentItemIdKey] = contentItem.Content.ContentMenuItemPart.SelectedContentItem.ContentItemIds[0];
+    var linkUrl = Url.RouteUrl(routeValues);
+}
+<a class="nav-link" href="@linkUrl">@contentItem.DisplayText</a>

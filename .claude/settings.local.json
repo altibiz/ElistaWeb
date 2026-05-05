@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:variant-haus-group.com)",
+      "Bash(python -c \"import uuid; print\\('{' + str\\(uuid.uuid4\\(\\)\\).upper\\(\\) + '}'\\)\")",
+      "Bash(powershell -NoProfile -Command \"[guid]::NewGuid\\(\\).ToString\\(\\).ToUpper\\(\\)\")",
+      "Bash(dotnet build *)",
+      "PowerShell(Out-Null *)",
+      "Bash(mkdir -p D:/source/ElistaWeb/IcfTheme/wwwroot/img/icf)",
+      "Bash(curl -sSL -o vhg-home.jpg \"https://variant-haus-group.com/wp-content/uploads/2024/07/VHG-Home2-899x1024.jpg\")",
+      "Bash(curl -sSL -o vhg-rohbau.jpg \"https://variant-haus-group.com/wp-content/uploads/2024/07/Bausatzhaus-Rohbau-VHG-Bausatzhaus-ETA-Zulassung-e1722322875348-1024x644.jpg\")",
+      "Bash(curl -sSL -o vhg-wall-cross-section.jpg \"https://variant-haus-group.com/wp-content/uploads/2024/07/Schallschutz-und-Waermeschutz-VHG-Bausatzhaus-1024x683.jpg\")",
+      "Bash(curl -sSL -o vhg-production.jpg \"https://variant-haus-group.com/wp-content/uploads/2024/07/Produktion-VHG-Bausatzhaus.jpg\")"
+    ]
+  }
+}

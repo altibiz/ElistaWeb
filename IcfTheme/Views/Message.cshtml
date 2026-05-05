@@ -1,0 +1,12 @@
+@{
+    string type = Model.Type.ToString().ToLowerInvariant();
+}
+<div class="mb-4 mb-lg-5 alert alert-@type alert-dismissible fade show" role="alert">
+    <div class="d-flex align-items-center">
+        <svg class="svg-icon d-none d-sm-block w-3rem h-3rem svg-icon-light flex-shrink-0 me-3">
+            <use xlink:href="#checked-circle-1"> </use>
+        </svg>
+        <p class="mb-0">@Model.Message</p>
+    </div>
+    <button class="btn-close btn-close-white opacity-10" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>

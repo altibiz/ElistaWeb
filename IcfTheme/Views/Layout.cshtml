@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hr-HR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@RenderTitleSegments(Site.SiteName, "before")</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link type="image/x-icon" rel="shortcut icon" href="~/IcfTheme/img/favicon.ico">
+    <style asp-name="IcfTheme-FontStyle"></style>
+    <style asp-name="IcfTheme-Swiper"></style>
+    <style asp-name="IcfTheme-Aos"></style>
+
+    <style asp-name="IcfTheme-MalihuScrollbar"></style>
+    <style asp-name="IcfTheme-Default"></style>
+    <style asp-name="IcfTheme-Custom"></style>
+    <style asp-name="IcfTheme-Icf"></style>
+    <style asp-name="IcfTheme-FontAwesome"></style>
+
+
+    <script asp-name="IcfTheme-Bootstrap" at="Foot"></script>
+    <script asp-name="IcfTheme-Jquery" at="Foot"></script>
+    <script asp-name="IcfTheme-BootstrapSelect" at="Foot"></script>
+    <script asp-name="IcfTheme-Aos" at="Foot"></script>
+    <script asp-name="IcfTheme-mCustomScrollbar" at="Foot"></script>
+    <script asp-name="IcfTheme-CustomScrollbar" at="Foot"></script>
+    <script asp-name="IcfTheme-PolyFills" at="Foot"></script>
+    <script asp-name="IcfTheme-Ofi" at="Foot"></script>
+    <script asp-name="IcfTheme-Sliders" at="Foot"></script>
+    <script asp-name="IcfTheme-Theme" at="Foot"></script>
+    <resources type="Meta" />
+    <resources type="HeadLink" />
+    <resources type="Stylesheet" />
+    <resources type="HeadScript" />
+    @await RenderSectionAsync("HeadMeta", required: false)
+</head>
+@{
+    if (!ThemeLayout.Attributes.TryGetValue("mainClass", out var disableContainer))
+    {
+        disableContainer = "container-fluid px-0";
+    }
+}
+<body class="icf-body">
+    <partial name="Svgs" />
+    <header class="icf-header">
+        <partial name="TopBar" />
+        <partial name="NavBar" />
+    </header>
+    <main>
+        @await RenderSectionAsync("Messages", required: false)
+        <div class="@disableContainer">
+            @await RenderBodyAsync()
+        </div>
+    </main>
+    <div class="back-top"><i class="bi bi-arrow-up-short"></i></div>
+
+    <partial name="Footer" />
+    <resources type="FootScript" />
+</body>
+
+</html>

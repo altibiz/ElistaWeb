@@ -1,0 +1,20 @@
+@using OrchardCore.Settings
+<nav class="navbar navbar-expand-lg icf-navbar px-lg-5 z-index-20">
+    <a class="navbar-brand icf-wordmark" href="/">
+        <span class="icf-wordmark-formadria">formAdria</span>
+        <span class="icf-wordmark-divider">·</span>
+        <span class="icf-wordmark-icf">ICF</span>
+    </a>
+    <ul class="list-inline mb-0 d-block d-lg-none">
+        <partial name="NavBarButtons" />
+    </ul>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <svg class="svg-icon navbar-icon">
+            <use xlink:href="#menu-hamburger-1"></use>
+        </svg>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+        <menu alias="alias:main-menu" cache-id="main-menu" cache-fixed-duration="00:05:00" cache-tag="alias:main-menu" />
+        <a class="btn btn-icf-primary ms-auto d-none d-lg-inline-flex" href="/kontakt">@T["Besplatno savjetovanje"]</a>
+    </div>
+</nav>

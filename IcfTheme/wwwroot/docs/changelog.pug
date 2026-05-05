@@ -1,0 +1,102 @@
+extends ../_pug-includes/layout
+
+block vars
+    - var active = 'docs'  
+    - var path = '../'    
+
+block content
+
+    - var breadcrumbs = []
+    - breadcrumbs.push({name: 'Home', link: '../index.html'})
+    - breadcrumbs.push({name: 'Changelog'})
+    - var heroHeading = 'Changelog'
+    - var current = 'docs/changelog.html'
+    - var heroColumns = 'col-lg-10 col-xl-8 offset-lg-2'
+    
+    include ../_pug-includes/inc-hero-fluid
+
+    .container-fluid
+        .row.px-xl-5
+            .col-lg-2
+                include ../_pug-includes/inc-docs-sidebar
+
+            .col-lg-10.col-xl-8.docs-content
+
+                +componentDocItem('Version 2.1.0', '<p class="text-muted">Feb 14, 2022</p>')
+                    .card.bg-gray-100.border-0
+                        .card-body.py-4 
+                            pre.card-text. 
+                                - <strong>new:</strong> Added 7 new product cards. <a href="components-theme.html#product">See demo</a>. 
+                                  Affected files: mixins.pug, mixins-product.pug, layout.pug, inc-var-shopitems.pug, components-theme.pug, new listin-*.pug files, 
+                                  theme.js, _navbar.scss, _products.scss, _swiper.scss, _variables.scss
+
+                +componentDocItem('Version 2.0.1', '<p class="text-muted">Jan 10, 2022</p>')
+                    .card.bg-gray-100.border-0
+                        .card-body.py-4 
+                            pre.card-text. 
+                                - <strong>fixed:</strong> Customer sidebar badge (inc-customer-sidebar.pug), Category sidebar chevrons (_sidebar.scss), 
+                                  Login modal close button (inc-log-modal.pug)
+
+                +componentDocItem('Version 2.0.0', '<p class="text-muted">Nov 24, 2021</p>')
+                    .card.bg-gray-100.border-0
+                        .card-body.py-4 
+                            pre.card-text. 
+                                - <strong>This versions adds Bootstrap 5 support.</strong>
+                                - v2.0.0 now comes with two folders inside the ZIP file - <span class="badge badge-info-light">bootstrap-4</span> (contains the B4 version of the theme) 
+                                    and <span class="badge badge-info-light">bootstrap-5</span> - contains v2.0.0 files.
+                                - <strong>main changes: </strong>
+                                    * updating pug/html to support new Bootstrap 5 classes, removing deprecated classes (affects 90% of the files)
+                                    * moving custom SCSS/CSS to B5 Utility classes (where possible)
+                                    * this version still comes with jQuery as a dependency. jQuery support will be removed in Varkala v3.0
+                                    
+                                - <strong>improved:</strong> Reworked animation in dropdown menus, removed JS positioning, 
+                                animated dropdown toggles 
+                                - <strong>updated packages:</strong> Bootstrap (5.1.3), Bootstrap Select (1.14.0-beta2),  NoUIslider (15.5.0), Swiper (7.2.0)
+
+                +componentDocItem('Version 1.2.1', '<p class="text-muted">Mar  3, 2021</p>')
+                    .card.bg-gray-100.border-0
+                        .card-body.py-4
+                            pre.card-text. 
+                                - <strong>fixed:</strong> Missing file causing Masonry issues in Blog - Masonry
+                                - <strong>Updated: </strong> - Bootstrap (4.6.0 - affects scss/bootstrap and stylesheets), 
+                                   jQuery (3.6.0),  added imagesLoaded (4.1.4)                               
+
+                +componentDocItem('Version 1.2.0', '<p class="text-muted">May 5, 2020</p>')
+                    .card.bg-gray-100.border-0
+                        .card-body.py-4
+                            pre.card-text. 
+                                - <strong>improved:</strong> In addition to HTML files, this theme now comes with Pug file sources, 
+                                    and changes in the Gulp workflow. 
+                                    Pug compilation is now the recommended way of work with this theme. Pug sources 
+                                    use includes and mixins for avoid repetitive code (navbar, footer, cards).
+                                    If you change the navbar, the change will be effective in all your pages, 
+                                    unlike when developing with HTML, where you would need to do all the changes in every file. 
+
+                                    <strong>changes:</strong>
+                                    * <code>pages</code> folder now renamed to <code>html</code>
+                                    * to run previously default `gulp` command, use `gulp dev-html`
+                                    * `gulp build` and `gulp build-html` now compile everything into `build` folder,
+                                        previously `dist`
+                                - <strong>fixed:</strong> Display issues in cart sidebar
+
+                +componentDocItem('Version 1.1.0', '<p class="text-muted">December 12, 2019</p>')
+                    .card.bg-gray-100
+                        .card-body.py-4
+                            pre.card-text. 
+                                - <strong>New pages: </strong> Homepage 3 - Design, Homepage 4 - Design, About, About 2, Multi-step checkout, Category - Masonry layout, 
+                                    Customer pages (Login, Account, Addresses, Orders, Order detail, Order tracking), FAQ, Privacy policy
+                                - <strong>Improved: </strong> - Added more icons to Orion Icons SVG sprite
+                                - <strong>Improved: </strong> - More topics in the components documentation
+                                - <strong>Fixed: </strong> - fixed build task in gulpfile.js
+                                - <strong>Updated: </strong> - Bootstrap (4.4.1 - affects scss/bootstrap and stylesheets), 
+                                    Bootstrap Select (1.13.12 - affects pages/vendor/bootstrap-select), 
+                                    Swiper (5.2.1 pages/vendor/swiper)
+
+                +componentDocItem('Version 1.0.0', '<p class="text-muted">July 25, 2019</p>')
+                    .card.bg-gray-100
+                        .card-body.py-4
+                            pre.card-text. 
+                                - Initial release
+
+
+

@@ -1,0 +1,8 @@
+@using OrchardCore.ContentManagement
+@{
+    ContentItem contentItem = Model.ContentItem;
+    var part = contentItem.Content["LinkMenuItemPart"];
+    var url = (string)part?.Url ?? "#";
+    var text = (string)part?.Name ?? contentItem.DisplayText;
+}
+<a class="nav-link" href="@Url.Content(url)">@text</a>

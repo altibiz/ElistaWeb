@@ -1,0 +1,49 @@
+@using IcfTheme
+@using OrchardCore.ContentManagement
+@using OrchardCore.Entities
+@using OrchardCore.Settings
+@inject ISiteService site
+
+@{
+    var contacts = (await site.GetSiteSettingsAsync()).As<ContentItem>("GeneralSettings");
+    var phone = contacts.GetText("Phone") ?? "+385 91 353 0012";
+    var email = contacts.GetText("Email") ?? "icf@formadria.com";
+}
+
+<footer class="icf-footer">
+    <div class="py-5 py-lg-6 icf-footer-main">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4">
+                    <div class="icf-wordmark icf-wordmark-footer mb-3">
+                        <span class="icf-wordmark-formadria">formAdria</span>
+                        <span class="icf-wordmark-divider">·</span>
+                        <span class="icf-wordmark-icf">ICF</span>
+                    </div>
+                    <p class="text-muted text-sm mb-0">
+                        @T["Ovlašteni distributer Variant Haus Group ICF sustava gradnje za Hrvatsku."]
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="icf-footer-heading">@T["Kontakt"]</h6>
+                    <address class="text-sm mb-0">
+                        formAdria<br />
+                        Čulinečka cesta 146, Zagreb<br />
+                        OIB: 53003301854<br />
+                        <a class="text-reset" href="mailto:@email">@email</a><br />
+                        <a class="text-reset" href="tel:@phone.Replace(" ", string.Empty)">@phone</a>
+                    </address>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="icf-footer-heading">@T["Radno vrijeme"]</h6>
+                    <p class="text-sm mb-0">@T["Ponedjeljak–Petak"]<br />09:00 – 17:00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-3 icf-footer-legal text-sm">
+        <div class="container">
+            <p class="mb-0">@T["© formAdria. Sva prava pridržana."]</p>
+        </div>
+    </div>
+</footer>

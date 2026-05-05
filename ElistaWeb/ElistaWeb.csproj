@@ -16,7 +16,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Carousel.OrchardCore\Carousel.OrchardCore.csproj" />
     <ProjectReference Include="..\Commerce\OrchardCore.Commerce\OrchardCore.Commerce.csproj" />
-    <ProjectReference Include="..\ElistaTheme\ElistaTheme.csproj" />	  
+    <ProjectReference Include="..\ElistaTheme\ElistaTheme.csproj" />
+    <ProjectReference Include="..\IcfTheme\IcfTheme.csproj" />
   </ItemGroup>
 
   <ItemGroup>
