@@ -5,6 +5,7 @@
  */
 
 :root {
+    color-scheme: light only;
     --icf-primary: #1ba39c;
     --icf-primary-dark: #157e78;
     --icf-primary-50: #e6f6f5;
