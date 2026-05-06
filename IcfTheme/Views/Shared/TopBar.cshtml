@@ -10,7 +10,7 @@
 
 @{
     var contacts = (await site.GetSiteSettingsAsync()).As<ContentItem>("GeneralSettings");
-    var phone = contacts.GetText("Phone") ?? "+385 91 353 0012";
+    var phone = contacts.GetText("Phone") ?? "+385 99 399 1989";
     var email = contacts.GetText("Email") ?? "icf@formadria.com";
     var navbar = await DisplayAsync(await NavbarDisplay.BuildDisplayAsync(UpdateModelAccessor.ModelUpdater));
 }

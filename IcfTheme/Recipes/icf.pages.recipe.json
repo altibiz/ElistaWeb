@@ -14,7 +14,7 @@
       "name": "content",
       "data": [
         {
-          "ContentItemId": "icfpghome000000000000000000",
+          "ContentItemId": "icfpghome00000000000000000",
           "ContentType": "Page",
           "DisplayText": "Naslovnica",
           "Latest": true,
@@ -44,7 +44,7 @@
                 }
               },
               {
-                "ContentItemId": "icfwidhomeoptions00000000",
+                "ContentItemId": "icfwidhomeoptions000000000",
                 "ContentType": "RawHtml",
                 "Latest": false,
                 "Published": false,
@@ -83,7 +83,7 @@
           }
         },
         {
-          "ContentItemId": "icfpgsystem00000000000000000",
+          "ContentItemId": "icfpgsystem000000000000000",
           "ContentType": "Page",
           "DisplayText": "Sustav gradnje",
           "Latest": true,
@@ -101,7 +101,7 @@
           "FlowPart": {
             "Widgets": [
               {
-                "ContentItemId": "icfwidsystemmain000000000",
+                "ContentItemId": "icfwidsystemmain0000000000",
                 "ContentType": "RawHtml",
                 "Latest": false,
                 "Published": false,
@@ -116,7 +116,7 @@
           }
         },
         {
-          "ContentItemId": "icfpgproduction00000000000000",
+          "ContentItemId": "icfpgproduction00000000000",
           "ContentType": "Page",
           "DisplayText": "Proizvodnja",
           "Latest": true,
@@ -134,7 +134,7 @@
           "FlowPart": {
             "Widgets": [
               {
-                "ContentItemId": "icfwidprodmain00000000000",
+                "ContentItemId": "icfwidprodmain000000000000",
                 "ContentType": "RawHtml",
                 "Latest": false,
                 "Published": false,
@@ -149,7 +149,7 @@
           }
         },
         {
-          "ContentItemId": "icfpgreferences000000000000000",
+          "ContentItemId": "icfpgreferences00000000000",
           "ContentType": "Page",
           "DisplayText": "Reference",
           "Latest": true,
@@ -167,7 +167,7 @@
           "FlowPart": {
             "Widgets": [
               {
-                "ContentItemId": "icfwidrefmain000000000000",
+                "ContentItemId": "icfwidrefmain0000000000000",
                 "ContentType": "RawHtml",
                 "Latest": false,
                 "Published": false,
@@ -182,7 +182,7 @@
           }
         },
         {
-          "ContentItemId": "icfpgfaq000000000000000000000",
+          "ContentItemId": "icfpgfaq000000000000000000",
           "ContentType": "Page",
           "DisplayText": "Česta pitanja",
           "Latest": true,
@@ -200,7 +200,7 @@
           "FlowPart": {
             "Widgets": [
               {
-                "ContentItemId": "icfwidfaqmain000000000000",
+                "ContentItemId": "icfwidfaqmain0000000000000",
                 "ContentType": "RawHtml",
                 "Latest": false,
                 "Published": false,
@@ -215,7 +215,7 @@
           }
         },
         {
-          "ContentItemId": "icfpgcontact00000000000000000",
+          "ContentItemId": "icfpgcontact00000000000000",
           "ContentType": "Page",
           "DisplayText": "Kontakt",
           "Latest": true,
@@ -233,14 +233,14 @@
           "FlowPart": {
             "Widgets": [
               {
-                "ContentItemId": "icfwidcontactmain00000000",
+                "ContentItemId": "icfwidcontactmain000000000",
                 "ContentType": "RawHtml",
                 "Latest": false,
                 "Published": false,
                 "Author": "admin",
                 "RawHtml": {
                   "Content": {
-                    "Html": "<section class=\"icf-section\"><div class=\"container\"><span class=\"icf-hero-eyebrow\">Kontakt</span><h1>Razgovarajmo o vašem projektu</h1><p class=\"lead\">Slobodno nas kontaktirajte za besplatno tehničko savjetovanje, ponudu ili dogovor o obilasku referentnih objekata.</p><div class=\"row mt-5 g-5\"><div class=\"col-lg-6\"><h3>formAdria</h3><address class=\"mb-4\">Čulinečka cesta 146<br>10000 Zagreb<br>OIB: 53003301854</address><p class=\"mb-2\"><strong>Telefon:</strong> <a href=\"tel:+385913530012\">+385 91 353 0012</a></p><p class=\"mb-2\"><strong>E-pošta:</strong> <a href=\"mailto:icf@formadria.com\">icf@formadria.com</a></p><p class=\"mb-2\"><strong>Radno vrijeme:</strong> Ponedjeljak–Petak, 09:00 – 17:00</p></div><div class=\"col-lg-6\"><h3>Kako postupamo</h3><ol><li>Pošaljete nam upit (idejni nacrt, lokacija, okvirni budžet).</li><li>Tim formAdrije priprema tehničku procjenu i preporuku jednog od tri modela suradnje.</li><li>Dogovaramo sastanak (uživo ili online) i obilazak referentne kuće ako je moguće.</li><li>Nakon ugovora isporučujemo elemente i pratimo gradnju do kraja.</li></ol></div></div></div></section>"
+                    "Html": "<section class=\"icf-section\"><div class=\"container\"><span class=\"icf-hero-eyebrow\">Kontakt</span><h1>Razgovarajmo o vašem projektu</h1><p class=\"lead\">Slobodno nas kontaktirajte za besplatno tehničko savjetovanje, ponudu ili dogovor o obilasku referentnih objekata.</p><div class=\"row mt-5 g-5\"><div class=\"col-lg-6\"><h3>formAdria</h3><address class=\"mb-4\">Čulinečka cesta 146<br>10000 Zagreb<br>OIB: 53003301854</address><p class=\"mb-2\"><strong>Telefon:</strong> <a href=\"tel:+385993991989\">+385 99 399 1989</a></p><p class=\"mb-2\"><strong>E-pošta:</strong> <a href=\"mailto:icf@formadria.com\">icf@formadria.com</a></p><p class=\"mb-2\"><strong>Radno vrijeme:</strong> Ponedjeljak–Petak, 09:00 – 17:00</p></div><div class=\"col-lg-6\"><h3>Kako postupamo</h3><ol><li>Pošaljete nam upit (idejni nacrt, lokacija, okvirni budžet).</li><li>Tim formAdrije priprema tehničku procjenu i preporuku jednog od tri modela suradnje.</li><li>Dogovaramo sastanak (uživo ili online) i obilazak referentne kuće ako je moguće.</li><li>Nakon ugovora isporučujemo elemente i pratimo gradnju do kraja.</li></ol></div></div></div></section>"
                   }
                 }
               }
@@ -248,7 +248,7 @@
           }
         },
         {
-          "ContentItemId": "icfmainmenu0000000000000000000",
+          "ContentItemId": "icfmainmenu000000000000000",
           "ContentType": "Menu",
           "DisplayText": "Main Menu",
           "Latest": true,
@@ -260,7 +260,7 @@
           "MenuItemsListPart": {
             "MenuItems": [
               {
-                "ContentItemId": "icfmenuitemhome000000000000",
+                "ContentItemId": "icfmenuitemhome00000000000",
                 "ContentType": "LinkMenuItem",
                 "DisplayText": "Naslovnica",
                 "Latest": false,
@@ -269,7 +269,7 @@
                 "LinkMenuItemPart": { "Name": "Naslovnica", "Url": "/" }
               },
               {
-                "ContentItemId": "icfmenuitemsystem00000000000",
+                "ContentItemId": "icfmenuitemsystem000000000",
                 "ContentType": "LinkMenuItem",
                 "DisplayText": "Sustav gradnje",
                 "Latest": false,
@@ -278,7 +278,7 @@
                 "LinkMenuItemPart": { "Name": "Sustav gradnje", "Url": "/sustav-gradnje" }
               },
               {
-                "ContentItemId": "icfmenuitemproduction0000000",
+                "ContentItemId": "icfmenuitemproduction00000",
                 "ContentType": "LinkMenuItem",
                 "DisplayText": "Proizvodnja",
                 "Latest": false,
@@ -287,7 +287,7 @@
                 "LinkMenuItemPart": { "Name": "Proizvodnja", "Url": "/proizvodnja" }
               },
               {
-                "ContentItemId": "icfmenuitemreferences0000000",
+                "ContentItemId": "icfmenuitemreferences00000",
                 "ContentType": "LinkMenuItem",
                 "DisplayText": "Reference",
                 "Latest": false,
@@ -296,7 +296,7 @@
                 "LinkMenuItemPart": { "Name": "Reference", "Url": "/reference" }
               },
               {
-                "ContentItemId": "icfmenuitemfaq00000000000000",
+                "ContentItemId": "icfmenuitemfaq000000000000",
                 "ContentType": "LinkMenuItem",
                 "DisplayText": "Česta pitanja",
                 "Latest": false,
@@ -305,7 +305,7 @@
                 "LinkMenuItemPart": { "Name": "Česta pitanja", "Url": "/cesta-pitanja" }
               },
               {
-                "ContentItemId": "icfmenuitemcontact0000000000",
+                "ContentItemId": "icfmenuitemcontact00000000",
                 "ContentType": "LinkMenuItem",
                 "DisplayText": "Kontakt",
                 "Latest": false,
