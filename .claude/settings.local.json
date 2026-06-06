@@ -10,7 +10,15 @@
       "Bash(curl -sSL -o vhg-home.jpg \"https://variant-haus-group.com/wp-content/uploads/2024/07/VHG-Home2-899x1024.jpg\")",
       "Bash(curl -sSL -o vhg-rohbau.jpg \"https://variant-haus-group.com/wp-content/uploads/2024/07/Bausatzhaus-Rohbau-VHG-Bausatzhaus-ETA-Zulassung-e1722322875348-1024x644.jpg\")",
       "Bash(curl -sSL -o vhg-wall-cross-section.jpg \"https://variant-haus-group.com/wp-content/uploads/2024/07/Schallschutz-und-Waermeschutz-VHG-Bausatzhaus-1024x683.jpg\")",
-      "Bash(curl -sSL -o vhg-production.jpg \"https://variant-haus-group.com/wp-content/uploads/2024/07/Produktion-VHG-Bausatzhaus.jpg\")"
+      "Bash(curl -sSL -o vhg-production.jpg \"https://variant-haus-group.com/wp-content/uploads/2024/07/Produktion-VHG-Bausatzhaus.jpg\")",
+      "PowerShell(New-Item *)",
+      "PowerShell(Set-Location *)",
+      "PowerShell(Remove-Item *)",
+      "PowerShell(dotnet build-server shutdown *)",
+      "PowerShell(Get-Process *)",
+      "PowerShell(if \\(Test-Path \"$env:TEMP\\\\ocpwreset\"\\) { \"still exists\" } else { \"confirmed deleted\" })",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('IcfTheme/Recipes/icf.pages.recipe.json','utf8'\\)\\); console.log\\('JSON valid'\\)\")"
     ]
   }
 }
