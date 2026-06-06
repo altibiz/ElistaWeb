@@ -12,7 +12,6 @@
     var contacts = (await site.GetSiteSettingsAsync()).As<ContentItem>("GeneralSettings");
     var phone = contacts.GetText("Phone") ?? "+385 99 399 1989";
     var email = contacts.GetText("Email") ?? "icf@formadria.com";
-    var navbar = await DisplayAsync(await NavbarDisplay.BuildDisplayAsync(UpdateModelAccessor.ModelUpdater));
 }
 
 <div class="icf-topbar text-sm">
@@ -24,19 +23,10 @@
                         <i class="fas fa-envelope me-2"></i>
                         <a class="text-reset" href="mailto:@email">@email</a>
                     </li>
-                    <li class="list-inline-item me-4">
+                    <li class="list-inline-item">
                         <i class="fas fa-phone me-2"></i>
                         <a class="text-reset" href="tel:@phone.Replace(" ", string.Empty)">@phone</a>
                     </li>
-                    <li class="list-inline-item">
-                        <i class="fas fa-clock me-2"></i>
-                        @T["Pon–Pet 9–17"]
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-5">
-                <ul class="list-inline mb-0 text-md-end">
-                    <li class="list-inline-item">@navbar</li>
                 </ul>
             </div>
         </div>
