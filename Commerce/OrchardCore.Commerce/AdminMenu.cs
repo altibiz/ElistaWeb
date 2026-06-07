@@ -15,10 +15,10 @@ namespace OrchardCore.Commerce
             T = localizer;
         }
 
-        public Task BuildNavigationAsync(string name, NavigationBuilder builder)
+        public ValueTask BuildNavigationAsync(string name, NavigationBuilder builder)
         {
             if (!String.Equals(name, "admin", StringComparison.OrdinalIgnoreCase))
-                return Task.CompletedTask;
+                return ValueTask.CompletedTask;
 
             builder
                 .Add(T["Commerce"], "0", rootView => rootView
@@ -39,7 +39,7 @@ namespace OrchardCore.Commerce
                           .LocalNav()
                 )));
 
-            return Task.CompletedTask;
+            return ValueTask.CompletedTask;
         }
     }
 }

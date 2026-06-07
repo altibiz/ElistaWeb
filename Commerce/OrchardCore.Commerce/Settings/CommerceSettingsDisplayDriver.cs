@@ -41,7 +41,7 @@ namespace OrchardCore.Commerce.Settings
             S = stringLocalizer;
         }
 
-        public override async Task<IDisplayResult> EditAsync(CommerceSettings section, BuildEditorContext context)
+        public override async Task<IDisplayResult> EditAsync(ISite model, CommerceSettings section, BuildEditorContext context)
         {
             var user = _httpContextAccessor.HttpContext?.User;
 
@@ -69,7 +69,7 @@ namespace OrchardCore.Commerce.Settings
             return Combine(shapes);
         }
 
-        public override async Task<IDisplayResult> UpdateAsync(CommerceSettings section, BuildEditorContext context)
+        public override async Task<IDisplayResult> UpdateAsync(ISite model, CommerceSettings section, UpdateEditorContext context)
         {
             var user = _httpContextAccessor.HttpContext?.User;
 
@@ -80,19 +80,19 @@ namespace OrchardCore.Commerce.Settings
 
             if (context.GroupId == GroupId)
             {
-                var model = new CommerceSettingsViewModel();
+                var viewModel = new CommerceSettingsViewModel();
 
-                if (await context.Updater.TryUpdateModelAsync(model, Prefix))
+                if (await context.Updater.TryUpdateModelAsync(viewModel, Prefix))
                 {
-                    section.DefaultCurrency = model.DefaultCurrency;
-                    section.CurrentDisplayCurrency = model.CurrentDisplayCurrency;
+                    section.DefaultCurrency = viewModel.DefaultCurrency;
+                    section.CurrentDisplayCurrency = viewModel.CurrentDisplayCurrency;
                 }
 
                 // Reload the tenant to apply the settings
                 await _orchardHost.ReloadShellContextAsync(_currentShellSettings);
             }
 
-            return await EditAsync(section, context);
+            return await EditAsync(model, section, context);
         }
     }
 }

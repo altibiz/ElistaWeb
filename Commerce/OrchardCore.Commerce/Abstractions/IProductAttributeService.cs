@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using OrchardCore.ContentManagement;
 
 namespace OrchardCore.Commerce.Abstractions
 {
     public interface IProductAttributeService
     {
-        IEnumerable<ProductAttributeDescription> GetProductAttributeFields(ContentItem product);
+        Task<IEnumerable<ProductAttributeDescription>> GetProductAttributeFieldsAsync(ContentItem product);
     }
 }

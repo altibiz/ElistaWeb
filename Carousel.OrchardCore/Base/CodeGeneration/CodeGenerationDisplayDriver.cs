@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Localization;
-using Newtonsoft.Json.Linq;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 using OrchardCore.ContentManagement.Metadata.Models;
 using OrchardCore.ContentManagement.Metadata.Settings;
 using OrchardCore.ContentTypes.Editors;
@@ -151,37 +152,41 @@ namespace Carousel.OrchardCore.Base.CodeGeneration
             }
         }
 
-        private string ConvertJToken(JToken jToken)
+        private string ConvertJsonNode(JsonNode node)
         {
-            switch (jToken)
+            switch (node)
             {
-                case JValue jValue:
-                    var value = jValue.Value;
-                    return value switch
-                    {
-                        bool boolValue => boolValue ? "true" : "false",
-                        string => $"\"{value}\"",
-                        _ => value?.ToString()?.Replace(',', '.'), // Replace decimal commas.
-                    };
-                case JArray jArray:
-                    return $"new[] {{ {string.Join(", ", jArray.Select(ConvertJToken))} }}";
-                case JObject jObject:
+                case JsonObject jObject:
                     // Using a quoted string so it doesn't mess up the syntax highlighting of the rest of the code.
-                    return T["\"FIX ME! Couldn't determine the actual type to instantiate.\" {0}", jObject.ToString()];
+                    return T["\"FIX ME! Couldn't determine the actual type to instantiate.\" {0}", jObject.ToJsonString()];
+                case JsonArray jArray:
+                    return $"new[] {{ {string.Join(", ", jArray.Where(n => n is not null).Select(n => ConvertJsonNode(n!)))} }}";
+                case JsonValue jValue:
+                    return jValue.GetValueKind() switch
+                    {
+                        JsonValueKind.True => "true",
+                        JsonValueKind.False => "false",
+                        JsonValueKind.String => $"\"{jValue.GetValue<string>()}\"",
+                        JsonValueKind.Number => jValue.ToJsonString().Replace(',', '.'), // Replace decimal commas.
+                        JsonValueKind.Null => null,
+                        _ => jValue.ToJsonString(),
+                    };
                 default:
-                    throw new NotSupportedException($"Settings values of type {jToken.GetType()} are not supported.");
+                    throw new NotSupportedException($"Settings values of type {node.GetType()} are not supported.");
             }
         }
 
-        private void AddSettingsWithout<T>(StringBuilder codeBuilder, JObject settings, int indentationDepth)
+        private void AddSettingsWithout<T>(StringBuilder codeBuilder, JsonObject settings, int indentationDepth)
         {
             var indentation = string.Join(string.Empty, Enumerable.Repeat(" ", indentationDepth));
 
-            var filteredSettings = ((IEnumerable<KeyValuePair<string, JToken>>)settings)
+            var filteredSettings = settings
                 .Where(setting => setting.Key != typeof(T).Name);
             foreach (var setting in filteredSettings)
             {
-                var properties = setting.Value.Where(property => property is JProperty).Cast<JProperty>().ToArray();
+                if (setting.Value is not JsonObject settingObject) continue;
+
+                var properties = settingObject.ToArray();
 
                 if (properties.Length == 0) continue;
 
@@ -193,7 +198,7 @@ namespace Carousel.OrchardCore.Base.CodeGeneration
                 for (int i = 0; i < properties.Length; i++)
                 {
                     var property = properties[i];
-                    var propertyValue = ConvertJToken(property.Value);
+                    var propertyValue = property.Value is null ? null : ConvertJsonNode(property.Value);
 
                     if (propertyValue == null)
                     {
@@ -204,7 +209,7 @@ namespace Carousel.OrchardCore.Base.CodeGeneration
                         propertyValue = "@" + propertyValue;
                     }
 
-                    codeBuilder.AppendLine($"{indentation}    {property.Name} = {propertyValue},");
+                    codeBuilder.AppendLine($"{indentation}    {property.Key} = {propertyValue},");
                 }
 
                 codeBuilder.AppendLine(indentation + "})");

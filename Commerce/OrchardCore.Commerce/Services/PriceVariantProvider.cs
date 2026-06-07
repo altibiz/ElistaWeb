@@ -30,35 +30,37 @@ namespace OrchardCore.Commerce.Services
             var skuProducts = (await _productService.GetProducts(skus))
                 .ToDictionary(p => p.Sku);
 
-            return items
-                .Select(item =>
+            var result = new List<ShoppingCartItem>();
+            foreach (var item in items)
+            {
+                if (skuProducts.TryGetValue(item.ProductSku, out var product))
                 {
-                    if (skuProducts.TryGetValue(item.ProductSku, out var product))
+                    var priceVariantsPart = product.ContentItem.As<PriceVariantsPart>();
+                    if (priceVariantsPart != null && priceVariantsPart.Variants != null)
                     {
-                        var priceVariantsPart = product.ContentItem.As<PriceVariantsPart>();
-                        if (priceVariantsPart != null && priceVariantsPart.Variants != null)
+                        var attributesRestrictedToPredefinedValues = (await _predefinedValuesService
+                            .GetProductAttributesRestrictedToPredefinedValuesAsync(product.ContentItem))
+                            .Select(attr => attr.PartName + "." + attr.Name)
+                            .ToHashSet();
+                        var predefinedAttributes = item.Attributes
+                            .OfType<IPredefinedValuesProductAttributeValue>()
+                            .Where(attribute => attributesRestrictedToPredefinedValues.Contains(attribute.AttributeName))
+                            .OrderBy(x => x.AttributeName);
+                        var variantKey = String.Join(
+                            "-",
+                            predefinedAttributes
+                                .Select(attr => attr.UntypedPredefinedValue)
+                                .Where(value => value != null));
+                        if (priceVariantsPart.Variants.ContainsKey(variantKey))
                         {
-                            var attributesRestrictedToPredefinedValues = _predefinedValuesService
-                                .GetProductAttributesRestrictedToPredefinedValues(product.ContentItem)
-                                .Select(attr => attr.PartName + "." + attr.Name)
-                                .ToHashSet();
-                            var predefinedAttributes = item.Attributes
-                                .OfType<IPredefinedValuesProductAttributeValue>()
-                                .Where(attribute => attributesRestrictedToPredefinedValues.Contains(attribute.AttributeName))
-                                .OrderBy(x => x.AttributeName);
-                            var variantKey = String.Join(
-                                "-",
-                                predefinedAttributes
-                                    .Select(attr => attr.UntypedPredefinedValue)
-                                    .Where(value => value != null));
-                            if (priceVariantsPart.Variants.ContainsKey(variantKey))
-                            {
-                                return item.WithPrice(new PrioritizedPrice(1, priceVariantsPart.Variants[variantKey]));
-                            }
+                            result.Add(item.WithPrice(new PrioritizedPrice(1, priceVariantsPart.Variants[variantKey])));
+                            continue;
                         }
                     }
-                    return item;
-                });
+                }
+                result.Add(item);
+            }
+            return result;
         }
     }
 }

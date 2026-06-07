@@ -1,12 +1,13 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using OrchardCore.ContentManagement;
 
 namespace OrchardCore.Commerce.Abstractions
 {
     public interface IPredefinedValuesProductAttributeService
     {
-        IEnumerable<ProductAttributeDescription> GetProductAttributesRestrictedToPredefinedValues(ContentItem product);
-        IEnumerable<IEnumerable<object>> GetProductAttributesPredefinedValues(ContentItem product);
-        IEnumerable<string> GetProductAttributesCombinations(ContentItem product);
+        Task<IEnumerable<ProductAttributeDescription>> GetProductAttributesRestrictedToPredefinedValuesAsync(ContentItem product);
+        Task<IEnumerable<IEnumerable<object>>> GetProductAttributesPredefinedValuesAsync(ContentItem product);
+        Task<IEnumerable<string>> GetProductAttributesCombinationsAsync(ContentItem product);
     }
 }

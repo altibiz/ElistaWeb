@@ -9,7 +9,7 @@ using OrchardCore.Commerce.Models;
 using OrchardCore.Commerce.ViewModels;
 using OrchardCore.ContentManagement.Metadata.Models;
 using OrchardCore.ContentTypes.Editors;
-using OrchardCore.DisplayManagement.ModelBinding;
+using OrchardCore.DisplayManagement.Handlers;
 using OrchardCore.DisplayManagement.Views;
 
 namespace OrchardCore.Commerce.Settings
@@ -25,7 +25,7 @@ namespace OrchardCore.Commerce.Settings
             _moneyService = moneyService;
         }
 
-        public override IDisplayResult Edit(ContentTypePartDefinition contentTypePartDefinition, IUpdateModel updater)
+        public override IDisplayResult Edit(ContentTypePartDefinition contentTypePartDefinition, BuildEditorContext context)
         {
             if (!String.Equals(nameof(PricePart), contentTypePartDefinition.PartDefinition.Name))
             {
@@ -73,7 +73,7 @@ namespace OrchardCore.Commerce.Settings
                         ? model.SpecificCurrencyIsoCode : null
             });
 
-            return Edit(contentTypePartDefinition, context.Updater);
+            return Edit(contentTypePartDefinition, context);
         }
     }
 }

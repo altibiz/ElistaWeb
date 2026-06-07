@@ -42,10 +42,10 @@ namespace OrchardCore.Commerce.Drivers
             });
         }
 
-        public override async Task<IDisplayResult> UpdateAsync(PricePart pricePart, IUpdateModel updater, UpdatePartEditorContext context)
+        public override async Task<IDisplayResult> UpdateAsync(PricePart pricePart, UpdatePartEditorContext context)
         {
             var updateModel = new PricePartViewModel();
-            if (await updater.TryUpdateModelAsync(updateModel, Prefix, t => t.PriceValue, t => t.PriceCurrency))
+            if (await context.Updater.TryUpdateModelAsync(updateModel, Prefix, t => t.PriceValue, t => t.PriceCurrency))
             {
                 pricePart.Price = _moneyService.Create(updateModel.PriceValue, updateModel.PriceCurrency);
             }

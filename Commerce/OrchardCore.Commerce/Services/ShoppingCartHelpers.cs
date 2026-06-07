@@ -45,7 +45,7 @@ namespace OrchardCore.Commerce.Services
         public async Task<ShoppingCart> ParseCart(ShoppingCartUpdateModel cart)
         {
             Dictionary<string, ProductPart> products = await GetProducts(cart.Lines.Select(l => l.ProductSku));
-            Dictionary<string, ContentTypeDefinition> types = ExtractTypeDefinitions(products.Values);
+            Dictionary<string, ContentTypeDefinition> types = await ExtractTypeDefinitionsAsync(products.Values);
             IList<ShoppingCartItem> parsedCart = cart.Lines
                 .Where(l => l.Quantity > 0)
                 .Select(l => new ShoppingCartItem(l.Quantity, l.ProductSku,
@@ -58,7 +58,7 @@ namespace OrchardCore.Commerce.Services
         {
             ProductPart product = await _productService.GetProduct(line.ProductSku);
             if (product is null) return null;
-            ContentTypeDefinition type = GetTypeDefinition(product);
+            ContentTypeDefinition type = await GetTypeDefinitionAsync(product);
             var parsedLine = new ShoppingCartItem(line.Quantity, line.ProductSku, ParseAttributes(line, type));
             return parsedLine;
         }
@@ -99,7 +99,7 @@ namespace OrchardCore.Commerce.Services
             // (deserialization being essentially non-polymorphic and without access to our type definition
             // contextual information).
             Dictionary<string, ProductPart> products = await GetProducts(cart.Items.Select(l => l.ProductSku));
-            Dictionary<string, ContentTypeDefinition> types = ExtractTypeDefinitions(products.Values);
+            Dictionary<string, ContentTypeDefinition> types = await ExtractTypeDefinitionsAsync(products.Values);
             var newCartItems = new List<ShoppingCartItem>(cart.Count);
             foreach (ShoppingCartItem line in cart.Items)
             {
@@ -134,17 +134,22 @@ namespace OrchardCore.Commerce.Services
         public async Task<string> Serialize(ShoppingCart cart)
             => await Task.FromResult(JsonSerializer.Serialize(cart));
 
-        private Dictionary<string, ContentTypeDefinition> ExtractTypeDefinitions(IEnumerable<ProductPart> products)
-                => products
-                    .Select(p => _contentDefinitionManager.GetTypeDefinition(p.ContentItem.ContentType))
-                    .GroupBy(t => t.Name)
-                    .ToDictionary(g => g.Key, g => g.First());
+        private async Task<Dictionary<string, ContentTypeDefinition>> ExtractTypeDefinitionsAsync(IEnumerable<ProductPart> products)
+        {
+            var result = new Dictionary<string, ContentTypeDefinition>();
+            foreach (var product in products)
+            {
+                var definition = await _contentDefinitionManager.GetTypeDefinitionAsync(product.ContentItem.ContentType);
+                result.TryAdd(definition.Name, definition);
+            }
+            return result;
+        }
 
         private async Task<Dictionary<string, ProductPart>> GetProducts(IEnumerable<string> skus)
             => (await _productService.GetProducts(skus)).ToDictionary(p => p.Sku);
 
-        private ContentTypeDefinition GetTypeDefinition(ProductPart product)
-            => _contentDefinitionManager.GetTypeDefinition(product.ContentItem.ContentType);
+        private async Task<ContentTypeDefinition> GetTypeDefinitionAsync(ProductPart product)
+            => await _contentDefinitionManager.GetTypeDefinitionAsync(product.ContentItem.ContentType);
 
         private static (ContentTypePartDefinition, ContentPartFieldDefinition) GetFieldDefinition(ContentTypeDefinition type, string attributeName)
         {

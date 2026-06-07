@@ -4,6 +4,7 @@ using OrchardCore.Commerce.Settings;
 using OrchardCore.Commerce.ViewModels;
 using OrchardCore.ContentManagement.Display.ContentDisplay;
 using OrchardCore.ContentManagement.Display.Models;
+using OrchardCore.ContentManagement.Metadata.Models;
 using OrchardCore.DisplayManagement.Views;
 
 namespace OrchardCore.Commerce.Drivers

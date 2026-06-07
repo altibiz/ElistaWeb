@@ -26,24 +26,24 @@ namespace OrchardCore.Commerce.Drivers
 
         public override IDisplayResult Display(PriceVariantsPart part, BuildPartDisplayContext context)
         {
-            return Initialize<PriceVariantsPartViewModel>(GetDisplayShapeType(context), m => BuildViewModel(m, part))
+            return Initialize<PriceVariantsPartViewModel>(GetDisplayShapeType(context), async m => await BuildViewModel(m, part))
                 .Location("Detail", "Content:25")
                 .Location("Summary", "Meta:10");
         }
 
         public override IDisplayResult Edit(PriceVariantsPart part, BuildPartEditorContext context)
         {
-            return Initialize<PriceVariantsPartViewModel>(GetEditorShapeType(context), m =>
+            return Initialize<PriceVariantsPartViewModel>(GetEditorShapeType(context), async m =>
             {
-                BuildViewModel(m, part);
+                await BuildViewModel(m, part);
                 m.Currencies = _moneyService.Currencies;
             });
         }
 
-        public override async Task<IDisplayResult> UpdateAsync(PriceVariantsPart part, IUpdateModel updater, UpdatePartEditorContext context)
+        public override async Task<IDisplayResult> UpdateAsync(PriceVariantsPart part, UpdatePartEditorContext context)
         {
             var updateModel = new PriceVariantsPartViewModel();
-            if (await updater.TryUpdateModelAsync(updateModel, Prefix, t => t.VariantsValues, t => t.VariantsCurrencies))
+            if (await context.Updater.TryUpdateModelAsync(updateModel, Prefix, t => t.VariantsValues, t => t.VariantsCurrencies))
             {
                 // Remove any content or the variants would be merged and not be cleared
                 part.Content.Variants.RemoveAll();
@@ -59,12 +59,12 @@ namespace OrchardCore.Commerce.Drivers
             return Edit(part, context);
         }
 
-        private Task BuildViewModel(PriceVariantsPartViewModel model, PriceVariantsPart part)
+        private async Task BuildViewModel(PriceVariantsPartViewModel model, PriceVariantsPart part)
         {
             model.ContentItem = part.ContentItem;
             model.PriceVariantsPart = part;
 
-            var allVariantsKeys = _predefinedValuesProductAttributeService.GetProductAttributesCombinations(part.ContentItem);
+            var allVariantsKeys = await _predefinedValuesProductAttributeService.GetProductAttributesCombinationsAsync(part.ContentItem);
             model.Variants = part.Variants ?? new Dictionary<string, Amount>();
 
             model.VariantsValues = allVariantsKeys.ToDictionary(x => x,
@@ -76,8 +76,6 @@ namespace OrchardCore.Commerce.Drivers
                 x => model.Variants.TryGetValue(x, out var amount)
                     ? amount.Currency.CurrencyIsoCode
                     : Currency.UnspecifiedCurrency.CurrencyIsoCode);
-
-            return Task.CompletedTask;
         }
     }
 }

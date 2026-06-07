@@ -34,9 +34,9 @@ namespace OrchardCore.Commerce.Drivers
         public override IDisplayResult Edit(OrderPart orderPart, BuildPartEditorContext context)
             => Initialize<OrderPartViewModel>(GetEditorShapeType(context), async m => await BuildViewModel(m, orderPart));
 
-        public override async Task<IDisplayResult> UpdateAsync(OrderPart orderPart, IUpdateModel updater, UpdatePartEditorContext context)
+        public override async Task<IDisplayResult> UpdateAsync(OrderPart orderPart, UpdatePartEditorContext context)
         {
-            await updater.TryUpdateModelAsync(orderPart, Prefix, t => t.LineItems);
+            await context.Updater.TryUpdateModelAsync(orderPart, Prefix, t => t.LineItems);
 
             return Edit(orderPart, context);
         }

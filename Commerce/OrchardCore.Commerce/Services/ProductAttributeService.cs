@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Caching.Memory;
 using OrchardCore.Commerce.Abstractions;
 using OrchardCore.Commerce.Fields;
@@ -28,7 +29,7 @@ namespace OrchardCore.Commerce.Services
             _cache = cache;
         }
 
-        public IEnumerable<ProductAttributeDescription> GetProductAttributeFields(ContentItem product)
+        public async Task<IEnumerable<ProductAttributeDescription>> GetProductAttributeFieldsAsync(ContentItem product)
         {
             var productAttributeTypes = GetProductAttributeFieldTypes(product);
 
@@ -36,8 +37,9 @@ namespace OrchardCore.Commerce.Services
                 => product.Get<ContentPart>(typePartDefinition.Name)
                     ?.Get(productAttributeTypes[partFieldDefinition.FieldDefinition.Name], partFieldDefinition.Name) as ProductAttributeField;
 
-            return _contentDefinitionManager
-                .GetTypeDefinition(product.ContentType)
+            var typeDefinition = await _contentDefinitionManager.GetTypeDefinitionAsync(product.ContentType);
+
+            return typeDefinition
                 .Parts
                 .SelectMany(typePartDefinition => typePartDefinition.PartDefinition.Fields
                     .Where(partFieldDefinition => productAttributeTypes.ContainsKey(partFieldDefinition.FieldDefinition.Name))
