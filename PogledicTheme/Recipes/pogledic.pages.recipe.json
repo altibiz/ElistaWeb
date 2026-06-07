@@ -1,0 +1,313 @@
+{
+  "name": "Pogledic.Pages",
+  "displayName": "Ordination Dr. Ivana Pogledić — pages and menus (DE/EN)",
+  "description": "Seeds the bilingual public pages and the main menus.",
+  "author": "Ordination Dr. Ivana Pogledić",
+  "website": "https://pogledic.at",
+  "version": "1.0.0",
+  "issetuprecipe": false,
+  "categories": [ "default" ],
+  "tags": [ "pogledic", "content" ],
+
+  "steps": [
+    {
+      "name": "content",
+      "data": [
+        {
+          "ContentItemId": "pghomede000000000000000000",
+          "ContentType": "Page",
+          "DisplayText": "Startseite",
+          "Latest": true,
+          "Published": true,
+          "Author": "admin",
+          "Page": {},
+          "TitlePart": { "Title": "Startseite" },
+          "AutoroutePart": { "Path": "startseite", "SetHomepage": true, "Disabled": false, "RouteContainedItems": false, "Absolute": false },
+          "LocalizationPart": { "Culture": "de", "LocalizationSet": "pgset-home" },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "ContentItemId": "pgwhomede00000000000000000",
+                "ContentType": "RawHtml",
+                "Latest": false,
+                "Published": false,
+                "Author": "admin",
+                "FlowMetadata": { "Alignment": 0, "Size": 100 },
+                "RawHtml": { "Content": { "Html": "<section class=\"pg-hero\"><div class=\"pg-container pg-hero-inner\"><div><span class=\"pg-eyebrow\">Neuroradiologie · Wien</span><h1>Spezialisierte neuroradiologische Diagnostik und Zweitmeinung.</h1><p class=\"pg-lead\">Dr. Ivana Pogledić, MD PhD, EDiR EDiNR — Fachärztin für Radiologie mit Schwerpunkt Neuroradiologie. Befundung von MRT und CT des Gehirns und der Wirbelsäule, fundierte ärztliche Zweitmeinung und Teleradiologie für zuweisende Ärztinnen und Ärzte.</p><div class=\"pg-hero-actions\"><a class=\"pg-btn pg-btn-primary\" href=\"/kontakt\">Termin vereinbaren</a><a class=\"pg-btn pg-btn-light\" href=\"/leistungen\">Leistungen ansehen</a></div></div><div class=\"pg-hero-card\"><h3>Qualifikation</h3><ul><li>Fachärztin für Radiologie (Österreich)</li><li>European Diploma in Radiology (EDiR)</li><li>European Diploma in Neuroradiology (EDiNR)</li><li>MD, PhD — Neurowissenschaften</li></ul></div></div></section><section class=\"pg-section\"><div class=\"pg-container\"><div class=\"pg-section-head pg-center\"><span class=\"pg-eyebrow\">Leistungen</span><h2>Wie ich Sie unterstütze</h2><p class=\"pg-lead\">Von der spezialisierten Befundung bis zur unabhängigen Zweitmeinung.</p></div><div class=\"pg-card-grid\"><div class=\"pg-card\"><div class=\"pg-card-icon\">◐</div><h3>Neuroradiologische Diagnostik</h3><p>Befundung von MRT- und CT-Untersuchungen des Gehirns, der Schädelbasis und der Wirbelsäule nach europäischem Standard.</p></div><div class=\"pg-card\"><div class=\"pg-card-icon\">✓</div><h3>Ärztliche Zweitmeinung</h3><p>Unabhängige Beurteilung vorliegender Bilddaten — Klarheit und Sicherheit vor wichtigen Therapieentscheidungen.</p></div><div class=\"pg-card\"><div class=\"pg-card-icon\">⇄</div><h3>Teleradiologie</h3><p>Subspezialisierte neuroradiologische Befundung aus der Ferne für Praxen, Ambulatorien und Kliniken.</p></div></div></div></section><section class=\"pg-section pg-section-alt\"><div class=\"pg-container pg-about-grid\"><div class=\"pg-portrait\">Porträtfoto folgt</div><div><span class=\"pg-eyebrow\">Über mich</span><h2>Erfahrung aus Wien, dem Saarland, Paris und Zagreb</h2><p>Seit 2018 Fachärztin für Radiologie in Österreich. Von 2014 bis 2024 an der Universitätsklinik für Radiologie und Nuklearmedizin (AKH Wien, MedUni Wien) im Bereich Neuroradiologie und muskuloskelettale Radiologie tätig. Forschungs- und Ausbildungsstationen u. a. in Homburg/Saar, am Hôpital Robert Debré (Paris) und am Kroatischen Institut für Hirnforschung (Zagreb).</p><p>Mein Anspruch: präzise und verständlich kommunizierte Befunde, die Patientinnen, Patienten und zuweisenden Ärztinnen und Ärzten eine sichere Entscheidungsgrundlage geben.</p><a class=\"pg-btn pg-btn-outline pg-mt\" href=\"/ueber-mich\">Mehr über mich</a></div></div></section><section class=\"pg-section\"><div class=\"pg-container\"><div class=\"pg-cta\"><h2>Eine fundierte Einschätzung Ihrer Bilddaten</h2><p>Vereinbaren Sie einen Termin oder senden Sie eine Anfrage für eine neuroradiologische Zweitmeinung.</p><a class=\"pg-btn pg-btn-light\" href=\"/kontakt\">Termin vereinbaren</a></div></div></section>" } }
+              }
+            ]
+          }
+        },
+        {
+          "ContentItemId": "pgaboutde00000000000000000",
+          "ContentType": "Page",
+          "DisplayText": "Über mich",
+          "Latest": true,
+          "Published": true,
+          "Author": "admin",
+          "Page": {},
+          "TitlePart": { "Title": "Über mich" },
+          "AutoroutePart": { "Path": "ueber-mich", "SetHomepage": false, "Disabled": false, "RouteContainedItems": false, "Absolute": false },
+          "LocalizationPart": { "Culture": "de", "LocalizationSet": "pgset-about" },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "ContentItemId": "pgwaboutde0000000000000000",
+                "ContentType": "RawHtml",
+                "Latest": false,
+                "Published": false,
+                "Author": "admin",
+                "FlowMetadata": { "Alignment": 0, "Size": 100 },
+                "RawHtml": { "Content": { "Html": "<section class=\"pg-section\"><div class=\"pg-container\"><div class=\"pg-section-head\"><span class=\"pg-eyebrow\">Über mich</span><h1>Dr. Ivana Pogledić</h1><p class=\"pg-lead\">Fachärztin für Radiologie · Schwerpunkt Neuroradiologie · MD, PhD, EDiR, EDiNR</p></div><div class=\"pg-about-grid\"><div><p>Dr. Ivana Pogledić ist Fachärztin für Radiologie mit ausgewiesenem Schwerpunkt in der Neuroradiologie. Ihre klinische und wissenschaftliche Arbeit verbindet langjährige Befundungserfahrung mit einem fundierten Verständnis der Entwicklung und Bildgebung des zentralen Nervensystems.</p><p>Von 2014 bis 2024 war sie an der Universitätsklinik für Radiologie und Nuklearmedizin am AKH Wien (Medizinische Universität Wien) tätig. Zuvor arbeitete sie in der Neuroradiologie des Universitätsklinikums des Saarlandes (Homburg) und forschte am Hôpital Robert Debré der Université Paris VII sowie am Kroatischen Institut für Hirnforschung in Zagreb, wo Teile ihrer Promotion entstanden.</p><p>Seit 2025 ist sie zudem als Clinical Research Affiliate am Clinical Neuroplasticity Laboratory der Yale School of Medicine assoziiert. Ihr Anspruch ist eine präzise, transparente und verständlich kommunizierte Befundung.</p><div class=\"pg-tags\"><span class=\"pg-tag\">Neuroradiologie</span><span class=\"pg-tag\">MRT &amp; CT</span><span class=\"pg-tag\">Zweitmeinung</span><span class=\"pg-tag\">Teleradiologie</span><span class=\"pg-tag\">Entwicklungsneurowissenschaft</span></div></div><div><div class=\"pg-portrait\">Porträtfoto folgt</div><ul class=\"pg-cred-list\"><li>Fachärztin für Radiologie (Österreich), seit 2018</li><li>European Diploma in Radiology (EDiR)</li><li>European Diploma in Neuroradiology (EDiNR)</li><li>MD, PhD — Neurowissenschaften</li><li>Ärztliche Zulassung in Österreich, Irland und Kroatien</li><li>Clinical Research Affiliate, Yale School of Medicine (seit 2025)</li></ul></div></div></div></section>" } }
+              }
+            ]
+          }
+        },
+        {
+          "ContentItemId": "pgservde000000000000000000",
+          "ContentType": "Page",
+          "DisplayText": "Leistungen",
+          "Latest": true,
+          "Published": true,
+          "Author": "admin",
+          "Page": {},
+          "TitlePart": { "Title": "Leistungen" },
+          "AutoroutePart": { "Path": "leistungen", "SetHomepage": false, "Disabled": false, "RouteContainedItems": false, "Absolute": false },
+          "LocalizationPart": { "Culture": "de", "LocalizationSet": "pgset-services" },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "ContentItemId": "pgwservde00000000000000000",
+                "ContentType": "RawHtml",
+                "Latest": false,
+                "Published": false,
+                "Author": "admin",
+                "FlowMetadata": { "Alignment": 0, "Size": 100 },
+                "RawHtml": { "Content": { "Html": "<section class=\"pg-section\"><div class=\"pg-container\"><div class=\"pg-section-head\"><span class=\"pg-eyebrow\">Leistungen</span><h1>Neuroradiologische Expertise</h1><p class=\"pg-lead\">Spezialisierte Bildgebung des Nervensystems — für Patientinnen und Patienten sowie für zuweisende Ärztinnen und Ärzte.</p></div><div class=\"pg-card-grid\"><div class=\"pg-card\"><div class=\"pg-card-icon\">◐</div><h3>Neuroradiologische Diagnostik</h3><p>Befundung von MRT und CT des Gehirns, der Schädelbasis, der Hirngefäße und der Wirbelsäule — von der Abklärung von Kopfschmerzen über Schlaganfall und Tumoren bis zu entzündlichen und degenerativen Erkrankungen.</p></div><div class=\"pg-card\"><div class=\"pg-card-icon\">✓</div><h3>Ärztliche Zweitmeinung</h3><p>Unabhängige Beurteilung bereits durchgeführter Untersuchungen. Eine zweite, spezialisierte Einschätzung schafft Klarheit vor weitreichenden Therapieentscheidungen.</p></div><div class=\"pg-card\"><div class=\"pg-card-icon\">⇄</div><h3>Teleradiologie für Zuweiser</h3><p>Subspezialisierte neuroradiologische Befundung aus der Ferne für Praxen, Ambulatorien und Kliniken — strukturierte Befunde mit verlässlicher Befundungsqualität.</p></div></div></div></section><section class=\"pg-section pg-section-alt\"><div class=\"pg-container\"><div class=\"pg-section-head\"><h2>Schwerpunkte</h2></div><div class=\"pg-card-grid pg-2\"><div class=\"pg-card\"><h3>Gehirn &amp; Schädelbasis</h3><p>Tumoren, Gefäßerkrankungen, Entzündungen, neurodegenerative und entwicklungsbedingte Veränderungen.</p></div><div class=\"pg-card\"><h3>Wirbelsäule</h3><p>Bandscheiben- und degenerative Erkrankungen, entzündliche und tumoröse Prozesse, postoperative Verlaufskontrollen.</p></div></div><div class=\"pg-center pg-mt\"><a class=\"pg-btn pg-btn-primary\" href=\"/kontakt\">Anfrage senden</a></div></div></section>" } }
+              }
+            ]
+          }
+        },
+        {
+          "ContentItemId": "pgresde0000000000000000000",
+          "ContentType": "Page",
+          "DisplayText": "Forschung",
+          "Latest": true,
+          "Published": true,
+          "Author": "admin",
+          "Page": {},
+          "TitlePart": { "Title": "Forschung" },
+          "AutoroutePart": { "Path": "forschung", "SetHomepage": false, "Disabled": false, "RouteContainedItems": false, "Absolute": false },
+          "LocalizationPart": { "Culture": "de", "LocalizationSet": "pgset-research" },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "ContentItemId": "pgwresde000000000000000000",
+                "ContentType": "RawHtml",
+                "Latest": false,
+                "Published": false,
+                "Author": "admin",
+                "FlowMetadata": { "Alignment": 0, "Size": 100 },
+                "RawHtml": { "Content": { "Html": "<section class=\"pg-section\"><div class=\"pg-container\"><div class=\"pg-section-head\"><span class=\"pg-eyebrow\">Forschung</span><h1>Wissenschaftlicher Schwerpunkt</h1><p class=\"pg-lead\">Entwicklungsneurowissenschaft, hochauflösende MRT des Gehirns und der Einsatz künstlicher Intelligenz in der Neuroradiologie.</p></div><p>Ein Schwerpunkt der wissenschaftlichen Arbeit liegt auf der MR-bildgebenden Darstellung der menschlichen Hirnentwicklung sowie auf der Korrelation von Bildgebung und Histologie. Aktuelle Projekte befassen sich zudem mit dem Einsatz großer Sprachmodelle und KI-gestützter Verfahren in der radiologischen Befundung.</p><h2 class=\"pg-mt\">Ausgewählte Publikationen</h2><ul class=\"pg-pub-list\"><li class=\"pg-pub\"><div class=\"pg-pub-year\">2021</div><div><div class=\"pg-pub-title\">Developmental Differences Between the Limbic and Neocortical Telencephalic Wall: An Intrasubject Slice-Matched 3T MRI–Histological Correlative Study in Humans</div><div class=\"pg-pub-meta\">Cerebral Cortex, 31(7)</div></div></li><li class=\"pg-pub\"><div class=\"pg-pub-year\">2025</div><div><div class=\"pg-pub-title\">The superficial subplate as an in vivo imaging biomarker of normal cortical development in humans — a 3T MRI feasibility study</div><div class=\"pg-pub-meta\">American Journal of Neuroradiology (angenommen)</div></div></li><li class=\"pg-pub\"><div class=\"pg-pub-year\">2025</div><div><div class=\"pg-pub-title\">Evaluating Large Language Model-Generated Brain MRI Protocols</div><div class=\"pg-pub-meta\">Preprint (medRxiv)</div></div></li></ul><p class=\"pg-muted\">Eine vollständige Publikationsliste ist auf Anfrage sowie über ResearchGate verfügbar.</p></div></section>" } }
+              }
+            ]
+          }
+        },
+        {
+          "ContentItemId": "pgcontde000000000000000000",
+          "ContentType": "Page",
+          "DisplayText": "Kontakt",
+          "Latest": true,
+          "Published": true,
+          "Author": "admin",
+          "Page": {},
+          "TitlePart": { "Title": "Kontakt" },
+          "AutoroutePart": { "Path": "kontakt", "SetHomepage": false, "Disabled": false, "RouteContainedItems": false, "Absolute": false },
+          "LocalizationPart": { "Culture": "de", "LocalizationSet": "pgset-contact" },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "ContentItemId": "pgwcontde00000000000000000",
+                "ContentType": "RawHtml",
+                "Latest": false,
+                "Published": false,
+                "Author": "admin",
+                "FlowMetadata": { "Alignment": 0, "Size": 100 },
+                "RawHtml": { "Content": { "Html": "<section class=\"pg-section\"><div class=\"pg-container\"><div class=\"pg-section-head\"><span class=\"pg-eyebrow\">Kontakt</span><h1>Termin &amp; Anfrage</h1><p class=\"pg-lead\">Für Termine, Zweitmeinungen oder teleradiologische Zusammenarbeit erreichen Sie die Ordination wie folgt.</p></div><div class=\"pg-contact-grid\"><div><div class=\"pg-contact-block\"><div class=\"pg-contact-label\">Ordination</div><address style=\"font-style:normal\">Ordination Dr. Ivana Pogledić<br />1010 Wien, Österreich<br /><em>(Adresse wird ergänzt)</em></address></div><div class=\"pg-contact-block\"><div class=\"pg-contact-label\">E-Mail</div><a href=\"mailto:office@pogledic.at\">office@pogledic.at</a></div><div class=\"pg-contact-block\"><div class=\"pg-contact-label\">Telefon</div><a href=\"tel:+431000000000\">+43 1 000 00 00</a></div><div class=\"pg-contact-block\"><div class=\"pg-contact-label\">Ordinationszeiten</div><p>Termine nach Vereinbarung.</p></div></div><div><h3>So läuft eine Anfrage ab</h3><ol class=\"pg-steps\"><li>Sie kontaktieren die Ordination per E-Mail oder Telefon.</li><li>Sie übermitteln vorhandene Bilddaten (CD/DICOM) und Befunde.</li><li>Sie erhalten einen Termin bzw. eine strukturierte neuroradiologische Beurteilung.</li></ol><div class=\"pg-map pg-mt\">Karte folgt</div></div></div></div></section>" } }
+              }
+            ]
+          }
+        },
+
+        {
+          "ContentItemId": "pghomeen000000000000000000",
+          "ContentType": "Page",
+          "DisplayText": "Home",
+          "Latest": true,
+          "Published": true,
+          "Author": "admin",
+          "Page": {},
+          "TitlePart": { "Title": "Home" },
+          "AutoroutePart": { "Path": "en", "SetHomepage": false, "Disabled": false, "RouteContainedItems": false, "Absolute": false },
+          "LocalizationPart": { "Culture": "en", "LocalizationSet": "pgset-home" },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "ContentItemId": "pgwhomeen00000000000000000",
+                "ContentType": "RawHtml",
+                "Latest": false,
+                "Published": false,
+                "Author": "admin",
+                "FlowMetadata": { "Alignment": 0, "Size": 100 },
+                "RawHtml": { "Content": { "Html": "<section class=\"pg-hero\"><div class=\"pg-container pg-hero-inner\"><div><span class=\"pg-eyebrow\">Neuroradiology · Vienna</span><h1>Specialised neuroradiology diagnostics and second opinion.</h1><p class=\"pg-lead\">Dr. Ivana Pogledić, MD PhD, EDiR EDiNR — consultant radiologist specialising in neuroradiology. Reporting of brain and spine MRI and CT, expert second opinions, and teleradiology for referring physicians.</p><div class=\"pg-hero-actions\"><a class=\"pg-btn pg-btn-primary\" href=\"/en/contact\">Book appointment</a><a class=\"pg-btn pg-btn-light\" href=\"/en/services\">View services</a></div></div><div class=\"pg-hero-card\"><h3>Qualifications</h3><ul><li>Consultant Radiologist (Austria)</li><li>European Diploma in Radiology (EDiR)</li><li>European Diploma in Neuroradiology (EDiNR)</li><li>MD, PhD — Neuroscience</li></ul></div></div></section><section class=\"pg-section\"><div class=\"pg-container\"><div class=\"pg-section-head pg-center\"><span class=\"pg-eyebrow\">Services</span><h2>How I can help</h2><p class=\"pg-lead\">From specialised reporting to an independent second opinion.</p></div><div class=\"pg-card-grid\"><div class=\"pg-card\"><div class=\"pg-card-icon\">◐</div><h3>Neuroradiology diagnostics</h3><p>Reporting of brain, skull base and spine MRI and CT examinations to European standards.</p></div><div class=\"pg-card\"><div class=\"pg-card-icon\">✓</div><h3>Medical second opinion</h3><p>An independent review of existing imaging — clarity and confidence before important treatment decisions.</p></div><div class=\"pg-card\"><div class=\"pg-card-icon\">⇄</div><h3>Teleradiology</h3><p>Subspecialty neuroradiology reporting at a distance for practices, outpatient centres and hospitals.</p></div></div></div></section><section class=\"pg-section pg-section-alt\"><div class=\"pg-container pg-about-grid\"><div class=\"pg-portrait\">Portrait photo to follow</div><div><span class=\"pg-eyebrow\">About</span><h2>Experience across Vienna, Saarland, Paris and Zagreb</h2><p>Austrian board-certified radiologist since 2018. From 2014 to 2024 at the Department of Biomedical Imaging and Image-guided Therapy (AKH Vienna, Medical University of Vienna), in neuroradiology and musculoskeletal radiology. Earlier research and training in Homburg/Saar, at Hôpital Robert Debré (Paris) and the Croatian Institute for Brain Research (Zagreb).</p><p>My aim: precise, clearly communicated reports that give patients and referring physicians a sound basis for decisions.</p><a class=\"pg-btn pg-btn-outline pg-mt\" href=\"/en/about\">More about me</a></div></div></section><section class=\"pg-section\"><div class=\"pg-container\"><div class=\"pg-cta\"><h2>A sound assessment of your imaging</h2><p>Book an appointment or send a request for a neuroradiology second opinion.</p><a class=\"pg-btn pg-btn-light\" href=\"/en/contact\">Book appointment</a></div></div></section>" } }
+              }
+            ]
+          }
+        },
+        {
+          "ContentItemId": "pgabouten00000000000000000",
+          "ContentType": "Page",
+          "DisplayText": "About",
+          "Latest": true,
+          "Published": true,
+          "Author": "admin",
+          "Page": {},
+          "TitlePart": { "Title": "About" },
+          "AutoroutePart": { "Path": "en/about", "SetHomepage": false, "Disabled": false, "RouteContainedItems": false, "Absolute": false },
+          "LocalizationPart": { "Culture": "en", "LocalizationSet": "pgset-about" },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "ContentItemId": "pgwabouten0000000000000000",
+                "ContentType": "RawHtml",
+                "Latest": false,
+                "Published": false,
+                "Author": "admin",
+                "FlowMetadata": { "Alignment": 0, "Size": 100 },
+                "RawHtml": { "Content": { "Html": "<section class=\"pg-section\"><div class=\"pg-container\"><div class=\"pg-section-head\"><span class=\"pg-eyebrow\">About</span><h1>Dr. Ivana Pogledić</h1><p class=\"pg-lead\">Consultant Radiologist · Neuroradiology · MD, PhD, EDiR, EDiNR</p></div><div class=\"pg-about-grid\"><div><p>Dr. Ivana Pogledić is a consultant radiologist with a strong focus on neuroradiology. Her clinical and scientific work combines many years of reporting experience with a deep understanding of the development and imaging of the central nervous system.</p><p>From 2014 to 2024 she worked at the Department of Biomedical Imaging and Image-guided Therapy at AKH Vienna (Medical University of Vienna). Before that she worked in neuroradiology at Saarland University Medical Center (Homburg) and carried out research at Hôpital Robert Debré, Université Paris VII, and at the Croatian Institute for Brain Research in Zagreb, where part of her doctorate was completed.</p><p>Since 2025 she has also been a Clinical Research Affiliate at the Clinical Neuroplasticity Laboratory, Yale School of Medicine. She is committed to precise, transparent and clearly communicated reporting.</p><div class=\"pg-tags\"><span class=\"pg-tag\">Neuroradiology</span><span class=\"pg-tag\">MRI &amp; CT</span><span class=\"pg-tag\">Second opinion</span><span class=\"pg-tag\">Teleradiology</span><span class=\"pg-tag\">Developmental neuroscience</span></div></div><div><div class=\"pg-portrait\">Portrait photo to follow</div><ul class=\"pg-cred-list\"><li>Consultant Radiologist (Austria), since 2018</li><li>European Diploma in Radiology (EDiR)</li><li>European Diploma in Neuroradiology (EDiNR)</li><li>MD, PhD — Neuroscience</li><li>Medical licences in Austria, Ireland and Croatia</li><li>Clinical Research Affiliate, Yale School of Medicine (since 2025)</li></ul></div></div></div></section>" } }
+              }
+            ]
+          }
+        },
+        {
+          "ContentItemId": "pgserven000000000000000000",
+          "ContentType": "Page",
+          "DisplayText": "Services",
+          "Latest": true,
+          "Published": true,
+          "Author": "admin",
+          "Page": {},
+          "TitlePart": { "Title": "Services" },
+          "AutoroutePart": { "Path": "en/services", "SetHomepage": false, "Disabled": false, "RouteContainedItems": false, "Absolute": false },
+          "LocalizationPart": { "Culture": "en", "LocalizationSet": "pgset-services" },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "ContentItemId": "pgwserven00000000000000000",
+                "ContentType": "RawHtml",
+                "Latest": false,
+                "Published": false,
+                "Author": "admin",
+                "FlowMetadata": { "Alignment": 0, "Size": 100 },
+                "RawHtml": { "Content": { "Html": "<section class=\"pg-section\"><div class=\"pg-container\"><div class=\"pg-section-head\"><span class=\"pg-eyebrow\">Services</span><h1>Neuroradiology expertise</h1><p class=\"pg-lead\">Specialised imaging of the nervous system — for patients and for referring physicians.</p></div><div class=\"pg-card-grid\"><div class=\"pg-card\"><div class=\"pg-card-icon\">◐</div><h3>Neuroradiology diagnostics</h3><p>Reporting of brain, skull base, cerebral vessels and spine MRI and CT — from headache work-up to stroke, tumours, and inflammatory or degenerative disease.</p></div><div class=\"pg-card\"><div class=\"pg-card-icon\">✓</div><h3>Medical second opinion</h3><p>An independent review of examinations already performed. A second, specialised assessment brings clarity before far-reaching treatment decisions.</p></div><div class=\"pg-card\"><div class=\"pg-card-icon\">⇄</div><h3>Teleradiology for referrers</h3><p>Subspecialty neuroradiology reporting at a distance for practices, outpatient centres and hospitals — structured reports with reliable quality.</p></div></div></div></section><section class=\"pg-section pg-section-alt\"><div class=\"pg-container\"><div class=\"pg-section-head\"><h2>Areas of focus</h2></div><div class=\"pg-card-grid pg-2\"><div class=\"pg-card\"><h3>Brain &amp; skull base</h3><p>Tumours, vascular disease, inflammation, neurodegenerative and developmental changes.</p></div><div class=\"pg-card\"><h3>Spine</h3><p>Disc and degenerative disease, inflammatory and tumour processes, post-operative follow-up.</p></div></div><div class=\"pg-center pg-mt\"><a class=\"pg-btn pg-btn-primary\" href=\"/en/contact\">Send a request</a></div></div></section>" } }
+              }
+            ]
+          }
+        },
+        {
+          "ContentItemId": "pgresen0000000000000000000",
+          "ContentType": "Page",
+          "DisplayText": "Research",
+          "Latest": true,
+          "Published": true,
+          "Author": "admin",
+          "Page": {},
+          "TitlePart": { "Title": "Research" },
+          "AutoroutePart": { "Path": "en/research", "SetHomepage": false, "Disabled": false, "RouteContainedItems": false, "Absolute": false },
+          "LocalizationPart": { "Culture": "en", "LocalizationSet": "pgset-research" },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "ContentItemId": "pgwresen000000000000000000",
+                "ContentType": "RawHtml",
+                "Latest": false,
+                "Published": false,
+                "Author": "admin",
+                "FlowMetadata": { "Alignment": 0, "Size": 100 },
+                "RawHtml": { "Content": { "Html": "<section class=\"pg-section\"><div class=\"pg-container\"><div class=\"pg-section-head\"><span class=\"pg-eyebrow\">Research</span><h1>Scientific focus</h1><p class=\"pg-lead\">Developmental neuroscience, high-resolution brain MRI, and the use of artificial intelligence in neuroradiology.</p></div><p>A central theme of the scientific work is MR imaging of human brain development and the correlation of imaging with histology. Current projects also explore the use of large language models and AI-assisted methods in radiology reporting.</p><h2 class=\"pg-mt\">Selected publications</h2><ul class=\"pg-pub-list\"><li class=\"pg-pub\"><div class=\"pg-pub-year\">2021</div><div><div class=\"pg-pub-title\">Developmental Differences Between the Limbic and Neocortical Telencephalic Wall: An Intrasubject Slice-Matched 3T MRI–Histological Correlative Study in Humans</div><div class=\"pg-pub-meta\">Cerebral Cortex, 31(7)</div></div></li><li class=\"pg-pub\"><div class=\"pg-pub-year\">2025</div><div><div class=\"pg-pub-title\">The superficial subplate as an in vivo imaging biomarker of normal cortical development in humans — a 3T MRI feasibility study</div><div class=\"pg-pub-meta\">American Journal of Neuroradiology (accepted)</div></div></li><li class=\"pg-pub\"><div class=\"pg-pub-year\">2025</div><div><div class=\"pg-pub-title\">Evaluating Large Language Model-Generated Brain MRI Protocols</div><div class=\"pg-pub-meta\">Preprint (medRxiv)</div></div></li></ul><p class=\"pg-muted\">A full publication list is available on request and via ResearchGate.</p></div></section>" } }
+              }
+            ]
+          }
+        },
+        {
+          "ContentItemId": "pgconten000000000000000000",
+          "ContentType": "Page",
+          "DisplayText": "Contact",
+          "Latest": true,
+          "Published": true,
+          "Author": "admin",
+          "Page": {},
+          "TitlePart": { "Title": "Contact" },
+          "AutoroutePart": { "Path": "en/contact", "SetHomepage": false, "Disabled": false, "RouteContainedItems": false, "Absolute": false },
+          "LocalizationPart": { "Culture": "en", "LocalizationSet": "pgset-contact" },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "ContentItemId": "pgwconten00000000000000000",
+                "ContentType": "RawHtml",
+                "Latest": false,
+                "Published": false,
+                "Author": "admin",
+                "FlowMetadata": { "Alignment": 0, "Size": 100 },
+                "RawHtml": { "Content": { "Html": "<section class=\"pg-section\"><div class=\"pg-container\"><div class=\"pg-section-head\"><span class=\"pg-eyebrow\">Contact</span><h1>Appointment &amp; enquiry</h1><p class=\"pg-lead\">For appointments, second opinions or teleradiology collaboration, you can reach the practice as follows.</p></div><div class=\"pg-contact-grid\"><div><div class=\"pg-contact-block\"><div class=\"pg-contact-label\">Practice</div><address style=\"font-style:normal\">Ordination Dr. Ivana Pogledić<br />1010 Vienna, Austria<br /><em>(address to be added)</em></address></div><div class=\"pg-contact-block\"><div class=\"pg-contact-label\">Email</div><a href=\"mailto:office@pogledic.at\">office@pogledic.at</a></div><div class=\"pg-contact-block\"><div class=\"pg-contact-label\">Phone</div><a href=\"tel:+431000000000\">+43 1 000 00 00</a></div><div class=\"pg-contact-block\"><div class=\"pg-contact-label\">Office hours</div><p>By appointment.</p></div></div><div><h3>How an enquiry works</h3><ol class=\"pg-steps\"><li>Contact the practice by email or phone.</li><li>Provide your existing imaging (CD/DICOM) and reports.</li><li>Receive an appointment or a structured neuroradiology assessment.</li></ol><div class=\"pg-map pg-mt\">Map to follow</div></div></div></div></section>" } }
+              }
+            ]
+          }
+        },
+
+        {
+          "ContentItemId": "pgmenude000000000000000000",
+          "ContentType": "Menu",
+          "DisplayText": "Hauptmenü",
+          "Latest": true,
+          "Published": true,
+          "Author": "admin",
+          "TitlePart": { "Title": "Hauptmenü" },
+          "AliasPart": { "Alias": "main-menu" },
+          "MenuPart": {},
+          "MenuItemsListPart": {
+            "MenuItems": [
+              { "ContentItemId": "pgmidehome0000000000000000", "ContentType": "LinkMenuItem", "DisplayText": "Startseite", "Latest": false, "Published": false, "Author": "admin", "LinkMenuItemPart": { "Name": "Startseite", "Url": "/" } },
+              { "ContentItemId": "pgmideabout000000000000000", "ContentType": "LinkMenuItem", "DisplayText": "Über mich", "Latest": false, "Published": false, "Author": "admin", "LinkMenuItemPart": { "Name": "Über mich", "Url": "/ueber-mich" } },
+              { "ContentItemId": "pgmideserv0000000000000000", "ContentType": "LinkMenuItem", "DisplayText": "Leistungen", "Latest": false, "Published": false, "Author": "admin", "LinkMenuItemPart": { "Name": "Leistungen", "Url": "/leistungen" } },
+              { "ContentItemId": "pgmideres00000000000000000", "ContentType": "LinkMenuItem", "DisplayText": "Forschung", "Latest": false, "Published": false, "Author": "admin", "LinkMenuItemPart": { "Name": "Forschung", "Url": "/forschung" } },
+              { "ContentItemId": "pgmidecont0000000000000000", "ContentType": "LinkMenuItem", "DisplayText": "Kontakt", "Latest": false, "Published": false, "Author": "admin", "LinkMenuItemPart": { "Name": "Kontakt", "Url": "/kontakt" } }
+            ]
+          },
+          "@WeldedPartSettings": { "MenuPart": { "Position": "2" }, "MenuItemsListPart": { "Position": "3" } }
+        },
+        {
+          "ContentItemId": "pgmenuen000000000000000000",
+          "ContentType": "Menu",
+          "DisplayText": "Main Menu",
+          "Latest": true,
+          "Published": true,
+          "Author": "admin",
+          "TitlePart": { "Title": "Main Menu" },
+          "AliasPart": { "Alias": "main-menu-en" },
+          "MenuPart": {},
+          "MenuItemsListPart": {
+            "MenuItems": [
+              { "ContentItemId": "pgmienhome0000000000000000", "ContentType": "LinkMenuItem", "DisplayText": "Home", "Latest": false, "Published": false, "Author": "admin", "LinkMenuItemPart": { "Name": "Home", "Url": "/en" } },
+              { "ContentItemId": "pgmienabout000000000000000", "ContentType": "LinkMenuItem", "DisplayText": "About", "Latest": false, "Published": false, "Author": "admin", "LinkMenuItemPart": { "Name": "About", "Url": "/en/about" } },
+              { "ContentItemId": "pgmienserv0000000000000000", "ContentType": "LinkMenuItem", "DisplayText": "Services", "Latest": false, "Published": false, "Author": "admin", "LinkMenuItemPart": { "Name": "Services", "Url": "/en/services" } },
+              { "ContentItemId": "pgmienres00000000000000000", "ContentType": "LinkMenuItem", "DisplayText": "Research", "Latest": false, "Published": false, "Author": "admin", "LinkMenuItemPart": { "Name": "Research", "Url": "/en/research" } },
+              { "ContentItemId": "pgmiencont0000000000000000", "ContentType": "LinkMenuItem", "DisplayText": "Contact", "Latest": false, "Published": false, "Author": "admin", "LinkMenuItemPart": { "Name": "Contact", "Url": "/en/contact" } }
+            ]
+          },
+          "@WeldedPartSettings": { "MenuPart": { "Position": "2" }, "MenuItemsListPart": { "Position": "3" } }
+        }
+      ]
+    }
+  ]
+}

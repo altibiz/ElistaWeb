@@ -1,0 +1,18 @@
+@{
+    var current = Model.CurrentCulture.Name?.Split('-')[0]?.ToUpperInvariant();
+}
+<div class="pg-langs">
+    <span class="pg-lang pg-lang-current">@current</span>
+    @foreach (var culture in Model.SupportedCultures)
+    {
+        if (culture.Name != Model.CurrentCulture.Name)
+        {
+            <a asp-route="RedirectToLocalizedContent"
+               asp-route-area="OrchardCore.ContentLocalization"
+               asp-route-targetCulture="@culture.Name"
+               asp-route-contentItemUrl="@Context.Request.Path.Value"
+               asp-route-queryStringValue="@Context.Request.QueryString.Value"
+               class="pg-lang">@culture.Name.Split('-')[0].ToUpperInvariant()</a>
+        }
+    }
+</div>

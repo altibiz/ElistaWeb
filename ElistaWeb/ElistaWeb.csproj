@@ -18,6 +18,7 @@
     <ProjectReference Include="..\Commerce\OrchardCore.Commerce\OrchardCore.Commerce.csproj" />
     <ProjectReference Include="..\ElistaTheme\ElistaTheme.csproj" />
     <ProjectReference Include="..\IcfTheme\IcfTheme.csproj" />
+    <ProjectReference Include="..\PogledicTheme\PogledicTheme.csproj" />
   </ItemGroup>
 
   <ItemGroup>
