@@ -352,7 +352,7 @@
                   "LinkUrl": "[js: variables('adminUrlPrefix') + '/Contents/ContentItems?contentsStatus=Latest&orderBy=Modified&typeName=Page']",
                   "UniqueId": "icf-admin-pages",
                   "Enabled": true,
-                  "Position": 0,
+                  "Position": "0",
                   "Items": []
                 },
                 {
@@ -361,7 +361,7 @@
                   "LinkUrl": "[js: variables('adminUrlPrefix') + '/Contents/ContentItems?contentsStatus=Latest&orderBy=Modified&typeName=Menu']",
                   "UniqueId": "icf-admin-menus",
                   "Enabled": true,
-                  "Position": 1,
+                  "Position": "1",
                   "Items": []
                 }
               ]
