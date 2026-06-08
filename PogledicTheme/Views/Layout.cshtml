@@ -1,0 +1,107 @@
+@using System.Globalization
+@inject OrchardCore.Localization.ILocalizationService LocalizationService
+@{
+    var culture = CultureInfo.CurrentUICulture.Name;
+    var isDe = culture.StartsWith("de", StringComparison.OrdinalIgnoreCase);
+    string L(string de, string en) => isDe ? de : en;
+
+    var supported = await LocalizationService.GetSupportedCulturesAsync();
+    var contactUrl = isDe ? "/kontakt" : "/en/contact";
+    var menuAlias = isDe ? "main-menu" : "main-menu-en";
+
+    if (!ThemeLayout.Attributes.TryGetValue("mainClass", out var mainClass))
+    {
+        mainClass = "";
+    }
+}
+<!DOCTYPE html>
+<html lang="@culture">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light only" />
+    <title>@RenderTitleSegments(Site.SiteName, "before")</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Spectral:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/PogledicTheme/css/pogledic.css" asp-append-version="true" />
+    <resources type="Meta" />
+    <resources type="HeadLink" />
+    <resources type="Stylesheet" />
+    <resources type="HeadScript" />
+    @await RenderSectionAsync("HeadMeta", required: false)
+</head>
+<body class="pg-body">
+    <header class="pg-header">
+        <div class="pg-container pg-header-inner">
+            <a class="pg-brand" href="@(isDe ? "/" : "/en")">
+                <span class="pg-brand-name">Dr. Ivana Pogledić</span>
+                <span class="pg-brand-sub">@L("Neuroradiologie · Wien", "Neuroradiology · Vienna")</span>
+            </a>
+            <input type="checkbox" id="pg-nav-toggle" class="pg-nav-toggle" hidden />
+            <label for="pg-nav-toggle" class="pg-nav-burger" aria-label="Menu"><span></span><span></span><span></span></label>
+            <nav class="pg-nav" aria-label="Main">
+                <menu alias="alias:@menuAlias" cache-id="@menuAlias" cache-fixed-duration="00:05:00" cache-tag="alias:@menuAlias"></menu>
+                <div class="pg-nav-actions">
+                    @if (supported != null && supported.Length > 1)
+                    {
+                        <div class="pg-langs">
+                            <span class="pg-lang pg-lang-current">@culture.Split('-')[0].ToUpperInvariant()</span>
+                            @foreach (var c in supported)
+                            {
+                                if (!string.Equals(c, culture, StringComparison.OrdinalIgnoreCase))
+                                {
+                                    <a class="pg-lang"
+                                       asp-route="RedirectToLocalizedContent"
+                                       asp-route-area="OrchardCore.ContentLocalization"
+                                       asp-route-targetCulture="@c"
+                                       asp-route-contentItemUrl="@Context.Request.Path.Value"
+                                       asp-route-queryStringValue="@Context.Request.QueryString.Value">@c.Split('-')[0].ToUpperInvariant()</a>
+                                }
+                            }
+                        </div>
+                    }
+                    <a class="pg-btn pg-btn-primary" href="@contactUrl">@L("Termin vereinbaren", "Book appointment")</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="@mainClass">
+        @await RenderSectionAsync("Messages", required: false)
+        @await RenderBodyAsync()
+    </main>
+
+    <footer class="pg-footer">
+        <div class="pg-container pg-footer-grid">
+            <div>
+                <div class="pg-footer-brand">Ordination Dr. Ivana Pogledić</div>
+                <p class="pg-muted">@L("Fachärztin für Radiologie · Neuroradiologie, Zweitmeinung und Teleradiologie.", "Consultant Radiologist · Neuroradiology, second opinion and teleradiology.")</p>
+            </div>
+            <div>
+                <h4 class="pg-footer-heading">@L("Kontakt", "Contact")</h4>
+                <address class="pg-muted pg-footer-address">
+                    Ordination Dr. Ivana Pogledić<br />
+                    1010 Wien, Österreich <!-- TODO: real address -->
+                    <br />
+                    <a href="mailto:office@pogledic.at">office@pogledic.at</a><br /> <!-- TODO: real email -->
+                    <a href="tel:+431000000000">+43 1 000 00 00</a> <!-- TODO: real phone -->
+                </address>
+            </div>
+            <div>
+                <h4 class="pg-footer-heading">@L("Ordinationszeiten", "Office hours")</h4>
+                <p class="pg-muted">@L("Termine nach Vereinbarung.", "By appointment.")</p>
+                <a class="pg-btn pg-btn-outline pg-btn-sm" href="@contactUrl">@L("Termin vereinbaren", "Book appointment")</a>
+            </div>
+        </div>
+        <div class="pg-footer-legal">
+            <div class="pg-container">
+                <span>© Dr. Ivana Pogledić</span>
+                <span class="pg-muted">@L("Alle Rechte vorbehalten.", "All rights reserved.")</span>
+            </div>
+        </div>
+    </footer>
+
+    <resources type="FootScript" />
+</body>
+</html>

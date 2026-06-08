@@ -1,0 +1,12 @@
+@{
+    TagBuilder tag = Tag(Model, "ul");
+    tag.AddCssClass("pg-nav-list");
+
+    foreach (var item in Model.Items)
+    {
+        tag.InnerHtml.AppendHtml("<li class='pg-nav-item'>");
+        tag.InnerHtml.AppendHtml(await DisplayAsync(item));
+        tag.InnerHtml.AppendHtml("</li>");
+    }
+}
+@tag

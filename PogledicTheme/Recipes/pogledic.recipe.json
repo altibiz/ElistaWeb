@@ -1,0 +1,189 @@
+{
+  "name": "pogledic",
+  "displayName": "Ordination Dr. Ivana Pogledić — Setup",
+  "description": "Setup recipe for the Dr. Ivana Pogledić neuroradiology site. Bilingual DE/EN.",
+  "author": "Ordination Dr. Ivana Pogledić",
+  "website": "https://pogledic.at",
+  "version": "1.0.0",
+  "issetuprecipe": true,
+  "categories": [ "default" ],
+  "tags": [ "pogledic", "medical", "neuroradiology" ],
+
+  "variables": {
+    "adminUrlPrefix": "[js: configuration('OrchardCore_Admin:AdminUrlPrefix', 'Admin')]"
+  },
+
+  "steps": [
+    {
+      "name": "feature",
+      "enable": [
+        "OrchardCore.Liquid",
+        "OrchardCore.Settings",
+        "OrchardCore.Contents",
+        "OrchardCore.ContentTypes",
+        "OrchardCore.ContentFields",
+        "OrchardCore.Widgets",
+        "OrchardCore.Flows",
+        "OrchardCore.Media",
+        "OrchardCore.Admin",
+        "OrchardCore.AdminMenu",
+        "OrchardCore.Alias",
+        "OrchardCore.Autoroute",
+        "OrchardCore.Resources",
+        "OrchardCore.Recipes",
+        "OrchardCore.Users",
+        "OrchardCore.Roles",
+        "OrchardCore.Localization",
+        "OrchardCore.ContentLocalization",
+        "OrchardCore.ContentLocalization.ContentCulturePicker",
+        "OrchardCore.ContentPreview",
+        "OrchardCore.Diagnostics",
+        "OrchardCore.HomeRoute",
+        "OrchardCore.Html",
+        "OrchardCore.Title",
+        "OrchardCore.Menu",
+        "OrchardCore.Navigation",
+        "OrchardCore.Themes",
+        "PogledicTheme",
+        "SafeMode",
+        "TheAdmin"
+      ]
+    },
+    {
+      "name": "themes",
+      "admin": "TheAdmin",
+      "site": "PogledicTheme"
+    },
+    {
+      "name": "settings",
+      "LocalizationSettings": {
+        "DefaultCulture": "de",
+        "SupportedCultures": [ "de", "en" ]
+      }
+    },
+    {
+      "name": "ContentDefinition",
+      "ContentTypes": [
+        {
+          "Name": "RawHtml",
+          "DisplayName": "Raw Html",
+          "Settings": {
+            "ContentTypeSettings": { "Draftable": true, "Versionable": true, "Securable": true, "Stereotype": "Widget" }
+          },
+          "ContentTypePartDefinitionRecords": [
+            { "PartName": "RawHtml", "Name": "RawHtml", "Settings": { "ContentTypePartSettings": { "Position": "0" } } }
+          ]
+        },
+        {
+          "Name": "Page",
+          "DisplayName": "Page",
+          "Settings": {
+            "ContentTypeSettings": { "Creatable": true, "Draftable": true, "Versionable": true, "Listable": true, "Securable": true }
+          },
+          "ContentTypePartDefinitionRecords": [
+            { "PartName": "TitlePart", "Name": "TitlePart", "Settings": { "ContentTypePartSettings": { "Position": "0" } } },
+            {
+              "PartName": "AutoroutePart", "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": { "Position": "1" },
+                "AutoroutePartSettings": { "AllowCustomPath": true, "Pattern": "{{ Model.ContentItem | display_text | slugify }}", "ShowHomepageOption": true }
+              }
+            },
+            { "PartName": "FlowPart", "Name": "FlowPart", "Settings": { "ContentTypePartSettings": { "Position": "2" } } },
+            { "PartName": "LocalizationPart", "Name": "LocalizationPart", "Settings": { "ContentTypePartSettings": { "Position": "3" } } },
+            { "PartName": "Page", "Name": "Page", "Settings": { "ContentTypePartSettings": { "Position": "4" } } }
+          ]
+        },
+        {
+          "Name": "Menu",
+          "DisplayName": "Menu",
+          "Settings": {
+            "ContentTypeSettings": { "Securable": true, "Stereotype": "MenuItem" }
+          },
+          "ContentTypePartDefinitionRecords": [
+            { "PartName": "TitlePart", "Name": "TitlePart", "Settings": { "ContentTypePartSettings": { "Position": "0" } } },
+            { "PartName": "AliasPart", "Name": "AliasPart", "Settings": { "ContentTypePartSettings": { "Position": "1" } } },
+            { "PartName": "MenuPart", "Name": "MenuPart", "Settings": { "ContentTypePartSettings": { "Position": "2" } } },
+            { "PartName": "MenuItemsListPart", "Name": "MenuItemsListPart", "Settings": { "ContentTypePartSettings": { "Position": "3" } } }
+          ]
+        },
+        {
+          "Name": "LinkMenuItem",
+          "DisplayName": "Link Menu Item",
+          "Settings": {
+            "ContentTypeSettings": { "Securable": true, "Stereotype": "MenuItem" }
+          },
+          "ContentTypePartDefinitionRecords": [
+            { "PartName": "LinkMenuItemPart", "Name": "LinkMenuItemPart", "Settings": { "ContentTypePartSettings": { "Position": "0" } } }
+          ]
+        }
+      ],
+      "ContentParts": [
+        { "Name": "FlowPart", "Settings": { "ContentPartSettings": { "Attachable": true, "Description": "Customizable body where you can build a content structure with widgets." } }, "ContentPartFieldDefinitionRecords": [] },
+        { "Name": "AutoroutePart", "Settings": { "ContentPartSettings": { "Attachable": true, "Description": "Provides a custom url for your content item." } }, "ContentPartFieldDefinitionRecords": [] },
+        { "Name": "TitlePart", "Settings": { "ContentPartSettings": { "Attachable": true, "Description": "Provides a Title for your content item.", "DefaultPosition": "0" } }, "ContentPartFieldDefinitionRecords": [] },
+        { "Name": "MenuPart", "Settings": {}, "ContentPartFieldDefinitionRecords": [] },
+        { "Name": "LinkMenuItemPart", "Settings": { "ContentPartSettings": { "Attachable": true, "Description": "Provides a menu link behavior for your content item." } }, "ContentPartFieldDefinitionRecords": [] },
+        {
+          "Name": "RawHtml",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            { "FieldName": "HtmlField", "Name": "Content", "Settings": { "ContentPartFieldSettings": { "DisplayName": "Content", "Position": "0", "Editor": "Multiline" } } }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Roles",
+      "Roles": [
+        { "Name": "Anonymous", "Description": "Anonymous role", "Permissions": [ "ViewContent" ] }
+      ]
+    },
+    {
+      "name": "AdminMenu",
+      "data": [
+        {
+          "Id": "pogledic-admin-menu-root",
+          "Name": "Admin menus",
+          "Enabled": true,
+          "MenuItems": [
+            {
+              "$type": "OrchardCore.AdminMenu.AdminNodes.PlaceholderAdminNode, OrchardCore.AdminMenu",
+              "LinkText": "Inhalt / Content",
+              "PermissionNames": [],
+              "UniqueId": "pogledic-admin-content",
+              "Enabled": true,
+              "LinkToFirstChild": true,
+              "Items": [
+                {
+                  "$type": "OrchardCore.AdminMenu.AdminNodes.LinkAdminNode, OrchardCore.AdminMenu",
+                  "LinkText": "Pages",
+                  "LinkUrl": "[js: variables('adminUrlPrefix') + '/Contents/ContentItems?contentsStatus=Latest&orderBy=Modified&typeName=Page']",
+                  "UniqueId": "pogledic-admin-pages",
+                  "Enabled": true,
+                  "Position": "0",
+                  "Items": []
+                },
+                {
+                  "$type": "OrchardCore.AdminMenu.AdminNodes.LinkAdminNode, OrchardCore.AdminMenu",
+                  "LinkText": "Menus",
+                  "LinkUrl": "[js: variables('adminUrlPrefix') + '/Contents/ContentItems?contentsStatus=Latest&orderBy=Modified&typeName=Menu']",
+                  "UniqueId": "pogledic-admin-menus",
+                  "Enabled": true,
+                  "Position": "1",
+                  "Items": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "recipes",
+      "Values": [
+        { "executionid": "PogledicTheme", "name": "Pogledic.Pages" }
+      ]
+    }
+  ]
+}
