@@ -65,7 +65,8 @@
       "WebFetch(domain:www.florianwolf.at)",
       "WebFetch(domain:www.linkedin.com)",
       "WebSearch",
-      "Bash(dotnet sln *)"
+      "Bash(dotnet sln *)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('../PogledicTheme/Recipes/pogledic.pages.recipe.json','utf8'\\)\\);console.log\\('recipe JSON valid'\\)\")"
     ]
   }
 }

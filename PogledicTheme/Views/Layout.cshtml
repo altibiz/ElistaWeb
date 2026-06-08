@@ -8,6 +8,7 @@
     var supported = await LocalizationService.GetSupportedCulturesAsync();
     var contactUrl = isDe ? "/kontakt" : "/en/contact";
     var menuAlias = isDe ? "main-menu" : "main-menu-en";
+    var email = isDe ? "radiologie@pogledic.com" : "radiology@pogledic.com";
 
     if (!ThemeLayout.Attributes.TryGetValue("mainClass", out var mainClass))
     {
@@ -84,7 +85,7 @@
                     Ordination Dr. Ivana Pogledić<br />
                     1010 Wien, Österreich <!-- TODO: real address -->
                     <br />
-                    <a href="mailto:office@pogledic.at">office@pogledic.at</a><br /> <!-- TODO: real email -->
+                    <a href="mailto:@email">@email</a><br />
                     <a href="tel:+431000000000">+43 1 000 00 00</a> <!-- TODO: real phone -->
                 </address>
             </div>
