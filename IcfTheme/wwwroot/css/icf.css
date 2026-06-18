@@ -393,16 +393,17 @@ body.icf-body a:not(.btn):not(.navbar-brand):not(.nav-link):hover {
     justify-content: center;
     box-shadow: 0 4px 12px rgba(27, 163, 156, 0.3);
     flex: 0 0 auto;
-}
-.icf-logo-badge img {
-    width: 26px;
-    height: 26px;
-    object-fit: contain;
-    display: block;
+    color: #fff;
+    font-family: var(--icf-font-display);
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+    line-height: 1;
 }
 .icf-logo-badge-footer {
     width: 48px;
     height: 48px;
+    font-size: 1.45rem;
 }
 
 /* Hero trust row */
