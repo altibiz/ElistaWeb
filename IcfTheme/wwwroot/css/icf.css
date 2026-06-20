@@ -537,3 +537,26 @@ body.icf-body a:not(.btn):not(.navbar-brand):not(.nav-link):hover {
    content rows (vertical gutter / row stacking spacing is preserved). */
 .icf-section .row,
 .icf-options .row { --bs-gutter-x: 1.5rem; }
+
+/* Slim CTA band — understated prompt + button at the foot of a page */
+.icf-cta-slim {
+    background: var(--icf-primary-50);
+    border-top: 1px solid var(--icf-gray-200);
+    padding: 2.5rem 0;
+}
+.icf-cta-slim-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.icf-cta-slim p {
+    font-family: var(--icf-font-display);
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--icf-charcoal);
+}
+@media (max-width: 575.98px) {
+    .icf-cta-slim-inner { flex-direction: column; align-items: flex-start; }
+}
