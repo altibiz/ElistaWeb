@@ -6,9 +6,13 @@
   "website": "https://icf.formadria.com",
   "version": "1.0.0",
   "issetuprecipe": false,
-  "categories": [ "default" ],
-  "tags": [ "icf", "content" ],
-
+  "categories": [
+    "default"
+  ],
+  "tags": [
+    "icf",
+    "content"
+  ],
   "steps": [
     {
       "name": "content",
@@ -21,7 +25,9 @@
           "Published": true,
           "Author": "admin",
           "Page": {},
-          "TitlePart": { "Title": "Naslovnica" },
+          "TitlePart": {
+            "Title": "Naslovnica"
+          },
           "AutoroutePart": {
             "Path": "naslovnica",
             "SetHomepage": true,
@@ -186,7 +192,9 @@
           "Published": true,
           "Author": "admin",
           "Page": {},
-          "TitlePart": { "Title": "Sustav gradnje" },
+          "TitlePart": {
+            "Title": "Sustav gradnje"
+          },
           "AutoroutePart": {
             "Path": "sustav-gradnje",
             "SetHomepage": false,
@@ -202,10 +210,13 @@
                 "Latest": false,
                 "Published": false,
                 "Author": "admin",
-                "FlowMetadata": { "Alignment": 0, "Size": 100 },
+                "FlowMetadata": {
+                  "Alignment": 0,
+                  "Size": 100
+                },
                 "RawHtml": {
                   "Content": {
-                    "Html": "<section class=\"icf-section\"><div class=\"container\"><span class=\"icf-hero-eyebrow\">VHG sustav gradnje</span><h1>ICF oplatni sustav s Neopor® jezgrom</h1><div class=\"row align-items-center g-5 mt-2\"><div class=\"col-lg-6\"><p class=\"lead\">Variant Haus Group ICF sustav koristi izolacijske oplate od ekspandiranog polistirena (Neopor®) koje se slažu u zidne elemente i ispunjavaju armiranim betonom. Rezultat je istovremeno gotova nosiva konstrukcija i kontinuirana toplinska izolacija — bez toplinskih mostova.</p></div><div class=\"col-lg-6\"><div class=\"icf-feature-image-frame\"><img src=\"/IcfTheme/img/icf/vhg-wall-cross-section.jpg\" alt=\"Presjek zida — toplinska i zvučna izolacija u VHG sustavu\" /></div><div class=\"icf-image-caption\">Presjek zida: zvučna i toplinska izolacija u jednom elementu.</div></div></div><div class=\"row mt-5 g-4\"><div class=\"col-md-6\"><h3>Glavne prednosti</h3><ul><li>Vrlo niska potrošnja energije (klasa A+ / pasivna kuća)</li><li>Brza gradnja — gruba konstrukcija u tjednima, ne mjesecima</li><li>Masivna armiranobetonska konstrukcija — otpornost na potres, vatru i vlagu</li><li>Tih i ugodan boravak — odlična zvučna izolacija</li><li>Bez toplinskih mostova zahvaljujući kontinuiranoj izolaciji</li></ul></div><div class=\"col-md-6\"><h3>Tehničke karakteristike</h3><ul><li>Neopor® jezgra različitih debljina (od 5 do 20+ cm vanjske izolacije)</li><li>Standardna debljina betonske jezgre 15 cm — dovoljna za do 4 etaže</li><li>Certificirani sustav po europskim normama</li><li>Kompatibilan s klasičnim instalacijama, ravnim i kosim krovovima</li></ul></div></div><div class=\"mt-5\"><a href=\"/proizvodnja\" class=\"btn btn-icf-outline me-2\">Pogledajte proizvodnju</a> <a href=\"/kontakt\" class=\"btn btn-icf-primary\">Zatražite tehničku ponudu</a></div></div></section>"
+                    "Html": "<section class=\"icf-section\"><div class=\"container\"><div class=\"row align-items-center g-5\"><div class=\"col-lg-6\"><span class=\"icf-hero-eyebrow\">VHG sustav gradnje</span><h1>ICF oplatni sustav s Neopor® jezgrom</h1><p class=\"lead\">Izolacijske oplate od Neopor® polistirena slažu se na gradilištu i ispunjavaju armiranim betonom — masivna nosiva konstrukcija i kontinuirana toplinska te zvučna izolacija u jednom koraku.</p><a href=\"/kontakt\" class=\"btn btn-icf-primary\">Zatražite tehničku ponudu</a></div><div class=\"col-lg-6\"><div class=\"icf-feature-image-frame\"><img src=\"/IcfTheme/img/icf/vhg-wall-cross-section.jpg\" alt=\"Presjek zida — toplinska i zvučna izolacija u VHG sustavu\" /></div><div class=\"icf-image-caption\">Presjek zida: toplinska i zvučna izolacija u jednom elementu.</div></div></div></div></section><section class=\"icf-section icf-section-light\"><div class=\"container\"><div class=\"row mb-5\"><div class=\"col-lg-8\"><span class=\"icf-hero-eyebrow\">Kako nastaje zid</span><h2>Od oplate do gotove konstrukcije u četiri koraka.</h2></div></div><ol class=\"icf-process\"><li><span class=\"icf-step-num\">1</span><div><strong>Slaganje oplata</strong><p>Neopor® elementi slažu se poput slagalice.</p></div></li><li><span class=\"icf-step-num\">2</span><div><strong>Armatura</strong><p>Postavlja se čelična armatura prema projektu.</p></div></li><li><span class=\"icf-step-num\">3</span><div><strong>Betoniranje</strong><p>Oplate se ispunjavaju armiranim betonom.</p></div></li><li><span class=\"icf-step-num\">4</span><div><strong>Gotov zid</strong><p>Nosiva i izolirana konstrukcija — bez dodatne izolacije.</p></div></li></ol></div></section><section class=\"icf-section\"><div class=\"container\"><div class=\"row mb-5\"><div class=\"col-lg-8\"><span class=\"icf-hero-eyebrow\">Glavne prednosti</span><h2>Zašto graditi u ICF sustavu.</h2></div></div><div class=\"row g-4\"><div class=\"col-md-4\"><div class=\"icf-option-card\"><div class=\"icf-option-icon\"><i class=\"fas fa-leaf\"></i></div><h3>Niska potrošnja</h3><p>Energetski razred A+ ili pasivna kuća — do 70% niži troškovi grijanja i hlađenja.</p></div></div><div class=\"col-md-4\"><div class=\"icf-option-card\"><div class=\"icf-option-icon\"><i class=\"fas fa-bolt\"></i></div><h3>Brza gradnja</h3><p>Gruba konstrukcija u tjednima, ne mjesecima.</p></div></div><div class=\"col-md-4\"><div class=\"icf-option-card\"><div class=\"icf-option-icon\"><i class=\"fas fa-shield-alt\"></i></div><h3>Čvrsto i sigurno</h3><p>Masivni armirani beton — otpornost na potres, vatru i vlagu.</p></div></div><div class=\"col-md-4\"><div class=\"icf-option-card\"><div class=\"icf-option-icon\"><i class=\"fas fa-volume-mute\"></i></div><h3>Tiho</h3><p>Izvrsna zvučna izolacija za miran boravak.</p></div></div><div class=\"col-md-4\"><div class=\"icf-option-card\"><div class=\"icf-option-icon\"><i class=\"fas fa-th-large\"></i></div><h3>Bez toplinskih mostova</h3><p>Kontinuirana izolacija po cijeloj ovojnici objekta.</p></div></div><div class=\"col-md-4\"><div class=\"icf-option-card\"><div class=\"icf-option-icon\"><i class=\"fas fa-drafting-compass\"></i></div><h3>Sloboda projektiranja</h3><p>Kompatibilno s ravnim i kosim krovovima te svim instalacijama.</p></div></div></div></div></section><section class=\"icf-section icf-section-light\"><div class=\"container\"><div class=\"row mb-4\"><div class=\"col-lg-8\"><span class=\"icf-hero-eyebrow\">Tehnički detalji</span><h2>Tehničke karakteristike</h2></div></div><div class=\"row g-4\"><div class=\"col-md-6\"><ul><li>Neopor® jezgra različitih debljina (od 5 do 20+ cm vanjske izolacije)</li><li>Standardna debljina betonske jezgre 15 cm — dovoljna za do 4 etaže</li><li>Certificiran sustav po europskim normama (ETA/CE)</li><li>Kompatibilan s ravnim i kosim krovovima</li></ul></div><div class=\"col-md-6\"><ul><li>Kontinuirana toplinska i zvučna izolacija</li><li>Bez toplinskih mostova</li><li>Kompatibilno s klasičnim instalacijama</li><li>Brza, čista i precizna gradnja</li></ul></div></div></div></section><section class=\"icf-contact-block\"><div class=\"container text-center\"><h2>Razmišljate o gradnji u ICF sustavu?</h2><p class=\"lead mb-4\">Pošaljite nam svoj projekt ili ideju — pripremamo tehničku procjenu i ponudu.</p><a href=\"/kontakt\" class=\"btn btn-icf-primary\">Zatražite tehničku ponudu</a> <a href=\"/proizvodnja\" class=\"btn btn-icf-outline ms-2 icf-btn-on-dark\">Pogledajte proizvodnju</a></div></section>"
                   }
                 }
               }
@@ -220,7 +231,9 @@
           "Published": true,
           "Author": "admin",
           "Page": {},
-          "TitlePart": { "Title": "Proizvodnja" },
+          "TitlePart": {
+            "Title": "Proizvodnja"
+          },
           "AutoroutePart": {
             "Path": "proizvodnja",
             "SetHomepage": false,
@@ -236,10 +249,13 @@
                 "Latest": false,
                 "Published": false,
                 "Author": "admin",
-                "FlowMetadata": { "Alignment": 0, "Size": 100 },
+                "FlowMetadata": {
+                  "Alignment": 0,
+                  "Size": 100
+                },
                 "RawHtml": {
                   "Content": {
-                    "Html": "<section class=\"icf-section\"><div class=\"container\"><span class=\"icf-hero-eyebrow\">VHG proizvodnja</span><h1>Predizgrađeni zidni elementi i Neopor® oplatni blokovi</h1><div class=\"row align-items-center g-5 mt-2\"><div class=\"col-lg-7\"><div class=\"icf-feature-image-frame\"><img src=\"/IcfTheme/img/icf/vhg-production.jpg\" alt=\"Pogon Variant Haus Group za proizvodnju ICF elemenata\" /></div></div><div class=\"col-lg-5\"><p class=\"lead\">Variant Haus Group u vlastitom pogonu proizvodi cijeli asortiman ICF oplatnih blokova i predizgrađenih zidnih elemenata. Elementi dolaze na gradilište spremni za slaganje, što omogućuje točnost i tempo gradnje koji klasične tehnologije ne mogu pratiti.</p></div></div><div class=\"row mt-5 g-4 align-items-start\"><div class=\"col-md-6\"><h3>Asortiman</h3><ul><li>Standardni oplatni blokovi (zidovi, uglovi, završetci)</li><li>Predizgrađeni zidni elementi po projektu</li><li>Stropni i krovni elementi</li><li>Specifični elementi za otvore, podrumske zidove i temelje</li></ul></div><div class=\"col-md-6\"><h3>Kontrola kvalitete</h3><ul><li>Sirovina Neopor® od provjerenih europskih dobavljača</li><li>Kontinuirana kontrola gustoće, dimenzija i toplinskih svojstava</li><li>CE certifikat i prateća tehnička dokumentacija</li></ul><div class=\"icf-feature-image-frame mt-4\"><img src=\"/IcfTheme/img/icf/vhg-icf-block.jpg\" alt=\"Neopor® ICF oplatni blok s 20 cm betonskom jezgrom\" /></div></div></div></div></section>"
+                    "Html": "<section class=\"icf-section\"><div class=\"container\"><div class=\"row align-items-center g-5\"><div class=\"col-lg-7\"><div class=\"icf-feature-image-frame\"><img src=\"/IcfTheme/img/icf/vhg-production.jpg\" alt=\"Pogon Variant Haus Group za proizvodnju ICF elemenata\" /></div></div><div class=\"col-lg-5\"><span class=\"icf-hero-eyebrow\">VHG proizvodnja</span><h1>Predizgrađeni elementi iz njemačkog pogona</h1><p class=\"lead\">Variant Haus Group u vlastitom pogonu proizvodi cijeli asortiman ICF oplatnih blokova i predizgrađenih zidnih elemenata — spremnih za slaganje na gradilištu.</p></div></div></div></section><section class=\"icf-section icf-section-light\"><div class=\"container\"><div class=\"row mb-5\"><div class=\"col-lg-8\"><span class=\"icf-hero-eyebrow\">Asortiman</span><h2>Što proizvodimo.</h2></div></div><div class=\"row g-4\"><div class=\"col-md-3 col-sm-6\"><div class=\"icf-option-card\"><div class=\"icf-option-icon\"><i class=\"fas fa-cubes\"></i></div><h3>Oplatni blokovi</h3><p>Standardni blokovi: zidovi, uglovi i završetci.</p></div></div><div class=\"col-md-3 col-sm-6\"><div class=\"icf-option-card\"><div class=\"icf-option-icon\"><i class=\"fas fa-th-large\"></i></div><h3>Zidni elementi</h3><p>Predizgrađeni elementi po projektu.</p></div></div><div class=\"col-md-3 col-sm-6\"><div class=\"icf-option-card\"><div class=\"icf-option-icon\"><i class=\"fas fa-border-all\"></i></div><h3>Stropni i krovni</h3><p>Elementi za stropove i krovove.</p></div></div><div class=\"col-md-3 col-sm-6\"><div class=\"icf-option-card\"><div class=\"icf-option-icon\"><i class=\"fas fa-puzzle-piece\"></i></div><h3>Specijalni elementi</h3><p>Za otvore, podrumske zidove i temelje.</p></div></div></div></div></section><section class=\"icf-section\"><div class=\"container\"><div class=\"row align-items-center g-5\"><div class=\"col-lg-6\"><span class=\"icf-hero-eyebrow\">Kontrola kvalitete</span><h2>Njemačka kvaliteta, dokumentirana.</h2><ul><li>Sirovina Neopor® od provjerenih europskih dobavljača</li><li>Kontinuirana kontrola gustoće, dimenzija i toplinskih svojstava</li><li>CE oznaka i prateća tehnička dokumentacija</li></ul></div><div class=\"col-lg-6\"><div class=\"icf-feature-image-frame\"><img src=\"/IcfTheme/img/icf/vhg-icf-block.jpg\" alt=\"Neopor® ICF oplatni blok\" /></div></div></div></div></section><section class=\"icf-section icf-section-light\"><div class=\"container\"><div class=\"icf-stats\"><div class=\"icf-stat\"><strong>1990.</strong><span>od početka VHG proizvodnje</span></div><div class=\"icf-stat\"><strong>Neopor®</strong><span>provjerena njemačka sirovina</span></div><div class=\"icf-stat\"><strong>CE</strong><span>označeni elementi</span></div><div class=\"icf-stat\"><strong>Po mjeri</strong><span>predizgrađeno prema projektu</span></div></div></div></section><section class=\"icf-contact-block\"><div class=\"container text-center\"><h2>Trebate elemente za svoj projekt?</h2><p class=\"lead mb-4\">Javite nam specifikacije — pripremamo ponudu i raspored isporuke.</p><a href=\"/kontakt\" class=\"btn btn-icf-primary\">Zatražite ponudu</a></div></section>"
                   }
                 }
               }
@@ -254,7 +270,9 @@
           "Published": true,
           "Author": "admin",
           "Page": {},
-          "TitlePart": { "Title": "Reference" },
+          "TitlePart": {
+            "Title": "Reference"
+          },
           "AutoroutePart": {
             "Path": "reference",
             "SetHomepage": false,
@@ -270,10 +288,13 @@
                 "Latest": false,
                 "Published": false,
                 "Author": "admin",
-                "FlowMetadata": { "Alignment": 0, "Size": 100 },
+                "FlowMetadata": {
+                  "Alignment": 0,
+                  "Size": 100
+                },
                 "RawHtml": {
                   "Content": {
-                    "Html": "<section class=\"icf-section\"><div class=\"container\"><span class=\"icf-hero-eyebrow\">Naši projekti</span><h1>Reference</h1><div class=\"row align-items-center g-5 mt-2\"><div class=\"col-lg-7\"><div class=\"icf-feature-image-frame\"><img src=\"/IcfTheme/img/icf/vhg-home.jpg\" alt=\"Obiteljska kuća izgrađena u VHG ICF sustavu\" /></div></div><div class=\"col-lg-5\"><p class=\"lead\">Variant Haus Group sustav korišten je u stotinama obiteljskih kuća i poslovnih objekata diljem Europe od 1990. godine.</p><p>Galeriju projekata u Hrvatskoj realiziranih u suradnji s formAdrijom uskoro objavljujemo na ovoj stranici.</p><div class=\"alert alert-info\">Galerija je u pripremi. Za uvid u dovršene projekte i posjet referentnoj kući, kontaktirajte nas.</div><a href=\"/kontakt\" class=\"btn btn-icf-primary\">Dogovorite obilazak</a></div></div></div></section>"
+                    "Html": "<section class=\"icf-section\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-8\"><span class=\"icf-hero-eyebrow\">Reference</span><h1>Provjeren sustav, tisuće domova u Europi.</h1><p class=\"lead\">VHG ICF sustav korišten je u stotinama obiteljskih kuća i poslovnih objekata diljem Europe od 1990. godine.</p></div></div></div></section><section class=\"icf-section icf-section-light\"><div class=\"container\"><div class=\"row align-items-center g-5\"><div class=\"col-lg-6\"><div class=\"icf-feature-image-frame\"><img src=\"/IcfTheme/img/icf/vhg-home.jpg\" alt=\"Obiteljska kuća izgrađena u VHG ICF sustavu\" /></div></div><div class=\"col-lg-6\"><h2>Iskustvo iz Europe, sada i u Hrvatskoj</h2><p>Kao novi partner za hrvatsko tržište, formAdria donosi sustav s više od tri desetljeća dokazane primjene. Galeriju domaćih projekata objavit ćemo čim budu dovršeni.</p><a href=\"/kontakt\" class=\"btn btn-icf-primary\">Postanite jedna od prvih referenci</a></div></div></div></section><section class=\"icf-section\"><div class=\"container\"><div class=\"icf-stats\"><div class=\"icf-stat\"><strong>30+</strong><span>godina primjene u Europi</span></div><div class=\"icf-stat\"><strong>stotine</strong><span>izgrađenih objekata</span></div><div class=\"icf-stat\"><strong>do 70%</strong><span>niži troškovi energije</span></div><div class=\"icf-stat\"><strong>ETA / CE</strong><span>certificiran sustav</span></div></div></div></section><section class=\"icf-contact-block\"><div class=\"container text-center\"><h2>Gradite među prvima u Hrvatskoj.</h2><p class=\"lead mb-4\">Dogovorite savjetovanje i saznajte kako VHG sustav odgovara vašem projektu.</p><a href=\"/kontakt\" class=\"btn btn-icf-primary\">Dogovorite savjetovanje</a></div></section>"
                   }
                 }
               }
@@ -288,7 +309,9 @@
           "Published": true,
           "Author": "admin",
           "Page": {},
-          "TitlePart": { "Title": "Česta pitanja" },
+          "TitlePart": {
+            "Title": "Česta pitanja"
+          },
           "AutoroutePart": {
             "Path": "cesta-pitanja",
             "SetHomepage": false,
@@ -304,10 +327,13 @@
                 "Latest": false,
                 "Published": false,
                 "Author": "admin",
-                "FlowMetadata": { "Alignment": 0, "Size": 100 },
+                "FlowMetadata": {
+                  "Alignment": 0,
+                  "Size": 100
+                },
                 "RawHtml": {
                   "Content": {
-                    "Html": "<section class=\"icf-section\"><div class=\"container\"><span class=\"icf-hero-eyebrow\">FAQ</span><h1>Česta pitanja</h1><div class=\"row mt-4\"><div class=\"col-lg-9\"><details class=\"icf-faq-item\"><summary>Što je točno ICF sustav?</summary><p>ICF (Insulating Concrete Forms) je sustav izgradnje u kojem se izolacijski blokovi od Neopor® polistirena slažu na gradilištu i ispunjavaju armiranim betonom. Konstrukcija je istovremeno nosiva i izolirana.</p></details><details class=\"icf-faq-item\"><summary>Koliko traje gruba gradnja u ICF sustavu?</summary><p>Za prosječnu obiteljsku kuću od oko 150 m² gruba konstrukcija dovršava se u 3 do 6 tjedana, ovisno o složenosti projekta i veličini tima.</p></details><details class=\"icf-faq-item\"><summary>Je li ICF skuplji od klasične gradnje?</summary><p>Ulazni trošak materijala je usporediv ili neznatno viši, ali ukupni trošak gradnje često ispada niži zbog brže izgradnje, manje radne snage i odsutnosti naknadnih izolacijskih radova. Ušteda na grijanju i hlađenju vraća investiciju kroz godine korištenja.</p></details><details class=\"icf-faq-item\"><summary>Tko može graditi u VHG sustavu?</summary><p>Sustav je dovoljno jednostavan za samogradnju uz našu tehničku podršku, no za većinu klijenata preporučamo da gruba konstrukcija ide preko izvođača s našim sudjelovanjem (modeli „Zajedno s nama\" ili „Ključ u ruke\").</p></details><details class=\"icf-faq-item\"><summary>Imate li certifikate i dokumentaciju za hrvatsko tržište?</summary><p>Da. VHG sustav posjeduje CE oznaku i prateću tehničku dokumentaciju. formAdria osigurava prijevod tehničkih listova i podršku u komunikaciji s projektantima i nadzorom.</p></details><details class=\"icf-faq-item\"><summary>Pokrivate li cijelu Hrvatsku?</summary><p>Da. Isporučujemo i pružamo tehničku podršku u cijeloj Hrvatskoj, sa skladištem i timom u Zagrebu.</p></details></div></div></div></section>"
+                    "Html": "<section class=\"icf-section\"><div class=\"container\"><div class=\"row mb-4\"><div class=\"col-lg-8\"><span class=\"icf-hero-eyebrow\">Česta pitanja</span><h1>Odgovori na vaša pitanja.</h1></div></div><div class=\"row\"><div class=\"col-lg-9\"><details class=\"icf-faq-item\"><summary>Što je točno ICF sustav?</summary><p>ICF (Insulating Concrete Forms) je sustav u kojem se izolacijski blokovi od Neopor® polistirena slažu na gradilištu i ispunjavaju armiranim betonom. Konstrukcija je istovremeno nosiva i izolirana.</p></details><details class=\"icf-faq-item\"><summary>Koliko traje gruba gradnja u ICF sustavu?</summary><p>Za prosječnu obiteljsku kuću od oko 150 m² gruba konstrukcija dovršava se u 3 do 6 tjedana, ovisno o složenosti projekta i veličini tima.</p></details><details class=\"icf-faq-item\"><summary>Je li ICF skuplji od klasične gradnje?</summary><p>Ulazni trošak materijala je usporediv ili neznatno viši, no ukupni trošak gradnje često je niži zbog brže izgradnje, manje radne snage i izostanka naknadnih izolacijskih radova. Ušteda na grijanju i hlađenju vraća investiciju kroz godine korištenja.</p></details><details class=\"icf-faq-item\"><summary>Tko može graditi u VHG sustavu?</summary><p>Sustav je dovoljno jednostavan za samogradnju uz našu tehničku podršku. Za većinu klijenata preporučamo da gruba konstrukcija ide preko izvođača uz naše sudjelovanje (modeli „Zajedno s nama\" ili „Ključ u ruke\").</p></details><details class=\"icf-faq-item\"><summary>Imate li certifikate i dokumentaciju za hrvatsko tržište?</summary><p>Da. VHG sustav posjeduje CE oznaku i prateću tehničku dokumentaciju (ETA/CE). formAdria osigurava tehničke listove i podršku u komunikaciji s projektantima i nadzorom.</p></details><details class=\"icf-faq-item\"><summary>Pokrivate li cijelu Hrvatsku?</summary><p>Da. Isporučujemo i pružamo tehničku podršku u cijeloj Hrvatskoj, sa sjedištem i timom u Zagrebu.</p></details></div></div></div></section><section class=\"icf-contact-block\"><div class=\"container text-center\"><h2>Imate dodatno pitanje?</h2><p class=\"lead mb-4\">Rado odgovaramo — bez obveze.</p><a href=\"/kontakt\" class=\"btn btn-icf-primary\">Postavite pitanje</a></div></section>"
                   }
                 }
               }
@@ -322,7 +348,9 @@
           "Published": true,
           "Author": "admin",
           "Page": {},
-          "TitlePart": { "Title": "Kontakt" },
+          "TitlePart": {
+            "Title": "Kontakt"
+          },
           "AutoroutePart": {
             "Path": "kontakt",
             "SetHomepage": false,
@@ -338,10 +366,13 @@
                 "Latest": false,
                 "Published": false,
                 "Author": "admin",
-                "FlowMetadata": { "Alignment": 0, "Size": 100 },
+                "FlowMetadata": {
+                  "Alignment": 0,
+                  "Size": 100
+                },
                 "RawHtml": {
                   "Content": {
-                    "Html": "<section class=\"icf-section\"><div class=\"container\"><span class=\"icf-hero-eyebrow\">Kontakt</span><h1>Razgovarajmo o vašem projektu</h1><p class=\"lead\">Slobodno nas kontaktirajte za besplatno tehničko savjetovanje, ponudu ili dogovor o obilasku referentnih objekata.</p><div class=\"row mt-5 g-5\"><div class=\"col-lg-6\"><h3>formAdria</h3><address class=\"mb-4\">Čulinečka cesta 146<br>10000 Zagreb<br>OIB: 53003301854</address><p class=\"mb-2\"><strong>Telefon:</strong> <a href=\"tel:+385993991989\">+385 99 399 1989</a></p><p class=\"mb-2\"><strong>E-pošta:</strong> <a href=\"mailto:icf@formadria.com\">icf@formadria.com</a></p><p class=\"mb-2\"><strong>Radno vrijeme:</strong> Ponedjeljak–Petak, 09:00 – 17:00</p></div><div class=\"col-lg-6\"><h3>Kako postupamo</h3><ol><li>Pošaljete nam upit (idejni nacrt, lokacija, okvirni budžet).</li><li>Tim formAdrije priprema tehničku procjenu i preporuku jednog od tri modela suradnje.</li><li>Dogovaramo sastanak (uživo ili online) i obilazak referentne kuće ako je moguće.</li><li>Nakon ugovora isporučujemo elemente i pratimo gradnju do kraja.</li></ol></div></div></div></section>"
+                    "Html": "<section class=\"icf-section\"><div class=\"container\"><div class=\"row mb-4\"><div class=\"col-lg-8\"><span class=\"icf-hero-eyebrow\">Kontakt</span><h1>Razgovarajmo o vašem projektu.</h1><p class=\"lead\">Besplatno tehničko savjetovanje, ponuda ili dogovor o suradnji — slobodno nam se javite.</p></div></div><div class=\"row g-5\"><div class=\"col-lg-6\"><h3>formAdria</h3><address class=\"mb-4\">Čulinečka cesta 146<br />10000 Zagreb<br />OIB: 53003301854</address><p class=\"mb-2\"><strong>Telefon:</strong> <a href=\"tel:+385993991989\">+385 99 399 1989</a></p><p class=\"mb-2\"><strong>E-pošta:</strong> <a href=\"mailto:icf@formadria.com\">icf@formadria.com</a></p><p class=\"mb-2\"><strong>Radno vrijeme:</strong> Ponedjeljak–Petak, 09:00 – 17:00</p></div><div class=\"col-lg-6\"><h3>Kako postupamo</h3><ol class=\"icf-steps-num\"><li>Pošaljete nam upit (idejni nacrt, lokacija, okvirni budžet).</li><li>Pripremamo tehničku procjenu i preporuku jednog od modela suradnje.</li><li>Dogovaramo sastanak (uživo ili online) i, gdje je moguće, obilazak.</li><li>Nakon ugovora isporučujemo elemente i pratimo gradnju do kraja.</li></ol></div></div></div></section><section class=\"icf-contact-block\"><div class=\"container text-center\"><h2>Spremni za prvi korak?</h2><p class=\"lead mb-4\">Pošaljite upit s idejnim nacrtom, lokacijom i okvirnim budžetom — javljamo se s procjenom.</p><a href=\"tel:+385993991989\" class=\"btn btn-icf-primary\">Nazovite nas</a> <a href=\"mailto:icf@formadria.com\" class=\"btn btn-icf-outline ms-2 icf-btn-on-dark\">Pošaljite e-poštu</a></div></section>"
                   }
                 }
               }
@@ -355,8 +386,12 @@
           "Latest": true,
           "Published": true,
           "Author": "admin",
-          "TitlePart": { "Title": "Main Menu" },
-          "AliasPart": { "Alias": "main-menu" },
+          "TitlePart": {
+            "Title": "Main Menu"
+          },
+          "AliasPart": {
+            "Alias": "main-menu"
+          },
           "MenuPart": {},
           "MenuItemsListPart": {
             "MenuItems": [
@@ -367,7 +402,10 @@
                 "Latest": false,
                 "Published": false,
                 "Author": "admin",
-                "LinkMenuItemPart": { "Name": "Naslovnica", "Url": "/" }
+                "LinkMenuItemPart": {
+                  "Name": "Naslovnica",
+                  "Url": "/"
+                }
               },
               {
                 "ContentItemId": "icfmenuitemsystem000000000",
@@ -376,7 +414,10 @@
                 "Latest": false,
                 "Published": false,
                 "Author": "admin",
-                "LinkMenuItemPart": { "Name": "Sustav gradnje", "Url": "/sustav-gradnje" }
+                "LinkMenuItemPart": {
+                  "Name": "Sustav gradnje",
+                  "Url": "/sustav-gradnje"
+                }
               },
               {
                 "ContentItemId": "icfmenuitemproduction00000",
@@ -385,7 +426,10 @@
                 "Latest": false,
                 "Published": false,
                 "Author": "admin",
-                "LinkMenuItemPart": { "Name": "Proizvodnja", "Url": "/proizvodnja" }
+                "LinkMenuItemPart": {
+                  "Name": "Proizvodnja",
+                  "Url": "/proizvodnja"
+                }
               },
               {
                 "ContentItemId": "icfmenuitemreferences00000",
@@ -394,7 +438,10 @@
                 "Latest": false,
                 "Published": false,
                 "Author": "admin",
-                "LinkMenuItemPart": { "Name": "Reference", "Url": "/reference" }
+                "LinkMenuItemPart": {
+                  "Name": "Reference",
+                  "Url": "/reference"
+                }
               },
               {
                 "ContentItemId": "icfmenuitemfaq000000000000",
@@ -403,7 +450,10 @@
                 "Latest": false,
                 "Published": false,
                 "Author": "admin",
-                "LinkMenuItemPart": { "Name": "Česta pitanja", "Url": "/cesta-pitanja" }
+                "LinkMenuItemPart": {
+                  "Name": "Česta pitanja",
+                  "Url": "/cesta-pitanja"
+                }
               },
               {
                 "ContentItemId": "icfmenuitemcontact00000000",
@@ -412,13 +462,20 @@
                 "Latest": false,
                 "Published": false,
                 "Author": "admin",
-                "LinkMenuItemPart": { "Name": "Kontakt", "Url": "/kontakt" }
+                "LinkMenuItemPart": {
+                  "Name": "Kontakt",
+                  "Url": "/kontakt"
+                }
               }
             ]
           },
           "@WeldedPartSettings": {
-            "MenuPart": { "Position": "3" },
-            "MenuItemsListPart": { "Position": "4" }
+            "MenuPart": {
+              "Position": "3"
+            },
+            "MenuItemsListPart": {
+              "Position": "4"
+            }
           }
         }
       ]
