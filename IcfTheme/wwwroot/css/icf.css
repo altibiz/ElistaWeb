@@ -537,23 +537,3 @@ body.icf-body a:not(.btn):not(.navbar-brand):not(.nav-link):hover {
    content rows (vertical gutter / row stacking spacing is preserved). */
 .icf-section .row,
 .icf-options .row { --bs-gutter-x: 1.5rem; }
-
-/* Numbered step list (e.g. contact "how we work") */
-.icf-steps-num { list-style: none; counter-reset: s; padding: 0; margin: 0; }
-.icf-steps-num li { counter-increment: s; position: relative; padding: 0.5rem 0 0.5rem 2.6rem; color: var(--icf-gray-700); }
-.icf-steps-num li::before {
-    content: counter(s);
-    position: absolute;
-    left: 0;
-    top: 0.4rem;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: var(--icf-primary);
-    color: #fff;
-    font-weight: 700;
-    font-size: 0.85rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
