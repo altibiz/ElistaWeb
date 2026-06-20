@@ -530,3 +530,10 @@ body.icf-body a:not(.btn):not(.navbar-brand):not(.nav-link):hover {
         margin-top: 0.75rem;
     }
 }
+
+/* Guard against horizontal page overflow: large Bootstrap gutters (e.g. g-5 = 3rem)
+   give a .row negative side-margins (-1.5rem) bigger than the .container padding
+   (0.75rem), so the row spills past the viewport. Cap the horizontal gutter on
+   content rows (vertical gutter / row stacking spacing is preserved). */
+.icf-section .row,
+.icf-options .row { --bs-gutter-x: 1.5rem; }
