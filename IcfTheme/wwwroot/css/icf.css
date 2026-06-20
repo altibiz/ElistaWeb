@@ -519,3 +519,14 @@ body.icf-body a:not(.btn):not(.navbar-brand):not(.nav-link):hover {
 /* Outline button on a dark background */
 .icf-btn-on-dark { border-color: #fff !important; color: #fff !important; }
 .icf-btn-on-dark:hover { background: #fff !important; color: var(--icf-primary) !important; }
+
+/* Mobile: when CTA buttons wrap/stack, align them flush-left and add vertical spacing
+   (the inline ms-2 margin otherwise leaves the second button indented and cramped). */
+@media (max-width: 575.98px) {
+    .icf-hero .btn + .btn,
+    .icf-contact-block .btn + .btn,
+    .icf-section .btn + .btn {
+        margin-left: 0 !important;
+        margin-top: 0.75rem;
+    }
+}
